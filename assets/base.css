@@ -2457,6 +2457,13 @@ input[type='checkbox'] {
 .header__heading-link .h2 {
     line-height: 1;
     color: rgba(var(--color-foreground), 0.75);
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.03125rem;
+
 }
 
 .header__heading-logo {
