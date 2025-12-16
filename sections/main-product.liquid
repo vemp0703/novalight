@@ -129,9 +129,17 @@
                   -%}
                 </div>
 
-                {% if product.metafields.custom.product_features %}
-                  <p>{{ product.metafields.custom.product_features | metafield_text }}</p>
-                {% endif %}
+{% if product.metafields.custom.product_features %}
+  <ul class="product-features">
+    {% assign features = product.metafields.custom.product_features | metafield_text | split: ';' %}
+    {% for feature in features %}
+      {% if feature != blank %}
+        <li>{{ feature | strip }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
