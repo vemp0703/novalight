@@ -106,14 +106,10 @@
                   </a>
                 </div>
 
-              
-{% if product.metafields.custom.short_description %}
-  <p>{{ product.metafields.custom.short_description | metafield_text }}</p>
-{% endif %}
-
-
-
-
+                {%- when 'product.metafields.custom.short_description' -%}              
+                {% if product.metafields.custom.short_description %}
+                  <p>{{ product.metafields.custom.short_description | metafield_text }}</p>
+                {% endif %}
 
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
