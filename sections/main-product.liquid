@@ -107,16 +107,18 @@
                 </div>
 
               
-   {% assign metafield_data = product.metafields.custom.short_description %}
+{% assign metafield_data = product.metafields.custom.short_description %}
 {% if metafield_data %}
   <div class="product-short-description">
-    {{ metafield_data | escape }}
+    {{ metafield_data | raw }} <!-- Use 'raw' to render HTML or rich text -->
   </div>
 {% else %}
   <div class="product-short-description">
     Default text when metafield is empty.
   </div>
 {% endif %}
+
+
 
 
 
