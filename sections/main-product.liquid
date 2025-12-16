@@ -111,7 +111,13 @@
                   <p>{{ product.metafields.custom.short_description | metafield_tag  }}</p>
                 {% endif %}
 
-                
+                <!-- Judge.me Star Rating -->
+<div class="jdgm-widget jdgm-preview-badge"
+     data-id="{{ product.id }}"
+     data-template="badge"
+     data-auto-install="false">
+</div>
+
 
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
