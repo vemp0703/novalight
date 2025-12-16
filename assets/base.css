@@ -3636,10 +3636,10 @@ span.jdgm-prev-badge__stars::after {
 
 /* Inject dynamic text */
 .jdgm-prev-badge__text::after {
-  content: attr(data-no-of-review) " Verified User";
-  font-size: 12px;
-  color: #1a73e8;
-  white-space: nowrap;
+    content: attr(data-no-of-review) " Verified User";
+    font-size: 15px;
+    color: #4d4d4d;
+    white-space: nowrap;
 }
 
 @keyframes indeterminateAnimation {
