@@ -397,22 +397,19 @@
       const count = match[0];
       const label = count === "1" ? "Verified User" : "Verified Users";
 
-      // Store dynamic value
       el.setAttribute("data-no-of-review", count);
-
-      // Update visible text
       el.textContent = count + " " + label;
     });
   }
 
-  // Run initially
-  document.addEventListener("DOMContentLoaded", updateJudgeMeText);
+  // Run immediately
+  updateJudgeMeText();
+
+  // Run when Judge.me finishes loading
   document.addEventListener("jdgm:ready", updateJudgeMeText);
 
-  // Watch for Judge.me re-render
-  const observer = new MutationObserver(function () {
-    updateJudgeMeText();
-  });
+  // Observe DOM changes (Judge.me re-renders after load)
+  const observer = new MutationObserver(updateJudgeMeText);
 
   observer.observe(document.body, {
     childList: true,
