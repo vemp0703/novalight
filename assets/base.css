@@ -3712,6 +3712,10 @@ span.badge.price__badge-sale.color-scheme-5 {
 .product .price .badge, .product .price__container {
      margin-top: 0.8rem;
 }
+span.price-item.price-item--regular {
+    font-family: 'Marcellus';
+    font-size: 3rem;
+}
 /* Mobile */
 @media (max-width: 768px) {
   .product-features {
