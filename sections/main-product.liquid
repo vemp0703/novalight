@@ -376,10 +376,7 @@
                                     {{ variant_price_compare | money_with_currency }}
                                   </s>
                                 </dd>
-                                <dt class="visually-hidden">
-                                  {{ 'products.product.price.sale_price' | t }}
-                                </dt>
-                                <dd>
+                                          <dd>
                                   <span class="price-per-item--current">
                                     {{-
                                       'products.product.volume_pricing.price_at_each_html'
@@ -387,6 +384,10 @@
                                     -}}
                                   </span>
                                 </dd>
+                                <dt class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </dt>
+                      
                               </dl>
                             {%- else -%}
                               <span class="price-per-item--current">
