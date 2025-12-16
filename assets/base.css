@@ -3624,6 +3624,9 @@ details-disclosure>details {
     display: block;
 }
 
+span.jdgm-prev-badge__stars::after {
+    content: attr(data-score);
+}
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
