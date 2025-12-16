@@ -3657,6 +3657,12 @@ s.price-item.price-item--regular, .price__sale {
 s.price-item.price-item--regular {
     color: #90A1B9;
 }
+span.badge.price__badge-sale.color-scheme-5 {
+    background: linear-gradient(90deg, #fb2c36, #ff6900);
+    font-family: 'Marcellus';
+    letter-spacing: normal;
+    font-size: 1.5rem;
+}
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
