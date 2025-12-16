@@ -109,7 +109,7 @@
               
                 {% assign metafield_data = product.metafields.custom.short_description %}
                 {% if metafield_data %}
-                  {% assign parsed_json = metafield_data | json %}
+                  {% assign parsed_json = metafield_data | parse_json %}
                   {% assign text_value = parsed_json.children[0].children[0].value %}
                   <div class="product-short-description">
                     {{ text_value }}
