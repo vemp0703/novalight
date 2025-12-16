@@ -112,11 +112,15 @@
                 {% endif %}
 
                 <!-- Judge.me Star Rating -->
-<div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget"
-     data-id="{{ product.id }}"
-     data-auto-install="false">
-  {{ product.metafields.judgeme.widget }}
+<!-- Custom Judge.me Review Badge -->
+<div class="custom-jdgm-badge">
+  <div class="jdgm-widget jdgm-preview-badge"
+       data-id="{{ product.id }}"
+       data-template="badge"
+       data-auto-install="false">
+  </div>
 </div>
+
 
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
