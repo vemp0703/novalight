@@ -244,7 +244,7 @@
 
                               {{ product.metafields.custom.product_features | json }}
                 {% if product.metafields.custom.product_features %}
-                  <p>{{ product.metafields.custom.product_features }}</p>
+                  <p>{{ product.metafields.custom.product_features | metafeild_text }}</p>
                 {% endif %}
 
               {%- when 'quantity_selector' -%}
