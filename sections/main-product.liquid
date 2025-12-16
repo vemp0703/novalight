@@ -106,7 +106,7 @@
                   </a>
                 </div>
 
-                {%- when 'product.metafields.custom.short_description' -%}              
+                {%- when 'short_description' -%}              
                 {% if product.metafields.custom.short_description %}
                   <p>{{ product.metafields.custom.short_description | metafield_text }}</p>
                 {% endif %}
