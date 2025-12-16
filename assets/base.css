@@ -3641,7 +3641,9 @@ span.jdgm-prev-badge__stars::after {
     color: #4d4d4d;
     white-space: nowrap;
 }
-
+span.badge.price__badge-sale.color-scheme-5 {
+    background: linear-gradient(90deg, #FB2C36 0%, #FF6900 100%);
+}
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
