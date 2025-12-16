@@ -387,27 +387,39 @@
   </body>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-  function updateJudgeMeBadgeText() {
-    document.querySelectorAll(".jdgm-prev-badge__text").forEach(function(el) {
-      const count = el.getAttribute("data-no-of-review");
-      if (!count) return;
+  function updateJudgeMeText() {
+    document.querySelectorAll(".jdgm-prev-badge__text").forEach(function (el) {
+      const match = el.textContent.match(/\d+/);
+      if (!match) return;
 
-      // Singular / plural handling
+      const count = match[0];
       const label = count === "1" ? "Verified User" : "Verified Users";
 
+      // Store dynamic value
+      el.setAttribute("data-no-of-review", count);
+
+      // Update visible text
       el.textContent = count + " " + label;
     });
   }
 
-  // Run on page load
-  updateJudgeMeBadgeText();
+  // Run initially
+  document.addEventListener("DOMContentLoaded", updateJudgeMeText);
+  document.addEventListener("jdgm:ready", updateJudgeMeText);
 
-  // Run again if Judge.me re-renders
-  document.addEventListener("jdgm:ready", updateJudgeMeBadgeText);
+  // Watch for Judge.me re-render
+  const observer = new MutationObserver(function () {
+    updateJudgeMeText();
+  });
 
-});
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+})();
 </script>
 
 
