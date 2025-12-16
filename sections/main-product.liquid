@@ -113,7 +113,7 @@
 
   <!-- Extract the text value from the JSON-like string -->
   {% assign first_split = metafield_data | split: '"value": "' %}
-  {% assign text_value = first_split[1] | split: '"' | first %}
+  {% assign text_value = first_split[2] | split: '"' | first %}
   
   <!-- Output the extracted value -->
   <div class="product-short-description">
