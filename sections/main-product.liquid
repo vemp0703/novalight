@@ -111,6 +111,8 @@
                   <p>{{ product.metafields.custom.short_description | metafield_tag  }}</p>
                 {% endif %}
 
+                
+
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
