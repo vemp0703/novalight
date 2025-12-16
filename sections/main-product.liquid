@@ -109,27 +109,12 @@
               
    {% assign metafield_data = product.metafields.custom.short_description %}
 {% if metafield_data %}
-  {% assign parsed_json = metafield_data | parse_json %}
-  {% if parsed_json.children %}
-    {% assign first_paragraph = parsed_json.children[0] %}
-    {% if first_paragraph.children %}
-      {% assign text_value = first_paragraph.children[0].value %}
-      <div class="product-short-description">
-        {{ text_value }}
-      </div>
-    {% else %}
-      <div class="product-short-description">
-        No text found in the first paragraph.
-      </div>
-    {% endif %}
-  {% else %}
-    <div class="product-short-description">
-      No children in the parsed JSON.
-    </div>
-  {% endif %}
+  <div class="product-short-description">
+    {{ metafield_data }}
+  </div>
 {% else %}
   <div class="product-short-description">
-    No metafield data available.
+    Default text when metafield is empty.
   </div>
 {% endif %}
 
