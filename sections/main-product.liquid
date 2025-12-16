@@ -108,7 +108,7 @@
 
               
 {% if product.metafields.custom.short_description %}
-  <p>{{ product.metafields.custom.short_description.value | Raw }}</p>
+  <p>{{ product.metafields.custom.short_description | default: 'default_value' }}</p>
 {% endif %}
 
 
