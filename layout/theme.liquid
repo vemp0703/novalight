@@ -386,14 +386,25 @@
     {%- endif -%}
   </body>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".jdgm-prev-badge__text").forEach(function(el) {
-    const match = el.textContent.match(/\d+/);
-    if (match) {
-      el.textContent = match[0] + " Verified Users";
-    }
-  });
+
+  function updateJudgeMeReviewCount() {
+    document.querySelectorAll(".jdgm-prev-badge__text").forEach(function(el) {
+      const match = el.textContent.match(/\d+/);
+      if (match) {
+        el.setAttribute("data-no-of-review", match[0]);
+      }
+    });
+  }
+
+  // Run once on load
+  updateJudgeMeReviewCount();
+
+  // Re-run if Judge.me loads asynchronously
+  document.addEventListener("jdgm:ready", updateJudgeMeReviewCount);
+
 });
 </script>
+
 </html>
