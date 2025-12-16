@@ -107,7 +107,18 @@
                 </div>
 
               
-              {{ product.metafields.custom.short_description}}
+                {% assign metafield_data = product.metafields.custom.short_description %}
+                {% if metafield_data %}
+                  {% assign parsed_json = metafield_data | parse_json %}
+                  {% assign text_value = parsed_json.children[0].children[0].value %}
+                  <div class="product-short-description">
+                    {{ text_value }}
+                  </div>
+                {% else %}
+                  <div class="product-short-description">
+                    Default text when metafield is empty.
+                  </div>
+                {% endif %}
 
 
               {%- when 'price' -%}
