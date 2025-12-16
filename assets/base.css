@@ -3644,6 +3644,16 @@ span.jdgm-prev-badge__stars::after {
 span.badge.price__badge-sale.color-scheme-5 {
     background: linear-gradient(90deg, #FB2C36 0%, #FF6900 100%);
 }
+s.price-item.price-item--regular, .price__sale {
+    font-size: 3rem !important;
+    vertical-align: top;
+    letter-spacing: normal;
+    color: #0F172B;
+    font-family: Marcellus;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem;
+}
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
