@@ -399,6 +399,12 @@
                       </price-per-item>
                     {%- endif -%}
                   </div>
+
+                  {{ product.metafields.custom.product_features | json }}
+                {% if product.metafields.custom.product_features %}
+                  <p>{{ product.metafields.custom.product_features }}</p>
+                {% endif %}
+
                   <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
                     {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                       <span class="divider">
