@@ -3663,6 +3663,56 @@ span.badge.price__badge-sale.color-scheme-5 {
     letter-spacing: normal;
     font-size: 1.5rem;
 }
+/* ===== Product Feature Pills ===== */
+
+.product-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0;
+  margin: 16px 0;
+  list-style: none;
+}
+
+/* Pill item */
+.product-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f9ff;
+  border: 1px solid #d9efff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Blue check icon */
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1da1f2;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Text */
+.feature-text {
+  line-height: 1.3;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-features {
+    grid-template-columns: 1fr;
+  }
+}
+
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
