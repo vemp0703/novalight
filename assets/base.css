@@ -3629,6 +3629,19 @@ span.jdgm-prev-badge__stars::after {
     font-family: 'Lato';
     font-weight: 700;
 }
+/* Hide original text */
+.jdgm-prev-badge__text {
+  font-size: 0;
+}
+
+/* Inject dynamic text */
+.jdgm-prev-badge__text::after {
+  content: attr(data-no-of-review) " Verified User";
+  font-size: 12px;
+  color: #1a73e8;
+  white-space: nowrap;
+}
+
 @keyframes indeterminateAnimation {
     0% {
         transform: translateX(-20%) scaleX(0);
