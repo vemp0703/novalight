@@ -241,6 +241,13 @@
                     </div>
                   </details>
                 </div>
+
+
+                {% if product.metafields.custom.product_features %}
+                  <p>{{ product.metafields.custom.product_features | metafield_tag  }}</p>
+                {% endif %}
+
+
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
