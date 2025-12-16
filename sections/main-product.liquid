@@ -106,14 +106,14 @@
                   </a>
                 </div>
 
-        {% if product.metafields.custom.short_description %}
-<div class="product-short-description">
-{{ product.metafields.custom.short_description }}
-</div>
+{% if product.metafields.custom.short_description %}
+  <div class="product-short-description">
+    {{ product.metafields.custom.short_description }}
+  </div>
 {% else %}
-    <div class="product-short-description">
-    Professional-grade red & infrared light therapy for visibly younger, healthier skin in just 10 minutes a day.
-    </div>
+  <div class="product-short-description">
+    No content found
+  </div>
 {% endif %}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
