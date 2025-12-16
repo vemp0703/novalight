@@ -262,7 +262,7 @@
 
       
 
-              {% comment %} {%- when 'quantity_selector' -%} {% endcomment %}
+              {%- when 'quantity_selector' -%}
 
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -496,6 +496,90 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+              
+                {%- when 'quantity_selector' -%}
+
+<div
+  id="Quantity-Form-{{ section.id }}"
+  class="product-form__input product-form__quantity"
+  {{ block.shopify_attributes }}
+>
+
+  <!-- Quantity label -->
+  <label
+    class="quantity__label form__label"
+    for="Quantity-{{ section.id }}"
+    aria-labelledby="quantity-label-{{ section.id }}"
+  >
+    <span aria-hidden="true">{{ 'products.product.quantity.label' | t }}</span>
+  </label>
+
+  <!-- ROW: Quantity + Add to Cart -->
+  <div class="product-form__qty-atc-row">
+
+    <!-- LEFT: Quantity Selector -->
+    <div class="product-form__qty-wrapper">
+
+      <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
+        <button class="quantity__button" name="minus" type="button">
+          <span class="visually-hidden">
+            {{ 'products.product.quantity.decrease' | t: product: product.title | escape }}
+          </span>
+          <span class="svg-wrapper">
+            {{ 'icon-minus.svg' | inline_asset_content }}
+          </span>
+        </button>
+
+        <input
+          class="quantity__input"
+          type="number"
+          name="quantity"
+          id="Quantity-{{ section.id }}"
+          value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+          form="{{ product_form_id }}"
+        >
+
+        <button class="quantity__button" name="plus" type="button">
+          <span class="visually-hidden">
+            {{ 'products.product.quantity.increase' | t: product: product.title | escape }}
+          </span>
+          <span class="svg-wrapper">
+            {{ 'icon-plus.svg' | inline_asset_content }}
+          </span>
+        </button>
+      </quantity-input>
+
+    </div>
+
+    <!-- RIGHT: Add to Cart Button -->
+    <div class="product-form__atc-wrapper">
+      {{ form | payment_button }}
+    </div>
+
+  </div>
+
+  <!-- Price per item -->
+  <div class="price-per-item__container">
+    <price-per-item
+      id="Price-Per-Item-{{ section.id }}"
+      data-section-id="{{ section.id }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    ></price-per-item>
+  </div>
+
+  <!-- Quantity rules -->
+  <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
+    {{ product.selected_or_first_available_variant.quantity_rule.min }}
+  </div>
+
+  <!-- Volume pricing -->
+  <volume-pricing class="parent-display" id="Volume-{{ section.id }}">
+    <!-- existing volume pricing code stays here -->
+  </volume-pricing>
+
+</div>
+
+              
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
