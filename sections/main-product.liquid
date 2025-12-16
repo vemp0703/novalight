@@ -106,7 +106,7 @@
                   </a>
                 </div>
 
-                <p>{{ product.metafields.custom.short_description }}</p>
+                <p>{{ product.metafields.custom.short_description.value }}</p>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
