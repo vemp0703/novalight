@@ -109,12 +109,13 @@
               
 {% assign metafield_data = product.metafields.custom.short_description %}
 {% if metafield_data %}
-  <!-- Debugging: Output raw metafield data -->
+  <!-- Debug: Output the raw metafield content -->
   <pre>{{ metafield_data }}</pre>
 
-  <!-- Extract the text value using split filters -->
-  {% assign text_value = metafield_data | split: '"value": "' | last | split: '"' | first %}
-  
+  <!-- Manually parse the JSON and extract the text value -->
+  {% assign first_child = metafield_data | split: '"value": "' %}
+  {% assign text_value = first_child[1] | split: '"' | first %}
+
   <div class="product-short-description">
     {{ text_value }}
   </div>
@@ -123,6 +124,7 @@
     Default text when metafield is empty.
   </div>
 {% endif %}
+
 
 
 
