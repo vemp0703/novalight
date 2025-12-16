@@ -128,9 +128,9 @@
                     price_class: 'price--large'
                   -%}
                 </div>
-                
+
                 {% if product.metafields.custom.product_features %}
-                  <p>{{ product.metafields.custom.product_features | metafeild_text }}</p>
+                  <p>{{ product.metafields.custom.product_features | metafield_text }}</p>
                 {% endif %}
 
                 {%- if product.quantity_price_breaks_configured? -%}
