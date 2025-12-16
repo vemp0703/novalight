@@ -385,4 +385,15 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".jdgm-prev-badge__text").forEach(function(el) {
+    const match = el.textContent.match(/\d+/);
+    if (match) {
+      el.textContent = match[0] + " Verified Users";
+    }
+  });
+});
+</script>
 </html>
