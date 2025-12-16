@@ -3626,6 +3626,8 @@ details-disclosure>details {
 
 span.jdgm-prev-badge__stars::after {
     content: attr(data-score);
+    font-family: 'Lato';
+    font-weight: 700;
 }
 @keyframes indeterminateAnimation {
     0% {
