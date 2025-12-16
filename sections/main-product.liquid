@@ -108,7 +108,7 @@
 
                           
                 {% if product.metafields.custom.short_description %}
-                  <p>{{ product.metafields.custom.short_description | metafield_text | raw }}</p>
+                  <p>{{ product.metafields.custom.short_description | metafield_text | raw  }}</p>
                 {% endif %}
 
               {%- when 'price' -%}
