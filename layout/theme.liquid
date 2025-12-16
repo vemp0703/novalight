@@ -387,37 +387,15 @@
   </body>
 
 <script>
-(function () {
-
-  function updateJudgeMeText() {
-    document.querySelectorAll(".jdgm-prev-badge__text").forEach(function (el) {
-      const match = el.textContent.match(/\d+/);
-      if (!match) return;
-
-      const count = match[0];
-      const label = count === "1" ? "Verified User" : "Verified Users";
-
-      el.setAttribute("data-no-of-review", count);
-      el.textContent = count + " " + label;
-    });
-  }
-
-  // Run immediately
-  updateJudgeMeText();
-
-  // Run when Judge.me finishes loading
-  document.addEventListener("jdgm:ready", updateJudgeMeText);
-
-  // Observe DOM changes (Judge.me re-renders after load)
-  const observer = new MutationObserver(updateJudgeMeText);
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
+function enhanceJudgeMeBadge() {
+  document.querySelectorAll('.jdgm-prev-badge__text').forEach(el => {
+    const num = el.textContent.match(/\d+/)?.[0];
+    if (num) el.setAttribute('data-no-of-review', num);
   });
+}
 
-})();
+document.addEventListener('jdgm:ready', enhanceJudgeMeBadge);
+document.addEventListener('DOMContentLoaded', enhanceJudgeMeBadge);
 </script>
-
 
 </html>
