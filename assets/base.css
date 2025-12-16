@@ -3681,7 +3681,7 @@ span.badge.price__badge-sale.color-scheme-5 {
   gap: 10px;
   background: #f1f9ff;
   border: 1px solid #d9efff;
-  border-radius: 999px;
+  border-radius: 1.025rem;
   padding: 10px 14px;
   font-size: 14px;
   color: #000;
