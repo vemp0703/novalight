@@ -109,8 +109,14 @@
               
 {% assign metafield_data = product.metafields.custom.short_description %}
 {% if metafield_data %}
+  <!-- Debugging: Output raw metafield data -->
+  <pre>{{ metafield_data }}</pre>
+
+  <!-- Extract the text value using split filters -->
+  {% assign text_value = metafield_data | split: '"value": "' | last | split: '"' | first %}
+  
   <div class="product-short-description">
-    {{ metafield_data | raw }} <!-- Use 'raw' to render HTML or rich text -->
+    {{ text_value }}
   </div>
 {% else %}
   <div class="product-short-description">
