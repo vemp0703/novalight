@@ -389,22 +389,26 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  function updateJudgeMeReviewCount() {
+  function updateJudgeMeBadgeText() {
     document.querySelectorAll(".jdgm-prev-badge__text").forEach(function(el) {
-      const match = el.textContent.match(/\d+/);
-      if (match) {
-        el.setAttribute("data-no-of-review", match[0]);
-      }
+      const count = el.getAttribute("data-no-of-review");
+      if (!count) return;
+
+      // Singular / plural handling
+      const label = count === "1" ? "Verified User" : "Verified Users";
+
+      el.textContent = count + " " + label;
     });
   }
 
-  // Run once on load
-  updateJudgeMeReviewCount();
+  // Run on page load
+  updateJudgeMeBadgeText();
 
-  // Re-run if Judge.me loads asynchronously
-  document.addEventListener("jdgm:ready", updateJudgeMeReviewCount);
+  // Run again if Judge.me re-renders
+  document.addEventListener("jdgm:ready", updateJudgeMeBadgeText);
 
 });
 </script>
+
 
 </html>
