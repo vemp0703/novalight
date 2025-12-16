@@ -128,8 +128,7 @@
                     price_class: 'price--large'
                   -%}
                 </div>
-
-                                        {{ product.metafields.custom.product_features | json }}
+                
                 {% if product.metafields.custom.product_features %}
                   <p>{{ product.metafields.custom.product_features | metafeild_text }}</p>
                 {% endif %}
