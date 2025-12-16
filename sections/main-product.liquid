@@ -242,6 +242,11 @@
                   </details>
                 </div>
 
+                              {{ product.metafields.custom.product_features | json }}
+                {% if product.metafields.custom.product_features %}
+                  <p>{{ product.metafields.custom.product_features }}</p>
+                {% endif %}
+
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -277,6 +282,9 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
+
+                    
+
                     <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                       <button class="quantity__button" name="minus" type="button">
                         <span class="visually-hidden">
@@ -400,10 +408,7 @@
                     {%- endif -%}
                   </div>
 
-                  {{ product.metafields.custom.product_features | json }}
-                {% if product.metafields.custom.product_features %}
-                  <p>{{ product.metafields.custom.product_features }}</p>
-                {% endif %}
+    
 
                   <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
                     {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
