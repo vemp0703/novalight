@@ -106,7 +106,7 @@
                   </a>
                 </div>
 
-                <p>{{ product.custom.short_description }}</p>
+                <p>{{ product | json}}</p>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
