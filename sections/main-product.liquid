@@ -108,7 +108,7 @@
 
 {% if product.metafields.custom.short_description %}
   <div class="product-short-description">
-    {{ product.metafields.custom.short_description }}
+    {{ product.metafields.custom.short_description | raw }}
   </div>
 {% else %}
   <div class="product-short-description">
