@@ -110,8 +110,6 @@
 {% assign metafield_data = product.metafields.custom.short_description %}
 
 {% if metafield_data %}
-  <!-- Debugging: Output the raw metafield content -->
-  <pre>{{ metafield_data }}</pre>
 
   <!-- Extract the text value from the JSON-like string -->
   {% assign first_split = metafield_data | split: '"value": "' %}
