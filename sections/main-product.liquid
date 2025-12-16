@@ -221,6 +221,11 @@
                   <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
+                        {{ product.metafields.custom.product_features | json }}
+                {% if product.metafields.custom.product_features %}
+                  <p>{{ product.metafields.custom.product_features | metafeild_text }}</p>
+                {% endif %}
+
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
@@ -242,10 +247,7 @@
                   </details>
                 </div>
 
-                              {{ product.metafields.custom.product_features | json }}
-                {% if product.metafields.custom.product_features %}
-                  <p>{{ product.metafields.custom.product_features | metafeild_text }}</p>
-                {% endif %}
+      
 
               {%- when 'quantity_selector' -%}
                 <div
