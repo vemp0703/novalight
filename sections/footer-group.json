@@ -14,11 +14,10 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "text_Cz64V9": {
-          "type": "text",
+        "brand_information_3QY3rK": {
+          "type": "brand_information",
           "settings": {
-            "heading": "Novalight",
-            "subtext": "<p>Professional LED light therapy devices for radiant, youthful skin at home.<br/><br/></p>"
+            "show_social": true
           }
         },
         "footer-0": {
@@ -44,7 +43,7 @@
         }
       },
       "block_order": [
-        "text_Cz64V9",
+        "brand_information_3QY3rK",
         "footer-0",
         "footer-1",
         "footer-2"
@@ -54,7 +53,7 @@
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": false,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
