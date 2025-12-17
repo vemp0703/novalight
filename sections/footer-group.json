@@ -14,13 +14,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "text_dkiTcD": {
-          "type": "text",
-          "settings": {
-            "heading": "Heading",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
-          }
-        },
         "brand_information_3QY3rK": {
           "type": "brand_information",
           "settings": {
@@ -43,6 +36,7 @@
         },
         "footer-2": {
           "type": "text",
+          "name": "Get In Touch",
           "settings": {
             "heading": "Get in Touch",
             "subtext": "<ul><li>support@novalight.com</li><li>+1-800-123-4567</li><li>123 Beauty Lane Los Angeles, CA 90001<br/><br/><br/><br/><br/></li></ul>"
@@ -50,7 +44,6 @@
         }
       },
       "block_order": [
-        "text_dkiTcD",
         "brand_information_3QY3rK",
         "footer-0",
         "footer-1",
