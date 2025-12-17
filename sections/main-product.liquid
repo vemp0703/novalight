@@ -278,8 +278,6 @@
                     {%- endif -%}
                   </span>
 
-
-                  <div class="quanity-conatainer">
                   <label
                     class="quantity__label form__label"
                     for="Quantity-{{ section.id }}"
@@ -332,7 +330,8 @@
                     </quantity-input>
 
                   
-
+{%- when 'quantity_buy_now' -%}
+  data called
 
                     {%- liquid
                       assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
