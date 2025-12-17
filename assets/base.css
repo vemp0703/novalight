@@ -3734,7 +3734,7 @@ span.price-item.price-item--regular {
 .product-form__input.product-form__quantity {
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 span.quantity__rules-cart {
