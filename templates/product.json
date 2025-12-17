@@ -203,11 +203,17 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "product_details_tabs_cPkNBp": {
+      "type": "product-details-tabs",
+      "name": "Product Details Tabs",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "product_usp_bar_NWh8XU",
+    "product_details_tabs_cPkNBp",
     "image-with-text",
     "multicolumn",
     "related-products"
