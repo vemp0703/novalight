@@ -145,6 +145,32 @@
           {% endif %}
 
 
+          <div class="product-cta-wrapper">
+  <div class="quantity-box">
+    <button type="button" class="qty-btn" data-action="decrease">−</button>
+
+    <input
+      type="number"
+      name="quantity"
+      value="1"
+      min="1"
+      class="qty-input"
+      id="Quantity-{{ section.id }}"
+    >
+
+    <button type="button" class="qty-btn" data-action="increase">+</button>
+  </div>
+
+  <button
+    type="submit"
+    name="add"
+    class="add-to-cart-btn"
+  >
+    Add to Cart — {{ product.selected_or_first_available_variant.price | money }}
+  </button>
+</div>
+
+
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -728,7 +754,7 @@
         </section>
       </div>
     </div>
-    
+
       {%- if product.description != blank -%}
       <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
         {{ product.description }}
