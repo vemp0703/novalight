@@ -40,6 +40,10 @@
             "picker_type": "button",
             "swatch_shape": "circle"
           }
+        },
+        "quantity_buy_now_CwE3HX": {
+          "type": "quantity_buy_now",
+          "settings": {}
         }
       },
       "block_order": [
@@ -47,7 +51,8 @@
         "title",
         "caption",
         "price",
-        "variant_picker"
+        "variant_picker",
+        "quantity_buy_now_CwE3HX"
       ],
       "settings": {
         "enable_sticky_info": true,
