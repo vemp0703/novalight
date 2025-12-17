@@ -1,0 +1,143 @@
+{% style %}
+.product-details {
+  padding: 60px 0;
+}
+
+.product-details h2 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.product-details__subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+
+.product-tab {
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product-tab.active {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.product-tab-content {
+  display: none;
+}
+
+.product-tab-content.active {
+  display: block;
+}
+
+.product-details-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.product-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.product-details-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-details-item p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .product-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+{% endstyle %}
+
+<div class="product-details page-width">
+  <h2>Product Details</h2>
+  <p class="product-details__subtitle">
+    Everything you need to know about {{ product.title }}
+  </p>
+
+  <!-- Tabs -->
+  <div class="product-tabs">
+    <button class="product-tab active" data-tab="specifications">Specifications</button>
+    <button class="product-tab" data-tab="included">What's Included</button>
+    <button class="product-tab" data-tab="technology">Technology</button>
+    <button class="product-tab" data-tab="care">Care & Maintenance</button>
+  </div>
+
+  <!-- Specifications -->
+  <div class="product-tab-content active" id="specifications">
+    <div class="product-details-card">
+      {{ product.metafields.tabs.specifications | metafield_tag }}
+    </div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="product-tab-content" id="included">
+    <div class="product-details-card">
+      {{ product.metafields.tabs.whats_included | metafield_tag }}
+    </div>
+  </div>
+
+  <!-- Technology -->
+  <div class="product-tab-content" id="technology">
+    <div class="product-details-card">
+      {{ product.metafields.tabs.technology | metafield_tag }}
+    </div>
+  </div>
+
+  <!-- Care -->
+  <div class="product-tab-content" id="care">
+    <div class="product-details-card">
+      {{ product.metafields.tabs.care | metafield_tag }}
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.product-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Details Tabs",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Details Tabs"
+    }
+  ]
+}
+{% endschema %}
