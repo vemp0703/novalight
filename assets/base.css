@@ -3736,7 +3736,7 @@ span.price-item.price-item--regular {
     align-items: center;
     gap: 2rem;
 }
-
+.button, .shopify-challenge__button, .customer button, button.shopify-payment-button__button--unbranded{ border-radius:5px}
 span.quantity__rules-cart {
     display: none;
 }
