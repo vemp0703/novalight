@@ -106,6 +106,62 @@
       "name": "Product USP Bar",
       "settings": {}
     },
+    "product_details_tabs_cPkNBp": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "tab_mwHbPt": {
+          "type": "tab",
+          "name": "Care & Maintenance",
+          "settings": {
+            "icon": "shopify://shop_images/Leaf.svg",
+            "label": "Care & Maintenance",
+            "description": "Detailed information and specifications",
+            "metafield_key": ""
+          }
+        },
+        "tab_RLrUCx": {
+          "type": "tab",
+          "name": "Technology",
+          "settings": {
+            "icon": "shopify://shop_images/vector_sheild.svg",
+            "label": "Technology",
+            "description": "Detailed information and specifications",
+            "metafield_key": ""
+          }
+        },
+        "tab_diCYFD": {
+          "type": "tab",
+          "name": "What's Included",
+          "settings": {
+            "icon": "shopify://shop_images/order_box.svg",
+            "label": "What's Included",
+            "description": "Detailed information and specifications",
+            "metafield_key": ""
+          }
+        },
+        "tab_BCpzww": {
+          "type": "tab",
+          "name": "Specifications",
+          "settings": {
+            "icon": "shopify://shop_images/Thunder.svg",
+            "label": "Specifications",
+            "description": "Detailed information and specifications",
+            "metafield_key": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_mwHbPt",
+        "tab_RLrUCx",
+        "tab_diCYFD",
+        "tab_BCpzww"
+      ],
+      "name": "Product Details Tabs",
+      "settings": {
+        "heading": "Product Details",
+        "subheading": "Everything you need to know about the product"
+      }
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -203,11 +259,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "product_details_tabs_cPkNBp": {
-      "type": "product-details-tabs",
-      "name": "Product Details Tabs",
-      "settings": {}
     }
   },
   "order": [
