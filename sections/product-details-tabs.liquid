@@ -51,7 +51,6 @@
   background: linear-gradient(135deg, #0ea5e9, #2563eb);
   color: #fff;
   box-shadow: 0 8px 20px rgba(37,99,235,.25);
-  filter: brightness(0) invert(1);
 }
 
 /* Panel */
@@ -105,7 +104,16 @@
   border-radius: 16px;
   padding: 32px;
 }
+/* Default (inactive tab) */
+.product-tab img {
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.25s ease;
+}
 
+/* Active tab */
+.product-tab.active img {
+  filter: brightness(0) invert(1);
+}
 @media (max-width: 768px) {
   .product-details-card {
     padding: 20px;
