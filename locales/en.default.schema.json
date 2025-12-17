@@ -1989,6 +1989,9 @@
         "quantity_selector": {
           "name": "Quantity selector"
         },
+        "quantity_buy_now": {
+          "name": "Quantity Buynow"
+        },
         "variant_picker": {
           "name": "Variant picker",
           "settings": {
