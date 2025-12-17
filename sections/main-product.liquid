@@ -143,48 +143,7 @@
               {% endfor %}
             </ul>
           {% endif %}
-{{ 'product-quantity.js' | asset_url | script_tag }}
 
-          <div class="product-cta-wrapper">
-  <div class="quantity-box">
-    <button type="button" class="qty-btn" data-action="decrease">−</button>
-
-    <input
-      type="number"
-      name="quantity"
-      value="1"
-      min="1"
-      class="qty-input"
-      id="Quantity-{{ section.id }}"
-    >
-
-    <button type="button" class="qty-btn" data-action="increase">+</button>
-  </div>
-
-  <button
-    type="submit"
-    name="add"
-    class="add-to-cart-btn"
-  >
-    Add to Cart — {{ product.selected_or_first_available_variant.price | money }}
-  </button>
-</div>
-
-    <script>
-      document.addEventListener('click', function (e) {
-  if (!e.target.classList.contains('qty-btn')) return;
-
-  const action = e.target.dataset.action;
-  const input = e.target.closest('.quantity-box').querySelector('.qty-input');
-  let value = parseInt(input.value, 10);
-
-  if (action === 'increase') value++;
-  if (action === 'decrease' && value > 1) value--;
-
-  input.value = value;
-});
-
-    </script>
 
 
                 {%- if product.quantity_price_breaks_configured? -%}
@@ -264,7 +223,8 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
-               
+
+                 
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -770,12 +730,6 @@
       </div>
     </div>
 
-      {%- if product.description != blank -%}
-      <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-        {{ product.description }}
-      </div>
-    {%- endif -%}
-
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -823,7 +777,6 @@
         assign seo_media = product.featured_media
       endif
     -%}
-
 
     <script type="application/ld+json">
       {{ product | structured_data }}
