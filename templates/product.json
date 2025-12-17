@@ -126,7 +126,7 @@
             "icon": "shopify://shop_images/order_box.svg",
             "label": "What's Included",
             "description": "Detailed information and specifications",
-            "metafield_key": ""
+            "metafield_key": "product_description"
           }
         },
         "tab_RLrUCx": {
