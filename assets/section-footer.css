@@ -3,7 +3,11 @@
   background: #0F172B;
     color: #fff;
 }
-
+footer *, footer .link {
+    color: #fff !important;
+    font-family: 'Marcellus';
+    font-weight: 400;
+}
 .footer:not(.color-scheme-1) {
   border-top: none;
 }
