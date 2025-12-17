@@ -1,71 +1,116 @@
 {% style %}
 .product-details {
-  padding: 60px 0;
+  padding: 72px 0;
+  background: #ffffff;
 }
 
-.product-details h2 {
+/* Header */
+.product-details__title {
+  text-align: center;
   font-size: 36px;
   font-weight: 600;
-  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .product-details__subtitle {
   text-align: center;
-  color: #6b7280;
+  font-size: 15px;
+  color: #64748b;
   margin-top: 8px;
 }
 
+/* Tabs */
 .product-tabs {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 32px 0;
+  margin: 40px 0 48px;
   flex-wrap: wrap;
 }
 
 .product-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 18px;
-  border-radius: 10px;
+  border-radius: 999px;
   background: #f1f5f9;
   border: none;
-  cursor: pointer;
   font-size: 14px;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .product-tab.active {
-  background: #0ea5e9;
-  color: #fff;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
-.product-tab-content {
+/* Content */
+.product-tab-panel {
   display: none;
 }
 
-.product-tab-content.active {
+.product-tab-panel.active {
   display: block;
 }
 
-.product-details-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 24px;
+/* Active tab header */
+.product-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
+.product-panel-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.product-panel-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-panel-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Card */
+.product-details-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 32px;
+  background: #ffffff;
+}
+
+/* Grid */
 .product-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 24px 40px;
 }
 
 .product-details-item h4 {
   font-size: 14px;
   font-weight: 600;
+  color: #0f172a;
 }
 
 .product-details-item p {
   font-size: 13px;
-  color: #6b7280;
-  margin-top: 4px;
+  color: #64748b;
+  margin-top: 6px;
 }
 
 @media (max-width: 768px) {
@@ -76,42 +121,67 @@
 {% endstyle %}
 
 <div class="product-details page-width">
-  <h2>Product Details</h2>
+  <h2 class="product-details__title">Product Details</h2>
   <p class="product-details__subtitle">
     Everything you need to know about {{ product.title }}
   </p>
 
   <!-- Tabs -->
   <div class="product-tabs">
-    <button class="product-tab active" data-tab="specifications">Specifications</button>
+    <button class="product-tab active" data-tab="specs">Specifications</button>
     <button class="product-tab" data-tab="included">What's Included</button>
-    <button class="product-tab" data-tab="technology">Technology</button>
+    <button class="product-tab" data-tab="tech">Technology</button>
     <button class="product-tab" data-tab="care">Care & Maintenance</button>
   </div>
 
-  <!-- Specifications -->
-  <div class="product-tab-content active" id="specifications">
+  <!-- Care (default active) -->
+  <div class="product-tab-panel active" id="specs">
+    <div class="product-panel-header">
+      <div class="product-panel-icon">⚙️</div>
+      <div>
+        <h3>Specifications</h3>
+        <p>Detailed information and specifications</p>
+      </div>
+    </div>
     <div class="product-details-card">
       {{ product.metafields.tabs.specifications | metafield_tag }}
     </div>
   </div>
 
-  <!-- What's Included -->
-  <div class="product-tab-content" id="included">
+  <div class="product-tab-panel" id="included">
+    <div class="product-panel-header">
+      <div class="product-panel-icon">📦</div>
+      <div>
+        <h3>What's Included</h3>
+        <p>Items included in the package</p>
+      </div>
+    </div>
     <div class="product-details-card">
-      {{ product.metafields.tabs.whats_included | metafield_tag }}
+      {{ product.metafields.tabs.included | metafield_tag }}
     </div>
   </div>
 
-  <!-- Technology -->
-  <div class="product-tab-content" id="technology">
+  <div class="product-tab-panel" id="tech">
+    <div class="product-panel-header">
+      <div class="product-panel-icon">🧠</div>
+      <div>
+        <h3>Technology</h3>
+        <p>Advanced product technology</p>
+      </div>
+    </div>
     <div class="product-details-card">
       {{ product.metafields.tabs.technology | metafield_tag }}
     </div>
   </div>
 
-  <!-- Care -->
-  <div class="product-tab-content" id="care">
+  <div class="product-tab-panel" id="care">
+    <div class="product-panel-header">
+      <div class="product-panel-icon">🍃</div>
+      <div>
+        <h3>Care & Maintenance</h3>
+        <p>Detailed information and specifications</p>
+      </div>
+    </div>
     <div class="product-details-card">
       {{ product.metafields.tabs.care | metafield_tag }}
     </div>
@@ -122,7 +192,7 @@
 document.querySelectorAll('.product-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.product-tab-panel').forEach(p => p.classList.remove('active'));
 
     tab.classList.add('active');
     document.getElementById(tab.dataset.tab).classList.add('active');
