@@ -109,22 +109,12 @@
     "product_details_tabs_cPkNBp": {
       "type": "product-details-tabs",
       "blocks": {
-        "tab_mwHbPt": {
+        "tab_BCpzww": {
           "type": "tab",
-          "name": "Care & Maintenance",
+          "name": "Specifications",
           "settings": {
-            "icon": "shopify://shop_images/Leaf.svg",
-            "label": "Care & Maintenance",
-            "description": "Detailed information and specifications",
-            "metafield_key": ""
-          }
-        },
-        "tab_RLrUCx": {
-          "type": "tab",
-          "name": "Technology",
-          "settings": {
-            "icon": "shopify://shop_images/vector_sheild.svg",
-            "label": "Technology",
+            "icon": "shopify://shop_images/Thunder.svg",
+            "label": "Specifications",
             "description": "Detailed information and specifications",
             "metafield_key": ""
           }
@@ -139,22 +129,32 @@
             "metafield_key": ""
           }
         },
-        "tab_BCpzww": {
+        "tab_RLrUCx": {
           "type": "tab",
-          "name": "Specifications",
+          "name": "Technology",
           "settings": {
-            "icon": "shopify://shop_images/Thunder.svg",
-            "label": "Specifications",
+            "icon": "shopify://shop_images/vector_sheild.svg",
+            "label": "Technology",
+            "description": "Detailed information and specifications",
+            "metafield_key": ""
+          }
+        },
+        "tab_mwHbPt": {
+          "type": "tab",
+          "name": "Care & Maintenance",
+          "settings": {
+            "icon": "shopify://shop_images/Leaf.svg",
+            "label": "Care & Maintenance",
             "description": "Detailed information and specifications",
             "metafield_key": ""
           }
         }
       },
       "block_order": [
-        "tab_mwHbPt",
-        "tab_RLrUCx",
+        "tab_BCpzww",
         "tab_diCYFD",
-        "tab_BCpzww"
+        "tab_RLrUCx",
+        "tab_mwHbPt"
       ],
       "name": "Product Details Tabs",
       "settings": {
