@@ -70,6 +70,42 @@
         "padding_bottom": 12
       }
     },
+    "product_usp_bar_NWh8XU": {
+      "type": "product-usp-bar",
+      "blocks": {
+        "usp_e3Erhm": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/free_shipping.png",
+            "title": "Free Express Shipping",
+            "text": "Arrives in 2–3 business days"
+          }
+        },
+        "usp_wjgEQE": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/reload.png",
+            "title": "365-Day Money-Back Guarantee",
+            "text": "Full refund if not satisfied"
+          }
+        },
+        "usp_tPGtFe": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/sheild.png",
+            "title": "1-Year Warranty Included",
+            "text": "Complete coverage for peace of mind"
+          }
+        }
+      },
+      "block_order": [
+        "usp_e3Erhm",
+        "usp_wjgEQE",
+        "usp_tPGtFe"
+      ],
+      "name": "Product USP Bar",
+      "settings": {}
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -171,6 +207,7 @@
   },
   "order": [
     "main",
+    "product_usp_bar_NWh8XU",
     "image-with-text",
     "multicolumn",
     "related-products"
