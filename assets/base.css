@@ -3749,6 +3749,9 @@ span.quantity__rules-cart {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
     border:none;
 }
+a.link.product__view-details.animate-arrow {
+    display: none;
+}
 /* Mobile */
 @media (max-width: 768px) {
   .product-features {
