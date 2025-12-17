@@ -283,7 +283,7 @@
                       {{- 'products.product.quantity.label' | t -}}
                     {%- endif -%}
                   </span>
-                  <label
+                  {% comment %} <label
                     class="quantity__label form__label"
                     for="Quantity-{{ section.id }}"
                     aria-labelledby="quantity-label-{{ section.id }}"
@@ -297,7 +297,7 @@
                         )</span
                       >
                     </span>
-                  </label>
+                  </label> {% endcomment %}
                   <div class="price-per-item__container">
 
                     
@@ -515,7 +515,7 @@
               {%- when 'share' -%}
                 {% liquid
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
-                  render 'share-button', block: block, share_link: share_url
+                  render 'share-button', block: block, share_link: share_url2
                 %}
 
               {%- when 'variant_picker' -%}
