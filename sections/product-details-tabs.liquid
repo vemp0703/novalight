@@ -1,15 +1,12 @@
 {% style %}
 .product-details {
   padding: 72px 0;
-  background: #ffffff;
 }
 
-/* Header */
 .product-details__title {
   text-align: center;
   font-size: 36px;
   font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 .product-details__subtitle {
@@ -37,18 +34,17 @@
   background: #f1f5f9;
   border: none;
   font-size: 14px;
-  color: #0f172a;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
 }
 
 .product-tab.active {
   background: linear-gradient(135deg, #0ea5e9, #2563eb);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(37,99,235,.25);
 }
 
-/* Content */
+/* Panel */
 .product-tab-panel {
   display: none;
 }
@@ -57,10 +53,9 @@
   display: block;
 }
 
-/* Active tab header */
+/* Header */
 .product-panel-header {
   display: flex;
-  align-items: center;
   gap: 14px;
   margin-bottom: 24px;
 }
@@ -73,7 +68,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+}
+
+.product-panel-icon img {
+  width: 20px;
+  height: 20px;
 }
 
 .product-panel-header h3 {
@@ -91,101 +90,66 @@
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   padding: 32px;
-  background: #ffffff;
-}
-
-/* Grid */
-.product-details-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px 40px;
-}
-
-.product-details-item h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.product-details-item p {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 6px;
 }
 
 @media (max-width: 768px) {
-  .product-details-grid {
-    grid-template-columns: 1fr;
+  .product-details-card {
+    padding: 20px;
   }
 }
 {% endstyle %}
 
 <div class="product-details page-width">
-  <h2 class="product-details__title">Product Details</h2>
-  <p class="product-details__subtitle">
-    Everything you need to know about {{ product.title }}
-  </p>
+  <h2 class="product-details__title">{{ section.settings.heading }}</h2>
+  <p class="product-details__subtitle">{{ section.settings.subheading }}</p>
 
   <!-- Tabs -->
   <div class="product-tabs">
-    <button class="product-tab active" data-tab="specs">Specifications</button>
-    <button class="product-tab" data-tab="included">What's Included</button>
-    <button class="product-tab" data-tab="tech">Technology</button>
-    <button class="product-tab" data-tab="care">Care & Maintenance</button>
+    {% for block in section.blocks %}
+      <button
+        class="product-tab{% if forloop.first %} active{% endif %}"
+        data-tab="tab-{{ block.id }}"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.icon != blank %}
+          <img
+            src="{{ block.settings.icon | image_url: width: 32 }}"
+            alt=""
+            width="16"
+            height="16"
+          >
+        {% endif %}
+        {{ block.settings.label }}
+      </button>
+    {% endfor %}
   </div>
 
-  <!-- Care (default active) -->
-  <div class="product-tab-panel active" id="specs">
-    <div class="product-panel-header">
-      <div class="product-panel-icon">⚙️</div>
-      <div>
-        <h3>Specifications</h3>
-        <p>Detailed information and specifications</p>
+  <!-- Panels -->
+  {% for block in section.blocks %}
+    <div
+      class="product-tab-panel{% if forloop.first %} active{% endif %}"
+      id="tab-{{ block.id }}"
+    >
+      <div class="product-panel-header">
+        <div class="product-panel-icon">
+          {% if block.settings.icon != blank %}
+            <img
+              src="{{ block.settings.icon | image_url: width: 40 }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+        <div>
+          <h3>{{ block.settings.label }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
       </div>
-    </div>
-    <div class="product-details-card">
-      {{ product.metafields.tabs.specifications | metafield_tag }}
-    </div>
-  </div>
 
-  <div class="product-tab-panel" id="included">
-    <div class="product-panel-header">
-      <div class="product-panel-icon">📦</div>
-      <div>
-        <h3>What's Included</h3>
-        <p>Items included in the package</p>
+      <div class="product-details-card">
+        {{ product.metafields.tabs[block.settings.metafield_key] | metafield_tag }}
       </div>
     </div>
-    <div class="product-details-card">
-      {{ product.metafields.tabs.included | metafield_tag }}
-    </div>
-  </div>
-
-  <div class="product-tab-panel" id="tech">
-    <div class="product-panel-header">
-      <div class="product-panel-icon">🧠</div>
-      <div>
-        <h3>Technology</h3>
-        <p>Advanced product technology</p>
-      </div>
-    </div>
-    <div class="product-details-card">
-      {{ product.metafields.tabs.technology | metafield_tag }}
-    </div>
-  </div>
-
-  <div class="product-tab-panel" id="care">
-    <div class="product-panel-header">
-      <div class="product-panel-icon">🍃</div>
-      <div>
-        <h3>Care & Maintenance</h3>
-        <p>Detailed information and specifications</p>
-      </div>
-    </div>
-    <div class="product-details-card">
-      {{ product.metafields.tabs.care | metafield_tag }}
-    </div>
-  </div>
+  {% endfor %}
 </div>
 
 <script>
@@ -203,10 +167,60 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 {% schema %}
 {
   "name": "Product Details Tabs",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Product Details",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Everything you need to know about the product",
+      "label": "Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Tab icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Tab label",
+          "default": "Care & Maintenance"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Tab description",
+          "default": "Detailed information and specifications"
+        },
+        {
+          "type": "text",
+          "id": "metafield_key",
+          "label": "Metafield key",
+          "info": "Example: care, specifications, technology"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Product Details Tabs"
+      "name": "Product Details Tabs",
+      "blocks": [
+        { "type": "tab" },
+        { "type": "tab" },
+        { "type": "tab" },
+        { "type": "tab" }
+      ]
     }
   ]
 }
