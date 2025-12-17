@@ -3716,6 +3716,67 @@ span.price-item.price-item--regular {
     font-family: 'Marcellus';
     font-size: 3rem;
 }
+
+.product-cta-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 52px;
+}
+
+.qty-btn {
+  width: 44px;
+  height: 100%;
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00b4ff, #007bff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .product-cta-wrapper {
+    flex-direction: column;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .product-features {
