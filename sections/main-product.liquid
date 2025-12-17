@@ -286,7 +286,7 @@
 
 
                   <div class="quanity-conatainer">
-                  {% comment %} <label
+                  <label
                     class="quantity__label form__label"
                     for="Quantity-{{ section.id }}"
                     aria-labelledby="quantity-label-{{ section.id }}"
@@ -300,8 +300,8 @@
                         )</span
                       >
                     </span>
-                  </label> {% endcomment %}
-                  {% comment %} <div class="price-per-item__container">
+                  </label> 
+                  <div class="price-per-item__container">
                     <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                       <button class="quantity__button" name="minus" type="button">
                         <span class="visually-hidden">
@@ -335,7 +335,7 @@
                           {{- 'icon-plus.svg' | inline_asset_content -}}
                         </span>
                       </button>
-                    </quantity-input> {% endcomment %}
+                    </quantity-input>
 
                   </div>
 
