@@ -105,13 +105,15 @@
   border-radius: 16px;
   padding: 32px;
 }
-/* Default (inactive tab) */
+/* Inactive tab icon – matches #45556C */
 .product-tab img {
-  filter: grayscale(100%) brightness(0.6);
+  filter: brightness(0) saturate(100%)
+          invert(32%) sepia(14%) saturate(820%)
+          hue-rotate(176deg) brightness(90%) contrast(92%);
   transition: filter 0.25s ease;
 }
 
-/* Active tab */
+/* Active tab icon – white */
 .product-tab.active img {
   filter: brightness(0) invert(1);
 }
