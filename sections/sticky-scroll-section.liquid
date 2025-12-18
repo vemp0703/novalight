@@ -3,7 +3,7 @@
 
 <section class="product-sticky-scroll-section mt-12">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-    
+
     <!-- Left sticky image -->
     <div class="lg:sticky lg:top-24">
       {% if section_items.primary_image != blank %}
@@ -13,7 +13,7 @@
       {% endif %}
     </div>
 
-    <!-- Right scroll content -->
+    <!-- Right scrollable content -->
     <div class="space-y-10">
 
       <!-- Section Heading -->
@@ -24,7 +24,7 @@
         <p class="text-gray-600 text-base lg:text-lg">{{ section_items.sub_heading }}</p>
       {% endif %}
 
-      <!-- Scrollable Items -->
+      <!-- Scrollable Steps -->
       <div class="space-y-8">
         {% for item in section_items.section_items.value %}
           <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
@@ -62,11 +62,11 @@
 /* Sticky image for large screens */
 @media (min-width: 1024px) {
   .product-sticky-scroll-section .lg\:sticky {
-    top: 6rem; /* Adjust for your header */
+    top: 6rem; /* Adjust if your header is taller */
   }
 }
 
-/* Smooth fade-in for scroll items */
+/* Fade-in animation for scroll items */
 .scroll-item {
   transition: all 0.7s ease-out;
 }
