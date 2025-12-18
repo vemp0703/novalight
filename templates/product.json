@@ -204,13 +204,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "product_judgme_review_VkBKVh": {
-      "type": "product-judgme-review",
-      "name": "Product Reviews",
-      "settings": {
-        "show_section": true
-      }
     }
   },
   "order": [
@@ -221,7 +214,6 @@
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
-    "product_judgme_review_VkBKVh",
     "related-products"
   ]
 }
