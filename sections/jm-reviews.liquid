@@ -7,10 +7,26 @@
     {{ product.metafields.judgeme.badge }}
 </div>
 
-<div class="jdgm-widget jdgm-preview-histogram"
-    data-id="{{ product.id }}"
-    data-template="histogram"> 
-    {{ product.metafields.judgeme.histogram }}
-</div>
+{% if product %}
+  <div style="max-width:500px;margin:40px auto">
+
+    <h3 style="text-align:center">Rating Breakdown</h3>
+
+    <div
+      class="jdgm-widget jdgm-histogram-widget"
+      data-product-id="{{ product.id }}"
+      data-template="histogram"
+    ></div>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.jdgm && jdgm.init) {
+        jdgm.init();
+      }
+    });
+  </script>
+{% endif %}
 
 
