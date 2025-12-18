@@ -1,27 +1,180 @@
-{% if product.metafields.custom.sticky_and_scroll_section != blank %}
-  {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
-  
-  <section class="left__conatiner">
-    <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="Image description">
-</section>
+{% schema %}
+{
+  "name": "Sticky Scroll Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "primary_image",
+      "label": "Primary Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_heading",
+      "label": "Section Sub Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Scroll Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon/Image"
+        },
+        {
+          "type": "text",
+          "id": "numeric",
+          "label": "Numeric/Step"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Item Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Item Content"
+        },
+        {
+          "type": "color",
+          "id": "gradient",
+          "label": "Item Background Color"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Sticky Scroll Section"
+    }
+  ]
+}
+{% endschema %}
 
-<section class="right__container">
+<style>
+.sticky-scroll-section {
+  display: flex;
+  gap: 40px;
+  margin: 50px 0;
+}
 
-    {{section_items.heading}}
+.sticky-scroll-left {
+  flex: 1;
+  position: sticky;
+  top: 50px;
+}
 
-    {{section_items.sub_heading}}
+.sticky-scroll-left img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
 
+.sticky-scroll-right {
+  flex: 1.5;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
 
-    {% for item in section_items.section_items.value %}
+.sticky-scroll-right h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-        <img src="{{ item.image | img_url: '800x' }}" alt="Image description">
-        {{item.numeric}}
-        {{item.heading}}
-        {{item.content}}
-        {{item.gradient}}
+.sticky-scroll-right p.sub-heading {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.scroll-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.scroll-item img.numeric-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.scroll-item-content h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.scroll-item-content p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* Scrollbar styling */
+.sticky-scroll-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sticky-scroll-right::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .sticky-scroll-section {
+    flex-direction: column;
+  }
+
+  .sticky-scroll-left {
+    position: relative;
+    top: 0;
+  }
+
+  .sticky-scroll-right {
+    max-height: none;
+  }
+}
+</style>
+
+<section class="sticky-scroll-section">
+  <div class="sticky-scroll-left">
+    {% if section.settings.primary_image != blank %}
+      <img src="{{ section.settings.primary_image | img_url: '800x' }}" alt="Primary Image">
+    {% endif %}
+  </div>
+
+  <div class="sticky-scroll-right">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.settings.sub_heading != blank %}
+      <p class="sub-heading">{{ section.settings.sub_heading }}</p>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      <div class="scroll-item" style="background: {{ block.settings.gradient }};">
+        {% if block.settings.image != blank %}
+          <img class="numeric-icon" src="{{ block.settings.image | img_url: '80x80' }}" alt="Icon">
+        {% endif %}
+        <div class="scroll-item-content">
+          <h3>{{ block.settings.numeric }} {{ block.settings.heading }}</h3>
+          <p>{{ block.settings.content }}</p>
+        </div>
+      </div>
     {% endfor %}
-
-
+  </div>
 </section>
-
-{% endif %}
