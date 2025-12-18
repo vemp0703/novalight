@@ -46,12 +46,6 @@
 {% if product.metafields.custom.product_highlights != blank %}
   <div class="product-highlights page-width">
 
-    {% if section.settings.heading != blank %}
-      <h3 class="highlights-heading">
-        {{ section.settings.heading }}
-      </h3>
-    {% endif %}
-
  <div class="highlights-grid">
       {% for highlight in product.metafields.custom.product_highlights.value %}
         <div class="highlight-card">
