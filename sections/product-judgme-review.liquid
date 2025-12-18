@@ -1,3 +1,241 @@
+{% comment %}
+  Product Reviews – Custom Design (Judge.me Safe)
+{% endcomment %}
+
+{% if section.settings.show_section %}
+
+<section class="product-reviews">
+  <div class="page-width">
+
+    <!-- Custom Header -->
+    <div class="reviews-header">
+      <h3>{{ section.settings.heading }}</h3>
+
+      <div class="reviews-summary">
+        <div
+          class="jdgm-widget jdgm-preview-badge"
+          data-id="{{ product.id }}"
+          data-template="badge"
+        >
+          {{ product.metafields.judgeme.badge }}
+        </div>
+      </div>
+
+      <p class="verified-count">
+        {{ section.settings.subtext }}
+      </p>
+    </div>
+
+    <!-- Judge.me Widget -->
+    <div
+      id="judgeme_product_reviews"
+      class="jdgm-widget jdgm-review-widget custom-judgeme"
+      data-id="{{ product.id }}"
+      data-product-title="{{ product.title | escape }}"
+    >
+      {{ product.metafields.judgeme.widget }}
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more-wrapper">
+      <button id="loadMoreReviews" class="load-more-btn">
+        {{ section.settings.load_more_text }}
+      </button>
+    </div>
+
+  </div>
+</section>
+
+{% endif %}
+
+{% style %}
+/* ===============================
+   GLOBAL SECTION
+================================ */
+
+.product-reviews {
+  padding: 70px 0;
+  background: #fff;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reviews-header h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.verified-count {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===============================
+   REMOVE UNWANTED JUDGEME UI
+================================ */
+
+.jdgm-sort-dropdown,
+.jdgm-row-actions,
+.jdgm-write-rev-link,
+.jdgm-subtab,
+.jdgm-form-wrapper,
+.jdgm-rev-widg__title,
+.jdgm-rev__reply,
+.jdgm-paginate {
+  display: none !important;
+}
+
+.jdgm-rev-widg__summary {
+  visibility: hidden;
+}
+
+/* ===============================
+   STAR STYLING
+================================ */
+
+.jdgm-star,
+.jdgm-star.jdgm--on {
+  color: #fbbf24 !important;
+}
+
+/* ===============================
+   RATING BREAKDOWN CARD
+================================ */
+
+.jdgm-histogram {
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 18px;
+  max-width: 420px;
+  margin: 0 auto 60px;
+}
+
+.jdgm-histogram__bar {
+  background: #e5e7eb !important;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.jdgm-histogram__bar-content {
+  background: #fbbf24 !important;
+  border-radius: 10px;
+}
+
+/* ===============================
+   REVIEW GRID
+================================ */
+
+.jdgm-rev-widg__reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.jdgm-rev {
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 22px;
+  background: #ffffff;
+}
+
+/* Title */
+.jdgm-rev__title {
+  font-weight: 600;
+  margin: 10px 0 6px;
+}
+
+/* Body */
+.jdgm-rev__body {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Author */
+.jdgm-rev__author {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Helpful */
+.jdgm-rev__helpful {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ===============================
+   LOAD MORE BUTTON
+================================ */
+
+.load-more-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.load-more-btn {
+  background: #000;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.load-more-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .reviews-header h3 {
+    font-size: 24px;
+  }
+}
+{% endstyle %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const loadMoreBtn = document.getElementById("loadMoreReviews");
+
+  function initLoadMore() {
+    const reviews = document.querySelectorAll(".jdgm-rev");
+    if (!reviews.length || !loadMoreBtn) return;
+
+    let visibleCount = {{ section.settings.initial_reviews }};
+    const step = {{ section.settings.load_more_step }};
+
+    function update() {
+      reviews.forEach((review, index) => {
+        review.style.display = index < visibleCount ? "block" : "none";
+      });
+
+      if (visibleCount >= reviews.length) {
+        loadMoreBtn.style.display = "none";
+      }
+    }
+
+    loadMoreBtn.addEventListener("click", function () {
+      visibleCount += step;
+      update();
+    });
+
+    update();
+  }
+
+  /* Judge.me loads async → observe DOM */
+  const observer = new MutationObserver(initLoadMore);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  initLoadMore();
+});
+</script>
+
 {% schema %}
 {
   "name": "Product Reviews",
@@ -11,8 +249,14 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Section heading",
+      "label": "Heading",
       "default": "Loved by 10,000+ Customers"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Sub text",
+      "default": "Based on verified customer reviews"
     },
     {
       "type": "text",
@@ -32,7 +276,7 @@
     {
       "type": "range",
       "id": "load_more_step",
-      "label": "Reviews to load per click",
+      "label": "Reviews loaded per click",
       "min": 2,
       "max": 12,
       "step": 1,
