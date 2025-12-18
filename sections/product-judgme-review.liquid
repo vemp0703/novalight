@@ -201,40 +201,66 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
   const loadMoreBtn = document.getElementById("loadMoreReviews");
+  if (!loadMoreBtn) return;
 
-  function initLoadMore() {
+  let loading = false;
+
+  function showInitialReviews() {
     const reviews = document.querySelectorAll(".jdgm-rev");
-    if (!reviews.length || !loadMoreBtn) return;
-
-    let visibleCount = {{ section.settings.initial_reviews }};
-    const step = {{ section.settings.load_more_step }};
-
-    function update() {
-      reviews.forEach((review, index) => {
-        review.style.display = index < visibleCount ? "block" : "none";
-      });
-
-      if (visibleCount >= reviews.length) {
-        loadMoreBtn.style.display = "none";
-      }
-    }
-
-    loadMoreBtn.addEventListener("click", function () {
-      visibleCount += step;
-      update();
+    reviews.forEach((rev, index) => {
+      rev.style.display = index < {{ section.settings.initial_reviews }} ? "block" : "none";
     });
-
-    update();
   }
 
-  /* Judge.me loads async → observe DOM */
-  const observer = new MutationObserver(initLoadMore);
+  function revealMore() {
+    const hidden = [...document.querySelectorAll(".jdgm-rev")].filter(
+      r => r.style.display === "none"
+    );
+
+    hidden.slice(0, {{ section.settings.load_more_step }}).forEach(r => {
+      r.style.display = "block";
+    });
+
+    if (document.querySelectorAll(".jdgm-rev").length ===
+        document.querySelectorAll(".jdgm-rev[style*='block']").length) {
+      tryLoadNextPage();
+    }
+  }
+
+  function tryLoadNextPage() {
+    if (loading) return;
+
+    const nextBtn = document.querySelector(".jdgm-paginate__next");
+    if (!nextBtn) {
+      loadMoreBtn.style.display = "none";
+      return;
+    }
+
+    loading = true;
+    nextBtn.click();
+
+    setTimeout(() => {
+      loading = false;
+      showInitialReviews();
+    }, 1200);
+  }
+
+  loadMoreBtn.addEventListener("click", function () {
+    revealMore();
+  });
+
+  // Initial load
+  const observer = new MutationObserver(() => {
+    showInitialReviews();
+  });
+
   observer.observe(document.body, { childList: true, subtree: true });
 
-  initLoadMore();
 });
 </script>
+
 
 {% schema %}
 {
