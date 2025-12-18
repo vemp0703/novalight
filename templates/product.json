@@ -187,6 +187,11 @@
       "name": "Clinical Results (Metaobject)",
       "settings": {}
     },
+    "jm_reviews_Bw7A7n": {
+      "type": "jm-reviews",
+      "name": "Judge.me Reviews",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -205,10 +210,25 @@
         "padding_bottom": 28
       }
     },
-    "jm_reviews_Bw7A7n": {
-      "type": "jm-reviews",
-      "name": "Judge.me Reviews",
-      "settings": {}
+    "1766085241df1922b8": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_mpwRT3": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_mpwRT3"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -220,6 +240,7 @@
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
     "jm_reviews_Bw7A7n",
+    "1766085241df1922b8",
     "related-products"
   ]
 }
