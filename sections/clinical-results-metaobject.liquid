@@ -1,0 +1,150 @@
+{% style %}
+ .clinical-results {
+  padding: 90px 0;
+  background: radial-gradient(120% 120% at 10% 10%, #0b1f3a, #060d1a);
+  color: #fff;
+  text-align: center;
+}
+
+.clinical-results__badge span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.clinical-results__heading {
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.clinical-results__subtext {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  font-size: 15px;
+  opacity: 0.75;
+}
+
+.clinical-results__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 26px;
+}
+
+.clinical-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  padding: 38px 26px;
+}
+
+.clinical-card__bar {
+  display: block;
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  margin: 0 auto 22px;
+}
+
+.clinical-card__value {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.clinical-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.clinical-card__desc {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+{% endstyle %}
+
+{% assign section_data = product.metafields.custom.clinical_results_section.value %}
+
+{% if section_data != blank and section_data.enable %}
+
+<section class="clinical-results">
+  <div class="page-width">
+
+    {% if section_data.badge_text != blank %}
+      <div class="clinical-results__badge">
+        <span>{{ section_data.badge_text }}</span>
+      </div>
+    {% endif %}
+
+    {% if section_data.heading != blank %}
+      <h2 class="clinical-results__heading">
+        {{ section_data.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section_data.sub_heading != blank %}
+      <p class="clinical-results__subtext">
+        {{ section_data.sub_heading }}
+      </p>
+    {% endif %}
+
+    {% if section_data.items.value != blank %}
+      <div class="clinical-results__grid">
+
+        {% for item in section_data.items.value %}
+          <div class="clinical-card">
+
+            {% if item.accent_color != blank %}
+              <span class="clinical-card__bar"
+                    style="background: {{ item.accent_color }};"></span>
+            {% endif %}
+
+            {% if item.value != blank %}
+              <h3 class="clinical-card__value"
+                  style="color: {{ item.accent_color }};">
+                {{ item.value }}
+              </h3>
+            {% endif %}
+
+            {% if item.title != blank %}
+              <h4 class="clinical-card__title">
+                {{ item.title }}
+              </h4>
+            {% endif %}
+
+            {% if item.description != blank %}
+              <p class="clinical-card__desc">
+                {{ item.description }}
+              </p>
+            {% endif %}
+
+          </div>
+        {% endfor %}
+
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Clinical Results",
+  "tag": "section",
+  "class": "section-clinical-results",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Clinical Results (Metaobject)"
+    }
+  ]
+}
+{% endschema %}
