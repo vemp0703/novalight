@@ -209,26 +209,6 @@
       "type": "jm-reviews",
       "name": "Judge.me Reviews",
       "settings": {}
-    },
-    "1766083392d40cb431": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_Te4mmR": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_Te4mmR"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -239,8 +219,7 @@
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
-    "related-products",
     "jm_reviews_Bw7A7n",
-    "1766083392d40cb431"
+    "related-products"
   ]
 }
