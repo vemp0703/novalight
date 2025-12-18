@@ -72,15 +72,12 @@
 
 {% endstyle %}
 {% if product %}
-
-    {{ product.id }}
 <section class="jm-design-reviews page-width">
 
-  {% if section.settings.heading != blank %}
-    <h2 class="jm-heading">{{ section.settings.heading }}</h2>
-  {% endif %}
+  <!-- Heading -->
+  <h2 class="jm-heading">Loved by 10,000+ Customers</h2>
 
-  <!-- Rating Summary -->
+  <!-- Stars + Rating -->
   <div class="jm-rating-summary">
     <div
       class="jdgm-preview-badge"
@@ -90,30 +87,29 @@
   </div>
 
   <!-- Rating Breakdown -->
-  {% if section.settings.show_breakdown %}
   <div class="jm-breakdown-card">
-    <h4>{{ section.settings.breakdown_heading }}</h4>
+    <h4>Rating Breakdown</h4>
 
     <div
-      class="jdgm-widget jdgm-review-widget"
+      class="jdgm-widget"
       data-product-id="{{ product.id }}"
       data-template="histogram"
     ></div>
   </div>
-  {% endif %}
 
   <!-- Reviews -->
   <div class="jm-review-grid">
     <div
-      class="jdgm-widget jdgm-review-widget"
+      class="jdgm-widget"
       data-product-id="{{ product.id }}"
       data-template="reviews"
-      data-per-page="{{ section.settings.reviews_limit }}"
+      data-per-page="3"
     ></div>
   </div>
 
 </section>
 {% endif %}
+
 
 {% schema %}
 {
