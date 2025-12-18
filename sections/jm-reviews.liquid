@@ -1,27 +1,6 @@
-
-<!-- Judge.me Star Rating -->
-<div class="jdgm-widget jdgm-preview-badge"
-    data-id="{{ product.id }}"
-    data-template="badge"> 
-    {{ product.metafields.judgeme.badge }}
+<div class="jdgm-widget jdgm-histogram-widget" ...>
+  {{ product.metafields.judgeme.histogram }}
 </div>
 
-<section class="page-width" style="padding:60px 0">
-  <h3 style="text-align:center">Rating Breakdown</h3>
-
-  <div
-    class="jdgm-widget jdgm-histogram-widget"
-    data-product-id="{{ product.id }}"
-    data-template="histogram"
-  >{{ product.metafields.judgeme.histogram }}</div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (window.jdgm && jdgm.init) {
-      jdgm.init();
-    }
-  });
-</script>
 
 
