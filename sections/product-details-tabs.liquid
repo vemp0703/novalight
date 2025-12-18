@@ -191,7 +191,7 @@
         {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
             {% elsif block.settings.metafield_key %}
-                {assign metakey=block.settings.metafield_key }
+                {% assign metakey = block.settings.metafield_key %}
 
                 {{ product.metafields.metakey  | metafield_tag}}
 
