@@ -192,6 +192,18 @@
       "name": "Sticky Scroll Section",
       "settings": {}
     },
+    "product_video_gallery_7gdXg8": {
+      "type": "product-video-gallery",
+      "name": "Product Video Gallery",
+      "settings": {
+        "badge_text": "▶Real Results from Real People",
+        "heading": "See TheraFace in Action",
+        "subtitle": "Watch verified users and skincare experts share their transformation stories",
+        "cta_text": "Ready to see results like these?",
+        "cta_label": "Get Your TheraFace Mask Today",
+        "cta_link": ""
+      }
+    },
     "17660988777f51a894": {
       "type": "apps",
       "blocks": {
@@ -238,6 +250,7 @@
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
     "sticky_scroll_section_7YyDeH",
+    "product_video_gallery_7gdXg8",
     "17660988777f51a894",
     "related-products"
   ]
