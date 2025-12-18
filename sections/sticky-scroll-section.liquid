@@ -2,84 +2,165 @@
 {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
 <section class="product-sticky-scroll-section">
+
   <div class="sticky-wrapper">
 
-    <!-- LEFT -->
+    <!-- LEFT COLUMN (STICKY IMAGE) -->
     <div class="sticky-image">
       {% if section_items.primary_image != blank %}
-        <img src="{{ section_items.primary_image | img_url: '800x' }}"
-             alt="{{ section_items.heading }}">
+        <img 
+          src="{{ section_items.primary_image | img_url: '800x' }}"
+          alt="{{ section_items.heading }}">
       {% endif %}
     </div>
 
-    <!-- RIGHT -->
+    <!-- RIGHT COLUMN (SCROLLABLE CONTENT) -->
     <div class="scroll-content">
 
       {% if section_items.heading != blank %}
-        <h2>{{ section_items.heading }}</h2>
+        <h2 class="section-heading">{{ section_items.heading }}</h2>
+      {% endif %}
+
+      {% if section_items.sub_heading != blank %}
+        <p class="section-subheading">{{ section_items.sub_heading }}</p>
       {% endif %}
 
       {% for item in section_items.section_items.value %}
         <div class="scroll-item">
-          <h3>{{ item.heading }}</h3>
-          <p>{{ item.content }}</p>
+          <div class="scroll-icon" style="background: {{ item.gradient }};">
+            {% if item.numeric != blank %}
+              {{ item.numeric }}
+            {% endif %}
+          </div>
+
+          <div class="scroll-text">
+            <h3>{{ item.heading }}</h3>
+            <p>{{ item.content }}</p>
+          </div>
         </div>
       {% endfor %}
 
     </div>
 
   </div>
+
 </section>
 
 <style>
-/* 🔑 CRITICAL FIX */
+/* ================================
+   GLOBAL FIX (SHOPIFY SAFE)
+================================ */
 .product-sticky-scroll-section {
-  position: relative;
+  width: 100%;
+  max-width: 100vw;
   overflow: visible !important;
+  padding: 80px 0;
 }
 
-/* Two columns */
+.product-sticky-scroll-section * {
+  box-sizing: border-box;
+}
+
+/* ================================
+   LAYOUT
+================================ */
 .sticky-wrapper {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 48px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* Sticky column */
+/* ================================
+   LEFT STICKY IMAGE
+================================ */
 .sticky-image {
-  width: 50%;
+  flex: 0 0 50%;
   position: sticky;
   top: 120px;
-  align-self: flex-start;
 }
 
 .sticky-image img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 18px;
+  display: block;
 }
 
-/* Scroll column */
+/* ================================
+   RIGHT SCROLL AREA
+================================ */
 .scroll-content {
-  width: 50%;
+  flex: 0 0 50%;
   height: 70vh;
   overflow-y: auto;
   padding-right: 12px;
 }
 
-/* Items */
-.scroll-item {
-  margin-bottom: 32px;
+/* ================================
+   CONTENT STYLING
+================================ */
+.section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-/* Mobile */
+.section-subheading {
+  font-size: 16px;
+  margin-bottom: 32px;
+  color: #666;
+}
+
+.scroll-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.scroll-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scroll-text h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.scroll-text p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ================================
+   MOBILE FIX
+================================ */
 @media (max-width: 1024px) {
   .sticky-wrapper {
     flex-direction: column;
   }
+
+  .sticky-image,
   .scroll-content {
+    flex: 0 0 100%;
+    position: relative;
     height: auto;
     overflow: visible;
+  }
+
+  .sticky-image {
+    top: 0;
   }
 }
 </style>
