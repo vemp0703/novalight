@@ -116,7 +116,7 @@
             "icon": "shopify://shop_images/Thunder.svg",
             "label": "Specifications",
             "description": "Detailed information and specifications",
-            "metafield_key": "custom.product_specification"
+            "metafield_key": "product_specification"
           }
         },
         "tab_diCYFD": {
