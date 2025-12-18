@@ -4,7 +4,9 @@
   
   {% if sections %}
     
-    {% for section in sections.value %}
+    {% for section in sections %}
+
+        {{ sections.heading }}
       <div class="sticky-scroll-item">
 
         <!-- Left: Primary Image -->
