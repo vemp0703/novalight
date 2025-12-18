@@ -3,15 +3,15 @@
 
 <section class="pinned-scroll-section">
 
-  <!-- This creates scroll space -->
+  <!-- Creates scroll duration -->
   <div class="pin-spacer">
 
-    <!-- This stays pinned -->
+    <!-- Pinned container -->
     <div class="pin-container">
 
       <div class="pin-layout">
 
-        <!-- LEFT (STICKY IMAGE) -->
+        <!-- LEFT : IMAGE -->
         <div class="pin-image">
           {% if section_items.primary_image != blank %}
             <img
@@ -20,15 +20,15 @@
           {% endif %}
         </div>
 
-        <!-- RIGHT (SCROLLABLE CONTENT) -->
+        <!-- RIGHT : SCROLL CONTENT -->
         <div class="pin-scroll">
 
           {% if section_items.heading != blank %}
-            <h2>{{ section_items.heading }}</h2>
+            <h2 class="pin-heading">{{ section_items.heading }}</h2>
           {% endif %}
 
           {% if section_items.sub_heading != blank %}
-            <p>{{ section_items.sub_heading }}</p>
+            <p class="pin-subheading">{{ section_items.sub_heading }}</p>
           {% endif %}
 
           {% for item in section_items.section_items.value %}
@@ -36,7 +36,7 @@
               <div class="pin-icon" style="background: {{ item.gradient }};">
                 {{ item.numeric }}
               </div>
-              <div>
+              <div class="pin-text">
                 <h3>{{ item.heading }}</h3>
                 <p>{{ item.content }}</p>
               </div>
@@ -52,25 +52,29 @@
 </section>
 
 <style>
-/* ===============================
-   CRITICAL SHOPIFY FIX
-================================ */
+/* =====================================================
+   SHOPIFY & GLOBAL FIX
+===================================================== */
 .pinned-scroll-section {
   width: 100%;
+  max-width: 100vw;
   overflow: visible !important;
 }
 
-/* ===============================
-   SCROLL SPACE CREATOR
-================================ */
-.pin-spacer {
-  height: 200vh; /* 🔥 controls how long section stays */
-  position: relative;
+.pinned-scroll-section * {
+  box-sizing: border-box;
 }
 
-/* ===============================
+/* =====================================================
+   SCROLL DURATION
+===================================================== */
+.pin-spacer {
+  height: 220vh; /* controls pin duration */
+}
+
+/* =====================================================
    PINNED CONTAINER
-================================ */
+===================================================== */
 .pin-container {
   position: sticky;
   top: 0;
@@ -80,20 +84,21 @@
   background: #fff;
 }
 
-/* ===============================
-   TWO COLUMN LAYOUT
-================================ */
+/* =====================================================
+   LAYOUT
+===================================================== */
 .pin-layout {
   display: flex;
   gap: 48px;
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
+  align-items: center;
 }
 
-/* ===============================
+/* =====================================================
    LEFT IMAGE
-================================ */
+===================================================== */
 .pin-image {
   flex: 0 0 50%;
 }
@@ -101,21 +106,42 @@
 .pin-image img {
   width: 100%;
   border-radius: 18px;
+  display: block;
 }
 
-/* ===============================
-   RIGHT SCROLL
-================================ */
+/* =====================================================
+   RIGHT SCROLL AREA
+===================================================== */
 .pin-scroll {
   flex: 0 0 50%;
   max-height: 70vh;
   overflow-y: auto;
   padding-right: 12px;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* ===============================
-   CONTENT
-================================ */
+.pin-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+   CONTENT STYLES
+===================================================== */
+.pin-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pin-subheading {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
 .pin-item {
   display: flex;
   gap: 16px;
@@ -131,11 +157,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-/* ===============================
-   MOBILE FALLBACK
-================================ */
+.pin-text h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.pin-text p {
+  margin: 0;
+  font-size: 15px;
+  color: #666;
+}
+
+/* =====================================================
+   TABLET (≤1024px)
+===================================================== */
 @media (max-width: 1024px) {
   .pin-spacer {
     height: auto;
@@ -150,9 +188,34 @@
     flex-direction: column;
   }
 
+  .pin-image,
   .pin-scroll {
+    flex: 0 0 100%;
     max-height: none;
     overflow: visible;
+  }
+}
+
+/* =====================================================
+   MOBILE (≤640px)
+===================================================== */
+@media (max-width: 640px) {
+  .pin-heading {
+    font-size: 24px;
+  }
+
+  .pin-layout {
+    padding: 0 16px;
+  }
+
+  .pin-item {
+    gap: 12px;
+  }
+
+  .pin-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
   }
 }
 </style>
