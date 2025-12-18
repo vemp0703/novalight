@@ -4,7 +4,7 @@
   {% assign badge = product.metafields.custom.badge_text.value %}
   {% assign heading = product.metafields.custom.promo_heading.value %}
   {% assign text = product.metafields.custom.promo_description.value %}
-  {% assign background_image = product.metafields.custom.background_image.value | file_url %}
+  {% assign background_image = product.metafields.custom.background_image.value | image_url: width: auto, height:auto  %}
 
 {% style %}
   .promo-banner {
