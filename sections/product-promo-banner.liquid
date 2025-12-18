@@ -1,10 +1,10 @@
-{% assign show_banner = product.metafields.custom.show_promotional_banner.value %}
+{% assign show_banner = product.metafields.custom.show_promo_banner.value %}
 
 {% if show_banner %}
-  {% assign badge = product.metafields.custom.badge_text.value %}
+  {% assign badge = product.metafields.custom.promo_badge.value %}
   {% assign heading = product.metafields.custom.promo_heading.value %}
-  {% assign text = product.metafields.custom.promo_description.value %}
-  {% assign gradient = product.metafields.custom.background_image.value %}
+  {% assign text = product.metafields.custom.promo_text.value %}
+  {% assign background_image = product.metafields.custom.promo_gradient.value %} {# renamed to background_image #}
 
   {% style %}
   .promo-banner {
@@ -15,9 +15,12 @@
     position: relative;
     border-radius: 18px;
     padding: 56px 40px;
-    background: var(--bg-gradient);
     color: #fff;
     overflow: hidden;
+    background-image: url('{{ background_image }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .promo-banner__badge {
@@ -78,10 +81,7 @@
 
   <section class="promo-banner">
     <div class="page-width">
-      <div
-        class="promo-banner__box"
-        style="--bg-gradient: {{ gradient }}"
-      >
+      <div class="promo-banner__box">
 
         {% if badge != blank %}
           <div class="promo-banner__badge">
