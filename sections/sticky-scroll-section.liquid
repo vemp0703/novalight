@@ -21,19 +21,20 @@
         {% endif %}
 
         <!-- Scrollable items -->
-        <div class="space-y-6">
+        <div class="space-y-8">
           {% for item in section_items.section_items.value %}
             <div class="scroll-item opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
-              {% if item.image != blank %}
-                <img src="{{ item.image | img_url: '800x' }}" alt="{{ item.heading }}" class="w-full h-auto rounded-md shadow-sm">
-              {% endif %}
-
+              
               {% if item.numeric != blank %}
-                <span class="text-lg font-semibold text-gray-900">{{ item.numeric }}</span>
+                <div class="text-3xl font-bold text-gray-900 mb-2">{{ item.numeric }}</div>
               {% endif %}
 
               {% if item.heading != blank %}
-                <h3 class="text-xl font-medium text-gray-800">{{ item.heading }}</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-1">{{ item.heading }}</h3>
+              {% endif %}
+
+              {% if item.image != blank %}
+                <img src="{{ item.image | img_url: '800x' }}" alt="{{ item.heading }}" class="w-full h-auto rounded-md shadow-sm mb-2">
               {% endif %}
 
               {% if item.content != blank %}
@@ -41,8 +42,9 @@
               {% endif %}
 
               {% if item.gradient != blank %}
-                <div class="h-1 rounded" style="background: {{ item.gradient }}"></div>
+                <div class="h-1 rounded mt-2" style="background: {{ item.gradient }}"></div>
               {% endif %}
+              
             </div>
           {% endfor %}
         </div>
@@ -51,7 +53,7 @@
   </section>
 
   <style>
-    /* Optional: maintain Dawn theme spacing on large screens */
+    /* Sticky left image for large screens */
     @media (min-width: 1024px) {
       .product-sticky-scroll-section .lg\:sticky {
         top: 6rem; /* adjust according to header height */
