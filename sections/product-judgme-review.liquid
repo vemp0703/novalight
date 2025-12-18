@@ -1,3 +1,139 @@
+{% comment %}
+  Product Reviews Section – Judge.me
+  Fully compatible & production safe
+{% endcomment %}
+
+{% if section.settings.show_section %}
+
+<section class="product-reviews">
+  <div class="page-width">
+
+    <!-- Header -->
+    <div class="reviews-header">
+      <h3>{{ section.settings.heading }}</h3>
+
+      <!-- Judge.me Preview Badge -->
+      <div class="reviews-summary">
+        <div
+          class="jdgm-widget jdgm-preview-badge"
+          data-id="{{ product.id }}"
+          data-template="badge"
+        >
+          {{ product.metafields.judgeme.badge }}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Full Reviews Widget -->
+    <div
+      id="judgeme_product_reviews"
+      class="jdgm-widget jdgm-review-widget"
+      data-id="{{ product.id }}"
+      data-product-title="{{ product.title | escape }}"
+    >
+      {{ product.metafields.judgeme.widget }}
+    </div>
+
+  </div>
+</section>
+
+{% endif %}
+
+{% style %}
+/* =========================
+   Product Reviews Styling
+   ========================= */
+
+.product-reviews {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews-header h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Center badge */
+.reviews-summary .jdgm-preview-badge {
+  display: inline-block;
+}
+
+/* Stars color */
+.jdgm-star,
+.jdgm-star.jdgm--on {
+  color: #FFC107 !important;
+}
+
+/* Rating text */
+.jdgm-prev-badge__text {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Review cards */
+.jdgm-rev {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+/* Review title */
+.jdgm-rev__title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Review body */
+.jdgm-rev__body {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Author */
+.jdgm-rev__author {
+  font-size: 13px;
+  color: #999;
+}
+
+/* Histogram */
+.jdgm-histogram__bar {
+  background: #eee !important;
+  border-radius: 6px;
+}
+
+.jdgm-histogram__bar-content {
+  background: #FFC107 !important;
+  border-radius: 6px;
+}
+
+/* Write review button */
+.jdgm-write-rev-link {
+  background: #000;
+  color: #fff !important;
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .reviews-header h3 {
+    font-size: 22px;
+  }
+}
+{% endstyle %}
+
 {% schema %}
 {
   "name": "Product Reviews",
@@ -6,93 +142,21 @@
     {
       "type": "checkbox",
       "id": "show_section",
-      "label": "Show Reviews Section",
+      "label": "Show reviews section",
       "default": true
     },
     {
       "type": "text",
-      "id": "section_heading",
-      "label": "Section Heading",
-      "default": "Loved by Customers"
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Loved by our customers"
     }
   ],
   "presets": [
     {
       "name": "Product Reviews",
-      "category": "Product",
-      "blocks": []
+      "category": "Product"
     }
   ]
 }
 {% endschema %}
-
-{% if section.settings.show_section %}
-<section class="product-reviews">
-  <div class="page-width">
-
-    <!-- Top Rating -->
-    <div class="reviews-header">
-      <h3>{{ section.settings.section_heading }} {{ product.metafields.judgeme.total_reviews.value | default: 0 }} Customers</h3>
-      <div class="reviews-summary">
-        <div class="stars">
-          {% assign avg_rating = product.metafields.judgeme.average_rating.value | default: 0 %}
-          {% for i in (1..5) %}
-            {% if i <= avg_rating %}
-              <span class="star filled">★</span>
-            {% else %}
-              <span class="star">★</span>
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="rating-number">{{ avg_rating | round: 1 }}</div>
-      </div>
-      <p class="verified-count">Based on {{ product.metafields.judgeme.total_reviews.value | default: 0 }} verified reviews</p>
-    </div>
-
-    <!-- Rating Breakdown -->
-    <div class="rating-breakdown">
-      <h4>Rating Breakdown</h4>
-      {% assign rating_counts = product.metafields.judgeme.rating_counts %}
-      {% for star in (5..1) %}
-        <div class="rating-bar-row">
-          <div class="star-label">{{ star }} ★</div>
-          <div class="bar-wrapper">
-            {% assign count = rating_counts[star] | default: 0 %}
-            {% assign max_count = rating_counts[5] | default: 1 %}
-            {% assign width = count | times: 100 | divided_by: max_count %}
-            <div class="bar" style="width: {{ width }}%;"></div>
-          </div>
-          <div class="count">{{ count }}</div>
-        </div>
-      {% endfor %}
-    </div>
-
-    <!-- Reviews List -->
-    <div class="reviews-list">
-      {% for review in product.metafields.judgeme.reviews %}
-        <div class="review-card">
-          <div class="review-stars">
-            {% for i in (1..5) %}
-              {% if i <= review.rating %}
-                <span class="star filled">★</span>
-              {% else %}
-                <span class="star">★</span>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <h5 class="review-title">{{ review.title }}</h5>
-          <p class="review-content">{{ review.content }}</p>
-          <div class="review-meta">
-            <span class="review-author">{{ review.author_name }}</span>
-            <span class="review-date">{{ review.date | date: "%B %d, %Y" }}</span>
-          </div>
-          {% if review.helpful_count %}
-            <div class="review-helpful">Helpful ({{ review.helpful_count }})</div>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-{% endif %}
