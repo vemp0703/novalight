@@ -191,7 +191,7 @@
             {{ product.description }}
             {% elsif product.metafields.tabs[block.settings.metafield_key] != blank %}
 
-                {{ product.metafields.tabs[block.settings.metafield_key] | json }}
+                {{ product.metafields.custom.product_specification  }}
 
             {{ product.metafields.tabs[block.settings.metafield_key] | metafield_tag }}
         {% endif %}
