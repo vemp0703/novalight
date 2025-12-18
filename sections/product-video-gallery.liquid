@@ -14,38 +14,28 @@
 
     <div class="video-row">
 
-{% for video in product.metafields.custom.product_video_gallery.value %}
-
-
-    {{ video }}
-
-
+{% for video_url in product.metafields.custom.product_video_gallery.value %}
   <div class="video-card">
 
-    {% if video.alt != blank %}
-      <span class="views">{{ video.alt }}</span>
-    {% endif %}
-
     <div class="video-thumb">
-      <video
-        muted
-        preload="metadata"
-        playsinline
-        poster="{{ video.preview_image | image_url: width: 600 }}"
-      >
-        <source src="{{ video.sources[0].url }}" type="video/mp4">
-      </video>
-
+      <video 
+        src="{{ video_url }}" 
+        controls 
+        preload="metadata" 
+        muted 
+        poster="" 
+      ></video>
       <span class="play-btn">▶</span>
     </div>
 
     <div class="video-info">
-      <strong>{{ video.alt | default: 'Customer Review' }}</strong>
+      <strong>Customer Review</strong>
       <span>Verified User</span>
     </div>
 
   </div>
 {% endfor %}
+
 
     </div>
 
