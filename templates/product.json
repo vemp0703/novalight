@@ -205,13 +205,12 @@
         "padding_bottom": 28
       }
     },
-    "jm_reviews_ajtxNh": {
+    "jm_reviews_Bw7A7n": {
       "type": "jm-reviews",
       "name": "Judge.me Reviews",
       "settings": {
-        "heading": "Loved by Customers",
-        "show_breakdown": true,
-        "breakdown_heading": "Rating Breakdown"
+        "heading": "Loved by 10000+ Customers",
+        "show_breakdown": true
       }
     }
   },
@@ -224,6 +223,6 @@
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
     "related-products",
-    "jm_reviews_ajtxNh"
+    "jm_reviews_Bw7A7n"
   ]
 }
