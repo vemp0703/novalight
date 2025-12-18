@@ -1,6 +1,6 @@
 {% comment %}
 Sticky & Scroll Section for Product Metaobjects
-- Pulls product metafield: custom.sticky_and_scroll_section
+- Product metafield: custom.sticky_and_scroll_section (list of metaobjects)
 - Each metaobject should have:
   - primary_image
   - heading
@@ -9,58 +9,53 @@ Sticky & Scroll Section for Product Metaobjects
 {% endcomment %}
 
 <section class="sticky-scroll-section-wrapper">
-    {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section.value %}
-    
-    {% if sticky_sections != blank %}
-        
-      {% for section_item in sticky_sections.value %}
-        {{ section_item | json }}
+  {% assign sticky_sections = section.settings.product.metafields.custom.sticky_and_scroll_section %}
+  {% if sticky_sections != blank %}
+    {% for section_item in sticky_sections %}
 
-        {{ section_item.primary_image | image_url: width: 800, height: auto  }}
-        <div class="sticky-scroll-section">
-          <div class="sticky-scroll-wrapper">
+      <div class="sticky-scroll-section">
+        <div class="sticky-scroll-wrapper">
 
-            <!-- Left Image (Sticky) -->
-            {% if section_item.primary_image != blank %}
-              <div class="sticky-image">
-                <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
-              </div>
+          <!-- Left Image (Sticky) -->
+          {% if section_item.primary_image != blank %}
+            <div class="sticky-image">
+              <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
+            </div>
+          {% endif %}
+
+          <!-- Right Content (Scrollable) -->
+          <div class="scroll-content">
+            {% if section_item.heading != blank %}
+              <h2>{{ section_item.heading }}</h2>
+            {% endif %}
+            {% if section_item.sub_heading != blank %}
+              <p>{{ section_item.sub_heading }}</p>
             {% endif %}
 
-            <!-- Right Content (Scrollable) -->
-            <div class="scroll-content">
-              {% if section_item.heading != blank %}
-                <h2>{{ section_item.heading }}</h2>
-              {% endif %}
-              {% if section_item.sub_heading != blank %}
-                <p>{{ section_item.sub_heading }}</p>
-              {% endif %}
-
-              {% if section_item.section_items != blank %}
-                <div class="items-list">
-                  {% for item in section_item.section_items %}
-                    <div class="item">
-                      {% if item.icon != blank %}
-                        <img src="{{ item.icon | img_url: '100x' }}" alt="{{ item.heading }}">
-                      {% endif %}
-                      {% if item.heading != blank %}
-                        <h3>{{ item.heading }}</h3>
-                      {% endif %}
-                      {% if item.number != blank %}
-                        <p>{{ item.number }}</p>
-                      {% endif %}
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
-
+            {% if section_item.section_items != blank %}
+              <div class="items-list">
+                {% for item in section_item.section_items %}
+                  <div class="item">
+                    {% if item.icon != blank %}
+                      <img src="{{ item.icon | img_url: '100x' }}" alt="{{ item.heading }}">
+                    {% endif %}
+                    {% if item.heading != blank %}
+                      <h3>{{ item.heading }}</h3>
+                    {% endif %}
+                    {% if item.number != blank %}
+                      <p>{{ item.number }}</p>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
+
         </div>
+      </div>
 
-      {% endfor %}
-    {% endif %}
-
+    {% endfor %}
+  {% endif %}
 </section>
 
 <style>
@@ -148,7 +143,7 @@ Sticky & Scroll Section for Product Metaobjects
 
 {% schema %}
 {
-  "name": "Sticky Scroll Sectiond",
+  "name": "Sticky Scroll Section",
   "settings": [
     {
       "type": "product",
