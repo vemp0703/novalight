@@ -188,7 +188,7 @@
 
       <div class="product-details-card">
 
-        {{  product.metafields.specifications[block.settings.metafield_key] | json}}
+        {{  product.metafields.specifications[block.settings.metafield_key] | metafield_tag}}
 
         {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
