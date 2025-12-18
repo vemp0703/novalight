@@ -194,9 +194,9 @@
             {% elsif block.settings.metafield_key != blank %}
             {% assign metakey = block.settings.metafield_key %}
 
-            {{ metakey }}
+            {{ product.metafields.tabs }}
 
-            {{ product.metafields.specification[metakey] | metafield_tag }}
+            {{ product.metafields.tabs[metakey] | metafield_tag }}
             {% endif %}
       </div>
     </div>
