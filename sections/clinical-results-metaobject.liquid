@@ -70,9 +70,6 @@
 {% endstyle %}
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
-{% assign items = section_data.result_items %}
-
-{{ section_data |json }}
 
 {% if section_data != blank and section_data.show_section.value == true %}
 
@@ -93,7 +90,7 @@
       <p class="clinical-results__subtext">{{ section_data.sub_heading }}</p>
     {% endif %}
 
-    {{ section_data.clinical_result_item  | json}}
+    {{ section_data.result_items  | json}}
     {% if section_data.clinical_result_item.value != blank %}
       <div class="clinical-results__grid">
         {% for item in section_data.clinical_result_item.value %}
