@@ -187,6 +187,13 @@
       "name": "Clinical Results (Metaobject)",
       "settings": {}
     },
+    "sticky_scroll_section_7YyDeH": {
+      "type": "sticky-scroll-section",
+      "name": "Sticky Scroll Section",
+      "settings": {
+        "sticky_image": "shopify://shop_images/skincare-9973091_1280_a2594a3a-92bc-44e4-9421-bc5c52f5929e.jpg"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -214,6 +221,7 @@
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
+    "sticky_scroll_section_7YyDeH",
     "related-products"
   ]
 }
