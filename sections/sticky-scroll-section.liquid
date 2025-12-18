@@ -21,7 +21,7 @@ Sticky & Scroll Section for Product Metaobjects
             <!-- Left Image (Sticky) -->
             {% if section_item.primary_image != blank %}
               <div class="sticky-image">
-                <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
+                <img src="{{ section_item.primary_image.url | img_url: '800x' }}" alt="{{ section_item.heading }}">
               </div>
             {% endif %}
 
@@ -146,7 +146,7 @@ Sticky & Scroll Section for Product Metaobjects
 
 {% schema %}
 {
-  "name": "Sticky Scroll Section",
+  "name": "Sticky Scroll Sectiond",
   "settings": [
     {
       "type": "product",
