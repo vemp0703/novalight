@@ -71,10 +71,10 @@
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
 
-{{ section_data | json }}
+
 
 {% if section_data != blank and section_data.enable.value == true %}
-
+{{ section_data | json }}
 <section class="clinical-results">
   <div class="page-width">
 
