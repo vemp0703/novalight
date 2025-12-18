@@ -11,7 +11,7 @@ Sticky & Scroll Section for Product Metaobjects
 <section class="sticky-scroll-section-wrapper">
   {% assign product_to_use = section.settings.product %}
   {% if product_to_use != blank %}
-    {% assign sticky_sections = product_to_use.metafields.custom.sticky_and_scroll_section.value %}
+    {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section.value %}
     {% if sticky_sections != blank %}
       {% for section_item in sticky_sections %}
 
@@ -21,7 +21,7 @@ Sticky & Scroll Section for Product Metaobjects
             <!-- Left Image (Sticky) -->
             {% if section_item.primary_image != blank %}
               <div class="sticky-image">
-                <img src="{{ section_item.primary_image.url | img_url: '800x' }}" alt="{{ section_item.heading }}">
+                <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
               </div>
             {% endif %}
 
