@@ -9,7 +9,7 @@ Sticky & Scroll Section for Product Metaobjects
 {% endcomment %}
 
 <section class="sticky-scroll-section-wrapper">
-  {% assign sticky_sections = section.settings.product.metafields.custom.sticky_and_scroll_section %}
+  {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section %}
   {% if sticky_sections != blank %}
     {% for section_item in sticky_sections %}
 
