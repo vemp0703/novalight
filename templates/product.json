@@ -177,6 +177,11 @@
         "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
       }
     },
+    "product_promo_banner_hfhMPj": {
+      "type": "product-promo-banner",
+      "name": "Product Promo Banner",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -195,9 +200,9 @@
         "padding_bottom": 28
       }
     },
-    "product_promo_banner_hfhMPj": {
-      "type": "product-promo-banner",
-      "name": "Product Promo Banner",
+    "product_dynamic_result_section_VNiJLc": {
+      "type": "product-dynamic-result-section",
+      "name": "Dynamic Clinical Results",
       "settings": {}
     }
   },
@@ -208,6 +213,7 @@
     "product_highlights_zpBYAV",
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
+    "product_dynamic_result_section_VNiJLc",
     "related-products"
   ]
 }
