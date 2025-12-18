@@ -162,6 +162,13 @@
         "subheading": "Everything you need to know about the product"
       }
     },
+    "product_highlights_zpBYAV": {
+      "type": "product-highlights",
+      "name": "Product Highlights",
+      "settings": {
+        "heading": "Product Specifications"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -180,11 +187,12 @@
         "padding_bottom": 28
       }
     },
-    "product_highlights_zpBYAV": {
-      "type": "product-highlights",
-      "name": "Product Highlights",
+    "key_benefits_zWttzP": {
+      "type": "key-benefits",
+      "name": "Product Key Benefits",
       "settings": {
-        "heading": "Product Specifications"
+        "heading": "Transform Your Skin with Professional LED Therapy",
+        "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
       }
     }
   },
@@ -193,6 +201,7 @@
     "product_usp_bar_NWh8XU",
     "product_details_tabs_cPkNBp",
     "product_highlights_zpBYAV",
-    "related-products"
+    "related-products",
+    "key_benefits_zWttzP"
   ]
 }
