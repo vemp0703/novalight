@@ -1,144 +1,18 @@
-{% style %}
-  .jm-design-reviews {
-  padding: 80px 0;
-  text-align: center;
-}
-
-.jm-heading {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-/* Summary */
-.jm-rating-summary {
-  margin-bottom: 40px;
-}
-
-/* Breakdown Card */
-.jm-breakdown-card {
-  max-width: 520px;
-  margin: 0 auto 60px;
-  padding: 28px;
-  background: #f9fbfd;
-  border-radius: 16px;
-  text-align: left;
-}
-
-.jm-breakdown-card h4 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.jm-break-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 14px;
-}
-
-.jm-star-label {
-  width: 40px;
-}
-
-.jm-bar {
-  flex: 1;
-  height: 8px;
-  background: #e6ecf2;
-  border-radius: 20px;
-  margin: 0 10px;
-  overflow: hidden;
-}
-
-.jm-bar span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, #ffb703, #ff9800);
-  border-radius: 20px;
-}
-
-.jm-count {
-  width: 30px;
-  text-align: right;
-}
-
-/* Reviews Grid */
-.jm-review-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-/* Judge.me cards */
-.jdgm-rev {
-  border: 1px solid #e6ecf2;
-  border-radius: 16px;
-  padding: 24px;
-  text-align: left;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .jm-review-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .jm-review-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-{% endstyle %}
 {% if product %}
 <section class="jm-design-reviews page-width">
 
-  {%- if section.settings.heading != blank -%}
+  {% if section.settings.heading != blank %}
     <h2 class="jm-heading">{{ section.settings.heading }}</h2>
-  {%- endif -%}
+  {% endif %}
 
   <!-- Rating Summary -->
   <div class="jm-rating-summary">
-    {% render 'judgeme_widgets',
-      widget_type: 'judgeme_preview_badge',
-      product: product
-    %}
+    {% render 'judgeme_preview_badge', product: product %}
   </div>
 
-  <!-- Rating Breakdown -->
-  {% if section.settings.show_breakdown %}
-  <div class="jm-breakdown-card">
-    <h4>{{ section.settings.breakdown_heading }}</h4>
-
-    {% assign total = product.metafields.judgeme.review_count | default: 1 %}
-
-    {% for i in (5..1) %}
-      {% assign rating_key = 'rating_' | append: i %}
-      {% assign count = product.metafields.judgeme[rating_key] | default: 0 %}
-      {% assign percent = count | times: 100 | divided_by: total %}
-
-      <div class="jm-break-row">
-        <span class="jm-star-label">{{ i }} ★</span>
-
-        <div class="jm-bar">
-          <span style="width: {{ percent }}%"></span>
-        </div>
-
-        <span class="jm-count">{{ count }}</span>
-      </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <!-- Reviews Grid -->
-  <div class="jm-review-grid">
-    {% render 'judgeme_widgets',
-      widget_type: 'judgeme_reviews',
-      product: product,
-      per_page: section.settings.reviews_limit
-    %}
+  <!-- Reviews + Breakdown (Official, Safe) -->
+  <div class="jm-reviews-wrapper">
+    {% render 'judgeme_all_reviews' %}
   </div>
 
 </section>
@@ -151,46 +25,13 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Section heading",
+      "label": "Heading",
       "default": "Loved by 10,000+ Customers"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_breakdown",
-      "label": "Show rating breakdown",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "breakdown_heading",
-      "label": "Breakdown heading",
-      "default": "Rating Breakdown"
-    },
-    {
-      "type": "range",
-      "id": "reviews_limit",
-      "label": "Number of reviews",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3
-    }
-  ],
-  "blocks": [
-    {
-      "type": "note",
-      "name": "Info",
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "Reviews are pulled automatically per product using Judge.me."
-        }
-      ]
     }
   ],
   "presets": [
     {
-      "name": "Judge.me Reviews",
+      "name": "Judge.me – Design Reviews",
       "category": "Reviews"
     }
   ]
