@@ -16,7 +16,7 @@
 
 {% for video_url in product.metafields.custom.product_video_gallery.value %}
   <div class="video-card">
-
+{{ video_url.url }}
     <div class="video-thumb">
       <video 
         src="{{ video_url.url }}" 
