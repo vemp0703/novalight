@@ -52,38 +52,34 @@
       </h3>
     {% endif %}
 
-    <div class="highlights-grid">
-      {% for block in section.blocks %}
-        {% assign highlight = block.settings.highlight %}
+ <div class="highlights-grid">
+      {% for highlight in product.metafields.custom.product_highlights.value %}
+        <div class="highlight-card">
 
-        {% if highlight != blank %}
-          <div class="highlight-card" {{ block.shopify_attributes }}>
+          {% if highlight.icon != blank %}
+            <div class="highlight-icon">
+              <img
+                src="{{ highlight.icon | image_url: width: 64 }}"
+                alt="{{ highlight.title | escape }}"
+                width="32"
+                height="32"
+              >
+            </div>
+          {% endif %}
 
-            {% if highlight.icon != blank %}
-              <div class="highlight-icon">
-                <img
-                  src="{{ highlight.icon | image_url: width: 64 }}"
-                  alt="{{ highlight.title | escape }}"
-                  width="32"
-                  height="32"
-                >
-              </div>
-            {% endif %}
+          {% if highlight.title != blank %}
+            <h4 class="highlight-title">
+              {{ highlight.title }}
+            </h4>
+          {% endif %}
 
-            {% if highlight.title != blank %}
-              <h4 class="highlight-title">
-                {{ highlight.title }}
-              </h4>
-            {% endif %}
+          {% if highlight.description != blank %}
+            <p class="highlight-desc">
+              {{ highlight.description }}
+            </p>
+          {% endif %}
 
-            {% if highlight.description != blank %}
-              <p class="highlight-desc">
-                {{ highlight.description }}
-              </p>
-            {% endif %}
-
-          </div>
-        {% endif %}
+        </div>
       {% endfor %}
     </div>
   </div>
