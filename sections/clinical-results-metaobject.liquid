@@ -90,10 +90,9 @@
       <p class="clinical-results__subtext">{{ section_data.sub_heading }}</p>
     {% endif %}
 
-    {{ section_data.result_items.value  | json}}
-    {% if section_data.clinical_result_item.value != blank %}
+    {% if section_data.result_items.value != blank %}
       <div class="clinical-results__grid">
-        {% for item in section_data.clinical_result_item.value %}
+        {% for item in section_data.result_items.value   %}
           <div class="clinical-card">
             <span class="clinical-card__bar"
               style="background: {{ item.accent_color }};"></span>
