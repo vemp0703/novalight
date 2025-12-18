@@ -1,12 +1,11 @@
 {% assign show_banner = product.metafields.custom.show_promotional_banner.value %}
 
 {% if show_banner %}
-  {% assign badge = product.metafields.custom.promo_badge.value %}
+  {% assign badge = product.metafields.custom.badge_text.value %}
   {% assign heading = product.metafields.custom.promo_heading.value %}
   {% assign text = product.metafields.custom.promo_description.value %}
-  {% assign background_image = product.metafields.custom.background_image.value %} {# renamed to background_image #}
-
-  {% style %}
+  {% assign background_image = product.metafields.custom.background_image.value %}
+    {% style %}
   .promo-banner {
     padding: 60px 0;
   }
