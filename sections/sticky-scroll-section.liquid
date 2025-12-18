@@ -1,5 +1,23 @@
 {% if product.metafields.custom.sticky_and_scroll_section != blank %}
   {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
   
+  <section class="left__conatiner">
     <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="Image description">
+</section>
+
+<section class="right__container">
+
+    {{section_items.heading}}
+
+    {{section_items.sub_heading}}
+
+
+    {% for items in section_items.list.value %}
+
+        {{items | json}}
+    {% endfor %}
+
+
+</section>
+
 {% endif %}
