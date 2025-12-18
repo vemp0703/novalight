@@ -13,8 +13,8 @@ Sticky & Scroll Section for Product Metaobjects
     
     {% if sticky_sections != blank %}
         
-      {% for section_item in sticky_sections.value %}
-        {{ sticky_sections | json }}
+      {% for section_item in sticky_sections %}
+        {{ section_item | json }}
 
         {{ section_item.primary_image | image_url: width: 800, height: auto  }}
         <div class="sticky-scroll-section">
