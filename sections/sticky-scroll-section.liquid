@@ -13,6 +13,7 @@ Sticky & Scroll Section for Product Metaobjects
   {% if sticky_sections != blank %}
     {% for section_item in sticky_sections %}
 
+        {{ section_item | json }}
       <div class="sticky-scroll-section">
         <div class="sticky-scroll-wrapper">
 
