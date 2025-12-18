@@ -1,90 +1,60 @@
 {% if product.metafields.custom.sticky_and_scroll_section != blank %}
   {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
-  <section class="sticky-scroll-section">
-    <!-- Left sticky image -->
-    <div class="left-container">
-      <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="Image description">
-    </div>
+  <section class="product-sticky-scroll-section mt-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      
+      <!-- Left sticky image -->
+      <div class="lg:sticky lg:top-24">
+        <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="{{ section_items.heading }}" class="w-full h-auto rounded-lg shadow-md">
+      </div>
 
-    <!-- Right scrolling content -->
-    <div class="right-container">
-      <h2>{{ section_items.heading }}</h2>
-      <p>{{ section_items.sub_heading }}</p>
+      <!-- Right scrolling content -->
+      <div class="space-y-8">
+        <!-- Section Heading -->
+        {% if section_items.heading != blank %}
+          <h2 class="text-3xl font-bold text-gray-900">{{ section_items.heading }}</h2>
+        {% endif %}
 
-      <div class="scroll-items">
-        {% for item in section_items.section_items.value %}
-          <div class="scroll-item">
-            <img src="{{ item.image | img_url: '800x' }}" alt="Item image">
-            <span class="numeric">{{ item.numeric }}</span>
-            <h3>{{ item.heading }}</h3>
-            <p>{{ item.content }}</p>
-            <div class="gradient" style="background: {{ item.gradient }}"></div>
-          </div>
-        {% endfor %}
+        {% if section_items.sub_heading != blank %}
+          <p class="text-gray-700 text-base">{{ section_items.sub_heading }}</p>
+        {% endif %}
+
+        <!-- Scrollable items -->
+        <div class="space-y-6">
+          {% for item in section_items.section_items.value %}
+            <div class="flex flex-col space-y-2">
+              {% if item.image != blank %}
+                <img src="{{ item.image | img_url: '800x' }}" alt="{{ item.heading }}" class="w-full h-auto rounded-md shadow-sm">
+              {% endif %}
+
+              {% if item.numeric != blank %}
+                <span class="text-lg font-semibold text-gray-900">{{ item.numeric }}</span>
+              {% endif %}
+
+              {% if item.heading != blank %}
+                <h3 class="text-xl font-medium text-gray-800">{{ item.heading }}</h3>
+              {% endif %}
+
+              {% if item.content != blank %}
+                <p class="text-gray-600">{{ item.content }}</p>
+              {% endif %}
+
+              {% if item.gradient != blank %}
+                <div class="h-1 rounded" style="background: {{ item.gradient }}"></div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
 
   <style>
-    .sticky-scroll-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .left-container {
-      flex: 1 1 40%;
-      position: sticky;
-      top: 2rem; /* adjust for your header */
-      max-height: 90vh;
-    }
-
-    .left-container img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .right-container {
-      flex: 1 1 55%;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .scroll-items {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .scroll-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-
-    .numeric {
-      font-weight: bold;
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .gradient {
-      height: 5px;
-      margin-top: 0.5rem;
-      border-radius: 3px;
-    }
-
-    @media (max-width: 768px) {
-      .sticky-scroll-section {
-        flex-direction: column;
-      }
-      .left-container, .right-container {
-        flex: 1 1 100%;
-        position: relative;
-        max-height: none;
+    /* Optional: maintain Dawn theme spacing on large screens */
+    @media (min-width: 1024px) {
+      .product-sticky-scroll-section .lg\:sticky {
+        top: 6rem; /* adjust according to header height */
       }
     }
   </style>
