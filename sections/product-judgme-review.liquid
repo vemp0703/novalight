@@ -1,5 +1,5 @@
 {% comment %}
-  Product Reviews – Custom Design (Judge.me Safe)
+  Product Reviews – Judge.me Carousel (Recommended)
 {% endcomment %}
 
 {% if section.settings.show_section %}
@@ -7,7 +7,7 @@
 <section class="product-reviews">
   <div class="page-width">
 
-    <!-- Custom Header -->
+    <!-- Header -->
     <div class="reviews-header">
       <h3>{{ section.settings.heading }}</h3>
 
@@ -26,21 +26,15 @@
       </p>
     </div>
 
-    <!-- Judge.me Widget -->
+    <!-- Judge.me Carousel -->
     <div
-      id="judgeme_product_reviews"
-      class="jdgm-widget jdgm-review-widget custom-judgeme"
+      class="jdgm-widget jdgm-carousel"
       data-id="{{ product.id }}"
-      data-product-title="{{ product.title | escape }}"
+      data-auto-play="false"
+      data-per-page="{{ section.settings.slides_desktop }}"
+      data-per-page-mobile="{{ section.settings.slides_mobile }}"
     >
-      {{ product.metafields.judgeme.widget }}
-    </div>
-
-    <!-- Load More -->
-    <div class="load-more-wrapper">
-      <button id="loadMoreReviews" class="load-more-btn">
-        {{ section.settings.load_more_text }}
-      </button>
+      {{ product.metafields.judgeme.carousel }}
     </div>
 
   </div>
@@ -50,7 +44,7 @@
 
 {% style %}
 /* ===============================
-   GLOBAL SECTION
+   SECTION
 ================================ */
 
 .product-reviews {
@@ -60,7 +54,7 @@
 
 .reviews-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .reviews-header h3 {
@@ -74,71 +68,19 @@
 }
 
 /* ===============================
-   REMOVE UNWANTED JUDGEME UI
+   CAROUSEL CARD STYLE
 ================================ */
 
-.jdgm-sort-dropdown,
-.jdgm-row-actions,
-.jdgm-write-rev-link,
-.jdgm-subtab,
-.jdgm-form-wrapper,
-.jdgm-rev-widg__title,
-.jdgm-rev__reply,
-.jdgm-paginate {
-  display: none !important;
-}
-
-.jdgm-rev-widg__summary {
-  visibility: hidden;
-}
-
-/* ===============================
-   STAR STYLING
-================================ */
-
-.jdgm-star,
-.jdgm-star.jdgm--on {
-  color: #fbbf24 !important;
-}
-
-/* ===============================
-   RATING BREAKDOWN CARD
-================================ */
-
-.jdgm-histogram {
-  background: #f8fafc;
-  padding: 24px;
-  border-radius: 18px;
-  max-width: 420px;
-  margin: 0 auto 60px;
-}
-
-.jdgm-histogram__bar {
-  background: #e5e7eb !important;
-  height: 8px;
-  border-radius: 10px;
-}
-
-.jdgm-histogram__bar-content {
-  background: #fbbf24 !important;
-  border-radius: 10px;
-}
-
-/* ===============================
-   REVIEW GRID
-================================ */
-
-.jdgm-rev-widg__reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.jdgm-rev {
+.jdgm-carousel-item {
   border: 1px solid #e5e7eb;
   border-radius: 18px;
   padding: 22px;
-  background: #ffffff;
+  background: #fff;
+}
+
+/* Stars */
+.jdgm-star {
+  color: #fbbf24 !important;
 }
 
 /* Title */
@@ -159,33 +101,25 @@
   color: #6b7280;
 }
 
-/* Helpful */
-.jdgm-rev__helpful {
-  font-size: 12px;
-  color: #6b7280;
+/* ===============================
+   REMOVE UNWANTED UI
+================================ */
+
+.jdgm-write-rev-link,
+.jdgm-row-actions,
+.jdgm-rev__reply {
+  display: none !important;
 }
 
 /* ===============================
-   LOAD MORE BUTTON
+   ARROWS
 ================================ */
 
-.load-more-wrapper {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.load-more-btn {
-  background: #000;
-  color: #fff;
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.load-more-btn:hover {
-  opacity: 0.9;
+.jdgm-carousel__left-arrow,
+.jdgm-carousel__right-arrow {
+  background: #000 !important;
+  color: #fff !important;
+  border-radius: 50%;
 }
 
 /* ===============================
@@ -199,57 +133,9 @@
 }
 {% endstyle %}
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const loadMoreBtn = document.getElementById("loadMoreReviews");
-  if (!loadMoreBtn) return;
-
-  let isLoading = false;
-
-  function getVisibleReviews() {
-    return document.querySelectorAll(".jdgm-rev").length;
-  }
-
-  function getNextButton() {
-    return document.querySelector(".jdgm-paginate__next:not(.jdgm-disabled)");
-  }
-
-  function loadNextPage() {
-    const nextBtn = getNextButton();
-
-    if (!nextBtn) {
-      loadMoreBtn.style.display = "none";
-      return;
-    }
-
-    if (isLoading) return;
-    isLoading = true;
-
-    nextBtn.click();
-
-    // Wait for Judge.me to inject new reviews
-    setTimeout(() => {
-      isLoading = false;
-
-      // If still has next page, keep button visible
-      if (!getNextButton()) {
-        loadMoreBtn.style.display = "none";
-      }
-    }, 1500);
-  }
-
-  loadMoreBtn.addEventListener("click", function () {
-    loadNextPage();
-  });
-
-});
-</script>
-
-
-
 {% schema %}
 {
-  "name": "Product Reviews",
+  "name": "Product Reviews Carousel",
   "settings": [
     {
       "type": "checkbox",
@@ -270,33 +156,27 @@ document.addEventListener("DOMContentLoaded", function () {
       "default": "Based on verified customer reviews"
     },
     {
-      "type": "text",
-      "id": "load_more_text",
-      "label": "Load more button text",
-      "default": "Load more reviews"
-    },
-    {
       "type": "range",
-      "id": "initial_reviews",
-      "label": "Reviews shown initially",
-      "min": 2,
-      "max": 12,
+      "id": "slides_desktop",
+      "label": "Slides per view (desktop)",
+      "min": 1,
+      "max": 4,
       "step": 1,
       "default": 3
     },
     {
       "type": "range",
-      "id": "load_more_step",
-      "label": "Reviews loaded per click",
-      "min": 2,
-      "max": 12,
+      "id": "slides_mobile",
+      "label": "Slides per view (mobile)",
+      "min": 1,
+      "max": 3,
       "step": 1,
-      "default": 3
+      "default": 1
     }
   ],
   "presets": [
     {
-      "name": "Product Reviews",
+      "name": "Product Reviews Carousel",
       "category": "Product"
     }
   ]
