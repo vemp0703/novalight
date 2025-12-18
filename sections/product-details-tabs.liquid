@@ -196,7 +196,7 @@
 
             {{ product.metafields.metakey }}
 
-            {{ product.metafields.metakey | metafield_tag }}
+            {{ product.metafields.block.settings.metafield_key | metafield_tag }}
             {% endif %}
       </div>
     </div>
