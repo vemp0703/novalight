@@ -92,7 +92,7 @@
 
     {% if section_data.clinical_result_item.value != blank %}
       <div class="clinical-results__grid">
-        {% for item in section_data.items.value %}
+        {% for item in section_data.clinical_result_item.value %}
           <div class="clinical-card">
             <span class="clinical-card__bar"
               style="background: {{ item.accent_color }};"></span>
