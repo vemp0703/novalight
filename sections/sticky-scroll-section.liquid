@@ -6,45 +6,47 @@
       
       <!-- Left sticky image -->
       <div class="lg:sticky lg:top-24">
-        <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="{{ section_items.heading }}" class="w-full h-auto rounded-lg shadow-md">
+        <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="{{ section_items.heading }}" class="w-full h-auto rounded-xl shadow-lg">
       </div>
 
       <!-- Right scrolling content -->
-      <div class="space-y-8">
-        <!-- Section Heading -->
+      <div class="space-y-10">
         {% if section_items.heading != blank %}
-          <h2 class="text-3xl font-bold text-gray-900">{{ section_items.heading }}</h2>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">{{ section_items.heading }}</h2>
         {% endif %}
 
         {% if section_items.sub_heading != blank %}
-          <p class="text-gray-700 text-base">{{ section_items.sub_heading }}</p>
+          <p class="text-gray-700 text-base lg:text-lg">{{ section_items.sub_heading }}</p>
         {% endif %}
 
-        <!-- Scrollable items -->
         <div class="space-y-8">
           {% for item in section_items.section_items.value %}
-            <div class="scroll-item opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
+            <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
               
-              {% if item.numeric != blank %}
-                <div class="text-3xl font-bold text-gray-900 mb-2">{{ item.numeric }}</div>
+              <!-- Icon circle -->
+              {% if item.icon != blank %}
+                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: {{ item.gradient | default: '#ddd' }};">
+                  <img src="{{ item.icon | img_url: '48x48' }}" alt="icon" class="w-6 h-6">
+                </div>
               {% endif %}
 
-              {% if item.heading != blank %}
-                <h3 class="text-xl font-semibold text-gray-800 mb-1">{{ item.heading }}</h3>
-              {% endif %}
+              <div class="flex-1">
+                {% if item.numeric != blank %}
+                  <div class="text-lg font-semibold text-gray-500 mb-1">{{ item.numeric }}</div>
+                {% endif %}
 
-              {% if item.image != blank %}
-                <img src="{{ item.image | img_url: '800x' }}" alt="{{ item.heading }}" class="w-full h-auto rounded-md shadow-sm mb-2">
-              {% endif %}
+                {% if item.heading != blank %}
+                  <h3 class="text-xl font-bold text-gray-900 mb-1">{{ item.heading }}</h3>
+                {% endif %}
 
-              {% if item.content != blank %}
-                <p class="text-gray-600">{{ item.content }}</p>
-              {% endif %}
+                {% if item.content != blank %}
+                  <p class="text-gray-600 leading-relaxed">{{ item.content }}</p>
+                {% endif %}
 
-              {% if item.gradient != blank %}
-                <div class="h-1 rounded mt-2" style="background: {{ item.gradient }}"></div>
-              {% endif %}
-              
+                {% if item.gradient != blank %}
+                  <div class="h-1 rounded mt-3" style="background: {{ item.gradient }}"></div>
+                {% endif %}
+              </div>
             </div>
           {% endfor %}
         </div>
@@ -53,19 +55,16 @@
   </section>
 
   <style>
-    /* Sticky left image for large screens */
     @media (min-width: 1024px) {
       .product-sticky-scroll-section .lg\:sticky {
-        top: 6rem; /* adjust according to header height */
+        top: 6rem;
       }
     }
   </style>
 
   <script>
-    // Fade-in scroll animation
     document.addEventListener('DOMContentLoaded', function() {
       const items = document.querySelectorAll('.scroll-item');
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
