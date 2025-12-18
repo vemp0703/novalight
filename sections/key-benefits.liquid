@@ -78,6 +78,8 @@
 
     {% if section.settings.heading != blank %}
       <h2 class="key-benefits__heading">
+
+        {{ section.settings | json }}
         {{ section.settings.heading }}
       </h2>
     {% endif %}
