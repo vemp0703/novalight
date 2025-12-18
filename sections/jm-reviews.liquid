@@ -1,18 +1,26 @@
+{% if product %}
+
 {% style %}
-/* SECTION */
+/* ================================
+   SECTION WRAPPER
+================================ */
 .jm-design-reviews {
   padding: 80px 0;
   text-align: center;
 }
 
-/* HEADING */
+/* ================================
+   HEADING
+================================ */
 .jm-heading {
   font-size: 38px;
   font-weight: 500;
   margin-bottom: 16px;
 }
 
-/* STAR SUMMARY */
+/* ================================
+   RATING SUMMARY
+================================ */
 .jm-rating-summary {
   margin-bottom: 50px;
 }
@@ -28,7 +36,9 @@
   margin-top: 6px;
 }
 
-/* BREAKDOWN CARD */
+/* ================================
+   BREAKDOWN CARD
+================================ */
 .jm-breakdown-card {
   max-width: 560px;
   margin: 0 auto 70px;
@@ -46,13 +56,17 @@
   margin-bottom: 22px;
 }
 
-/* REMOVE DEFAULT TITLES */
+/* ================================
+   REMOVE DEFAULT TITLES
+================================ */
 .jdgm-widget-title,
 .jdgm-subtitle {
   display: none !important;
 }
 
-/* HISTOGRAM */
+/* ================================
+   HISTOGRAM
+================================ */
 .jdgm-histogram__row {
   align-items: center;
 }
@@ -73,14 +87,23 @@
   color: #6b7280;
 }
 
-/* REVIEWS GRID */
+/* Prevent CLS while loading */
+.jdgm-histogram-widget:empty {
+  min-height: 120px;
+}
+
+/* ================================
+   REVIEWS GRID
+================================ */
 .jm-review-grid .jdgm-revs-tab {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
-/* REVIEW CARD */
+/* ================================
+   REVIEW CARD
+================================ */
 .jdgm-rev {
   border: 1px solid #e5e7eb;
   border-radius: 16px;
@@ -109,7 +132,9 @@
   color: #6b7280;
 }
 
-/* RESPONSIVE */
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 1024px) {
   .jm-review-grid .jdgm-revs-tab {
     grid-template-columns: repeat(2, 1fr);
@@ -121,16 +146,16 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 {% endstyle %}
-{% if product %}
+
 <section class="jm-design-reviews page-width">
 
   <!-- Heading -->
-  <h2 class="jm-heading">Loved by 10,000+ Customers</h2>
+  <h2 class="jm-heading">
+    {{ section.settings.heading }}
+  </h2>
 
-  <!-- Stars + Rating -->
+  <!-- Rating Badge -->
   <div class="jm-rating-summary">
     <div
       class="jdgm-preview-badge"
@@ -140,15 +165,17 @@
   </div>
 
   <!-- Rating Breakdown -->
-  <div class="jm-breakdown-card">
-    <h4>Rating Breakdown</h4>
+  {% if section.settings.show_breakdown %}
+    <div class="jm-breakdown-card">
+      <h4>{{ section.settings.breakdown_heading }}</h4>
 
-    <div
-      class="jdgm-widget"
-      data-product-id="{{ product.id }}"
-      data-template="histogram"
-    >{{ product.metafields.judgeme.histogram }}</div>
-  </div>
+      <div
+        class="jdgm-widget jdgm-histogram-widget"
+        data-product-id="{{ product.id }}"
+        data-template="histogram"
+      ></div>
+    </div>
+  {% endif %}
 
   <!-- Reviews -->
   <div class="jm-review-grid">
@@ -156,13 +183,13 @@
       class="jdgm-widget"
       data-product-id="{{ product.id }}"
       data-template="reviews"
-      data-per-page="3"
+      data-per-page="{{ section.settings.reviews_limit }}"
     ></div>
   </div>
 
 </section>
-{% endif %}
 
+{% endif %}
 
 {% schema %}
 {
@@ -189,7 +216,7 @@
     {
       "type": "range",
       "id": "reviews_limit",
-      "label": "Number of reviews",
+      "label": "Number of reviews per page",
       "min": 1,
       "max": 6,
       "step": 1,
