@@ -1,14 +1,38 @@
-{% comment %}
-  Section: Product Reviews
-  Requires Judge.me app
-{% endcomment %}
+{% schema %}
+{
+  "name": "Product Reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Reviews Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Loved by Customers"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews",
+      "category": "Product",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
 
+{% if section.settings.show_section %}
 <section class="product-reviews">
   <div class="page-width">
 
     <!-- Top Rating -->
     <div class="reviews-header">
-      <h3>Loved by {{ product.metafields.judgeme.total_reviews.value | default: 0 }} Customers</h3>
+      <h3>{{ section.settings.section_heading }} {{ product.metafields.judgeme.total_reviews.value | default: 0 }} Customers</h3>
       <div class="reviews-summary">
         <div class="stars">
           {% assign avg_rating = product.metafields.judgeme.average_rating.value | default: 0 %}
@@ -71,142 +95,4 @@
 
   </div>
 </section>
-
-{% style %}
-.product-reviews {
-  padding: 60px 0;
-  font-family: sans-serif;
-}
-.reviews-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.reviews-header h3 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.reviews-summary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-}
-.stars .star {
-  color: #ccc;
-  font-size: 20px;
-}
-.stars .star.filled {
-  color: #FFC107;
-}
-.rating-number {
-  font-weight: 600;
-  font-size: 20px;
-}
-.verified-count {
-  font-size: 14px;
-  color: #777;
-}
-.rating-breakdown {
-  max-width: 400px;
-  margin: 0 auto 50px;
-}
-.rating-breakdown h4 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-.rating-bar-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  gap: 10px;
-}
-.star-label {
-  width: 30px;
-  font-size: 14px;
-}
-.bar-wrapper {
-  flex: 1;
-  background: #eee;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.bar {
-  height: 100%;
-  background: #FFC107;
-  border-radius: 5px;
-}
-.count {
-  width: 25px;
-  text-align: right;
-  font-size: 14px;
-}
-.reviews-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.review-card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 20px;
-  background: #fff;
-}
-.review-stars .star {
-  font-size: 16px;
-  color: #ccc;
-}
-.review-stars .star.filled {
-  color: #FFC107;
-}
-.review-title {
-  font-weight: 600;
-  margin: 10px 0 5px;
-}
-.review-content {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
-}
-.review-meta {
-  font-size: 12px;
-  color: #999;
-  display: flex;
-  gap: 10px;
-}
-.review-helpful {
-  font-size: 12px;
-  color: #555;
-  margin-top: 5px;
-}
-{% endstyle %}
-{% schema %}
-{
-  "name": "Product Reviews",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_section",
-      "label": "Show Reviews Section",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "section_heading",
-      "label": "Section Heading",
-      "default": "Loved by Customers"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product Reviews",
-      "category": "Product",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+{% endif %}
