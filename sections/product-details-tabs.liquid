@@ -187,6 +187,9 @@
       </div>
 
       <div class="product-details-card">
+
+        {{  product.metafields.tabs | json}}
+
         {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
             {% elsif product.metafields.tabs[block.settings.metafield_key] != blank %}
