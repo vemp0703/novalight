@@ -1,6 +1,7 @@
 <section class="sticky-scroll-section">
   {% assign sections = product.metafields.custom.sticky_and_scroll_section.value %}
   
+  {{ sections | json }}
   {% if sections %}
     {% for section in sections %}
       <div class="sticky-scroll-item">
