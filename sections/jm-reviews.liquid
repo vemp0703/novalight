@@ -1,3 +1,76 @@
+{% style %}
+  .jm-design-reviews {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.jm-heading {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Summary */
+.jm-rating-summary {
+  margin-bottom: 40px;
+}
+
+/* Breakdown Card */
+.jm-breakdown-card {
+  max-width: 520px;
+  margin: 0 auto 60px;
+  padding: 28px;
+  background: #f9fbfd;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.jm-breakdown-card h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Hide Judge.me titles */
+.jdgm-widget-title,
+.jdgm-subtitle {
+  display: none !important;
+}
+
+/* Histogram bars */
+.jdgm-histogram__bar-content {
+  background: linear-gradient(90deg, #ffb703, #ff9800) !important;
+  border-radius: 20px;
+}
+
+/* Reviews Grid */
+.jm-review-grid .jdgm-revs-tab {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Review Cards */
+.jdgm-rev {
+  border: 1px solid #e6ecf2;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .jm-review-grid .jdgm-revs-tab {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .jm-review-grid .jdgm-revs-tab {
+    grid-template-columns: 1fr;
+  }
+}
+
+{% endstyle %}
 {% if product %}
 
     {{ product.id }}
