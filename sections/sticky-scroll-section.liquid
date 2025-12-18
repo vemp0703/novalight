@@ -1,126 +1,128 @@
 {% if product.metafields.custom.sticky_and_scroll_section != blank %}
 {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
-<section class="product-sticky-scroll-section">
+<section class="pinned-scroll-section">
 
-  <div class="sticky-wrapper">
+  <!-- This creates scroll space -->
+  <div class="pin-spacer">
 
-    <!-- LEFT COLUMN (STICKY IMAGE) -->
-    <div class="sticky-image">
-      {% if section_items.primary_image != blank %}
-        <img 
-          src="{{ section_items.primary_image | img_url: '800x' }}"
-          alt="{{ section_items.heading }}">
-      {% endif %}
-    </div>
+    <!-- This stays pinned -->
+    <div class="pin-container">
 
-    <!-- RIGHT COLUMN (SCROLLABLE CONTENT) -->
-    <div class="scroll-content">
+      <div class="pin-layout">
 
-      {% if section_items.heading != blank %}
-        <h2 class="section-heading">{{ section_items.heading }}</h2>
-      {% endif %}
-
-      {% if section_items.sub_heading != blank %}
-        <p class="section-subheading">{{ section_items.sub_heading }}</p>
-      {% endif %}
-
-      {% for item in section_items.section_items.value %}
-        <div class="scroll-item">
-          <div class="scroll-icon" style="background: {{ item.gradient }};">
-            {% if item.numeric != blank %}
-              {{ item.numeric }}
-            {% endif %}
-          </div>
-
-          <div class="scroll-text">
-            <h3>{{ item.heading }}</h3>
-            <p>{{ item.content }}</p>
-          </div>
+        <!-- LEFT (STICKY IMAGE) -->
+        <div class="pin-image">
+          {% if section_items.primary_image != blank %}
+            <img
+              src="{{ section_items.primary_image | img_url: '800x' }}"
+              alt="{{ section_items.heading }}">
+          {% endif %}
         </div>
-      {% endfor %}
 
+        <!-- RIGHT (SCROLLABLE CONTENT) -->
+        <div class="pin-scroll">
+
+          {% if section_items.heading != blank %}
+            <h2>{{ section_items.heading }}</h2>
+          {% endif %}
+
+          {% if section_items.sub_heading != blank %}
+            <p>{{ section_items.sub_heading }}</p>
+          {% endif %}
+
+          {% for item in section_items.section_items.value %}
+            <div class="pin-item">
+              <div class="pin-icon" style="background: {{ item.gradient }};">
+                {{ item.numeric }}
+              </div>
+              <div>
+                <h3>{{ item.heading }}</h3>
+                <p>{{ item.content }}</p>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
     </div>
 
   </div>
-
 </section>
 
 <style>
-/* ================================
-   GLOBAL FIX (SHOPIFY SAFE)
+/* ===============================
+   CRITICAL SHOPIFY FIX
 ================================ */
-.product-sticky-scroll-section {
+.pinned-scroll-section {
   width: 100%;
-  max-width: 100vw;
   overflow: visible !important;
-  padding: 80px 0;
 }
 
-.product-sticky-scroll-section * {
-  box-sizing: border-box;
-}
-
-/* ================================
-   LAYOUT
+/* ===============================
+   SCROLL SPACE CREATOR
 ================================ */
-.sticky-wrapper {
+.pin-spacer {
+  height: 200vh; /* 🔥 controls how long section stays */
+  position: relative;
+}
+
+/* ===============================
+   PINNED CONTAINER
+================================ */
+.pin-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: center;
+  background: #fff;
+}
+
+/* ===============================
+   TWO COLUMN LAYOUT
+================================ */
+.pin-layout {
+  display: flex;
   gap: 48px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 24px;
 }
 
-/* ================================
-   LEFT STICKY IMAGE
+/* ===============================
+   LEFT IMAGE
 ================================ */
-.sticky-image {
+.pin-image {
   flex: 0 0 50%;
-  position: sticky;
-  top: 120px;
 }
 
-.sticky-image img {
+.pin-image img {
   width: 100%;
   border-radius: 18px;
-  display: block;
 }
 
-/* ================================
-   RIGHT SCROLL AREA
+/* ===============================
+   RIGHT SCROLL
 ================================ */
-.scroll-content {
+.pin-scroll {
   flex: 0 0 50%;
-  height: 70vh;
+  max-height: 70vh;
   overflow-y: auto;
   padding-right: 12px;
 }
 
-/* ================================
-   CONTENT STYLING
+/* ===============================
+   CONTENT
 ================================ */
-.section-heading {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.section-subheading {
-  font-size: 16px;
-  margin-bottom: 32px;
-  color: #666;
-}
-
-.scroll-item {
+.pin-item {
   display: flex;
   gap: 16px;
   margin-bottom: 28px;
 }
 
-.scroll-icon {
+.pin-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -129,38 +131,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
-.scroll-text h3 {
-  margin: 0 0 4px;
-  font-size: 18px;
-}
-
-.scroll-text p {
-  margin: 0;
-  color: #666;
-  font-size: 15px;
-}
-
-/* ================================
-   MOBILE FIX
+/* ===============================
+   MOBILE FALLBACK
 ================================ */
 @media (max-width: 1024px) {
-  .sticky-wrapper {
+  .pin-spacer {
+    height: auto;
+  }
+
+  .pin-container {
+    position: relative;
+    height: auto;
+  }
+
+  .pin-layout {
     flex-direction: column;
   }
 
-  .sticky-image,
-  .scroll-content {
-    flex: 0 0 100%;
-    position: relative;
-    height: auto;
+  .pin-scroll {
+    max-height: none;
     overflow: visible;
-  }
-
-  .sticky-image {
-    top: 0;
   }
 }
 </style>
