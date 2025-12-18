@@ -201,65 +201,50 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const loadMoreBtn = document.getElementById("loadMoreReviews");
   if (!loadMoreBtn) return;
 
-  let loading = false;
+  let isLoading = false;
 
-  function showInitialReviews() {
-    const reviews = document.querySelectorAll(".jdgm-rev");
-    reviews.forEach((rev, index) => {
-      rev.style.display = index < {{ section.settings.initial_reviews }} ? "block" : "none";
-    });
+  function getVisibleReviews() {
+    return document.querySelectorAll(".jdgm-rev").length;
   }
 
-  function revealMore() {
-    const hidden = [...document.querySelectorAll(".jdgm-rev")].filter(
-      r => r.style.display === "none"
-    );
-
-    hidden.slice(0, {{ section.settings.load_more_step }}).forEach(r => {
-      r.style.display = "block";
-    });
-
-    if (document.querySelectorAll(".jdgm-rev").length ===
-        document.querySelectorAll(".jdgm-rev[style*='block']").length) {
-      tryLoadNextPage();
-    }
+  function getNextButton() {
+    return document.querySelector(".jdgm-paginate__next:not(.jdgm-disabled)");
   }
 
-  function tryLoadNextPage() {
-    if (loading) return;
+  function loadNextPage() {
+    const nextBtn = getNextButton();
 
-    const nextBtn = document.querySelector(".jdgm-paginate__next");
     if (!nextBtn) {
       loadMoreBtn.style.display = "none";
       return;
     }
 
-    loading = true;
+    if (isLoading) return;
+    isLoading = true;
+
     nextBtn.click();
 
+    // Wait for Judge.me to inject new reviews
     setTimeout(() => {
-      loading = false;
-      showInitialReviews();
-    }, 1200);
+      isLoading = false;
+
+      // If still has next page, keep button visible
+      if (!getNextButton()) {
+        loadMoreBtn.style.display = "none";
+      }
+    }, 1500);
   }
 
   loadMoreBtn.addEventListener("click", function () {
-    revealMore();
+    loadNextPage();
   });
-
-  // Initial load
-  const observer = new MutationObserver(() => {
-    showInitialReviews();
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
 
 });
 </script>
+
 
 
 {% schema %}
