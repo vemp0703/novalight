@@ -68,7 +68,9 @@
 
 {% assign benefits = product.metafields.custom.product_benefits.value %}
 
-{% if benefits != blank %}
+
+
+
 <section class="key-benefits">
   <div class="page-width">
 
@@ -83,7 +85,7 @@
         {{ section.settings.subheading }}
       </p>
     {% endif %}
-
+{% if benefits != blank %}
     <div class="key-benefits__grid">
       {% for item in benefits %}
         <div
