@@ -2,10 +2,10 @@
 {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
 <section class="product-sticky-scroll-section mt-12">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-    
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
+
     <!-- Left sticky image -->
-    <div class="lg:sticky lg:top-24">
+    <div class="sticky-image">
       {% if section_items.primary_image != blank %}
         <img src="{{ section_items.primary_image | img_url: '800x' }}" 
              alt="{{ section_items.heading }}" 
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Right scroll content -->
-    <div class="space-y-10">
+    <div class="scroll-content space-y-10">
 
       <!-- Section Heading -->
       {% if section_items.heading != blank %}
@@ -27,7 +27,7 @@
       <!-- Scrollable Items -->
       <div class="space-y-8">
         {% for item in section_items.section_items.value %}
-          <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
+          <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6">
 
             <!-- Icon / Numeric -->
             <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
@@ -61,34 +61,54 @@
 <style>
 /* Sticky image for large screens */
 @media (min-width: 1024px) {
-  .product-sticky-scroll-section .lg\:sticky {
-    top: 6rem; /* Adjust for your header */
+  .sticky-image {
+    position: sticky;
+    top: 6rem; /* adjust for header */
   }
 }
 
-/* Smooth fade-in for scroll items */
+/* Initial scroll item state */
 .scroll-item {
   transition: all 0.7s ease-out;
-}
-.scroll-item.opacity-100 {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
 
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/ScrollTrigger.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const items = document.querySelectorAll('.scroll-item');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('opacity-100');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+  // Pin left image
+  gsap.registerPlugin(ScrollTrigger);
 
-  items.forEach(item => observer.observe(item));
+  const section = document.querySelector('.product-sticky-scroll-section');
+  const stickyImage = section.querySelector('.sticky-image');
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom bottom",
+    pin: stickyImage,
+    pinSpacing: false
+  });
+
+  // Animate scroll items
+  gsap.utils.toArray('.scroll-item').forEach(item => {
+    gsap.fromTo(item, 
+      { opacity: 0, y: 30 }, 
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play none none none"
+        }
+      });
+  });
 });
 </script>
 
