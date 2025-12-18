@@ -1,0 +1,238 @@
+{% if product.metafields.custom.product_video_gallery != blank %}
+<section class="theraface-videos">
+  <div class="container">
+
+    {% if section.settings.badge_text != blank %}
+      <span class="badge">{{ section.settings.badge_text }}</span>
+    {% endif %}
+
+    <h2>{{ section.settings.heading }}</h2>
+
+    {% if section.settings.subtitle != blank %}
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="video-row">
+
+      {% for video in product.metafields.custom.product_video_gallery.value %}
+        <div class="video-card">
+
+          {% if video.alt != blank %}
+            <span class="views">{{ video.alt }}</span>
+          {% endif %}
+
+          <div class="video-thumb">
+            {{ video | video_tag: 
+              image_size: '600x', 
+              controls: false, 
+              preload: 'metadata',
+              muted: true
+            }}
+            <span class="play-btn">▶</span>
+          </div>
+
+          <div class="video-info">
+            <strong>{{ video.title | default: 'Customer Review' }}</strong>
+            <span>{{ video.author | default: 'Verified User' }}</span>
+          </div>
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+    {% if section.settings.cta_text != blank %}
+      <p class="cta-text">{{ section.settings.cta_text }}</p>
+    {% endif %}
+
+    {% if section.settings.cta_label != blank %}
+      <a href="{{ section.settings.cta_link }}" class="cta-btn">
+        {{ section.settings.cta_label }}
+      </a>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+.theraface-videos {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.theraface-videos .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.theraface-videos .badge {
+  display: inline-block;
+  background: #f0f4ff;
+  color: #3b5cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.theraface-videos h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.theraface-videos .subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.video-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.video-card {
+  min-width: 260px;
+  text-align: left;
+  position: relative;
+}
+
+.views {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.video-thumb {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-thumb video {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.9);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.video-info {
+  padding: 10px 5px;
+}
+
+.video-info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.video-info span {
+  font-size: 13px;
+  color: #777;
+}
+
+.cta-text {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 14px 28px;
+  background: #2b6cff;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.video-thumb video').forEach(video => {
+    video.addEventListener('click', function () {
+      if (this.paused) {
+        this.play();
+        this.setAttribute('controls', 'controls');
+      } else {
+        this.pause();
+      }
+    });
+  });
+});
+</script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Video Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "▶ Real Results from Real People"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "See TheraFace in Action"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Watch verified users and skincare experts share their transformation stories"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Ready to see results like these?"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button label",
+      "default": "Get Your TheraFace Mask Today"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Video Gallery"
+    }
+  ]
+}
+{% endschema %}
