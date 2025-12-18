@@ -39,9 +39,13 @@
 }
 
 .clinical-results__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 26px;
+display: grid;
+width: 1042px;
+height: 282px;
+row-gap: 32px;
+column-gap: 32px;
+grid-template-rows: repeat(1, minmax(0, 1fr));
+grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .clinical-card {
