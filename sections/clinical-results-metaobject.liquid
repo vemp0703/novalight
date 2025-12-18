@@ -70,7 +70,7 @@
 {% endstyle %}
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
-{% assign items = section_data.result_items.value %}
+{% assign items = section_data.result_items %}
 
 {{ section_data |json }}
 
