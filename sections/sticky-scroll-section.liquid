@@ -19,7 +19,7 @@ Product Sticky & Scroll Section
           <!-- Left Image (Sticky) -->
           {% if section_item.metafields.primary_image.value != blank %}
             <div class="sticky-image">
-              <img src="{{ section_item.primary_image.value | img_url: '800x' }}" alt="{{ section_item.metafields.heading.value }}">
+              <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.metafields.heading.value }}">
             </div>
           {% endif %}
 
