@@ -146,7 +146,7 @@
             "icon": "shopify://shop_images/Leaf.svg",
             "label": "Care & Maintenance",
             "description": "Detailed information and specifications",
-            "metafield_key": ""
+            "metafield_key": "custom.product_care_and_maintaince"
           }
         }
       },
