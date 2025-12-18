@@ -1,81 +1,95 @@
 {% if product.metafields.custom.sticky_and_scroll_section != blank %}
-  {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
+{% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
-  <section class="product-sticky-scroll-section mt-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-      
-      <!-- Left sticky image -->
-      <div class="lg:sticky lg:top-24">
-        <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="{{ section_items.heading }}" class="w-full h-auto rounded-xl shadow-lg">
-      </div>
-
-      <!-- Right scrolling content -->
-      <div class="space-y-10">
-        {% if section_items.heading != blank %}
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">{{ section_items.heading }}</h2>
-        {% endif %}
-
-        {% if section_items.sub_heading != blank %}
-          <p class="text-gray-700 text-base lg:text-lg">{{ section_items.sub_heading }}</p>
-        {% endif %}
-
-        <div class="space-y-8">
-          {% for item in section_items.section_items.value %}
-            <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
-              
-              <!-- Icon circle -->
-              {% if item.icon != blank %}
-                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: {{ item.gradient | default: '#ddd' }};">
-                  <img src="{{ item.icon | img_url: '48x48' }}" alt="icon" class="w-6 h-6">
-                </div>
-              {% endif %}
-
-              <div class="flex-1">
-                {% if item.numeric != blank %}
-                  <div class="text-lg font-semibold text-gray-500 mb-1">{{ item.numeric }}</div>
-                {% endif %}
-
-                {% if item.heading != blank %}
-                  <h3 class="text-xl font-bold text-gray-900 mb-1">{{ item.heading }}</h3>
-                {% endif %}
-
-                {% if item.content != blank %}
-                  <p class="text-gray-600 leading-relaxed">{{ item.content }}</p>
-                {% endif %}
-
-                {% if item.gradient != blank %}
-                  <div class="h-1 rounded mt-3" style="background: {{ item.gradient }}"></div>
-                {% endif %}
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
+<section class="product-sticky-scroll-section mt-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    
+    <!-- Left sticky image -->
+    <div class="lg:sticky lg:top-24">
+      {% if section_items.primary_image != blank %}
+        <img src="{{ section_items.primary_image | img_url: '800x' }}" 
+             alt="{{ section_items.heading }}" 
+             class="w-full h-auto rounded-xl shadow-lg">
+      {% endif %}
     </div>
-  </section>
 
-  <style>
-    @media (min-width: 1024px) {
-      .product-sticky-scroll-section .lg\:sticky {
-        top: 6rem;
+    <!-- Right scroll content -->
+    <div class="space-y-10">
+
+      <!-- Section Heading -->
+      {% if section_items.heading != blank %}
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">{{ section_items.heading }}</h2>
+      {% endif %}
+      {% if section_items.sub_heading != blank %}
+        <p class="text-gray-600 text-base lg:text-lg">{{ section_items.sub_heading }}</p>
+      {% endif %}
+
+      <!-- Scrollable Items -->
+      <div class="space-y-8">
+        {% for item in section_items.section_items.value %}
+          <div class="scroll-item flex items-start space-x-4 opacity-0 transform translate-y-6 transition-all duration-700 ease-out">
+
+            <!-- Icon / Numeric -->
+            <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+                 style="background: {{ item.gradient }};">
+              {% if item.icon != blank %}
+                <img src="{{ item.icon | img_url: '48x48' }}" alt="" class="w-6 h-6">
+              {% elsif item.numeric != blank %}
+                <span class="text-white font-bold text-lg">{{ item.numeric }}</span>
+              {% endif %}
+            </div>
+
+            <!-- Step content -->
+            <div>
+              {% if item.heading != blank %}
+                <h3 class="text-xl font-semibold text-gray-800">{{ item.heading }}</h3>
+              {% endif %}
+              {% if item.content != blank %}
+                <p class="text-gray-600 mt-1">{{ item.content }}</p>
+              {% endif %}
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* Sticky image for large screens */
+@media (min-width: 1024px) {
+  .product-sticky-scroll-section .lg\:sticky {
+    top: 6rem; /* Adjust for your header */
+  }
+}
+
+/* Smooth fade-in for scroll items */
+.scroll-item {
+  transition: all 0.7s ease-out;
+}
+.scroll-item.opacity-100 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.scroll-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100');
+        observer.unobserve(entry.target);
       }
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const items = document.querySelectorAll('.scroll-item');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0', 'translate-y-6');
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-
-      items.forEach(item => observer.observe(item));
     });
-  </script>
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+});
+</script>
+
 {% endif %}
