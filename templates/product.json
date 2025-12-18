@@ -187,59 +187,6 @@
       "name": "Clinical Results (Metaobject)",
       "settings": {}
     },
-    "1766085241df1922b8": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_mpwRT3": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        },
-        "judge_me_reviews_cards_carousel_CpaQnY": {
-          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "show_sample_reviews": true,
-            "reviews_selection": "all",
-            "products": [],
-            "star_rating": "all",
-            "show_review_media": true,
-            "display_order": "media_first",
-            "no_image_fallback": "review_text_only",
-            "max_reviews": 20,
-            "review_length": "medium",
-            "text_size": "medium",
-            "image_ratio": "1",
-            "reviews_shown": 4,
-            "show_reviewer_name": true,
-            "show_product_name": true,
-            "hide_arrows_mobile": true,
-            "arrows_position": "sides",
-            "max_width": 1100,
-            "corner_styling": "soft",
-            "header_text_color": "#000000",
-            "text_color": "#000000",
-            "card_color": "#f9f9f9",
-            "stars_color": "",
-            "arrows_color": "#000000",
-            "transition_speed": 5,
-            "header_text": "",
-            "show_average_rating": false
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_mpwRT3",
-        "judge_me_reviews_cards_carousel_CpaQnY"
-      ],
-      "name": "Reviews",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -275,8 +222,7 @@
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
-    "1766085241df1922b8",
-    "related-products",
-    "product_judgme_review_VkBKVh"
+    "product_judgme_review_VkBKVh",
+    "related-products"
   ]
 }
