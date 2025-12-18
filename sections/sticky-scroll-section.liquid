@@ -1,27 +1,91 @@
 {% if product.metafields.custom.sticky_and_scroll_section != blank %}
   {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
-  
-  <section class="left__conatiner">
-    <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="Image description">
-</section>
 
-<section class="right__container">
+  <section class="sticky-scroll-section">
+    <!-- Left sticky image -->
+    <div class="left-container">
+      <img src="{{ section_items.primary_image | img_url: '800x' }}" alt="Image description">
+    </div>
 
-    {{section_items.heading}}
+    <!-- Right scrolling content -->
+    <div class="right-container">
+      <h2>{{ section_items.heading }}</h2>
+      <p>{{ section_items.sub_heading }}</p>
 
-    {{section_items.sub_heading}}
+      <div class="scroll-items">
+        {% for item in section_items.section_items.value %}
+          <div class="scroll-item">
+            <img src="{{ item.image | img_url: '800x' }}" alt="Item image">
+            <span class="numeric">{{ item.numeric }}</span>
+            <h3>{{ item.heading }}</h3>
+            <p>{{ item.content }}</p>
+            <div class="gradient" style="background: {{ item.gradient }}"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
+  <style>
+    .sticky-scroll-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
 
-    {% for item in section_items.section_items.value %}
+    .left-container {
+      flex: 1 1 40%;
+      position: sticky;
+      top: 2rem; /* adjust for your header */
+      max-height: 90vh;
+    }
 
-        <img src="{{ item.image | img_url: '800x' }}" alt="Image description">
-        {{item.numeric}}
-        {{item.heading}}
-        {{item.content}}
-        {{item.gradient}}
-    {% endfor %}
+    .left-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
+    .right-container {
+      flex: 1 1 55%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
 
-</section>
+    .scroll-items {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
+    .scroll-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .numeric {
+      font-weight: bold;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .gradient {
+      height: 5px;
+      margin-top: 0.5rem;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-scroll-section {
+        flex-direction: column;
+      }
+      .left-container, .right-container {
+        flex: 1 1 100%;
+        position: relative;
+        max-height: none;
+      }
+    }
+  </style>
 {% endif %}
