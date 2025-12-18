@@ -179,12 +179,20 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "product_highlights_zpBYAV": {
+      "type": "product-highlights",
+      "name": "Product Highlights",
+      "settings": {
+        "heading": "Product Specifications"
+      }
     }
   },
   "order": [
     "main",
     "product_usp_bar_NWh8XU",
     "product_details_tabs_cPkNBp",
+    "product_highlights_zpBYAV",
     "related-products"
   ]
 }
