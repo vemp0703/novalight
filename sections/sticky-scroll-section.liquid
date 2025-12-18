@@ -1,48 +1,49 @@
 {% comment %}
-Sticky & Scroll Section (Block Version)
-- Metaobject: custom.sticky_and_scroll_section
-- Each block can have:
-  - Primary Image
-  - Heading
-  - Sub Heading
-  - Section Items (list of items)
+Product Sticky & Scroll Section
+- Uses product metafield: custom.sticky_and_scroll_section
+- Each metaobject should have:
+  - primary_image
+  - heading
+  - sub_heading
+  - section_items (list of items with icon, heading, number)
 {% endcomment %}
 
 <section class="sticky-scroll-section-wrapper">
-  {% if section.blocks.size > 0 %}
-    {% for block in section.blocks %}
-      {% assign section_item = block.settings.section_item %}
+  {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section.value %}
+  {% if sticky_sections != blank %}
+    {% for section_item in sticky_sections %}
 
       <div class="sticky-scroll-section">
         <div class="sticky-scroll-wrapper">
 
           <!-- Left Image (Sticky) -->
-          {% if section_item.primary_image %}
+          {% if section_item.metafields.primary_image.value != blank %}
             <div class="sticky-image">
-              <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
+              <img src="{{ section_item.metafields.primary_image.value | img_url: '800x' }}" alt="{{ section_item.metafields.heading.value }}">
             </div>
           {% endif %}
 
           <!-- Right Content (Scrollable) -->
           <div class="scroll-content">
-            {% if section_item.heading %}
-              <h2>{{ section_item.heading }}</h2>
+            {% if section_item.metafields.heading.value != blank %}
+              <h2>{{ section_item.metafields.heading.value }}</h2>
             {% endif %}
-            {% if section_item.sub_heading %}
-              <p>{{ section_item.sub_heading }}</p>
+            {% if section_item.metafields.sub_heading.value != blank %}
+              <p>{{ section_item.metafields.sub_heading.value }}</p>
             {% endif %}
 
-            {% if section_item.section_items %}
+            {% if section_item.metafields.section_items.value != blank %}
               <div class="items-list">
-                {% for item in section_item.section_items %}
+                {% assign items = section_item.metafields.section_items.value %}
+                {% for item in items %}
                   <div class="item">
-                    {% if item.icon %}
+                    {% if item.icon != blank %}
                       <img src="{{ item.icon | img_url: '100x' }}" alt="{{ item.heading }}">
                     {% endif %}
-                    {% if item.heading %}
+                    {% if item.heading != blank %}
                       <h3>{{ item.heading }}</h3>
                     {% endif %}
-                    {% if item.number %}
+                    {% if item.number != blank %}
                       <p>{{ item.number }}</p>
                     {% endif %}
                   </div>
@@ -53,11 +54,13 @@ Sticky & Scroll Section (Block Version)
 
         </div>
       </div>
+
     {% endfor %}
   {% endif %}
 </section>
 
 <style>
+/* Sticky Scroll Section Styles */
 .sticky-scroll-section-wrapper {
   width: 100%;
   display: flex;
@@ -126,6 +129,7 @@ Sticky & Scroll Section (Block Version)
   font-size: 16px;
 }
 
+/* Responsive */
 @media screen and (max-width: 1024px) {
   .sticky-scroll-wrapper {
     flex-direction: column;
@@ -137,4 +141,3 @@ Sticky & Scroll Section (Block Version)
   }
 }
 </style>
-
