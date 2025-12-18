@@ -187,7 +187,7 @@
       </div>
 
       <div class="product-details-card">
-        {{ tabs[block.settings.metafield_key] }}
+        {{ product.metafields.tabs[block.settings.metafield_key] }}
         {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
             {% elsif product.metafields.tabs[block.settings.metafield_key] != blank %}
