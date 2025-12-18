@@ -1,104 +1,150 @@
 {% comment %}
-  SECTION: Sticky Image + Scrollable Content (Block Version)
-  Shopify section with blocks for dynamic scroll items
+  Section: Sticky and Scroll Section
+  Metaobject: custom.sticky_and_scroll_section
 {% endcomment %}
 
-<section class="sticky-scroll">
-  <div class="page-width sticky-scroll__grid">
-
-    <!-- LEFT: Sticky Image -->
-    <div class="sticky-scroll__left">
-      {% if section.settings.sticky_image != blank %}
-        <img class="sticky-scroll__image"
-             src="{{ section.settings.sticky_image | image_url: width: 900 }}"
-             alt=""
-             loading="lazy">
-      {% endif %}
-    </div>
-
-    <!-- RIGHT: Scrollable Items -->
-    <div class="sticky-scroll__right">
-      <div class="sticky-scroll__items">
-
-        {% for block in section.blocks %}
-          <div class="sticky-scroll__item" data-index="{{ forloop.index0 }}">
-            {% if block.settings.heading != blank %}
-              <h2 class="sticky-scroll__heading">{{ block.settings.heading }}</h2>
-            {% endif %}
-
-            {% if block.settings.sub_heading != blank %}
-              <p class="sticky-scroll__subheading">{{ block.settings.sub_heading }}</p>
-            {% endif %}
-
-            {% if block.settings.item_content != blank %}
-              <div class="sticky-scroll__list">{{ block.settings.item_content }}</div>
-            {% endif %}
+<section class="sticky-scroll-section">
+  {% assign section_data = shop.metaobjects.custom.sticky_and_scroll_section.first %}
+  
+  {% if section_data and section_data.section_items %}
+    {% for item in section_data.section_items %}
+      <div class="sticky-scroll-item">
+        <!-- Left Image (sticky on desktop) -->
+        {% if item.primary_image %}
+          <div class="sticky-scroll-image">
+            <img src="{{ item.primary_image | img_url: '600x' }}" alt="{{ item.heading }}">
           </div>
-        {% endfor %}
+        {% endif %}
 
+        <!-- Right Content -->
+        <div class="sticky-scroll-content">
+          {% if item.heading %}
+            <h2 class="sticky-scroll-heading">{{ item.heading }}</h2>
+          {% endif %}
+
+          {% if item.sub_heading %}
+            <p class="sticky-scroll-subheading">{{ item.sub_heading }}</p>
+          {% endif %}
+
+          {% if item.items %}
+            <div class="sticky-scroll-list">
+              {% for list_item in item.items %}
+                <p class="sticky-scroll-list-item">{{ list_item }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
       </div>
-    </div>
-
-  </div>
+    {% endfor %}
+  {% endif %}
 </section>
 
 <style>
-.sticky-scroll {
-  padding: 100px 0;
+/* Section wrapper */
+.sticky-scroll-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
 }
-.sticky-scroll__grid {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  gap: 60px;
+
+/* Each item wrapper */
+.sticky-scroll-item {
+  display: flex;
+  gap: 2rem;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
-.sticky-scroll__left {
+
+/* Left image */
+.sticky-scroll-image {
+  flex: 0 0 300px;
   position: sticky;
-  top: 120px;
+  top: 2rem; /* spacing from top */
+  height: max-content;
 }
-.sticky-scroll__image {
+
+.sticky-scroll-image img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  object-fit: cover;
+  border-radius: 1rem;
 }
-.sticky-scroll__right {
-  max-height: calc(100vh - 160px);
+
+/* Right content */
+.sticky-scroll-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading and subheading */
+.sticky-scroll-heading {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.sticky-scroll-subheading {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Scrollable items list */
+.sticky-scroll-list {
+  max-height: 300px; /* adjust as needed */
   overflow-y: auto;
-  padding-right: 20px;
+  padding-right: 0.5rem;
+  border-left: 2px solid #eee;
+  padding-left: 1rem;
 }
-.sticky-scroll__item {
-  padding: 60px 0;
-  border-bottom: 1px solid #eee;
+
+/* Each item in the list */
+.sticky-scroll-list-item {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
-.sticky-scroll__item:last-child {
-  border-bottom: none;
+
+/* Optional: scrollbar styling */
+.sticky-scroll-list::-webkit-scrollbar {
+  width: 8px;
 }
-.sticky-scroll__heading {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 12px;
+.sticky-scroll-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
 }
-.sticky-scroll__subheading {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 24px;
-}
-.sticky-scroll__list {
-  padding-left: 18px;
-}
-@media (max-width: 990px) {
-  .sticky-scroll__grid {
-    grid-template-columns: 1fr;
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .sticky-scroll-item {
+    flex-direction: column;
+    align-items: center;
   }
-  .sticky-scroll__left {
-    position: relative;
+  .sticky-scroll-image {
+    position: relative; /* remove sticky on smaller screens */
     top: 0;
-    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
   }
-  .sticky-scroll__right {
-    max-height: none;
-    overflow: visible;
-    padding-right: 0;
+  .sticky-scroll-content {
+    width: 100%;
+  }
+  .sticky-scroll-list {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky-scroll-heading {
+    font-size: 1.5rem;
+  }
+  .sticky-scroll-subheading {
+    font-size: 1rem;
+  }
+  .sticky-scroll-list {
+    max-height: 150px;
+    border-left: none;
+    padding-left: 0;
   }
 }
 </style>
@@ -108,25 +154,17 @@
   "name": "Sticky Scroll Section",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "sticky_image",
-      "label": "Sticky Left Image"
+      "type": "text",
+      "id": "custom_heading",
+      "label": "Optional Heading Above Section",
+      "default": "Your Section Heading"
     }
   ],
-  "blocks": [
-    {
-      "type": "scroll_item",
-      "name": "Scroll Item",
-      "settings": [
-        {"type": "text", "id": "heading", "label": "Heading"},
-        {"type": "text", "id": "sub_heading", "label": "Sub Heading"},
-        {"type": "richtext", "id": "item_content", "label": "Content / List"}
-      ]
-    }
-  ],
-  "max_blocks": 20,
   "presets": [
-    {"name": "Sticky Scroll Section"}
+    {
+      "name": "Sticky Scroll Section",
+      "category": "Custom"
+    }
   ]
 }
 {% endschema %}
