@@ -12,6 +12,7 @@ Product Sticky & Scroll Section
   {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section.value %}
   {% if sticky_sections != blank %}
     {{ sticky_sections.heading }}
+    {{ sticky_sections.sub_heading }}
     {% for section_item in sticky_sections %}
 
       <div class="sticky-scroll-section">
