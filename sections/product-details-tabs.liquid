@@ -188,14 +188,14 @@
 
       <div class="product-details-card">
 
-        {% if block.settings.metafield_key == 'description' %}
+            {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
-            {% elsif block.settings.metafield_key %}
-                {% assign metakey = block.settings.metafield_key %}
 
-                {{ product.metafields.metakey  | metafield_tag}}
+            {% elsif block.settings.metafield_key != blank %}
+            {% assign metakey = block.settings.metafield_key %}
 
-        {% endif %}
+            {{ product.metafields.tabs[metakey] | metafield_tag }}
+            {% endif %}
       </div>
     </div>
   {% endfor %}
