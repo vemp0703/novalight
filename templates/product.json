@@ -209,8 +209,7 @@
       "type": "product-judgme-review",
       "name": "Product Reviews",
       "settings": {
-        "show_section": true,
-        "section_heading": "Loved by Customers"
+        "show_section": true
       }
     }
   },
