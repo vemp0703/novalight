@@ -34,11 +34,16 @@
   height: 44px;
   border-radius: 10px;
   background: var(--accent);
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+}
+
+.key-benefits__icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .key-benefits__title {
@@ -68,8 +73,7 @@
 
 {% assign benefits = product.metafields.custom.product_benefits.value %}
 
-{{  benefits }}
-
+{% if benefits != blank %}
 <section class="key-benefits">
   <div class="page-width">
 
@@ -83,6 +87,7 @@
       <p class="key-benefits__subheading">
         {{ section.settings.subheading }}
       </p>
+    {% endif %}
 
     <div class="key-benefits__grid">
       {% for item in benefits %}
@@ -93,7 +98,11 @@
 
           {% if item.icon.value != blank %}
             <div class="key-benefits__icon">
-              <img src={{ item.icon.value }}>
+              <img
+                src="{{ item.icon.value | image_url: width: 80 }}"
+                alt="{{ item.title.value | escape }}"
+                loading="lazy"
+              >
             </div>
           {% endif %}
 
