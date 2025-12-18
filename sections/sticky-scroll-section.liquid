@@ -1,6 +1,6 @@
 {% comment %}
 Sticky & Scroll Section for Product Metaobjects
-- Product metafield: custom.sticky_and_scroll_section (list of metaobjects)
+- Product metafield: custom.sticky_and_scroll_section
 - Each metaobject should have:
   - primary_image
   - heading
@@ -9,11 +9,10 @@ Sticky & Scroll Section for Product Metaobjects
 {% endcomment %}
 
 <section class="sticky-scroll-section-wrapper">
-  {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section.value %}
+  {% assign sticky_sections = product.metafields.custom.sticky_and_scroll_section %}
   {% if sticky_sections != blank %}
     {% for section_item in sticky_sections %}
 
-        {{ section_item | json }}
       <div class="sticky-scroll-section">
         <div class="sticky-scroll-wrapper">
 
@@ -60,7 +59,6 @@ Sticky & Scroll Section for Product Metaobjects
 </section>
 
 <style>
-/* Sticky Scroll Section Styles */
 .sticky-scroll-section-wrapper {
   width: 100%;
   display: flex;
@@ -141,22 +139,3 @@ Sticky & Scroll Section for Product Metaobjects
   }
 }
 </style>
-
-{% schema %}
-{
-  "name": "Sticky Scroll Section",
-  "settings": [
-    {
-      "type": "product",
-      "id": "product",
-      "label": "Select Product"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Sticky Scroll Section",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
