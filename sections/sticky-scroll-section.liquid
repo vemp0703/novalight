@@ -12,9 +12,9 @@
     {{section_items.sub_heading}}
 
 
-    {% for items in section_items.items.value %}
+    {% for item in section_items.items.value %}
 
-        {{items | json}}
+        {{item | json}}
     {% endfor %}
 
 
