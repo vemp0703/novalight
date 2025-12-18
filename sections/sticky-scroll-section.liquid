@@ -1,47 +1,55 @@
-<section class="sticky-scroll-section">
-  {% assign sections = product.metafields.custom.sticky_and_scroll_section.value %}
-  
-  
-  {% if sections %}
-    
-    {% for section in sections %}
+{% comment %}
+Sticky & Scroll Section (Block Version)
+- Metaobject: custom.sticky_and_scroll_section
+- Each block can have:
+  - Primary Image
+  - Heading
+  - Sub Heading
+  - Section Items (list of items)
+{% endcomment %}
 
-        {{ sections.heading }}
-      <div class="sticky-scroll-item">
+<section class="sticky-scroll-section-wrapper">
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {% assign section_item = block.settings.section_item %}
 
-        <!-- Left: Primary Image -->
-        {% if section.primary_image %}
-          <div class="sticky-scroll-image">
-            <img src="{{ section.primary_image | img_url: '600x' }}" alt="{{ section.heading }}">
-          </div>
-        {% endif %}
+      <div class="sticky-scroll-section">
+        <div class="sticky-scroll-wrapper">
 
-        <!-- Right: Heading, Subheading, Scrollable Items -->
-        <div class="sticky-scroll-content">
-          {% if section.heading %}
-            <h2 class="sticky-scroll-heading">{{ section.heading }}</h2>
-          {% endif %}
-          {% if section.subheading %}
-            <p class="sticky-scroll-subheading">{{ section.subheading }}</p>
-          {% endif %}
-
-          {% if section.section_items %}
-            <div class="sticky-scroll-list">
-              {% for item in section.section_items %}
-                <div class="scroll-item" style="background: {{ item.gradient }}">
-                  {% if item.icon %}
-                    <img class="item-icon" src="{{ item.icon | img_url: '50x50' }}" alt="{{ item.heading }}">
-                  {% endif %}
-                  {% if item.numeric %}
-                    <p class="item-numeric">{{ item.numeric }}</p>
-                  {% endif %}
-                  {% if item.heading %}
-                    <p class="item-heading">{{ item.heading }}</p>
-                  {% endif %}
-                </div>
-              {% endfor %}
+          <!-- Left Image (Sticky) -->
+          {% if section_item.primary_image %}
+            <div class="sticky-image">
+              <img src="{{ section_item.primary_image | img_url: '800x' }}" alt="{{ section_item.heading }}">
             </div>
           {% endif %}
+
+          <!-- Right Content (Scrollable) -->
+          <div class="scroll-content">
+            {% if section_item.heading %}
+              <h2>{{ section_item.heading }}</h2>
+            {% endif %}
+            {% if section_item.sub_heading %}
+              <p>{{ section_item.sub_heading }}</p>
+            {% endif %}
+
+            {% if section_item.section_items %}
+              <div class="items-list">
+                {% for item in section_item.section_items %}
+                  <div class="item">
+                    {% if item.icon %}
+                      <img src="{{ item.icon | img_url: '100x' }}" alt="{{ item.heading }}">
+                    {% endif %}
+                    {% if item.heading %}
+                      <h3>{{ item.heading }}</h3>
+                    {% endif %}
+                    {% if item.number %}
+                      <p>{{ item.number }}</p>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
 
         </div>
       </div>
@@ -50,115 +58,83 @@
 </section>
 
 <style>
-.sticky-scroll-section {
+.sticky-scroll-section-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 50px;
+  padding: 20px;
 }
 
-.sticky-scroll-item {
+.sticky-scroll-section {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.sticky-scroll-image {
-  flex: 0 0 300px;
-  position: sticky;
-  top: 2rem;
-  height: max-content;
+.sticky-scroll-wrapper {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
 }
-.sticky-scroll-image img {
+
+.sticky-image {
+  flex: 0 0 45%;
+  position: sticky;
+  top: 100px;
+}
+
+.sticky-image img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 12px;
 }
 
-.sticky-scroll-content {
+.scroll-content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.sticky-scroll-heading {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-.sticky-scroll-subheading {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.sticky-scroll-list {
-  max-height: 300px;
-  overflow-y: auto;
+.items-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
 }
 
-.scroll-item {
+.item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 0.8rem;
-  color: #fff;
+  gap: 15px;
 }
-.item-icon {
+
+.item img {
   width: 50px;
   height: 50px;
-}
-.item-numeric {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.item-heading {
-  font-size: 1rem;
+  object-fit: contain;
 }
 
-@media (max-width: 1024px) {
-  .sticky-scroll-item {
+.item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sticky-scroll-wrapper {
     flex-direction: column;
-    align-items: center;
   }
-  .sticky-scroll-image {
+  .sticky-image {
     position: relative;
+    top: auto;
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 1.5rem;
-  }
-  .sticky-scroll-list {
-    max-height: 200px;
-  }
-}
-
-@media (max-width: 600px) {
-  .sticky-scroll-heading {
-    font-size: 1.5rem;
-  }
-  .sticky-scroll-subheading {
-    font-size: 1rem;
-  }
-  .sticky-scroll-list {
-    max-height: 150px;
   }
 }
 </style>
 
-{% schema %}
-{
-  "name": "Sticky Scroll Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Sticky Scroll Section",
-      "category": "Product"
-    }
-  ]
-}
-{% endschema %}
