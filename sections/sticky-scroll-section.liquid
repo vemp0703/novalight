@@ -2,10 +2,10 @@
 {% assign section_items = product.metafields.custom.sticky_and_scroll_section.value %}
 
 <section class="product-sticky-scroll-section mt-12">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+  <div class="lg:flex lg:gap-12">
 
     <!-- Left sticky image -->
-    <div class="lg:sticky lg:top-24">
+    <div class="lg:w-1/2 lg:sticky lg:top-24">
       {% if section_items.primary_image != blank %}
         <img src="{{ section_items.primary_image | img_url: '800x' }}" 
              alt="{{ section_items.heading }}" 
@@ -14,8 +14,8 @@
     </div>
 
     <!-- Right scrollable content -->
-    <div class="space-y-10">
-
+    <div class="lg:w-1/2 max-h-[80vh] overflow-y-auto space-y-10 pr-4">
+      
       <!-- Section Heading -->
       {% if section_items.heading != blank %}
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">{{ section_items.heading }}</h2>
