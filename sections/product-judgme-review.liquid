@@ -183,3 +183,30 @@
   margin-top: 5px;
 }
 {% endstyle %}
+{% schema %}
+{
+  "name": "Product Reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Reviews Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Loved by Customers"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews",
+      "category": "Product",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
