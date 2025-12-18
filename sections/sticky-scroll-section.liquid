@@ -1,58 +1,38 @@
 {% comment %}
-  SECTION: Sticky Image + Scrollable Content
-  Metafield key: custom.sticky_and_scroll_section (Metaobject)
-  Metaobject structure:
-  - section_items (list of metaobjects)
-    Each item:
-      - primary_image (image)
-      - heading (single line text)
-      - sub_heading (single line text)
-      - items (list of text / richtext)
+  SECTION: Sticky Image + Scrollable Content (Block Version)
+  Shopify section with blocks for dynamic scroll items
 {% endcomment %}
-
-{% assign sticky_section = product.metafields.custom.sticky_and_scroll_section.value %}
-
-{% if sticky_section != blank and sticky_section.section_items.value != blank %}
 
 <section class="sticky-scroll">
   <div class="page-width sticky-scroll__grid">
 
-    {%- comment -%} LEFT : Sticky Image {%- endcomment -%}
+    <!-- LEFT: Sticky Image -->
     <div class="sticky-scroll__left">
-      {% assign first_item = sticky_section.section_items.value | first %}
-      {% if first_item.primary_image != blank %}
-        <img
-          class="sticky-scroll__image"
-          src="{{ first_item.primary_image | image_url: width: 900 }}"
-          alt="{{ first_item.heading | escape }}"
-          loading="lazy"
-        >
+      {% if section.settings.sticky_image != blank %}
+        <img class="sticky-scroll__image"
+             src="{{ section.settings.sticky_image | image_url: width: 900 }}"
+             alt=""
+             loading="lazy">
       {% endif %}
     </div>
 
-    {%- comment -%} RIGHT : Scrollable Content {%- endcomment -%}
+    <!-- RIGHT: Scrollable Items -->
     <div class="sticky-scroll__right">
       <div class="sticky-scroll__items">
 
-        {% for block in sticky_section.section_items.value %}
+        {% for block in section.blocks %}
           <div class="sticky-scroll__item" data-index="{{ forloop.index0 }}">
-
-            {% if block.heading != blank %}
-              <h2 class="sticky-scroll__heading">{{ block.heading }}</h2>
+            {% if block.settings.heading != blank %}
+              <h2 class="sticky-scroll__heading">{{ block.settings.heading }}</h2>
             {% endif %}
 
-            {% if block.sub_heading != blank %}
-              <p class="sticky-scroll__subheading">{{ block.sub_heading }}</p>
+            {% if block.settings.sub_heading != blank %}
+              <p class="sticky-scroll__subheading">{{ block.settings.sub_heading }}</p>
             {% endif %}
 
-            {% if block.items.value != blank %}
-              <ul class="sticky-scroll__list">
-                {% for list_item in block.items.value %}
-                  <li>{{ list_item }}</li>
-                {% endfor %}
-              </ul>
+            {% if block.settings.item_content != blank %}
+              <div class="sticky-scroll__list">{{ block.settings.item_content }}</div>
             {% endif %}
-
           </div>
         {% endfor %}
 
@@ -66,83 +46,55 @@
 .sticky-scroll {
   padding: 100px 0;
 }
-
 .sticky-scroll__grid {
   display: grid;
   grid-template-columns: 45% 55%;
   gap: 60px;
   align-items: flex-start;
 }
-
 .sticky-scroll__left {
   position: sticky;
   top: 120px;
 }
-
 .sticky-scroll__image {
   width: 100%;
   height: auto;
   border-radius: 16px;
 }
-
 .sticky-scroll__right {
   max-height: calc(100vh - 160px);
   overflow-y: auto;
   padding-right: 20px;
 }
-
-/* smooth native scroll */
-.sticky-scroll__right::-webkit-scrollbar {
-  width: 4px;
-}
-
-.sticky-scroll__right::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
-  border-radius: 10px;
-}
-
 .sticky-scroll__item {
   padding: 60px 0;
   border-bottom: 1px solid #eee;
 }
-
 .sticky-scroll__item:last-child {
   border-bottom: none;
 }
-
 .sticky-scroll__heading {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 12px;
 }
-
 .sticky-scroll__subheading {
   font-size: 18px;
   color: #666;
   margin-bottom: 24px;
 }
-
 .sticky-scroll__list {
   padding-left: 18px;
 }
-
-.sticky-scroll__list li {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
 @media (max-width: 990px) {
   .sticky-scroll__grid {
     grid-template-columns: 1fr;
   }
-
   .sticky-scroll__left {
     position: relative;
     top: 0;
     margin-bottom: 40px;
   }
-
   .sticky-scroll__right {
     max-height: none;
     overflow: visible;
@@ -151,31 +103,30 @@
 }
 </style>
 
-<script>
-/* Optional: Sync image change while scrolling */
-(function () {
-  const section = document.querySelector('.sticky-scroll');
-  if (!section) return;
-
-  const items = section.querySelectorAll('.sticky-scroll__item');
-  const image = section.querySelector('.sticky-scroll__image');
-  const images = {{ sticky_section.section_items.value | map: 'primary_image' | json }};
-
-  if (!image || images.length === 0) return;
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const index = entry.target.dataset.index;
-        if (images[index]) {
-          image.src = images[index].src;
-        }
-      }
-    });
-  }, { threshold: 0.6 });
-
-  items.forEach(item => observer.observe(item));
-})();
-</script>
-
-{% endif %}
+{% schema %}
+{
+  "name": "Sticky Scroll Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "sticky_image",
+      "label": "Sticky Left Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scroll_item",
+      "name": "Scroll Item",
+      "settings": [
+        {"type": "text", "id": "heading", "label": "Heading"},
+        {"type": "text", "id": "sub_heading", "label": "Sub Heading"},
+        {"type": "richtext", "id": "item_content", "label": "Content / List"}
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {"name": "Sticky Scroll Section"}
+  ]
+}
+{% endschema %}
