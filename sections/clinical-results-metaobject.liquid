@@ -70,6 +70,7 @@
 {% endstyle %}
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
+{% assign items = section_data.items.value %}
 
 {% if section_data != blank and section_data.show_section.value == true %}
 
