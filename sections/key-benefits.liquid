@@ -1,53 +1,7 @@
-<section class="key-benefits">
-  <div class="page-width">
-    
-    {% if section.settings.heading != blank %}
-      <h2 class="key-benefits__heading">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
+{% style %}
 
-    {% if section.settings.subheading != blank %}
-      <p class="key-benefits__subheading">
-        {{ section.settings.subheading }}
-      </p>
-    {% endif %}
-
-    <div class="key-benefits__grid">
-      {% for block in section.blocks %}
-        <div
-          class="key-benefits__item"
-          style="--accent: {{ block.settings.accent_color }}"
-          {{ block.shopify_attributes }}
-        >
-          {% if block.settings.icon != blank %}
-            <div class="key-benefits__icon">
-              {{ block.settings.icon }}
-            </div>
-          {% endif %}
-
-          {% if block.settings.title != blank %}
-            <h3 class="key-benefits__title">
-              {{ block.settings.title }}
-            </h3>
-          {% endif %}
-
-          {% if block.settings.text != blank %}
-            <p class="key-benefits__text">
-              {{ block.settings.text }}
-            </p>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-
-<style>
 .key-benefits {
   padding: 60px 0;
-  background: #fff;
 }
 
 .key-benefits__heading {
@@ -59,7 +13,6 @@
 
 .key-benefits__subheading {
   text-align: center;
-  font-size: 16px;
   max-width: 700px;
   margin: 0 auto 40px;
   color: #666;
@@ -75,11 +28,6 @@
   border: 1px solid var(--accent);
   border-radius: 14px;
   padding: 28px;
-  transition: 0.3s ease;
-}
-
-.key-benefits__item:hover {
-  transform: translateY(-4px);
 }
 
 .key-benefits__icon {
@@ -117,66 +65,57 @@
     grid-template-columns: 1fr;
   }
 }
-</style>
 
-{% schema %}
-{
-  "name": "Key Benefits",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Section heading",
-      "default": "Transform Your Skin with Professional LED Therapy"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Section subheading",
-      "default": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "benefit",
-      "name": "Benefit item",
-      "settings": [
-        {
-          "type": "html",
-          "id": "icon",
-          "label": "Icon (SVG / emoji)",
-          "default": "✨"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Reduces Fine Lines & Wrinkles"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "Description",
-          "default": "Clinically proven to reduce the appearance of fine lines and wrinkles."
-        },
-        {
-          "type": "color",
-          "id": "accent_color",
-          "label": "Accent color",
-          "default": "#8b5cf6"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Key Benefits",
-      "blocks": [
-        { "type": "benefit" },
-        { "type": "benefit" },
-        { "type": "benefit" }
-      ]
-    }
-  ]
-}
-{% endschema %}
+
+{% endstyle %}
+
+
+{% assign benefits = product.metafields.custom.product_benefits.value %}
+
+{% if benefits != blank %}
+<section class="key-benefits">
+  <div class="page-width">
+
+    {% if section.settings.heading != blank %}
+      <h2 class="key-benefits__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="key-benefits__subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
+
+    <div class="key-benefits__grid">
+      {% for benefit in benefits %}
+        {% assign item = benefit %}
+
+        <div class="key-benefits__item" style="--accent: {{ item.color.value }}">
+          
+          {% if item.icon != blank %}
+            <div class="key-benefits__icon">
+              {{ item.icon.value }}
+            </div>
+          {% endif %}
+
+          {% if item.title != blank %}
+            <h3 class="key-benefits__title">
+              {{ item.title.value }}
+            </h3>
+          {% endif %}
+
+          {% if item.description != blank %}
+            <p class="key-benefits__text">
+              {{ item.description.value }}
+            </p>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
