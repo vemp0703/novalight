@@ -90,7 +90,7 @@
       <p class="clinical-results__subtext">{{ section_data.sub_heading }}</p>
     {% endif %}
 
-    {% if section_data.clinical_results_items.value != blank %}
+    {% if section_data.clinical_result_item.value != blank %}
       <div class="clinical-results__grid">
         {% for item in section_data.items.value %}
           <div class="clinical-card">
