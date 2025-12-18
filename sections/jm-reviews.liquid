@@ -2,29 +2,24 @@
 
 {% style %}
 /* ================================
-   SECTION WRAPPER
+   SECTION
 ================================ */
 .jm-design-reviews {
   padding: 80px 0;
   text-align: center;
 }
 
-/* ================================
-   HEADING
-================================ */
 .jm-heading {
   font-size: 38px;
   font-weight: 500;
   margin-bottom: 16px;
 }
 
-/* ================================
-   RATING SUMMARY
-================================ */
 .jm-rating-summary {
   margin-bottom: 50px;
 }
 
+/* Stars */
 .jdgm-preview-badge .jdgm-star {
   color: #f5a623 !important;
 }
@@ -37,7 +32,7 @@
 }
 
 /* ================================
-   BREAKDOWN CARD
+   BREAKDOWN
 ================================ */
 .jm-breakdown-card {
   max-width: 560px;
@@ -56,21 +51,13 @@
   margin-bottom: 22px;
 }
 
-/* ================================
-   REMOVE DEFAULT TITLES
-================================ */
+/* Remove Judge.me default headings */
 .jdgm-widget-title,
 .jdgm-subtitle {
   display: none !important;
 }
 
-/* ================================
-   HISTOGRAM
-================================ */
-.jdgm-histogram__row {
-  align-items: center;
-}
-
+/* Histogram */
 .jdgm-histogram__bar {
   height: 8px !important;
   border-radius: 20px;
@@ -87,7 +74,6 @@
   color: #6b7280;
 }
 
-/* Prevent CLS while loading */
 .jdgm-histogram-widget:empty {
   min-height: 120px;
 }
@@ -101,19 +87,13 @@
   gap: 32px;
 }
 
-/* ================================
-   REVIEW CARD
-================================ */
+/* Review card */
 .jdgm-rev {
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   padding: 26px;
-  text-align: left;
   background: #fff;
-}
-
-.jdgm-rev__rating {
-  margin-bottom: 12px;
+  text-align: left;
 }
 
 .jdgm-rev__body {
@@ -132,9 +112,7 @@
   color: #6b7280;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* Responsive */
 @media (max-width: 1024px) {
   .jm-review-grid .jdgm-revs-tab {
     grid-template-columns: repeat(2, 1fr);
@@ -148,14 +126,14 @@
 }
 {% endstyle %}
 
-<section class="jm-design-reviews page-width">
+<section class="jm-design-reviews page-width" id="jm-reviews-{{ section.id }}">
 
   <!-- Heading -->
   <h2 class="jm-heading">
     {{ section.settings.heading }}
   </h2>
 
-  <!-- Rating Badge -->
+  <!-- Badge -->
   <div class="jm-rating-summary">
     <div
       class="jdgm-preview-badge"
@@ -164,7 +142,7 @@
     ></div>
   </div>
 
-  <!-- Rating Breakdown -->
+  <!-- Breakdown -->
   {% if section.settings.show_breakdown %}
     <div class="jm-breakdown-card">
       <h4>{{ section.settings.breakdown_heading }}</h4>
@@ -180,14 +158,30 @@
   <!-- Reviews -->
   <div class="jm-review-grid">
     <div
-      class="jdgm-widget"
+      class="jdgm-widget jdgm-reviews-widget"
       data-product-id="{{ product.id }}"
       data-template="reviews"
-      data-per-page="{{ section.settings.reviews_limit }}"
+      data-reviews-per-page="10"
     ></div>
   </div>
 
 </section>
+
+<!-- 🔥 FORCE JUDGEME INIT (CRITICAL FIX) -->
+<script>
+(function () {
+  function initJudgeMe() {
+    if (window.jdgm && typeof jdgm.init === "function") {
+      jdgm.init();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initJudgeMe);
+
+  // Extra safety for AJAX / Dawn
+  setTimeout(initJudgeMe, 800);
+})();
+</script>
 
 {% endif %}
 
@@ -199,7 +193,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Loved by 10,000+ Customers"
+      "default": "Loved by Customers"
     },
     {
       "type": "checkbox",
@@ -212,15 +206,6 @@
       "id": "breakdown_heading",
       "label": "Breakdown heading",
       "default": "Rating Breakdown"
-    },
-    {
-      "type": "range",
-      "id": "reviews_limit",
-      "label": "Number of reviews per page",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3
     }
   ],
   "presets": [
