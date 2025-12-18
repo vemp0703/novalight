@@ -3,7 +3,7 @@
   
   <section class="sticky-scroll-section">
     <div class="container">
-      {% for item in block_items %}
+      {% for item in section_items.block_items.value %}
         {% assign item = item | parse_json %}
         <div class="sticky-scroll-wrapper">
           
