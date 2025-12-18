@@ -188,13 +188,11 @@
 
       <div class="product-details-card">
 
-        {{  block.settings.metafield_key | json }}
-
         {% if block.settings.metafield_key == 'description' %}
             {{ product.description }}
-            {% elsif product.metafields.tabs[block.settings.metafield_key] != blank %}
+            {% elsif block.settings.metafield_key != blank %}
 
-                {{ product.metafields.custom.product_specification  }}
+                {{ product.metafields.block.settings.metafield_key  | metafield_tag}}
 
             {{ product.metafields.tabs[block.settings.metafield_key] | metafield_tag }}
         {% endif %}
