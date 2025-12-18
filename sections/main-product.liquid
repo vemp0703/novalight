@@ -814,23 +814,23 @@
     <h3>Product Specifications</h3>
 
     <div class="spec-grid">
-      {% for spec in product.metafields.custom.product_specs.value %}
+      {% for spec in product.metafields.custom.product_highlights.value %}
         <div class="spec-card">
 
-          {% if spec.icon != blank %}
+          {% if product_highlight.icon != blank %}
             <img
-              src="{{ spec.icon | image_url: width: 64 }}"
+              src="{{ product_highlight.icon | image_url: width: 64 }}"
               alt=""
             >
           {% endif %}
 
-          {% if spec.title != blank %}
-            <h4>{{ spec.title }}</h4>
+          {% if product_highlight.title != blank %}
+            <h4>{{ product_highlight.title }}</h4>
           {% endif %}
 
-          {% if spec.description != blank %}
+          {% if product_highlight.description != blank %}
             <div class="spec-desc">
-              {{ spec.description | metafield_tag }}
+              {{ product_highlight.description | metafield_tag }}
             </div>
           {% endif %}
 
