@@ -1,0 +1,124 @@
+{% style %}
+ .product-highlights {
+  margin-top: 40px;
+}
+
+.highlights-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.highlight-card {
+  border: 1px solid #e6eaf0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.highlight-icon {
+  margin-bottom: 12px;
+}
+
+.highlight-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.highlight-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+{% endstyle %}
+
+
+{% if product.metafields.custom.product_highlights != blank %}
+  <div class="product-highlights">
+
+    {% if section.settings.heading != blank %}
+      <h3 class="highlights-heading">
+        {{ section.settings.heading }}
+      </h3>
+    {% endif %}
+
+    <div class="highlights-grid">
+      {% for block in section.blocks %}
+        {% assign highlight = block.settings.highlight %}
+
+        {% if highlight != blank %}
+          <div class="highlight-card" {{ block.shopify_attributes }}>
+
+            {% if highlight.icon != blank %}
+              <div class="highlight-icon">
+                <img
+                  src="{{ highlight.icon | image_url: width: 64 }}"
+                  alt="{{ highlight.title | escape }}"
+                  width="32"
+                  height="32"
+                >
+              </div>
+            {% endif %}
+
+            {% if highlight.title != blank %}
+              <h4 class="highlight-title">
+                {{ highlight.title }}
+              </h4>
+            {% endif %}
+
+            {% if highlight.description != blank %}
+              <p class="highlight-desc">
+                {{ highlight.description }}
+              </p>
+            {% endif %}
+
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Highlights",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Product Specifications"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "metaobject",
+          "id": "highlight",
+          "label": "Product Highlight",
+          "metaobject_type": "product_highlight"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Product Highlights"
+    }
+  ]
+}
+{% endschema %}
