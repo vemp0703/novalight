@@ -1,63 +1,115 @@
 {% style %}
-  .jm-design-reviews {
+/* SECTION */
+.jm-design-reviews {
   padding: 80px 0;
   text-align: center;
 }
 
+/* HEADING */
 .jm-heading {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 38px;
+  font-weight: 500;
   margin-bottom: 16px;
 }
 
-/* Summary */
+/* STAR SUMMARY */
 .jm-rating-summary {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-/* Breakdown Card */
+.jdgm-preview-badge .jdgm-star {
+  color: #f5a623 !important;
+}
+
+.jdgm-preview-badge__text {
+  display: block;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* BREAKDOWN CARD */
 .jm-breakdown-card {
-  max-width: 520px;
-  margin: 0 auto 60px;
-  padding: 28px;
+  max-width: 560px;
+  margin: 0 auto 70px;
+  padding: 32px;
   background: #f9fbfd;
-  border-radius: 16px;
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px #eef2f7;
   text-align: left;
 }
 
 .jm-breakdown-card h4 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 22px;
 }
 
-/* Hide Judge.me titles */
+/* REMOVE DEFAULT TITLES */
 .jdgm-widget-title,
 .jdgm-subtitle {
   display: none !important;
 }
 
-/* Histogram bars */
+/* HISTOGRAM */
+.jdgm-histogram__row {
+  align-items: center;
+}
+
+.jdgm-histogram__bar {
+  height: 8px !important;
+  border-radius: 20px;
+  background: #e5e7eb !important;
+}
+
 .jdgm-histogram__bar-content {
   background: linear-gradient(90deg, #ffb703, #ff9800) !important;
   border-radius: 20px;
 }
 
-/* Reviews Grid */
+.jdgm-histogram__frequency {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* REVIEWS GRID */
 .jm-review-grid .jdgm-revs-tab {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px;
 }
 
-/* Review Cards */
+/* REVIEW CARD */
 .jdgm-rev {
-  border: 1px solid #e6ecf2;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
-  padding: 24px;
+  padding: 26px;
   text-align: left;
+  background: #fff;
 }
 
-/* Responsive */
+.jdgm-rev__rating {
+  margin-bottom: 12px;
+}
+
+.jdgm-rev__body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.jdgm-rev__author {
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.jdgm-rev__timestamp {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .jm-review-grid .jdgm-revs-tab {
     grid-template-columns: repeat(2, 1fr);
@@ -69,6 +121,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 
 {% endstyle %}
 {% if product %}
