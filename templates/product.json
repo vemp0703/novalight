@@ -205,24 +205,11 @@
         "padding_bottom": 28
       }
     },
-    "1766075116e9a23126": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_PKL8rk": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_PKL8rk"
-      ],
+    "jm_reviews_JQRLWG": {
+      "type": "jm-reviews",
+      "name": "Judge.me – Design Reviews",
       "settings": {
-        "include_margins": true
+        "heading": "Loved by 10,000+ Customers"
       }
     }
   },
@@ -234,7 +221,7 @@
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
-    "1766075116e9a23126",
-    "related-products"
+    "related-products",
+    "jm_reviews_JQRLWG"
   ]
 }
