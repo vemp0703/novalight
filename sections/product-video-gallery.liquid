@@ -14,30 +14,33 @@
 
     <div class="video-row">
 
-      {% for video in product.metafields.custom.product_video_gallery.value %}
-        <div class="video-card">
+{% for video in product.metafields.custom.product_video_gallery.value %}
+  <div class="video-card">
 
-          {% if video.alt != blank %}
-            <span class="views">{{ video.alt }}</span>
-          {% endif %}
+    {% if video.alt != blank %}
+      <span class="views">{{ video.alt }}</span>
+    {% endif %}
 
-          <div class="video-thumb">
-            {{ video | video_tag: 
-              image_size: '600x', 
-              controls: false, 
-              preload: 'metadata',
-              muted: true
-            }}
-            <span class="play-btn">▶</span>
-          </div>
+    <div class="video-thumb">
+      <video
+        muted
+        preload="metadata"
+        playsinline
+        poster="{{ video.preview_image | image_url: width: 600 }}"
+      >
+        <source src="{{ video.sources[0].url }}" type="video/mp4">
+      </video>
 
-          <div class="video-info">
-            <strong>{{ video.title | default: 'Customer Review' }}</strong>
-            <span>{{ video.author | default: 'Verified User' }}</span>
-          </div>
+      <span class="play-btn">▶</span>
+    </div>
 
-        </div>
-      {% endfor %}
+    <div class="video-info">
+      <strong>{{ video.alt | default: 'Customer Review' }}</strong>
+      <span>Verified User</span>
+    </div>
+
+  </div>
+{% endfor %}
 
     </div>
 
