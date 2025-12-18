@@ -194,6 +194,11 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "product_promo_banner_hfhMPj": {
+      "type": "product-promo-banner",
+      "name": "Product Promo Banner",
+      "settings": {}
     }
   },
   "order": [
@@ -202,6 +207,7 @@
     "product_details_tabs_cPkNBp",
     "product_highlights_zpBYAV",
     "product_key_benefits_7mEe4C",
+    "product_promo_banner_hfhMPj",
     "related-products"
   ]
 }
