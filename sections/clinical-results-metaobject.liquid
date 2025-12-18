@@ -71,9 +71,7 @@
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
 
-{{ section_data | json }}
-
-{% if section_data != blank and show_section.enable %}
+{% if section_data != blank and section_data.enable.value == true %}
 
 <section class="clinical-results">
   <div class="page-width">
@@ -85,50 +83,29 @@
     {% endif %}
 
     {% if section_data.heading != blank %}
-      <h2 class="clinical-results__heading">
-        {{ section_data.heading }}
-      </h2>
+      <h2 class="clinical-results__heading">{{ section_data.heading }}</h2>
     {% endif %}
 
     {% if section_data.sub_heading != blank %}
-      <p class="clinical-results__subtext">
-        {{ section_data.sub_heading }}
-      </p>
+      <p class="clinical-results__subtext">{{ section_data.sub_heading }}</p>
     {% endif %}
 
     {% if section_data.items.value != blank %}
       <div class="clinical-results__grid">
-
         {% for item in section_data.items.value %}
           <div class="clinical-card">
+            <span class="clinical-card__bar"
+              style="background: {{ item.accent_color }};"></span>
 
-            {% if item.accent_color != blank %}
-              <span class="clinical-card__bar"
-                    style="background: {{ item.accent_color }};"></span>
-            {% endif %}
+            <h3 class="clinical-card__value"
+              style="color: {{ item.accent_color }};">
+              {{ item.value }}
+            </h3>
 
-            {% if item.value != blank %}
-              <h3 class="clinical-card__value"
-                  style="color: {{ item.accent_color }};">
-                {{ item.value }}
-              </h3>
-            {% endif %}
-
-            {% if item.title != blank %}
-              <h4 class="clinical-card__title">
-                {{ item.title }}
-              </h4>
-            {% endif %}
-
-            {% if item.description != blank %}
-              <p class="clinical-card__desc">
-                {{ item.description }}
-              </p>
-            {% endif %}
-
+            <h4 class="clinical-card__title">{{ item.title }}</h4>
+            <p class="clinical-card__desc">{{ item.description }}</p>
           </div>
         {% endfor %}
-
       </div>
     {% endif %}
 
@@ -136,6 +113,7 @@
 </section>
 
 {% endif %}
+
 
 {% schema %}
 {
