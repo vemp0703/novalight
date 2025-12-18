@@ -136,7 +136,7 @@
             "icon": "shopify://shop_images/vector_sheild.svg",
             "label": "Technology",
             "description": "Detailed information and specifications",
-            "metafield_key": ""
+            "metafield_key": "product_technology"
           }
         },
         "tab_mwHbPt": {
