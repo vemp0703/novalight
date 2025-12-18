@@ -15,6 +15,11 @@
     <div class="video-row">
 
 {% for video in product.metafields.custom.product_video_gallery.value %}
+
+
+    {{ video }}
+
+
   <div class="video-card">
 
     {% if video.alt != blank %}
