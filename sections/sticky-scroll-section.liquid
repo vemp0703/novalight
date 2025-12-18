@@ -3,8 +3,8 @@
   
   
   {% if sections %}
-    {{ sections | json }}
-    {% for section in sections %}
+    
+    {% for section in sections.value %}
       <div class="sticky-scroll-item">
 
         <!-- Left: Primary Image -->
