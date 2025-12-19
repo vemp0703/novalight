@@ -239,6 +239,14 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "faq_FBBaNF": {
+      "type": "faq",
+      "name": "FAQ Section",
+      "settings": {
+        "faq_heading": "Frequently Asked Questions",
+        "faq_subheading": "Everything you need to know about TheraFace Mask"
+      }
     }
   },
   "order": [
@@ -252,6 +260,7 @@
     "sticky_scroll_section_7YyDeH",
     "product_video_gallery_7gdXg8",
     "17660988777f51a894",
+    "faq_FBBaNF",
     "related-products"
   ]
 }
