@@ -1,6 +1,6 @@
-{% assign faq_content = product.metafields.custom.frequent_ask_question %}
+{% assign faq_content = product.metafields.custom.frequent_ask_question | metafield_tag %}
 <div class="faq-section">
-  {{ faq_content | metafield_tag }}
+  {{ faq_content  }}
 </div>
 
 {% schema %}
