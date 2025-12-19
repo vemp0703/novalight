@@ -16,7 +16,7 @@
 
 {% if product.metafields.custom.product_video_gallery != blank %}
 
-  {% assign video_html = product.metafields.custom.product_video_gallery | metafield_text %}
+  {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
   {% assign video_list = video_html 
     | remove: '<ul>' 
     | remove: '</ul>' 
@@ -27,7 +27,6 @@
 
     {% for item in video_list %}
 
-        {{ item }}
       {% assign video_url = item | remove: '<li>' | strip %}
 
       {% if video_url != blank %}
