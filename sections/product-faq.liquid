@@ -1,4 +1,4 @@
-{% assign faq_content = product.metafields.custom.frequent_ask_question | strip_html: false %}
+{% assign faq_content = product.metafields.custom.frequent_ask_question %}
 
 {{ faq_content }}
 {% if faq_content != blank %}
