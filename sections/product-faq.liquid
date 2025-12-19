@@ -9,8 +9,10 @@
 
       
       {% assign question = parts[0] | strip %}
-      {{ question }}
+      
       {% assign answer = parts[1] | strip %}
+
+      {{ answer }}
       <div class="faq-item border rounded-lg mb-3 p-4 bg-white shadow-sm">
         <button type="button" class="faq-question flex justify-between items-center w-full text-left focus:outline-none">
           <span>{{ question }}</span>
