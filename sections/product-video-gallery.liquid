@@ -24,7 +24,17 @@
 {% for item in list_items %}
   {% if item contains '</li>' %}
     {% assign video_url = item | split: '</li>' | first | strip %}
-    {{ video_url }}<br>
+
+           <video
+          class="w-full rounded-lg shadow"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source src="{{ video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
   {% endif %}
 {% endfor %}
 
