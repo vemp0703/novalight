@@ -1,2 +1,95 @@
- {% assign faq_content = product.metafields.custom.faq_content.value  | metafield_tag %}
+{% assign faq_content = product.metafields.custom.frequent_ask_question.value  | metafield_tag %}
 {{ faq_content }}
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "faq_subheading",
+      "label": "Subheading",
+      "default": "Everything you need to know about TheraFace Mask"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="faq-section my-12 max-w-4xl mx-auto px-4">
+  <h2 class="text-2xl font-semibold text-center mb-4">{{ section.settings.faq_heading }}</h2>
+  <p class="text-center text-gray-600 mb-8">{{ section.settings.faq_subheading }}</p>
+
+  <div class="faq-accordion border rounded-lg overflow-hidden">
+    {% for block in section.blocks %}
+      <div class="faq-item border-b">
+        <button class="faq-question w-full text-left px-4 py-3 flex justify-between items-center focus:outline-none">
+          <span>{{ block.settings.question }}</span>
+          <span class="faq-icon text-blue-500 font-bold text-xl">+</span>
+        </button>
+        <div class="faq-answer px-4 py-3 hidden text-gray-700">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .faq-question:hover { background-color: #f9f9f9; }
+  .faq-icon.rotate { transform: rotate(45deg); transition: transform 0.3s ease; }
+  .faq-answer { transition: max-height 0.3s ease; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const faqButtons = document.querySelectorAll('.faq-question');
+
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector('.faq-icon');
+
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          icon.classList.add('rotate');
+          icon.textContent = '−';
+        } else {
+          answer.classList.add('hidden');
+          icon.classList.remove('rotate');
+          icon.textContent = '+';
+        }
+      });
+    });
+  });
+</script>
