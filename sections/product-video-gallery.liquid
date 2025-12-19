@@ -14,32 +14,29 @@
 
     <div class="video-row">
 
-{% assign videos_links = product.metafields.custom.product_video_gallery.value %}
-
-{% for video_url in videos_links %}
-  <div class="video-card">
-{{ video_url }}
-    <div class="video-thumb">
-      <video 
-        src="{{ video_url.url }}" 
-        controls 
-        preload="metadata" 
-        muted 
-        poster="" 
-      ></video>
-      <span class="play-btn">▶</span>
-    </div>
-
-    <div class="video-info">
-      <strong>Customer Review</strong>
-      <span>Verified User</span>
-    </div>
-
+        {% if product.metafields.custom.product_video_gallery != blank %}
+  <div class="video-row">
+    {% for video_url in product.metafields.custom.product_video_gallery.value %}
+      <div class="video-card">
+        <div class="video-thumb">
+          <video 
+            src="{{ video_url }}" 
+            controls 
+            preload="metadata" 
+            muted
+          ></video>
+          <span class="play-btn">▶</span>
+        </div>
+        <div class="video-info">
+          <strong>Customer Review</strong>
+          <span>Verified User</span>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-{% endfor %}
+{% endif %}
 
-
-    </div>
+</div>
 
     {% if section.settings.cta_text != blank %}
       <p class="cta-text">{{ section.settings.cta_text }}</p>
