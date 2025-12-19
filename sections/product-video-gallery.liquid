@@ -1,5 +1,5 @@
-{% if product.metafields.custom.product_video_gallery != blank %}
 <section class="theraface-videos">
+  {% if product.metafields.custom.product_video_gallery != blank %}
   <div class="container">
 
     {% if section.settings.badge_text != blank %}
@@ -12,43 +12,26 @@
       <p class="subtitle">{{ section.settings.subtitle }}</p>
     {% endif %}
 
+    {% assign video_html = product.metafields.custom.product_video_gallery.value %}
+    {% assign video_items = video_html | split: '<li>' %}
+
     <div class="video-row">
-
-{% if product.metafields.custom.product_video_gallery != blank %}
-
-  {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
-  {% assign video_list = video_html 
-    | remove: '<ul>' 
-    | remove: '</ul>' 
-    | split: '</li>' 
-  %}
-
-  <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    {% for item in video_list %}
-
-      {% assign video_url = item | remove: '<li>' | strip %}
-
-      {% if video_url != blank %}
-        <video
-          class="w-full rounded-lg shadow"
-          controls
-          playsinline
-          preload="metadata"
-        >
-          <source src="{{ video_url }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      {% endif %}
-    {% endfor %}
-
-  </div>
-
-{% endif %}
-
-
-
-</div>
+      {% for item in video_items %}
+        {% if item contains '</li>' %}
+          {% assign video_url = item | split: '</li>' | first | strip %}
+          {% if video_url != blank %}
+            <div class="video-card">
+              <div class="video-thumb">
+                <video playsinline preload="metadata" muted>
+                  <source src="{{ video_url }}" type="video/mp4">
+                </video>
+                <span class="play-btn">▶</span>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
 
     {% if section.settings.cta_text != blank %}
       <p class="cta-text">{{ section.settings.cta_text }}</p>
@@ -61,6 +44,7 @@
     {% endif %}
 
   </div>
+  {% endif %}
 </section>
 
 <style>
@@ -69,13 +53,11 @@
   background: #fff;
   text-align: center;
 }
-
-.theraface-videos .container {
+.container {
   max-width: 1200px;
   margin: auto;
 }
-
-.theraface-videos .badge {
+.badge {
   display: inline-block;
   background: #f0f4ff;
   color: #3b5cff;
@@ -84,63 +66,45 @@
   font-size: 13px;
   margin-bottom: 16px;
 }
-
-.theraface-videos h2 {
+h2 {
   font-size: 32px;
   margin-bottom: 10px;
 }
-
-.theraface-videos .subtitle {
+.subtitle {
   color: #666;
   margin-bottom: 40px;
 }
-
 .video-row {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   padding-bottom: 10px;
 }
-
 .video-card {
   min-width: 260px;
-  text-align: left;
-  position: relative;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
-
-.views {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 12px;
-  z-index: 2;
-}
-
 .video-thumb {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+  background: #000;
 }
-
 .video-thumb video {
   width: 100%;
   height: auto;
   display: block;
   cursor: pointer;
 }
-
 .play-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,0.9);
+  inset: 0;
+  margin: auto;
   width: 50px;
   height: 50px;
+  background: rgba(255,255,255,0.9);
   border-radius: 50%;
   font-size: 18px;
   display: flex;
@@ -148,27 +112,11 @@
   justify-content: center;
   pointer-events: none;
 }
-
-.video-info {
-  padding: 10px 5px;
-}
-
-.video-info strong {
-  display: block;
-  font-size: 14px;
-}
-
-.video-info span {
-  font-size: 13px;
-  color: #777;
-}
-
 .cta-text {
   margin-top: 40px;
   font-size: 14px;
   color: #666;
 }
-
 .cta-btn {
   display: inline-block;
   margin-top: 12px;
@@ -179,14 +127,31 @@
   text-decoration: none;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  .video-row {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.video-thumb video').forEach(video => {
+  const videos = document.querySelectorAll('.video-thumb video');
+
+  videos.forEach(video => {
     video.addEventListener('click', function () {
+      videos.forEach(v => {
+        if (v !== this) {
+          v.pause();
+          v.removeAttribute('controls');
+        }
+      });
+
       if (this.paused) {
         this.play();
+        this.muted = false;
         this.setAttribute('controls', 'controls');
       } else {
         this.pause();
@@ -195,8 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
-{% endif %}
 
 {% schema %}
 {
