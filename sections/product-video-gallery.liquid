@@ -19,7 +19,7 @@
 
 {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
 
-{% assign list_items = html | split: '<li>' %}
+{% assign list_items = video_html | split: '<li>' %}
 
 {% for item in list_items %}
   {% if item contains '</li>' %}
