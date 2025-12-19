@@ -240,8 +240,8 @@
         "padding_bottom": 28
       }
     },
-    "faq_FBBaNF": {
-      "type": "faq",
+    "product_faq_Xy4pcD": {
+      "type": "product-faq",
       "name": "FAQ Section",
       "settings": {
         "faq_heading": "Frequently Asked Questions",
@@ -260,7 +260,7 @@
     "sticky_scroll_section_7YyDeH",
     "product_video_gallery_7gdXg8",
     "17660988777f51a894",
-    "faq_FBBaNF",
+    "product_faq_Xy4pcD",
     "related-products"
   ]
 }
