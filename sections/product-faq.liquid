@@ -6,6 +6,8 @@
   {% for faq in faqs %}
     {% if faq != blank %}
       {% assign parts = faq | split:'</h6>' %}
+
+      {{ parts }}
       {% assign question = parts[0] | strip %}
       {% assign answer = parts[1] | strip %}
       <div class="faq-item border rounded-lg mb-3 p-4 bg-white shadow-sm">
