@@ -14,6 +14,8 @@
 
     {% assign video_html = product.metafields.custom.product_video_gallery.value | metafield_tag %}
 
+    {{  video_html }}
+
     {% assign video_items = video_html | split: '<li>' %}
 
     <div class="video-row">
