@@ -26,6 +26,8 @@
   <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
 
     {% for item in video_list %}
+
+        {{ item }}
       {% assign video_url = item | remove: '<li>' | strip %}
 
       {% if video_url != blank %}
