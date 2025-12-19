@@ -38,28 +38,6 @@
   {% endif %}
 {% endfor %}
 
-
-  <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    {% for item in video_list %}
-
-      {% assign video_url = item | remove: '<li>' | strip %}
-
-      {% if video_url != blank %}
-        <video
-          class="w-full rounded-lg shadow"
-          controls
-          playsinline
-          preload="metadata"
-        >
-          <source src="{{ video_url }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      {% endif %}
-    {% endfor %}
-
-  </div>
-
 {% endif %}
 
 
