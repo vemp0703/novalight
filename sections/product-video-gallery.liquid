@@ -14,33 +14,37 @@
 
     <div class="video-row">
 
-{% assign video_html = product.metafields.custom.product_video_gallery.value %}
-{% assign video_list = video_html | strip_html | newline_to_br | split: '<br />' %}
+{% if product.metafields.custom.product_video_gallery != blank %}
 
-{{ video_list }}
+  {% assign video_html = product.metafields.custom.product_video_gallery | metafield_text %}
+  {% assign video_list = video_html 
+    | remove: '<ul>' 
+    | remove: '</ul>' 
+    | split: '</li>' 
+  %}
 
-<div class="video-row">
-  {% for video_url in video_list %}
-    {% assign video_url = video_url | strip %}
-    {% if video_url != blank %}
-      <div class="video-card">
-        <div class="video-thumb">
-          <video 
-            src="{{ video_url }}" 
-            controls 
-            preload="metadata" 
-            muted
-          ></video>
-          <span class="play-btn">▶</span>
-        </div>
-        <div class="video-info">
-          <strong>Customer Review</strong>
-          <span>Verified User</span>
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+  <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    {% for item in video_list %}
+      {% assign video_url = item | remove: '<li>' | strip %}
+
+      {% if video_url != blank %}
+        <video
+          class="w-full rounded-lg shadow"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source src="{{ video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+{% endif %}
+
 
 
 </div>
