@@ -1,4 +1,4 @@
-{% assign faq_html = product.metafields.custom.frequent_ask_question.value %}
+{% assign faq_html = product.metafields.custom.frequent_ask_question.value | metafield_tag %}
 
 {% if faq_html != blank %}
 <section class="product-faq">
