@@ -240,12 +240,12 @@
         "padding_bottom": 28
       }
     },
-    "product_faq_Xy4pcD": {
+    "product_faq_mE7BPV": {
       "type": "product-faq",
-      "name": "FAQ Section",
+      "name": "Product FAQ",
       "settings": {
-        "faq_heading": "Frequently Asked Questions",
-        "faq_subheading": "Everything you need to know about TheraFace Mask"
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about TheraFace Mask"
       }
     }
   },
@@ -260,7 +260,7 @@
     "sticky_scroll_section_7YyDeH",
     "product_video_gallery_7gdXg8",
     "17660988777f51a894",
-    "product_faq_Xy4pcD",
+    "product_faq_mE7BPV",
     "related-products"
   ]
 }
