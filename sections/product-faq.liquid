@@ -8,6 +8,8 @@
 
     
     {% assign faq_items = faq_html | metafield_tag %}
+
+    {{ faq_items  }}
     {% assign items = faq_items | metafield_tag | split: '<h6>' %}
     
     {% for item in items %}
