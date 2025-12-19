@@ -98,7 +98,18 @@
   line-height: 20px; /* 142.857% */
   margin:auto;
 }
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
+/* Mobile → 1 column */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
 {% endstyle %}
 
 {% assign section_data = product.metafields.custom.clinical_results_section.value %}
