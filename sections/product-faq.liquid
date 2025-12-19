@@ -6,9 +6,10 @@
     <h2 class="faq-title">{{ section.settings.heading }}</h2>
     <p class="faq-subtitle">{{ section.settings.subheading }}</p>
 
-    {{ faq_html }}
-
-    {% assign items = faq_html | metafield_tag | split: '<h6>' %}
+    
+    {% assign faq_items = faq_html | metafield_tag %}
+    {% assign items = faq_items | metafield_tag | split: '<h6>' %}
+    
     {% for item in items %}
       {% if item contains '</h6>' %}
         {% assign parts = item | split: '</h6>' %}
