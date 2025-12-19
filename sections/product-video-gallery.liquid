@@ -17,26 +17,28 @@
 {% if product.metafields.custom.product_video_gallery != blank %}
 
 
-{% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
+{% assign raw = product.metafields.custom.product_video_gallery.value | strip_html %}
+{% assign urls = raw | split: 'https://' %}
 
-{% assign list_items = video_html | split: '<li>' %}
+<div class="video-row">
+  {% for item in urls %}
+    {% unless forloop.first %}
+      {% assign clean_url = 'https://' 
+        | append: item 
+        | split: ' ' | first 
+        | split: '\n' | first 
+        | split: '\r' | first 
+        | strip 
+      %}
 
-{% for item in list_items %}
-  {% if item contains '</li>' %}
-    {% assign video_url = item | split: '</li>' | first | strip %}
-
-        <video
-          class="w-full rounded-lg shadow"
-          controls
-          playsinline
-          preload="metadata"
-        >
-          <source src="{{ video_url }}" type="video/mp4">
-          Your browser does not support the video tag.
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="{{ clean_url }}" type="video/mp4">
         </video>
-    
-  {% endif %}
-{% endfor %}
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
 
 {% endif %}
 
