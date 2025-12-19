@@ -9,7 +9,7 @@
     <p class="text-gray-600 mb-6">{{ section.settings.faq_subheading }}</p>
   {% endif %}
 
-  {% assign faqs = faq_content | split:'<h6>' %}
+  {% assign faqs = faq_content | split:'<h6>' | metafield_tag %}
   {% for faq in faqs %}
     {% if faq != blank %}
       {% assign parts = faq | split:'</h6>' %}
