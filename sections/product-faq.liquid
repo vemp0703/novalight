@@ -1,24 +1,27 @@
-{% assign faq_content = product.metafields.custom.frequent_ask_question  | metafield_tag %}
+{% assign faq_content = product.metafields.custom.frequent_ask_question.value %}
 
 {% if faq_content != blank %}
 <div class="faq-section max-w-2xl mx-auto mt-12">
+  {% if section.settings.faq_heading != blank %}
+    <h2 class="text-2xl font-bold mb-2">{{ section.settings.faq_heading }}</h2>
+  {% endif %}
+  {% if section.settings.faq_subheading != blank %}
+    <p class="text-gray-600 mb-6">{{ section.settings.faq_subheading }}</p>
+  {% endif %}
+
   {% assign faqs = faq_content | split:'<h6>' %}
   {% for faq in faqs %}
     {% if faq != blank %}
       {% assign parts = faq | split:'</h6>' %}
-
-      
       {% assign question = parts[0] | strip %}
-      
       {% assign answer = parts[1] | strip %}
 
-      
       <div class="faq-item border rounded-lg mb-3 p-4 bg-white shadow-sm">
         <button type="button" class="faq-question flex justify-between items-center w-full text-left focus:outline-none">
           <span>{{ question }}</span>
           <span class="faq-toggle">+</span>
         </button>
-        <div class="faq-answer mt-2 hidden text-gray-700">
+        <div class="faq-answer mt-2 max-h-0 overflow-hidden transition-all duration-300 text-gray-700">
           {{ answer }}
         </div>
       </div>
@@ -49,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggle = item.querySelector('.faq-toggle');
 
     btn.addEventListener('click', () => {
-      const isOpen = !answer.classList.contains('hidden');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
       if(isOpen) {
-        answer.classList.add('hidden');
+        answer.style.maxHeight = "0px";
         toggle.textContent = '+';
       } else {
-        answer.classList.remove('hidden');
+        answer.style.maxHeight = answer.scrollHeight + "px";
         toggle.textContent = '-';
       }
     });
@@ -62,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {% endif %}
-
 
 {% schema %}
 {
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "type": "text",
       "id": "faq_subheading",
       "label": "Subheading",
-      "default": "Everything you need to know about TheraFace Mask"
+      "default": "Everything you need to know about the product"
     }
   ],
   "presets": [
@@ -89,4 +91,3 @@ document.addEventListener('DOMContentLoaded', function() {
   ]
 }
 {% endschema %}
-
