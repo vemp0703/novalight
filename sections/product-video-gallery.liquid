@@ -19,7 +19,7 @@
 
 {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
 
-{% assign items = video_html | split: '<li>' | remove: 'ol' | remove:'a' %}
+{% assign items = video_html | split: '<li>' | remove: 'ol' | remove:'<a>' %}
 
 {{ items }}
   <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
