@@ -23,7 +23,7 @@
 
 {% for item in list_items %}
   {% if item contains '</li>' %}
-    {% assign video_url = item | split: '</li>' | first | strip %}
+    {% assign video_url = item | split: '</li>' | first | strip | strip_html %}
 
         <video
           class="w-full rounded-lg shadow"
