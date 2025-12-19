@@ -17,17 +17,11 @@
 {% if product.metafields.custom.product_video_gallery != blank %}
 
 
-    {{ product.metafields.custom.product_video_gallery | metafield_tag }} 
+{% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
 
-  {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
+{% assign items = video_html | split: '<li>' %}
 
-  {{ video_html }}
-  {% assign video_list = video_html 
-    | remove: '<ul>' 
-    | remove: '</ul>' 
-    | split: '</li>' 
-  %}
-
+{{ items }}
   <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
 
     {% for item in video_list %}
