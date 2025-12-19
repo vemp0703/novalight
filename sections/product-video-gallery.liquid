@@ -17,6 +17,8 @@
 {% assign video_html = product.metafields.custom.product_video_gallery.value %}
 {% assign video_list = video_html | strip_html | newline_to_br | split: '<br />' %}
 
+{{ video_list }}
+
 <div class="video-row">
   {% for video_url in video_list %}
     {% assign video_url = video_url | strip %}
