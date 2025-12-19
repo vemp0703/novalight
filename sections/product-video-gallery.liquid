@@ -19,7 +19,7 @@
 
 {% assign video_html = product.metafields.custom.product_video_gallery | metafield_tag %}
 
-{% for url in video_html %}
+{% for url in product.metafields.custom.product_video_gallery %}
   {{ url }}
 {% endfor %}
   <div class="product-video-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
