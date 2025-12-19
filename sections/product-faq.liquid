@@ -1,4 +1,4 @@
-{% assign faq_content = product.metafields.custom.frequent_ask_question.value %}
+{% assign faq_content = product.metafields.custom.frequent_ask_question.value | metafield_tag%}
 
 {% if faq_content != blank %}
 <div class="faq-section max-w-2xl mx-auto mt-12">
