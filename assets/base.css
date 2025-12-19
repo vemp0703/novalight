@@ -3726,6 +3726,7 @@ span.price-item.price-item--regular {
     align-items: center;
     font-family: 'Marcellus';
     font-size: 30px;
+    flex-wrap: wrap;
 }
 
 .quanity_buy_now div {
