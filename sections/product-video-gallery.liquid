@@ -77,8 +77,8 @@
 <style>
 .theraface-videos {
   padding: 60px 20px;
-  text-align: center;
   background: #fff;
+  text-align: center;
 }
 .container {
   max-width: 1200px;
@@ -102,6 +102,13 @@
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.video-row::-webkit-scrollbar {
+  display: none;
 }
 .video-card {
   min-width: 260px;
@@ -113,7 +120,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(0,0,0,.75);
+  background: rgba(0,0,0,0.75);
   color: #fff;
   font-size: 12px;
   padding: 4px 10px;
@@ -166,16 +173,45 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.video-thumb video').forEach(video => {
+document.addEventListener('DOMContentLoaded', function () {
+  const videos = document.querySelectorAll('.video-thumb video');
+
+  videos.forEach(video => {
+    const playBtn = video.parentElement.querySelector('.play-btn');
+
+    video.addEventListener('play', () => {
+      if (playBtn) playBtn.style.display = 'none';
+    });
+
+    video.addEventListener('pause', () => {
+      if (!video.ended && playBtn) playBtn.style.display = 'flex';
+    });
+
+    video.addEventListener('ended', () => {
+      video.removeAttribute('controls');
+      if (playBtn) playBtn.style.display = 'flex';
+    });
+
     video.addEventListener('click', () => {
-      document.querySelectorAll('.video-thumb video').forEach(v => v.pause());
-      video.play();
-      video.setAttribute('controls', 'controls');
+      videos.forEach(v => {
+        if (v !== video) {
+          v.pause();
+          v.currentTime = 0;
+          v.removeAttribute('controls');
+          const btn = v.parentElement.querySelector('.play-btn');
+          if (btn) btn.style.display = 'flex';
+        }
+      });
+
+      if (video.paused) {
+        video.setAttribute('controls', 'controls');
+        video.play();
+      }
     });
   });
 });
 </script>
+
 {% endif %}
 
 {% schema %}
