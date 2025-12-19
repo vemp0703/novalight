@@ -23,7 +23,7 @@
           {% assign parts = raw | split: '|' %}
 
           {% assign video_url = parts[0] | strip %}
-          {% assign title = parts[1] | default: 'Product Review' | strip %}
+          {% assign title = parts[1] | default: '' | strip %}
           {% assign views = parts[2] | default: '0' | strip %}
 
           <div class="video-card">
