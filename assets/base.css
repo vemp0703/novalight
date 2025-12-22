@@ -3644,7 +3644,7 @@ span.jdgm-prev-badge__stars::after {
 span.badge.price__badge-sale.color-scheme-5 {
     background: linear-gradient(90deg, #FB2C36 0%, #FF6900 100%);
 }
-s.price-item.price-item--regular, .price__sale {
+/* s.price-item.price-item--regular, .price__sale {
     font-size: 3rem !important;
     vertical-align: top;
     letter-spacing: normal;
@@ -3653,7 +3653,7 @@ s.price-item.price-item--regular, .price__sale {
     font-style: normal;
     font-weight: 400;
     line-height: 3rem;
-}
+} */
 s.price-item.price-item--regular {
     color: #90A1B9;
 }
