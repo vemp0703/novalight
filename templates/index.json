@@ -120,9 +120,11 @@
       "settings": {
         "heading": "Flawless Beauty, Just Keep Scrolling",
         "heading_color": "#000000",
-        "slider_speed": 25,
+        "heading_size": 32,
+        "slider_speed": 40,
         "font_size": 18,
         "text_color": "#303030",
+        "icon_size": 24,
         "inverse_colors": false
       }
     },
