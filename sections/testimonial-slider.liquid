@@ -231,6 +231,27 @@
       <div class="testimonial-track" id="testimonial-track-{{ section.id }}">
         {% for block in section.blocks %}
           <div class="testimonial-card" {{ block.shopify_attributes }}>
+                 <div class="testimonial-rating">
+              <div class="stars">
+                {% assign rating = block.settings.rating %}
+                {% for i in (1..5) %}
+                  {% if i <= rating %}
+                    <img src="{{ section.settings.star_image | img_url: '20x20' }}" 
+                         alt="Star" 
+                         width="20" 
+                         height="20"
+                         loading="lazy">
+                  {% else %}
+                    <img src="{{ section.settings.star_empty_image | default: section.settings.star_image | img_url: '20x20' }}" 
+                         alt="Empty Star" 
+                         width="20" 
+                         height="20"
+                         loading="lazy">
+                  {% endif %}
+                {% endfor %}
+              </div>
+              
+            </div>
             <div class="testimonial-content">
               <p>{{ block.settings.testimonial_text }}</p>
             </div>
@@ -253,30 +274,11 @@
               <div class="author-info">
                 <h4>{{ block.settings.author_name }}</h4>
                 <p>{{ block.settings.author_position }}</p>
+                <div class="testimonial-date">{{ block.settings.date }}</div>
               </div>
             </div>
             
-            <div class="testimonial-rating">
-              <div class="stars">
-                {% assign rating = block.settings.rating %}
-                {% for i in (1..5) %}
-                  {% if i <= rating %}
-                    <img src="{{ section.settings.star_image | img_url: '20x20' }}" 
-                         alt="Star" 
-                         width="20" 
-                         height="20"
-                         loading="lazy">
-                  {% else %}
-                    <img src="{{ section.settings.star_empty_image | default: section.settings.star_image | img_url: '20x20' }}" 
-                         alt="Empty Star" 
-                         width="20" 
-                         height="20"
-                         loading="lazy">
-                  {% endif %}
-                {% endfor %}
-              </div>
-              <div class="testimonial-date">{{ block.settings.date }}</div>
-            </div>
+       
           </div>
         {% endfor %}
       </div>
