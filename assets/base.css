@@ -3773,3 +3773,23 @@ a.link.product__view-details.animate-arrow {
         transform: translateX(100%) scaleX(0);
     }
 }
+
+
+.customized-featured-collection h2.title.inline-richtext.h1 {
+    text-align: center;
+}
+
+.customized-featured-collection .customized-card-product .card-information .price .price__container span {
+    font-size: 18px;
+}
+
+.customized-featured-collection .customized-card-product .card-information .price .price__container span s.price-item.price-item--regular {
+    font-size: 18px;
+}
+
+.customized-featured-collection .customized-card-product .card-information .card-heading {
+    font-size: 26px;
+}
+.customized-featured-collection .customized-card-product .card-information .card-heading a {
+    font-size: 26px;
+}
