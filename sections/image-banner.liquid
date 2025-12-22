@@ -27,6 +27,41 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+
+  {% if section.settings.section_width == 'boxed'%}
+
+#Banner-{{ section.id }}{
+    max-width: 1440px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+#Banner-{{ section.id }} .banner__media.media {
+    border-radius: 15px;
+}
+
+#Banner-{{ section.id }} .banner__media.media img {
+    border-radius: 15px;
+}
+
+#Banner-{{ section.id }} .banner__media.media::before,
+#Banner-{{ section.id }} .banner__media.media::after{
+    border-radius: 15px;
+    content: '';
+}
+#Banner-{{ section.id }}::before{
+        border-radius: 15px;
+}
+
+#Banner-{{ section.id }} .banner__content {
+      border-radius: 15px;
+}
+
+#Banner-{{ section.id }}::after {
+    border-radius: 15px;
+}
+
+{%endif%}
 {%- endstyle -%}
 
 {%- liquid
