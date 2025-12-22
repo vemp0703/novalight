@@ -283,13 +283,20 @@
             "heading_size": "h1"
           }
         },
+        "text_XqUM7w": {
+          "type": "text",
+          "settings": {
+            "text": "Your fall plans call for some new outfits",
+            "text_style": "body"
+          }
+        },
         "buttons_nkfEtQ": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -298,12 +305,13 @@
       "block_order": [
         "text_7JVebD",
         "heading_6bC8HT",
+        "text_XqUM7w",
         "buttons_nkfEtQ"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/bottom_cta.png",
-        "image_overlay_opacity": 0,
+        "image_overlay_opacity": 10,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "middle-left",
@@ -312,7 +320,7 @@
         "color_scheme": "",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "show_text_below": false
       }
     }
   },
