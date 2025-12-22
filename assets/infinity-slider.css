@@ -1,0 +1,119 @@
+/* infinity-slider.css */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.infinity-slider-section {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: var(--heading-color);
+  font-family: "Lato", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-wrapper.color-inverse .slide {
+  color: #ffffff !important;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--slider-speed) linear infinite;
+  will-change: transform;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slide-color);
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-size: var(--slide-font-size);
+  gap: 12px;
+  white-space: nowrap;
+  padding: 0 25px;
+  min-width: 250px;
+}
+
+.slide img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.slide-icon-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-icon-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-text {
+  line-height: 1.2;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.slider-wrapper:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .infinity-slider-section {
+    padding: 30px 15px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .slide {
+    font-size: calc(var(--slide-font-size) * 0.85);
+    min-width: 200px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 22px;
+  }
+  
+  .slide {
+    min-width: 180px;
+    font-size: calc(var(--slide-font-size) * 0.75);
+  }
+}
