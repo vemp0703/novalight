@@ -30,10 +30,14 @@
 
   {% if section.settings.section_width == 'boxed'%}
 
+    .custom-image-banner{
+ padding:0 1.2rem;
+    }
+
 #Banner-{{ section.id }}{
     max-width: 1440px;
     margin: 0 auto;
-    padding:0 1.2rem;
+   
     border-radius: 15px;
 }
 
@@ -206,7 +210,7 @@
 {
   "name": "t:sections.image-banner.name",
   "tag": "section",
-  "class": "section",
+  "class": "section custom-image-banner",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
