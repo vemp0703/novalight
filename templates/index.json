@@ -16,22 +16,29 @@
           "type": "heading",
           "settings": {
             "heading": "END OF SEASON SALE",
-            "heading_size": "h0"
+            "heading_size": "h2"
+          }
+        },
+        "heading_V3DPt7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Up to 75% OFF</strong>",
+            "heading_size": "hxl"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Hundred of new items on sale, online and in-store",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Explore Now",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -40,17 +47,19 @@
       },
       "block_order": [
         "heading",
+        "heading_V3DPt7",
         "text",
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image": "shopify://shop_images/hero.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
