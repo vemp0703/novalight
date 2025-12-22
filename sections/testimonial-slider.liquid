@@ -1,0 +1,538 @@
+{%- style -%}
+  .testimonial-slider-section {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
+  }
+  
+  .testimonial-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .testimonial-slider-wrapper {
+    position: relative;
+  }
+  
+  .testimonial-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 10px 0 30px;
+  }
+  
+  .testimonial-track::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial-card {
+    min-width: 350px;
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+  }
+  
+  .testimonial-content {
+    margin-bottom: 25px;
+  }
+  
+  .testimonial-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .author-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .author-info p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+  }
+  
+  .testimonial-rating {
+    margin-bottom: 20px;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .stars img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .testimonial-date {
+    color: #999;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  
+  .slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .slider-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+  }
+  
+  .slider-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .testimonial-slider-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    
+    .section-header h2 {
+      font-size: 32px;
+    }
+    
+    .testimonial-card {
+      min-width: 300px;
+      padding: 25px;
+    }
+    
+    .testimonial-slider {
+      padding: 0 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-card {
+      min-width: 280px;
+      padding: 20px;
+    }
+    
+    .section-header h2 {
+      font-size: 28px;
+    }
+    
+    .slider-btn {
+      width: 40px;
+      height: 40px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="testimonial-slider-section" data-section-id="{{ section.id }}">
+  <div class="testimonial-slider">
+    <div class="section-header">
+      <h2>{{ section.settings.section_title }}</h2>
+    </div>
+    
+    <div class="testimonial-slider-wrapper">
+      <div class="testimonial-track" id="testimonial-track-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="testimonial-card" {{ block.shopify_attributes }}>
+            <div class="testimonial-content">
+              <p>{{ block.settings.testimonial_text }}</p>
+            </div>
+            
+            <div class="testimonial-author">
+              {% if block.settings.avatar_image %}
+                <div class="author-avatar">
+                  <img src="{{ block.settings.avatar_image | img_url: '60x60', crop: 'center' }}" 
+                       alt="{{ block.settings.author_name }}" 
+                       width="60" 
+                       height="60">
+                </div>
+              {% else %}
+                <div class="author-avatar">
+                  {{ block.settings.author_name | slice: 0 | upcase }}
+                </div>
+              {% endif %}
+              
+              <div class="author-info">
+                <h4>{{ block.settings.author_name }}</h4>
+                <p>{{ block.settings.author_position }}</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-rating">
+              <div class="stars">
+                {% assign rating = block.settings.rating %}
+                {% for i in (1..5) %}
+                  {% if i <= rating %}
+                    <img src="{{ section.settings.star_image | img_url: '20x20' }}" 
+                         alt="Star" 
+                         width="20" 
+                         height="20"
+                         loading="lazy">
+                  {% else %}
+                    <img src="{{ section.settings.star_empty_image | default: section.settings.star_image | img_url: '20x20' }}" 
+                         alt="Empty Star" 
+                         width="20" 
+                         height="20"
+                         loading="lazy">
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="testimonial-date">{{ block.settings.date }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    {% if section.blocks.size > 1 %}
+      <div class="slider-controls">
+        <button class="slider-btn prev-btn" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="slider-btn next-btn" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="slider-dots" id="slider-dots-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sectionId = '{{ section.id }}';
+  const track = document.getElementById(`testimonial-track-${sectionId}`);
+  const cards = track.querySelectorAll('.testimonial-card');
+  const prevBtn = track.closest('.testimonial-slider-wrapper').nextElementSibling?.querySelector('.prev-btn');
+  const nextBtn = track.closest('.testimonial-slider-wrapper').nextElementSibling?.querySelector('.next-btn');
+  const dotsContainer = document.getElementById(`slider-dots-${sectionId}`);
+  const dots = dotsContainer?.querySelectorAll('.dot');
+  
+  if (!track || cards.length <= 1) return;
+  
+  let currentIndex = 0;
+  const cardWidth = cards[0].offsetWidth + 30; // width + gap
+  
+  function updateSlider() {
+    track.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: 'smooth'
+    });
+    
+    if (dots) {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = currentIndex > 0 ? currentIndex - 1 : cards.length - 1;
+      updateSlider();
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentIndex = currentIndex < cards.length - 1 ? currentIndex + 1 : 0;
+      updateSlider();
+    });
+  }
+  
+  if (dots) {
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+  }
+  
+  // Auto slide (optional)
+  {% if section.settings.autoplay %}
+    setInterval(() => {
+      currentIndex = currentIndex < cards.length - 1 ? currentIndex + 1 : 0;
+      updateSlider();
+    }, {{ section.settings.autoplay_speed | default: 5000 }});
+  {% endif %}
+  
+  // Handle responsive card width changes
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newCardWidth = cards[0].offsetWidth + 30;
+      if (cardWidth !== newCardWidth) {
+        cardWidth = newCardWidth;
+        updateSlider();
+      }
+    }, 250);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "What Our Customers Think!"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_image",
+      "label": "Star Image (Filled)",
+      "info": "Upload your custom star image for filled stars"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_empty_image",
+      "label": "Star Image (Empty)",
+      "info": "Optional: Upload custom image for empty stars"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed (ms)",
+      "min": 3000,
+      "max": 9000,
+      "step": 1000,
+      "default": 5000
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "testimonial_text",
+          "label": "Testimonial Text",
+          "default": "<p>Absolutely love it! Satisfied with that purchase. High quality and very soft product for that price. Thanks a lot!</p>"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "Jacintha McKinsey"
+        },
+        {
+          "type": "text",
+          "id": "author_position",
+          "label": "Author Position",
+          "default": "Marketing"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_image",
+          "label": "Avatar Image",
+          "info": "Optional: Upload author avatar image"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "09 Feb, 2022"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Absolutely love it! Satisfied with that purchase. High quality and very soft product for that price. Thanks a lot!</p>",
+            "author_name": "Jacintha McKinsey",
+            "author_position": "Marketing",
+            "rating": 5,
+            "date": "09 Feb, 2022"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Excellent quality! So much love and care was put into these clothes! Highly recommend for everyone</p>",
+            "author_name": "Nicole Smith",
+            "author_position": "Design Director",
+            "rating": 5,
+            "date": "13 Jun, 2022"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Beautiful naturally dyed colors!! If you're looking for toddler clothes, I highly recommend this shop!!</p>",
+            "author_name": "Jane Wood",
+            "author_position": "Financial Advisor",
+            "rating": 5,
+            "date": "29 May, 2022"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
