@@ -165,55 +165,50 @@
         "padding_bottom": 64
       }
     },
-    "collage": {
-      "type": "collage",
+    "image_with_text_H8qj7k": {
+      "type": "image-with-text",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "heading_VrG6jn": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "Image with text",
+            "heading_size": "h1"
           }
         },
-        "product": {
-          "type": "product",
+        "text_jeQkke": {
+          "type": "text",
           "settings": {
-            "product": "",
-            "second_image": false
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "button_HRkeEX": {
+          "type": "button",
           "settings": {
-            "collection": ""
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "heading_VrG6jn",
+        "text_jeQkke",
+        "button_HRkeEX"
       ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
+        "image": "shopify://shop_images/gempages_585598889726313143-4dd336e2-214a-4efd-b87f-4541339e6cb8.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -270,14 +265,63 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_banner_fCeN46": {
+      "type": "image-banner",
+      "blocks": {
+        "text_7JVebD": {
+          "type": "text",
+          "settings": {
+            "text": "NEW COLLECTION",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "heading_6bC8HT": {
+          "type": "heading",
+          "settings": {
+            "heading": "More Style. More Savings.",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_nkfEtQ": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_7JVebD",
+        "heading_6bC8HT",
+        "buttons_nkfEtQ"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/bottom_cta.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     }
   },
   "order": [
     "image_banner",
     "infinity_slider_wPYRQH",
     "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "image_with_text_H8qj7k",
+    "multicolumn",
+    "image_banner_fCeN46"
   ]
 }
