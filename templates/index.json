@@ -299,6 +299,68 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "testimonial_slider_JtM43D": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "testimonial_cbyFkN": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Absolutely love it! Satisfied with that purchase. High quality and very soft product for that price. Thanks a lot!</p>",
+            "author_name": "Jacintha McKinsey",
+            "author_position": "Marketing",
+            "rating": 5,
+            "date": "09 Feb, 2022"
+          }
+        },
+        "testimonial_hJtXr3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Absolutely love it! Satisfied with that purchase. High quality and very soft product for that price. Thanks a lot!</p>",
+            "author_name": "Jacintha McKinsey",
+            "author_position": "Marketing",
+            "rating": 5,
+            "date": "09 Feb, 2022"
+          }
+        },
+        "testimonial_mWwa7p": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Excellent quality! So much love and care was put into these clothes! Highly recommend for everyone</p>",
+            "author_name": "Nicole Smith",
+            "author_position": "Design Director",
+            "rating": 5,
+            "date": "13 Jun, 2022"
+          }
+        },
+        "testimonial_gMtBch": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Beautiful naturally dyed colors!! If you're looking for toddler clothes, I highly recommend this shop!!</p>",
+            "author_name": "Jane Wood",
+            "author_position": "Financial Advisor",
+            "rating": 5,
+            "date": "29 May, 2022"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_cbyFkN",
+        "testimonial_hJtXr3",
+        "testimonial_mWwa7p",
+        "testimonial_gMtBch"
+      ],
+      "name": "Testimonial Slider",
+      "settings": {
+        "section_title": "What Our Customers Think!",
+        "background_color": "#f3f3f3",
+        "autoplay": false,
+        "autoplay_speed": 5000,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
     }
   },
   "order": [
@@ -307,6 +369,7 @@
     "featured_collection",
     "image_with_text_H8qj7k",
     "image_banner_fCeN46",
-    "featured_collection_8NqKMk"
+    "featured_collection_8NqKMk",
+    "testimonial_slider_JtM43D"
   ]
 }
