@@ -257,25 +257,14 @@
             </div>
             
             <div class="testimonial-author">
-              {% if block.settings.avatar_image %}
-                <div class="author-avatar">
-                  <img src="{{ block.settings.avatar_image | img_url: '120x120', crop: 'center' }}" 
-                       alt="{{ block.settings.author_name }}" 
-                       width="60" 
-                       height="60"
-                       loading="lazy">
-                </div>
-              {% else %}
-                <div class="author-avatar">
-                  {{ block.settings.author_name | slice: 0 | upcase }}
-                </div>
-              {% endif %}
+              
               
               <div class="author-info">
                 <h4>{{ block.settings.author_name }}</h4>
                 <p>{{ block.settings.author_position }}</p>
-                <div class="testimonial-date">{{ block.settings.date }}</div>
+               
               </div>
+               <div class="testimonial-date">{{ block.settings.date }}</div>
             </div>
             
        
@@ -531,12 +520,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "label": "Author Position",
           "default": "Marketing"
         },
-        {
-          "type": "image_picker",
-          "id": "avatar_image",
-          "label": "Avatar Image",
-          "info": "Optional: Upload author avatar image"
-        },
+
         {
           "type": "range",
           "id": "rating",
