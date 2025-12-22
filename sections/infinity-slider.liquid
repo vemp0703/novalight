@@ -1,0 +1,41 @@
+{{ 'infinity-slider.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  :root {
+    --slider-speed: {{ section.settings.slider_speed }}s;
+    --slide-font-size: {{ section.settings.font_size }}px;
+    --slide-color: {{ section.settings.text_color }};
+    --heading-color: {{ section.settings.heading_color }};
+  }
+{% endstyle %}
+
+<div class="infinity-slider-section">
+  {% if section.settings.heading != blank %}
+    <div class="heading-wrapper">
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+    </div>
+  {% endif %}
+  
+  <div class="slider-wrapper {% if section.settings.inverse_colors %}color-inverse{% endif %}">
+    <div class="slider-track">
+      {% for block in section.blocks %}
+        {% for i in (1..4) %}
+          <div class="slide" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | img_url: '50x' }}" 
+                   alt="{{ block.settings.text | escape }}"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            {% elsif block.settings.icon_svg != blank %}
+              <div class="slide-icon-svg">{{ block.settings.icon_svg }}</div>
+            {% endif %}
+            <span class="slide-text">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'infinity-slider.js' | asset_url }}" defer></script>
