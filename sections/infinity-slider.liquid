@@ -1,31 +1,131 @@
-{{ 'infinity-slider.css' | asset_url | stylesheet_tag }}
-
 {% style %}
-  :root {
-    --slider-speed: {{ section.settings.slider_speed }}s;
-    --slide-font-size: {{ section.settings.font_size }}px;
-    --slide-color: {{ section.settings.text_color }};
-    --heading-color: {{ section.settings.heading_color }};
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+  
+  .section-{{ section.id }} .slider-wrapper.color-black .slide {
+    color: {{ section.settings.text_color }} !important;
+  }
+  
+  .section-{{ section.id }} .slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .section-{{ section.id }} .slider-track {
+    display: flex;
+    width: calc(250px * {{ section.blocks.size | times: 4 }});
+    animation: scroll-{{ section.id }} {{ section.settings.slider_speed }}s linear infinite;
+  }
+  
+  .section-{{ section.id }} .slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
+  }
+  
+  .section-{{ section.id }} .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.text_color }};
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-size: {{ section.settings.font_size }}px;
+    gap: 8px;
+    white-space: nowrap;
+    min-width: 250px;
+    padding: 0 20px;
+  }
+  
+  .section-{{ section.id }} .slide img {
+    width: {{ section.settings.icon_size }}px !important;
+    height: {{ section.settings.icon_size }}px !important;
+    object-fit: contain;
+  }
+  
+  .section-{{ section.id }} .slide-icon-svg {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section-{{ section.id }} .slide-icon-svg svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  @keyframes scroll-{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Section title styling */
+  .section-{{ section.id }} .heading-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .section-{{ section.id }} .section-title {
+    color: {{ section.settings.heading_color }};
+    font-family: "Lato", sans-serif;
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .slider-track {
+      width: calc(200px * {{ section.blocks.size | times: 4 }});
+    }
+    
+    .section-{{ section.id }} .slide {
+      min-width: 200px;
+      font-size: {{ section.settings.font_size | times: 0.85 }}px;
+    }
+    
+    .section-{{ section.id }} .section-title {
+      font-size: {{ section.settings.heading_size | times: 0.8 }}px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-{{ section.id }} .slider-track {
+      width: calc(180px * {{ section.blocks.size | times: 4 }});
+    }
+    
+    .section-{{ section.id }} .slide {
+      min-width: 180px;
+      font-size: {{ section.settings.font_size | times: 0.75 }}px;
+    }
+    
+    .section-{{ section.id }} .section-title {
+      font-size: {{ section.settings.heading_size | times: 0.7 }}px;
+    }
   }
 {% endstyle %}
 
-<div class="infinity-slider-section">
+<div class="infinity-slider-section section-{{ section.id }}">
   {% if section.settings.heading != blank %}
     <div class="heading-wrapper">
       <h2 class="section-title">{{ section.settings.heading }}</h2>
     </div>
   {% endif %}
   
-  <div class="slider-wrapper {% if section.settings.inverse_colors %}color-inverse{% endif %}">
+  <div class="slider-wrapper {% if section.settings.inverse_colors %}color-black{% endif %}">
     <div class="slider-track">
-      {% for block in section.blocks %}
-        {% for i in (1..4) %}
+      {% comment %} Each block will be repeated 4 times for seamless animation {% endcomment %}
+      {% for i in (1..4) %}
+        {% for block in section.blocks %}
           <div class="slide" {{ block.shopify_attributes }}>
             {% if block.settings.icon != blank %}
-              <img src="{{ block.settings.icon | img_url: '50x' }}" 
+              <img src="{{ block.settings.icon | img_url: '100x' }}" 
                    alt="{{ block.settings.text | escape }}"
-                   width="24"
-                   height="24"
+                   width="{{ section.settings.icon_size }}"
+                   height="{{ section.settings.icon_size }}"
                    loading="lazy">
             {% elsif block.settings.icon_svg != blank %}
               <div class="slide-icon-svg">{{ block.settings.icon_svg }}</div>
@@ -37,34 +137,12 @@
     </div>
   </div>
 </div>
-<script>
-    // infinity-slider.js
-class InfinitySlider extends HTMLElement {
-  constructor() {
-    super();
-    
-    // Ensure smooth animation even when tab is inactive
-    document.addEventListener('visibilitychange', () => {
-      const sliderTrack = this.querySelector('.slider-track');
-      if (document.hidden) {
-        sliderTrack.style.animationPlayState = 'paused';
-      } else {
-        sliderTrack.style.animationPlayState = 'running';
-      }
-    });
-  }
-}
-
-if (!customElements.get('infinity-slider')) {
-  customElements.define('infinity-slider', InfinitySlider);
-}
-</script>
 
 {% schema %}
 {
   "name": "Infinity Slider",
   "tag": "section",
-  "class": "section-infinity-slider",
+  "class": "section",
   "settings": [
     {
       "type": "text",
@@ -80,13 +158,24 @@ if (!customElements.get('infinity-slider')) {
     },
     {
       "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Size",
+      "default": 32
+    },
+    {
+      "type": "range",
       "id": "slider_speed",
       "min": 10,
       "max": 60,
-      "step": 5,
+      "step": 1,
       "unit": "s",
       "label": "Slider Speed",
-      "default": 25
+      "default": 25,
+      "info": "Animation duration in seconds"
     },
     {
       "type": "range",
@@ -95,7 +184,7 @@ if (!customElements.get('infinity-slider')) {
       "max": 32,
       "step": 1,
       "unit": "px",
-      "label": "Font Size",
+      "label": "Text Font Size",
       "default": 18
     },
     {
@@ -105,11 +194,21 @@ if (!customElements.get('infinity-slider')) {
       "default": "#303030"
     },
     {
+      "type": "range",
+      "id": "icon_size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 24
+    },
+    {
       "type": "checkbox",
       "id": "inverse_colors",
-      "label": "Inverse Colors",
+      "label": "Dark Background Mode",
       "default": false,
-      "info": "Enable for dark backgrounds"
+      "info": "Enable if section has dark background"
     }
   ],
   "blocks": [
@@ -120,19 +219,20 @@ if (!customElements.get('infinity-slider')) {
         {
           "type": "text",
           "id": "text",
-          "label": "Text",
+          "label": "Slide Text",
           "default": "Feature Name"
         },
         {
           "type": "image_picker",
           "id": "icon",
-          "label": "Icon Image"
+          "label": "Icon Image",
+          "info": "Recommended size: 50x50px"
         },
         {
           "type": "textarea",
           "id": "icon_svg",
-          "label": "SVG Icon Code",
-          "info": "Alternative to image. Paste SVG code here."
+          "label": "Or SVG Icon Code",
+          "info": "Paste SVG code here as alternative to image"
         }
       ]
     }
@@ -140,6 +240,13 @@ if (!customElements.get('infinity-slider')) {
   "presets": [
     {
       "name": "Infinity Slider",
+      "category": "Sliders",
+      "settings": {
+        "heading": "Why Choose Us",
+        "slider_speed": 25,
+        "font_size": 18,
+        "text_color": "#303030"
+      },
       "blocks": [
         {
           "type": "slide",
@@ -163,6 +270,18 @@ if (!customElements.get('infinity-slider')) {
           "type": "slide",
           "settings": {
             "text": "Redness Relief"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "text": "Comfort Fit"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "text": "Custom Modes"
           }
         }
       ]
