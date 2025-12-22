@@ -342,13 +342,35 @@
             "rating": 5,
             "date": "29 May, 2022"
           }
+        },
+        "testimonial_FVWgzr": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Beautiful naturally dyed colors!! If you're looking for toddler clothes, I highly recommend this shop!!</p>",
+            "author_name": "Jane Wood",
+            "author_position": "Financial Advisor",
+            "rating": 5,
+            "date": "29 May, 2022"
+          }
+        },
+        "testimonial_fE7egg": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Beautiful naturally dyed colors!! If you're looking for toddler clothes, I highly recommend this shop!!</p>",
+            "author_name": "Jane Wood",
+            "author_position": "Financial Advisor",
+            "rating": 5,
+            "date": "29 May, 2022"
+          }
         }
       },
       "block_order": [
         "testimonial_cbyFkN",
         "testimonial_hJtXr3",
         "testimonial_mWwa7p",
-        "testimonial_gMtBch"
+        "testimonial_gMtBch",
+        "testimonial_FVWgzr",
+        "testimonial_fE7egg"
       ],
       "name": "Testimonial Slider",
       "settings": {
