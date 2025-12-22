@@ -3779,17 +3779,17 @@ a.link.product__view-details.animate-arrow {
     text-align: center;
 }
 
-.customized-featured-collection .customized-card-product .card-information .price .price__container span {
+.customized-card-product .card__content .price .price__container span {
     font-size: 18px;
 }
 
-.customized-featured-collection .customized-card-product .card-information .price .price__container span s.price-item.price-item--regular {
+.customized-card-product .card__content  .price .price__container span s.price-item.price-item--regular {
     font-size: 18px;
 }
 
-.customized-featured-collection .customized-card-product .card-information .card-heading {
+.customized-card-product .card__content  .card-heading {
     font-size: 26px;
 }
-.customized-featured-collection .customized-card-product .card-information .card-heading a {
+.customized-card-product .card__content .card-heading a {
     font-size: 26px;
 }
