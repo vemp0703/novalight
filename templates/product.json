@@ -77,24 +77,24 @@
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/free_shipping.png",
-            "title": "Free Express Shipping",
-            "text": "Arrives in 2–3 business days"
+            "title": "30-Day Guarantee",
+            "text": "Peace of mind with our 30-day satisfaction guarantee."
           }
         },
         "usp_wjgEQE": {
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/reload.png",
-            "title": "365-Day Money-Back Guarantee",
-            "text": "Full refund if not satisfied"
+            "title": "Hassle-Free Refunds",
+            "text": "Easy returns and refunds if you’re not fully satisfied."
           }
         },
         "usp_tPGtFe": {
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/sheild.png",
-            "title": "1-Year Warranty Included",
-            "text": "Complete coverage for peace of mind"
+            "title": "Skin-Safe Design",
+            "text": "Gentle, skin-friendly materials for safe at-home use."
           }
         }
       },
@@ -222,6 +222,14 @@
         "include_margins": true
       }
     },
+    "product_faq_mE7BPV": {
+      "type": "product-faq",
+      "name": "Product FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about TheraFace Mask"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -238,14 +246,6 @@
         "show_rating": false,
         "padding_top": 36,
         "padding_bottom": 28
-      }
-    },
-    "product_faq_mE7BPV": {
-      "type": "product-faq",
-      "name": "Product FAQ",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subheading": "Everything you need to know about TheraFace Mask"
       }
     }
   },
