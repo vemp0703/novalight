@@ -420,6 +420,69 @@
         "padding_bottom": 36
       }
     },
+    "collapsible_content_NGczcr": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_JMtMWK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is LED light therapy safe for home use?",
+            "icon": "none",
+            "row_content": "<p>Yes! Novalight™ LED devices are designed for safe at-home use with adjustable intensity levels, making them suitable even for sensitive skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pi4mkD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_dWKM37": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ei7xMg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_JMtMWK",
+        "collapsible_row_pi4mkD",
+        "collapsible_row_dWKM37",
+        "collapsible_row_Ei7xMg"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "Got Questions?",
+        "heading": "<strong>Answers to What You’re Curious About</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Gemini_Generated_Image_tqyrcftqyrcftqyr.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "newsletter_gWkyyG": {
       "type": "newsletter",
       "blocks": {
@@ -464,6 +527,7 @@
     "featured_collection_8NqKMk",
     "testimonial_slider_JtM43D",
     "featured_blog_fUtUEG",
+    "collapsible_content_NGczcr",
     "newsletter_gWkyyG"
   ]
 }
