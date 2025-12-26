@@ -528,27 +528,36 @@
         "collapsible_row_wjGKx7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can I use LED therapy with my existing skincare products?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Absolutely! Novalight™ works perfectly alongside your daily cleansers and moisturizers. Pairing your device with your favorite products can enhance results without extra effort.</p>",
             "page": ""
           }
         },
         "collapsible_row_JDqwdh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "How long should each LED session last?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Most sessions take 10–20 minutes, depending on your routine and skin concerns. Following the recommended timing ensures safe, effective results every time.</p>",
             "page": ""
           }
         },
         "collapsible_row_Ekmfpa": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is Novalight™ safe for sensitive skin types?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Yes. Devices have adjustable intensity levels to provide a gentle, soothing experience. Even sensitive skin can enjoy the benefits of light therapy without irritation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8iEcUU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I target specific areas with my LED device?",
+            "icon": "none",
+            "row_content": "<p>Definitely. Novalight™ allows focused care on areas like under the eyes or around the nose. Targeted sessions help improve tone, calm redness, and refresh your skin naturally.</p>",
             "page": ""
           }
         }
@@ -562,7 +571,8 @@
         "collapsible_row_KH3Fam",
         "collapsible_row_wjGKx7",
         "collapsible_row_JDqwdh",
-        "collapsible_row_Ekmfpa"
+        "collapsible_row_Ekmfpa",
+        "collapsible_row_8iEcUU"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
