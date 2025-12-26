@@ -15,28 +15,28 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "END OF SEASON SALE",
+            "heading": "LED Skincare Devices for Glowing Skin at Home",
             "heading_size": "h2"
           }
         },
         "heading_V3DPt7": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Up to 75% OFF</strong>",
+            "heading": "Glow That Speaks for Itself",
             "heading_size": "hxl"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Hundred of new items on sale, online and in-store",
+            "text": "Novalight™ creates advanced LED skincare devices designed for safe, effective at-home light therapy. Refresh your skin, improve tone, and enjoy a simple daily routine trusted by thousands.Relax, enjoy, and let your skin do the talking.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Explore Now",
+            "button_label_1": "Experience the Glow",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
