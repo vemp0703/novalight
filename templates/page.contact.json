@@ -16,6 +16,37 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_pgh48x": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7Nrk6K": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Novalight LLC</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Y7RemR": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Address: </strong>30 N Gould St Str R, Sheridan, Wyoming 82801, United States <br/><strong>Phone: </strong>+1 239-286-7315<br/><strong>Email: </strong>info@novalight-shop.com<br/><strong>Office Hour: </strong>9 Am - 5 Pm (Monday to Friday )<br/><strong>Timezone: </strong>(GMT-07:00) Mountain Standard Time (Phoenix)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7Nrk6K",
+        "text_Y7RemR"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "form": {
       "type": "contact-form",
       "settings": {
@@ -29,6 +60,7 @@
   },
   "order": [
     "main",
+    "rich_text_pgh48x",
     "form"
   ]
 }
