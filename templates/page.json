@@ -11,9 +11,34 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "rich_text_4bYmQH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BXTtNJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BXTtNJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image_with_text_pBPA96": {
@@ -121,6 +146,7 @@
   },
   "order": [
     "main",
+    "rich_text_4bYmQH",
     "image_with_text_pBPA96",
     "multicolumn_R6FJxr"
   ]
