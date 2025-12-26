@@ -72,7 +72,7 @@
         "slide_Yhtg8G": {
           "type": "slide",
           "settings": {
-            "text": "Collagen Boost",
+            "text": "Radiant, healthy-looking skin",
             "icon": "shopify://shop_images/Group.svg",
             "icon_svg": ""
           }
@@ -80,7 +80,7 @@
         "slide_mWiVWA": {
           "type": "slide",
           "settings": {
-            "text": "Acne Control",
+            "text": "More balanced tone and texture",
             "icon": "shopify://shop_images/Group.svg",
             "icon_svg": ""
           }
@@ -88,7 +88,7 @@
         "slide_cCm7q9": {
           "type": "slide",
           "settings": {
-            "text": "Tone Correction",
+            "text": "Calm, soothing light therapy",
             "icon": "shopify://shop_images/Group.svg",
             "icon_svg": ""
           }
@@ -96,7 +96,7 @@
         "slide_wjaaQw": {
           "type": "slide",
           "settings": {
-            "text": "Redness Relief",
+            "text": "Naturally luminous glow",
             "icon": "shopify://shop_images/Group.svg",
             "icon_svg": ""
           }
@@ -104,13 +104,14 @@
         "slide_tBR7rx": {
           "type": "slide",
           "settings": {
-            "text": "Comfort Fit",
+            "text": "Improved skin vitality",
             "icon": "shopify://shop_images/Group.svg",
             "icon_svg": ""
           }
         },
         "slide_FJaQWw": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "text": "Custom Modes",
             "icon": "shopify://shop_images/Group.svg",
@@ -128,7 +129,7 @@
       ],
       "name": "Infinity Slider",
       "settings": {
-        "heading": "Flawless Beauty, Just Keep Scrolling",
+        "heading": "Fresh Face, Fresh Start",
         "heading_color": "#000000",
         "heading_size": 32,
         "slider_speed": 40,
