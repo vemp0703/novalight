@@ -122,6 +122,9 @@
         "column_kwFYW6",
         "column_dUWQDe"
       ],
+      "custom_css": [
+        ".title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {display: flex; text-align: center; justify-content: center;}"
+      ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Multicolumn",
