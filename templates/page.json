@@ -19,27 +19,37 @@
     "image_with_text_pBPA96": {
       "type": "image-with-text",
       "blocks": {
+        "caption_CbjU9Q": {
+          "type": "caption",
+          "settings": {
+            "caption": "About Novalight™",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "heading_nGfVr7": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Where Science Meets Radiance",
             "heading_size": "h1"
           }
         },
         "text_9AAEPN": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>At <strong>Novalight™</strong>, we believe that truly effective skincare should be simple, safe, and grounded in proven science. Our goal is to make advanced LED light therapy accessible to everyone, allowing you to achieve visible, confidence-boosting results from the comfort of your own home. Each Novalight™ device and bundle is carefully designed to integrate effortlessly into your daily routine, transforming skincare into a moment of intentional self-care.</p><p>By combining cutting-edge LED technology with intelligent, user-friendly design, Novalight™ products work in harmony with your skin’s natural processes. Our devices are developed to help rejuvenate tired, dull-looking skin, enhance brightness, and support a smoother, more refreshed appearance—without unnecessary complexity or harsh treatments. With consistent use, just a few minutes a day can make a meaningful difference in how your skin looks and feels.</p><p>Every Novalight™ product is created with a strong focus on comfort, quality, and reliability. Designed for safe at-home use, our devices deliver gentle yet effective light therapy that fits seamlessly into modern lifestyles. Whether you’re looking to elevate your skincare routine, maintain a healthy glow, or enjoy a calming daily ritual, Novalight™ offers a balanced approach that blends innovation with ease.</p><p>With Novalight™, skincare becomes more than a routine—it becomes a simple, science-backed experience that empowers you to care for your skin with confidence, consistency, and clarity.</p>",
             "text_style": "body"
           }
         }
       },
       "block_order": [
+        "caption_CbjU9Q",
         "heading_nGfVr7",
         "text_9AAEPN"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
