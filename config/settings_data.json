@@ -390,7 +390,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "main#MainContent {display: flex; justify-content: center; align-items: center; gap: 50px;}"
+      "main#MainContent {display: flex; justify-content: space-between; align-items: center; gap: 50px; padding: 50px;}"
     ]
   }
 }
