@@ -144,9 +144,9 @@
       "settings": {
         "collection": "frontpage",
         "products_to_show": 4,
-        "title": "Everyone’s Loving These",
+        "title": "Favorites Our Customers Return To",
         "heading_size": "h1",
-        "description": "",
+        "description": "<p>Our top stars, adored for results you can see and feel. Loved by thousands, these favorites bring out your natural glow, boost confidence, and make your daily skincare ritual a treat. </p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
