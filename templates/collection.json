@@ -11,7 +11,6 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -20,7 +19,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -61,6 +59,7 @@
         "heading_cgKqzn",
         "text_7zffez"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "height": "adapt",
@@ -113,6 +112,7 @@
         "column_kwFYW6",
         "column_dUWQDe"
       ],
+      "disabled": true,
       "custom_css": [
         ".title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {display: flex; text-align: center; justify-content: center;}"
       ],
