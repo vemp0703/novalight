@@ -95,8 +95,8 @@
         "column_RBrTpK": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong>Our Mission</strong>",
+            "text": "<p>Our mission at <strong>Novalight™</strong> is to make advanced, science-driven skincare accessible, simple, and safe for everyday use. We are committed to delivering thoughtfully designed LED light therapy solutions that help people care for their skin with confidence—without complexity, invasive treatments, or unnecessary steps. Through innovation, quality, and ease of use, we aim to elevate daily self-care into a meaningful and effective ritual.</p>",
             "link_label": "",
             "link": ""
           }
@@ -104,8 +104,8 @@
         "column_PtH9r8": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong>Our Vision</strong>",
+            "text": "<p>Our vision is to become a trusted global leader in at-home light therapy skincare. We strive to redefine modern skincare by bridging science and simplicity, empowering individuals to take control of their skin health with reliable, effective, and beautifully designed solutions. As technology evolves, Novalight™ envisions a future where professional-level skincare is not limited to clinics—but is available, enjoyable, and effortless for everyone.<br/><br/></p>",
             "link_label": "",
             "link": ""
           }
@@ -113,8 +113,8 @@
         "column_HkRgE8": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong>Our Goals</strong>",
+            "text": "<p>Our vision is to become a trusted global leader in at-home light therapy skincare. We aim to redefine modern skincare by blending science with simplicity, empowering individuals to take control of their skin health through reliable, effective, and thoughtfully designed solutions. As technology evolves, Novalight™ envisions a future where professional-level skincare extends beyond clinics—becoming accessible, enjoyable, and effortless for everyone.</p>",
             "link_label": "",
             "link": ""
           }
