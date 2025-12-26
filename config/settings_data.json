@@ -390,7 +390,6 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "main#MainContent {display: flex; justify-content: space-around; align-items: center; gap: 50px; padding: 50px;}",
       "h1.main-page-title.page-title.h0.scroll-trigger.animate--fade-in {margin-bottom: 10px;}"
     ]
   }
