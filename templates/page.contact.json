@@ -23,7 +23,7 @@
         "heading_Wctj37": {
           "type": "heading",
           "settings": {
-            "heading": "Contact Us",
+            "heading": "<strong>Contact Us</strong>",
             "heading_size": "h1"
           }
         }
