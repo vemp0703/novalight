@@ -515,6 +515,42 @@
             "row_content": "<p>Use your device on clean skin, following the recommended timing. Many users pair it with their regular skincare for enhanced results.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_KH3Fam": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can LED light therapy help with acne-prone skin?",
+            "icon": "none",
+            "row_content": "<p>Yes! Novalight™ LED devices are designed to gently calm acne-prone areas. Regular use can help reduce redness and inflammation while supporting clearer, healthier-looking skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wjGKx7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_JDqwdh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ekmfpa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -522,7 +558,11 @@
         "collapsible_row_pi4mkD",
         "collapsible_row_dWKM37",
         "collapsible_row_Ei7xMg",
-        "collapsible_row_bcyzkG"
+        "collapsible_row_bcyzkG",
+        "collapsible_row_KH3Fam",
+        "collapsible_row_wjGKx7",
+        "collapsible_row_JDqwdh",
+        "collapsible_row_Ekmfpa"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
