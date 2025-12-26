@@ -435,27 +435,36 @@
         "collapsible_row_pi4mkD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "How long does it take to see results with an LED face mask?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Most users notice visible improvements in skin tone, texture, and radiance within a few weeks of consistent use. Individual results may vary.</p>",
             "page": ""
           }
         },
         "collapsible_row_dWKM37": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can LED light therapy be used daily?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Yes. Daily or several-times-per-week use is safe. Many customers build a routine that fits their schedule for optimal benefits.</p>",
             "page": ""
           }
         },
         "collapsible_row_Ei7xMg": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is Novalight™ suitable for all skin types?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Absolutely! Novalight™ LED skincare devices are suitable for most skin types. Adjustable settings allow a gentle and comfortable experience for everyone.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bcyzkG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the best way to use my Novalight™ device?",
+            "icon": "none",
+            "row_content": "<p>Use your device on clean skin, following the recommended timing. Many users pair it with their regular skincare for enhanced results.</p>",
             "page": ""
           }
         }
@@ -464,7 +473,8 @@
         "collapsible_row_JMtMWK",
         "collapsible_row_pi4mkD",
         "collapsible_row_dWKM37",
-        "collapsible_row_Ei7xMg"
+        "collapsible_row_Ei7xMg",
+        "collapsible_row_bcyzkG"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
