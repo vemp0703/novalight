@@ -285,6 +285,66 @@
         "show_text_below": false
       }
     },
+    "rich_text_AipNht": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_paepMY": {
+          "type": "caption",
+          "settings": {
+            "caption": "Wish Your Skin Could Feel Alive Again?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_CXAxUf": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Your Skin Rescue Starts Here</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_dBnemk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From dullness to uneven tone and stress-related skin fatigue, Novalight™ delivers professional-quality at-home solutions. Experience glowing, healthy-looking skin with ease, every day.</p>"
+          }
+        },
+        "text_DLiCAz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✓ <strong>Dull, Lackluster Skin</strong> – Novalight™ devices and bundles revitalize your complexion, bringing out a natural, luminous glow in just minutes a day.</p><p>✓ <strong>Uneven Tone & Texture</strong> – Targeted light therapy helps improve the appearance of uneven tone, revealing a more even, radiant surface.</p><p>✓ <strong>Redness & Irritation</strong> – Gentle LED therapy soothes and calms sensitive areas, restoring comfort and a healthy, balanced appearance.</p><p>✓ <strong>Early Signs of Aging</strong> – Supports the skin’s natural collagen process and improves elasticity with Novalight™ products, giving skin a firmer, refreshed, and youthful look.</p>"
+          }
+        },
+        "button_dAkEJ3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_paepMY",
+        "heading_CXAxUf",
+        "text_dBnemk",
+        "text_DLiCAz",
+        "button_dAkEJ3"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "featured_collection_8NqKMk": {
       "type": "featured-collection",
       "settings": {
@@ -534,6 +594,7 @@
     "featured_collection",
     "image_with_text_H8qj7k",
     "image_banner_fCeN46",
+    "rich_text_AipNht",
     "featured_collection_8NqKMk",
     "testimonial_slider_JtM43D",
     "featured_blog_fUtUEG",
