@@ -387,7 +387,7 @@
       ],
       "name": "Testimonial Slider",
       "settings": {
-        "section_title": "What Our Customers Think!",
+        "section_title": "Testimonials",
         "background_color": "#f3f3f3",
         "star_image": "shopify://shop_images/star.png",
         "star_empty_image": "shopify://shop_images/star.png",
