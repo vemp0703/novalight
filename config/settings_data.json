@@ -391,7 +391,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "h1.main-page-title.page-title.h0.scroll-trigger.animate--fade-in {margin-bottom: 10px;}"
+      "h1.main-page-title.page-title.h0.scroll-trigger.animate--fade-in {margin-bottom: 10px;}",
+      ".page-width--narrow {max-width: 128.6rem; padding: 0;}"
     ]
   }
 }
