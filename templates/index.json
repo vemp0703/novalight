@@ -233,28 +233,28 @@
         "text_7JVebD": {
           "type": "text",
           "settings": {
-            "text": "NEW COLLECTION",
+            "text": "",
             "text_style": "caption-with-letter-spacing"
           }
         },
         "heading_6bC8HT": {
           "type": "heading",
           "settings": {
-            "heading": "More Style. More Savings.",
+            "heading": "Your Skin, Your Confidence",
             "heading_size": "h1"
           }
         },
         "text_XqUM7w": {
           "type": "text",
           "settings": {
-            "text": "Your fall plans call for some new outfits",
+            "text": "Every day is an opportunity to let your skin shine. Novalight™ LED devices are designed to make professional-level skincare effortless at home. Calm, rejuvenate, and energize your skin in just minutes, so you can feel confident in every moment. Embrace a routine that works for you and see your natural glow come to life.",
             "text_style": "body"
           }
         },
         "buttons_nkfEtQ": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Now",
+            "button_label_1": "Experience the Glow",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
