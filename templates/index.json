@@ -403,14 +403,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "product_faq_PrnNkL": {
-      "type": "product-faq",
-      "name": "Product FAQ",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subheading": "Everything you need to know about TheraFace Mask"
-      }
     }
   },
   "order": [
@@ -421,7 +413,6 @@
     "image_banner_fCeN46",
     "featured_collection_8NqKMk",
     "testimonial_slider_JtM43D",
-    "featured_blog_fUtUEG",
-    "product_faq_PrnNkL"
+    "featured_blog_fUtUEG"
   ]
 }
