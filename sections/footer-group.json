@@ -24,14 +24,14 @@
           "type": "link_list",
           "settings": {
             "heading": "Shops",
-            "menu": "shops"
+            "menu": "shop"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
             "heading": "Supports",
-            "menu": "support"
+            "menu": ""
           }
         },
         "footer-2": {
