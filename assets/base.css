@@ -3742,11 +3742,11 @@ span.quantity__rules-cart {
     display: none;
 }
 .product-form__submit {
-    background: linear-gradient(90deg, #00A6F4 0%, #0084D1 100%);
+    background: linear-gradient(90deg, #000 0%, #331 100%);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
 }
 .product-form__submit:hover {
-    background: linear-gradient(90deg, #00A6F4 0%, #0084D1 100%);
+    background: linear-gradient(90deg, #000 0%, #331 100%);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
     border:none;
 }
