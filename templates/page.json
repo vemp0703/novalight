@@ -55,14 +55,14 @@
         "heading_nGfVr7": {
           "type": "heading",
           "settings": {
-            "heading": "Where Science Meets Radiance",
+            "heading": "Science You Can See, Care You Can Trust",
             "heading_size": "h1"
           }
         },
         "text_9AAEPN": {
           "type": "text",
           "settings": {
-            "text": "<p>At <strong>Novalight™</strong>, we believe that truly effective skincare should be simple, safe, and grounded in proven science. Our goal is to make advanced LED light therapy accessible to everyone, allowing you to achieve visible, confidence-boosting results from the comfort of your own home. Each Novalight™ device and bundle is carefully designed to integrate effortlessly into your daily routine, transforming skincare into a moment of intentional self-care.</p><p>By combining cutting-edge LED technology with intelligent, user-friendly design, Novalight™ products work in harmony with your skin’s natural processes. Our devices are developed to help rejuvenate tired, dull-looking skin, enhance brightness, and support a smoother, more refreshed appearance—without unnecessary complexity or harsh treatments. With consistent use, just a few minutes a day can make a meaningful difference in how your skin looks and feels.</p><p>Every Novalight™ product is created with a strong focus on comfort, quality, and reliability. Designed for safe at-home use, our devices deliver gentle yet effective light therapy that fits seamlessly into modern lifestyles. Whether you’re looking to elevate your skincare routine, maintain a healthy glow, or enjoy a calming daily ritual, Novalight™ offers a balanced approach that blends innovation with ease.</p><p>With Novalight™, skincare becomes more than a routine—it becomes a simple, science-backed experience that empowers you to care for your skin with confidence, consistency, and clarity.</p>",
+            "text": "<p>At Novalight™, we bring professional LED light therapy to your home with devices designed for real results. Our approach is rooted in research-backed technology that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.</p>",
             "text_style": "body"
           }
         }
@@ -89,14 +89,60 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_pNqMJY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yrwxRE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why We Exist",
+            "heading_size": "h1"
+          }
+        },
+        "text_DDEVRG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ started with a simple goal: to make advanced skincare accessible to everyone. Our founders, frustrated by expensive clinic visits and limited home options, created a line of LED devices that anyone can use safely and consistently. We believe taking care of your skin should feel approachable, effective, and rewarding.</p>"
+          }
+        },
+        "heading_YwfGDg": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Makes Novalight™ Different",
+            "heading_size": "h1"
+          }
+        },
+        "text_9b6VKJ": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Evidence-Based LED Technology</strong> – Using wavelengths proven to support skin renewal and appearance.<br/></li><li><strong>Intuitive Daily Use</strong> – Designed to fit naturally into your routine.<br/></li><li><strong>Gentle and Safe</strong> – Suitable for all skin types, without irritation.</li><li><strong>Visible Impact</strong> – Noticeable improvements with consistent use.<br/><br/></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yrwxRE",
+        "text_DDEVRG",
+        "heading_YwfGDg",
+        "text_9b6VKJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "multicolumn_R6FJxr": {
       "type": "multicolumn",
       "blocks": {
         "column_RBrTpK": {
           "type": "column",
           "settings": {
-            "title": "<strong>Our Mission</strong>",
-            "text": "<p>Our mission at <strong>Novalight™</strong> is to make advanced, science-driven skincare accessible, simple, and safe for everyday use. We are committed to delivering thoughtfully designed LED light therapy solutions that help people care for their skin with confidence—without complexity, invasive treatments, or unnecessary steps. Through innovation, quality, and ease of use, we aim to elevate daily self-care into a meaningful and effective ritual.</p>",
+            "title": "<strong>Our Story</strong>",
+            "text": "<p>Novalight™ was founded to bring a thoughtful approach to skincare at home. Driven by a passion for innovation and results, our team sought to create LED light therapy devices that make caring for your skin effective. We focus on combining scientific understanding with practical design, allowing individuals to support their skin’s natural processes without relying on complex methods.<br/></p>",
             "link_label": "",
             "link": ""
           }
@@ -104,8 +150,8 @@
         "column_PtH9r8": {
           "type": "column",
           "settings": {
-            "title": "<strong>Our Vision</strong>",
-            "text": "<p>Our vision is to become a trusted global leader in at-home light therapy skincare. We strive to redefine modern skincare by bridging science and simplicity, empowering individuals to take control of their skin health with reliable, effective, and beautifully designed solutions. As technology evolves, Novalight™ envisions a future where professional-level skincare is not limited to clinics—but is available, enjoyable, and effortless for everyone.<br/><br/></p>",
+            "title": "<strong>Our Mission</strong>",
+            "text": "<p>Our mission is to provide safe, research-informed skincare solutions that are easy to use daily. We strive to deliver devices that promote skin health and wellness, making advanced skincare practices approachable for everyone. Through consistent, mindful use, we aim to help individuals feel confident and supported in their self-care routines while achieving visible, healthy results.<br/></p>",
             "link_label": "",
             "link": ""
           }
@@ -113,8 +159,8 @@
         "column_HkRgE8": {
           "type": "column",
           "settings": {
-            "title": "<strong>Our Goals</strong>",
-            "text": "<p>Our vision is to become a trusted global leader in at-home light therapy skincare. We aim to redefine modern skincare by blending science with simplicity, empowering individuals to take control of their skin health through reliable, effective, and thoughtfully designed solutions. As technology evolves, Novalight™ envisions a future where professional-level skincare extends beyond clinics—becoming accessible, enjoyable, and effortless for everyone.</p>",
+            "title": "<strong>Our Vision</strong>",
+            "text": "<p>We envision a future where professional-level skin treatments are accessible at home, giving people the ability to care for their skin on their own terms. By focusing on innovation, usability, and scientifically supported practices, Novalight™ aims to become a leading name in home skincare, inspiring trust and promoting well-being for all users.</p>",
             "link_label": "",
             "link": ""
           }
@@ -148,6 +194,7 @@
     "main",
     "rich_text_4bYmQH",
     "image_with_text_pBPA96",
+    "rich_text_pNqMJY",
     "multicolumn_R6FJxr"
   ]
 }
