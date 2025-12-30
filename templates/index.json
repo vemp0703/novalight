@@ -271,7 +271,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "section_width": "full",
+        "section_width": "boxed",
         "image": "shopify://shop_images/bottom_cta.png",
         "image_overlay_opacity": 10,
         "image_height": "adapt",
