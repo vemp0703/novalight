@@ -76,7 +76,6 @@
         "usp_e3Erhm": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/free_shipping.png",
             "title": "30-Day Guarantee",
             "text": "Peace of mind with our 30-day satisfaction guarantee."
           }
@@ -84,7 +83,6 @@
         "usp_wjgEQE": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/reload.png",
             "title": "Hassle-Free Refunds",
             "text": "Easy returns and refunds if you’re not fully satisfied."
           }
@@ -92,7 +90,6 @@
         "usp_tPGtFe": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/sheild.png",
             "title": "Skin-Safe Design",
             "text": "Gentle, skin-friendly materials for safe at-home use."
           }
@@ -143,7 +140,7 @@
           "type": "tab",
           "name": "Care & Maintenance",
           "settings": {
-            "icon": "shopify://shop_images/Leaf_c63dae39-bcfb-4099-a005-de35e597de5e.svg",
+            "icon": "shopify://shop_images/Leaf.svg",
             "label": "Care & Maintenance",
             "description": "Detailed information and specifications",
             "metafield_key": "product_care_and_maintaince"
