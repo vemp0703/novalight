@@ -83,11 +83,12 @@
       </h2>
     {% endif %}
 
-    {% if section.settings.subheading != blank %}
-      <p class="key-benefits__subheading">
-        {{ section.settings.subheading }}
-      </p>
-    {% endif %}
+    {% if product.metafields.custom.product_key_benefits_description != blank %}
+  <p class="key-benefits__subheading">
+    {{ product.metafields.custom.product_key_benefits_description }}
+  </p>
+{% endif %}
+
 
     <div class="key-benefits__grid">
       {% for item in benefits %}
