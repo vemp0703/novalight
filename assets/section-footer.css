@@ -1,6 +1,6 @@
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  background: #0F172B;
+  background:rgb(0, 0, 0);
     color: #fff;
 }
 footer *, footer .link {
