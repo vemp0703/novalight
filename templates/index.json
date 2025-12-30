@@ -271,7 +271,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "section_width": "boxed",
+        "section_width": "full",
         "image": "shopify://shop_images/bottom_cta.png",
         "image_overlay_opacity": 10,
         "image_height": "adapt",
@@ -279,7 +279,7 @@
         "desktop_content_position": "middle-left",
         "desktop_content_alignment": "left",
         "show_text_box": false,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "left",
         "show_text_below": true
