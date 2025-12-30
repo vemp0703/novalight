@@ -74,7 +74,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.png",
+        "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
