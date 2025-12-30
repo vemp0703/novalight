@@ -186,6 +186,9 @@
     },
     "sticky_scroll_section_7YyDeH": {
       "type": "sticky-scroll-section",
+      "custom_css": [
+        ".pin-icon {background: #577a6c;}"
+      ],
       "name": "Sticky Scroll Section",
       "settings": {}
     },
