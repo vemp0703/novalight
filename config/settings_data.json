@@ -394,7 +394,7 @@
       "h1.main-page-title.page-title.h0.scroll-trigger.animate--fade-in {margin-bottom: 10px;}",
       ".page-width--narrow {max-width: 128.6rem; padding: 0;}",
       ".shopify-policy__container {max-width: 95%;}",
-      "@media screen and (max-width: 749px) {.collection__description.body.rte.scroll-trigger.animate--slide-in {padding: 0px !important; } div#ImageWithText--template--17720416534615__image_with_text_H8qj7k {padding: 30px 0px; } div#ImageWithText--template--17720416534615__image_with_text_iVWfpR {padding: 30px 0px; } .banner__box.content-container.content-container--full-width-mobile.color-scheme-2.gradient {padding: 30px 20px; background: #f7f7f5; } div#Banner-template--17720416534615__image_banner_fCeN46 .banner__media.media.scroll-trigger.animate--fade-in {display: none;}}"
+      "@media screen and (max-width: 749px) {.collection__description.body.rte.scroll-trigger.animate--slide-in {padding: 0px !important; } div#ImageWithText--template--17720416534615__image_with_text_H8qj7k {padding: 30px 0px; } div#ImageWithText--template--17720416534615__image_with_text_iVWfpR {padding: 30px 0px; } .banner__box.content-container.content-container--full-width-mobile.color-scheme-2.gradient {padding: 30px 20px; background: #f7f7f5; } div#Banner-template--17720416534615__image_banner_fCeN46 .banner__media.media.scroll-trigger.animate--fade-in {display: none; } .shopify-policy__container {max-width: 95%; padding: 0px 20px;}}"
     ]
   }
 }
