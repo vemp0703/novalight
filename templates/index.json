@@ -212,7 +212,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_5xj9865xj9865xj9.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_5xj9865xj9865xj9.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -272,7 +272,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "section_width": "boxed",
-        "image": "shopify://shop_images/bottom_cta.webp",
+        "image": "shopify://shop_images/bottom_cta.png",
         "image_overlay_opacity": 10,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -318,7 +318,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_tqyrcftqyrcftqyr.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_tqyrcftqyrcftqyr.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -373,7 +373,7 @@
             "testimonial_text": "<p>Using the Novalight™ LED face mask has become a relaxing part of my nightly routine. My skin feels genuinely refreshed, and I actually look forward to this quiet self-care moment.</p>",
             "author_name": "Emma L.",
             "author_position": "",
-            "rating": 5,
+            "rating": 1,
             "date": ""
           }
         },
@@ -585,7 +585,7 @@
         "container_color_scheme": "",
         "color_scheme": "",
         "open_first_collapsible_row": false,
-        "image": "shopify://shop_images/Gemini_Generated_Image_v29ufqv29ufqv29u.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_v29ufqv29ufqv29u.png",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
         "padding_top": 36,
