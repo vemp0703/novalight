@@ -170,7 +170,7 @@
       "type": "product-key-benefits",
       "name": "Product Key Benefits",
       "settings": {
-        "heading": "Transform Your Skin with Professional LED Therapy",
+        "heading": "{{ product.metafields.custom.product_key_benefits_title.value }}",
         "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
       }
     },
