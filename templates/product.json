@@ -171,7 +171,7 @@
       "name": "Product Key Benefits",
       "settings": {
         "heading": "{{ product.metafields.custom.product_key_benefits_title.value }}",
-        "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
+        "subheading": ""
       }
     },
     "product_promo_banner_hfhMPj": {
