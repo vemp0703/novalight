@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_593353412729373607": {
+      "type": "gp-section-593353412729373607",
+      "settings": {
+        "checksum": "8102e3807aa00f6465ac6a0c8366fff9023a59a2596e0332645d067d53504f24_1_1_1_0__1",
+        "ggCYUxgEhyh_text": "<p>FEATURED IN</p>"
+      }
+    },
+    "gp_section_593353412729439143": {
+      "type": "gp-section-593353412729439143",
+      "blocks": {
+        "gp_app_qikify-upsell_gTIuQz8x8u": {
+          "type": "shopify://apps/qikify-bogo-freegift/blocks/bogo_offer/2e94b962-8172-4839-8ad9-7837eb8b017a",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        }
+      },
+      "block_order": [
+        "gp_app_qikify-upsell_gTIuQz8x8u"
+      ],
+      "settings": {
+        "checksum": "9fc1459230e95807110250e91efb8c523f1363d40cc373124ec56a75c1eac75f_1_1_1_0__1",
+        "ggbUO5STk22_text": "<p>4.7/5 (Based on 629 reviews) | <span style=\"color:#B32308;\">7000+ Masks Already Sold</span></p>",
+        "ggh4IFMVGlh_template": "In Stock!",
+        "ggh4IFMVGlh_outOfStockMessage": "OUT OF STOCK",
+        "ggh4IFMVGlh_continueSelling": "Restock soon! PREORDER NOW",
+        "ggh4IFMVGlh_unlimitedQuantityMessage": "In Stock!",
+        "gg5Sj0txQqL_text": "<p>NOVALIGHT™ Regenmask 2.0 is an advanced LED therapy mask engineered for targeted skincare support with professional-level settings.</p>",
+        "gguKkFK0ToZ_text": "Quantity",
+        "gg1n_36uo99_label": "Add to cart",
+        "gg1n_36uo99_outOfStockLabel": "Out of stock",
+        "gg1n_36uo99_unavailableLabel": "Unavailable",
+        "gg1n_36uo99_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "ggrea1VTNx1_label": "Buy Now",
+        "ggrea1VTNx1_outOfStockLabel": "Out of stock",
+        "ggrea1VTNx1_unavailableLabel": "Unavailable",
+        "ggrea1VTNx1_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "ggPYB-oHzpS_text": "<p>Free Global Shipping Above $50</p>",
+        "ggatvf3OoBt_text": "<p>1 Year Warranty</p>",
+        "gg9Y6HH0j02_text": "<p>Secure online payment</p>",
+        "ggExFQ0IQBu_text": "<p>30 Days Return</p>",
+        "ggkCsU8innO_text": "<p>Secure Checkout With:</p>",
+        "ggEks8-3r3j_childItem_0": "<p>Product Details</p>",
+        "ggEks8-3r3j_childItem_1": "<p>Return and Refund Policy</p>",
+        "ggzPwj8Kr63_text": "<p>NOVALIGHT™ Regenmask 2.0 is an advanced LED therapy mask engineered for targeted skincare support with professional-level settings. It features seven different wavelengths, including red, blue, green, yellow, purple, cyan, and white light. Each light serves a specific function—from soothing inflammation to addressing discoloration and supporting overall skin clarity.</p>",
+        "ggEb3w8J-nI_text": "<p>Please note the change in our refund policy regarding skin care products. For hygiene reasons, all products intended for skin care are neither refundable nor exchangeable, as specified in our general terms and conditions of sale.</p>"
+      }
+    },
+    "gp_section_593353412729504679": {
+      "type": "gp-section-593353412729504679",
+      "settings": {
+        "checksum": "617ddf2feaca12c26576a90f9e117e8024f1f5e6c88463c6bad333f23fca17b0_1_1_1_0__1",
+        "gggk88p1qOk_text": "Over 10 years of scientific research !",
+        "gggVPddRcVo_text": "The Regenmask™ utilizes recognized and NASA-used therapeutic LED technology. It offers you a safe and cost-effective solution to all your anti-aging and acne woes. It is simple, convenient, and totally safe.",
+        "ggxJuPEXEny_text": "We use the most clinically effective LEDs available!",
+        "ggPgi1ZFXKV_text": "In just 15 to 30 minutes a day, you can embrace a whole new you!",
+        "ggkXhOA3e_l_text": "<p>of users saw smoother skin with reduced wrinkles and fine lines</p>",
+        "gg78puxOszH_text": "<p>noticed enhanced skin tone and overall smoothness</p>",
+        "ggcZZb3WoOB_leftImageLabel": "Before",
+        "ggcZZb3WoOB_rightImageLabel": "After"
+      }
+    },
+    "gp_section_593353412729570215": {
+      "type": "gp-section-593353412729570215",
+      "settings": {
+        "checksum": "4af0ce701cee401fd08129721eea67a7dbba62459945103f25c56d5be2fe622c_1_1_1_0__1",
+        "ggRJXZX9NZO_text": "Results you'll see with your own eyes",
+        "ggRbsffyxcO_text": "Clinically proven devices delivering real results, never just empty promises.",
+        "ggW-7nun3Qn_text": "IT REALLY WORKS!!",
+        "ggLM9rrzZfH_text": "Teresa S. | Verified Customer",
+        "ggFfjFqtqVf_text": "“I was very skeptical when my husband bought this mask for me. But after 6mo the results are amazing!! I’ve tried numerous serums for my sun spots but nothing worked until I used this mask. Definitely worth the money.”",
+        "gg-YUumrX_6_text": "Renewed Skin!",
+        "ggpJh-vTEzC_text": "Tiffany L. | Verified Customer",
+        "ggEFMOK9dJg_text": "“My Novalight mask has been amazing! As someone who struggles with acne and rosacea, your LED light therapy mask has improved my skin so much that I can now feel comfortable without any makeup. I’m very happy with this product!”",
+        "ggI3c5dzWA1_text": "IT REALLY WORKS!!",
+        "ggtDSNkkUCz_text": "Aimee. | Verified Customer",
+        "gg4_K8E6fbx_text": "“I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit.”",
+        "gG0d9FJWlHG_text": "IT REALLY WORKS!!",
+        "gxINq6w1lEP_text": "Teresa S. | Verified Customer",
+        "gByNzh1QSXS_text": "“I was very skeptical when my husband bought this mask for me. But after 6mo the results are amazing!! I’ve tried numerous serums for my sun spots but nothing worked until I used this mask. Definitely worth the money.”",
+        "gWm1JWIF5v0_text": "Renewed Skin!",
+        "gid-Ej0tMGt_text": "Tiffany L. | Verified Customer",
+        "gNtFEu9ipQ0_text": "“My Novalight mask has been amazing! As someone who struggles with acne and rosacea, your LED light therapy mask has improved my skin so much that I can now feel comfortable without any makeup. I’m very happy with this product!”",
+        "gveofcCzqYO_text": "IT REALLY WORKS!!",
+        "gcpvBiQd2u1_text": "Aimee. | Verified Customer",
+        "g6nPbfqnm9J_text": "“I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit.”"
+      }
+    },
+    "gp_section_593353412729635751": {
+      "type": "gp-section-593353412729635751",
+      "settings": {
+        "checksum": "ba1b5b24a481dc3c16a1cdad34a87b6e0f6e54b7ec884dd6f5fb5fe1e1c2a9ad_1_1_1_0__1",
+        "ggSFpFh9gv8_text": "Quick start: easy guide to glowy skin",
+        "ggPYN-mD_p2_text": "<p>Wash and dry your face thoroughly, removing all makeup and dirt.</p>",
+        "ggWq6E0YfgN_text": "<p>Connect the USB cable and power cable to the remote control and to the mask.</p>",
+        "ggBGHIX88MW_text": "<p>Place the Novalight Regenmask 2.0 on your face, adjusting the straps for a comfortable fit, hold the Power switch and set the time, color mode, brightness and intensity</p>",
+        "gggd6dkmyGi_text": "<p>Enjoy your treatment session! Each session should last 10-20 minutes.We recommended to use the mask 2-3 times per week for optimal results.</p>",
+        "gg8m4nleWW5_text": "Why Choose the Regenmask 2.0?",
+        "gg0syJfgF7-_text": "<p>It’s like going to a clinic, minus the on-going costs, the time commitment, the overpromises, the upselling and the hassle.</p>"
+      }
+    },
+    "gp_section_593353412729701287": {
+      "type": "gp-section-593353412729701287",
+      "settings": {
+        "checksum": "9581f1c49ed76128c63db245f41aeff10151f5f28e485f257572f16940aba794_1_1_1_0__1",
+        "ggHR1goxMpA_text": "Key Benefits",
+        "ggWWA9yvBO0_text": "<p>Professional-grade LED light therapy for targeted skin transformation. Advanced 7-wavelength technology delivers clinical results at home with customizable settings and expanded coverage.</p>",
+        "gg4R0WZX4A7_text": "7 Targeted Wavelengths",
+        "gg_CHyPUDv7_text": "<p>Red, blue, green, yellow, purple, cyan &amp; white light – each targeting specific skin concerns</p>",
+        "ggDANyyxxvN_text": "<span style=\"font-size:20px;\"><strong>Multi-Function Treatment</strong></span>",
+        "ggHZc51QYeJ_text": "<p>Soothes inflammation, reduces acne, addresses discoloration &amp; supports overall skin clarity</p>",
+        "ggtt8z12qMD_text": "Clinically Backed",
+        "ggvgarHVAG4_text": "<p>American Academy of Dermatology recognizes LED therapy as safe and effective for acne and anti-aging</p>",
+        "gg-Rb-aD-vS_text": "Advanced Features",
+        "ggzgQIwkd0a_text": "<p>Built for users seeking professional control, broader wavelength options &amp; expanded</p>",
+        "ggv9DplKddd_text": "<span style=\"font-size:20px;\"><strong>Smart Controls</strong></span>",
+        "gg3UHkiDQPs_text": "<p>Adjustable intensity levels, wireless remote &amp; pre-set daily/weekly programs</p>",
+        "ggOnaPUVF7x_text": "<span style=\"font-size:20px;\"><strong>Enhanced Coverage</strong></span>",
+        "ggmjvNG9XHY_text": "<p>Includes separate neck panel for comprehensive face + neck treatment</p>",
+        "ggQA1Qpwghf_text": "<span style=\"font-size:20px;\"><strong>Ergonomic Design</strong></span>",
+        "ggcwNqMaNAL_text": "<p>Full skin contact and even light distribution for maximum effectiveness</p>"
+      }
+    },
+    "gp_section_593353412729766823": {
+      "type": "gp-section-593353412729766823",
+      "settings": {
+        "checksum": "c1c0e05d3cb6a2bd031f739b56ec815c79fcbc455453b93f0789271e2d3fa6fa_1_1_1_0__1",
+        "ggDaOA15eaj_text": "Turn On the Light. Turn Up the Glow.",
+        "ggDwj8_wWBf_text": "<p>Experience the magic of red, blue, and amber light for smooth, radiant skin.</p>",
+        "ggkKtAcij7J_text": "<p>Red Light Therapy</p>",
+        "gg45vFKB4PE_text": "<p>Boosts collagen, reduces fine lines, and rejuvenates tired skin.</p>",
+        "ggPpGsL7sXx_text": "<p>Blue Light Therapy</p>",
+        "ggJhtmpniEa_text": "<p>Targets acne, calms breakouts, clears skin, helps unclog pores, and calms irritated skin.</p>",
+        "ggleKWxHNC9_text": "<p>Amber Light Therapy</p>",
+        "ggvPpJD-N1F_text": "<p>Soothes redness, evens tone, and supports healing. Perfect for dull, stressed-out skin that needs a peaceful reset</p>",
+        "ggjhzMCpWbl_text": "Experience three powerful light therapies in one device",
+        "ggA4-WRVD0A_text": "Red Light (630nm)",
+        "ggTnHGBOuur_text": "Reduces fine lines and wrinkles for youthful skin.",
+        "ggSHi6n_GSy_text": "near-infrared light (830nm)",
+        "gg5_-3etkjo_text": "Rejuvenates and enhances skin radiance.",
+        "ggA8fQV-jVh_text": "multi-color therapy",
+        "gg-KFdH-kWB_text": "Customizes treatment for elasticity, texture, and pigmentation.",
+        "ggxYnWRp-iI_text": "Novalight™ - Regenmask 2.0",
+        "ggJsKMQmhXT_text": "<p>Safe, pain-free, and non-invasive</p>",
+        "ggRTVGrbM36_text": "<p>Soft, hygienic &amp; flexible silicone</p>",
+        "ggNbVbrDg-P_text": "<p>Quick 10-minute treatment</p>",
+        "gg6lInRjUzU_text": "<p>| Based on 629 reviews</p>",
+        "ggRVijsNkRA_text": "Why Customers Love Novalight™ - Regenmask 2.0",
+        "ggCa8xLwpcg_text": "<p>Highly recommend!</p>",
+        "ggao1xB6Ysb_text": "<p>I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit</p>",
+        "ggH9Kx3_hqa_text": "<p>—Aimee.</p>",
+        "ggytYBYrnCN_text": "<p>IT REALLY WORKS!!</p>",
+        "ggxEkl6glGT_text": "<p>After years of searching for an effective wrinkle treatment, I finally found a game-changer with this LED mask therapy. Six months in, the results are astonishing! I’ve used countless serums and devices with no success until now. This LED mask is definitely worth the investment.</p>",
+        "ggM19vTj5OP_text": "<p>—BJ Nardi.</p>",
+        "ggi6AXMoNKd_text": "<p>Completely CURED my acne</p>",
+        "ggHMolIHj_9_text": "<p>I have been battling dark spots for years, trying everything under the sun. When I came across this LED mask, I was hesitant but decided to give it a try. After 6 months of consistent use, the improvement is remarkable! My dark spots have significantly faded. This LED mask is truly worth every penny.</p>",
+        "ggECNERHHTz_text": "<p>—Terri P.</p>",
+        "ggjeEPUzAHz_text": "Frequently Asked Questions",
+        "ggM_f2g-aQq_childItem_0": "<p>Is there scientific evidence for LED light therapy ?</p>",
+        "ggM_f2g-aQq_childItem_1": "<p>Is LED light therapy painful?</p>",
+        "ggM_f2g-aQq_childItem_2": "<p>Can I use skincare products at the same time as my Novalight mask ?</p>",
+        "ggM_f2g-aQq_childItem_3": "<p>How often should the device be used ?</p>",
+        "ggM_f2g-aQq_childItem_4": "<p>Do I need eye protection ?</p>",
+        "ggFag0SyHPv_text": "<p>LED light therapy has been thoroughly tested, evaluated, and validated by hundreds of universities, medical labs, and most notably by NASA. In fact, over 2000 reports and documents have been written on this technology.</p>",
+        "gaRjC3FbZm9_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">No, it does not cause any pain. It even provides a feeling of relaxation.</span></p>",
+        "gUNlCkSROcv_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">Yes, you can. In fact, the results of your light therapy will be more dramatic if you use high-quality skincare products. Additionally, you can use your acne-fighting products to speed up the healing process for your skin.</span></p>",
+        "gP66e8Cuqr7_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">The suggested usage time is 10 to 20 minutes. It is most appropriate to start with a 10-minute treatment, 4 times a week to begin, unless otherwise directed by a doctor. Once you have achieved your initial goals, it is more than likely you will only need to use the device twice a week. Since the LEDs provide a pure and powerful output, these few treatments will be sufficient.</span></p>",
+        "guxmczcTxO-_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">The design of this mask does not cover the eye area, so there is no need to wear eye protection during treatments. However, it is advisable to avoid looking directly at the LED and to close your eyes during the treatment.</span></p>"
+      }
+    },
+    "gp_section_593353412729832359": {
+      "type": "gp-section-593353412729832359",
+      "settings": {
+        "section_preload": "true",
+        "checksum": "09ec098ff10460a0894dff0ec1450ee773b117f20311be4f558dafcd0085dae9_1_1_1_0__1"
+      }
+    }
+  },
+  "order": [
+    "gp_section_593353412729832359",
+    "gp_section_593353412729439143",
+    "gp_section_593353412729373607",
+    "gp_section_593353412729570215",
+    "gp_section_593353412729504679",
+    "gp_section_593353412729635751",
+    "gp_section_593353412729701287",
+    "gp_section_593353412729766823"
+  ]
+}
