@@ -8,244 +8,6 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main": {
-      "type": "main-product",
-      "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "caption": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_buy_now_CwE3HX": {
-          "type": "quantity_buy_now",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "vendor",
-        "title",
-        "caption",
-        "price",
-        "variant_picker",
-        "quantity_buy_now_CwE3HX"
-      ],
-      "settings": {
-        "enable_sticky_info": true,
-        "color_scheme": "",
-        "media_size": "large",
-        "constrain_to_viewport": true,
-        "media_fit": "cover",
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
-    "product_usp_bar_NWh8XU": {
-      "type": "product-usp-bar",
-      "blocks": {
-        "usp_e3Erhm": {
-          "type": "usp",
-          "settings": {
-            "title": "30-Day Guarantee",
-            "text": "Peace of mind with our 30-day satisfaction guarantee."
-          }
-        },
-        "usp_wjgEQE": {
-          "type": "usp",
-          "settings": {
-            "title": "Hassle-Free Refunds",
-            "text": "Easy returns and refunds if you’re not fully satisfied."
-          }
-        },
-        "usp_tPGtFe": {
-          "type": "usp",
-          "settings": {
-            "title": "Skin-Safe Design",
-            "text": "Gentle, skin-friendly materials for safe at-home use."
-          }
-        }
-      },
-      "block_order": [
-        "usp_e3Erhm",
-        "usp_wjgEQE",
-        "usp_tPGtFe"
-      ],
-      "name": "Product USP Bar",
-      "settings": {}
-    },
-    "product_details_tabs_cPkNBp": {
-      "type": "product-details-tabs",
-      "blocks": {
-        "tab_BCpzww": {
-          "type": "tab",
-          "name": "Specifications",
-          "settings": {
-            "icon": "shopify://shop_images/Thunder.svg",
-            "label": "Specifications",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_specification"
-          }
-        },
-        "tab_diCYFD": {
-          "type": "tab",
-          "name": "What's Included",
-          "settings": {
-            "icon": "shopify://shop_images/order_box.svg",
-            "label": "What's Included",
-            "description": "Detailed information and specifications",
-            "metafield_key": "description"
-          }
-        },
-        "tab_RLrUCx": {
-          "type": "tab",
-          "name": "Technology",
-          "settings": {
-            "icon": "shopify://shop_images/vector_sheild.svg",
-            "label": "Technology",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_technology"
-          }
-        },
-        "tab_mwHbPt": {
-          "type": "tab",
-          "name": "Care & Maintenance",
-          "settings": {
-            "icon": "shopify://shop_images/Leaf.svg",
-            "label": "Care & Maintenance",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_care_and_maintaince"
-          }
-        }
-      },
-      "block_order": [
-        "tab_BCpzww",
-        "tab_diCYFD",
-        "tab_RLrUCx",
-        "tab_mwHbPt"
-      ],
-      "name": "Product Details Tabs",
-      "settings": {
-        "heading": "Product Details",
-        "subheading": "Everything you need to know about the product"
-      }
-    },
-    "product_highlights_zpBYAV": {
-      "type": "product-highlights",
-      "name": "Product Highlights",
-      "settings": {
-        "heading": "Product Specifications"
-      }
-    },
-    "product_key_benefits_7mEe4C": {
-      "type": "product-key-benefits",
-      "name": "Product Key Benefits",
-      "settings": {
-        "heading": "Transform Your Skin with Professional LED Therapy",
-        "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
-      }
-    },
-    "product_promo_banner_hfhMPj": {
-      "type": "product-promo-banner",
-      "name": "Product Promo Banner",
-      "settings": {}
-    },
-    "clinical_results_metaobject_AJtiEM": {
-      "type": "clinical-results-metaobject",
-      "name": "Clinical Results (Metaobject)",
-      "settings": {}
-    },
-    "sticky_scroll_section_7YyDeH": {
-      "type": "sticky-scroll-section",
-      "name": "Sticky Scroll Section",
-      "settings": {}
-    },
-    "product_video_gallery_7gdXg8": {
-      "type": "product-video-gallery",
-      "name": "Product Video Gallery",
-      "settings": {
-        "badge_text": "▶Real Results from Real People",
-        "heading": "See TheraFace in Action",
-        "subtitle": "Watch verified users and skincare experts share their transformation stories",
-        "cta_text": "Ready to see results like these?",
-        "cta_label": "Get Your TheraFace Mask Today",
-        "cta_link": ""
-      }
-    },
-    "17660988777f51a894": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_8zFrTE": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_8zFrTE"
-      ],
-      "name": "Product Review",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "product_faq_mE7BPV": {
-      "type": "product-faq",
-      "name": "Product FAQ",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subheading": "Everything you need to know about TheraFace Mask"
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    }
-  },
   "order": [
     "main",
     "product_usp_bar_NWh8XU",
@@ -259,5 +21,243 @@
     "17660988777f51a894",
     "product_faq_mE7BPV",
     "related-products"
-  ]
+  ],
+  "sections": {
+    "17660988777f51a894": {
+      "block_order": [
+        "judge_me_reviews_featured_carousel_8zFrTE"
+      ],
+      "blocks": {
+        "judge_me_reviews_featured_carousel_8zFrTE": {
+          "settings": {
+            "maxwidth": 1080
+          },
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8"
+        }
+      },
+      "name": "Product Review",
+      "settings": {
+        "include_margins": true
+      },
+      "type": "apps"
+    },
+    "clinical_results_metaobject_AJtiEM": {
+      "name": "Clinical Results (Metaobject)",
+      "settings": {},
+      "type": "clinical-results-metaobject"
+    },
+    "main": {
+      "block_order": [
+        "vendor",
+        "title",
+        "caption",
+        "price",
+        "variant_picker",
+        "quantity_buy_now_CwE3HX"
+      ],
+      "blocks": {
+        "caption": {
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          },
+          "type": "text"
+        },
+        "price": {
+          "settings": {},
+          "type": "price"
+        },
+        "quantity_buy_now_CwE3HX": {
+          "settings": {},
+          "type": "quantity_buy_now"
+        },
+        "title": {
+          "settings": {},
+          "type": "title"
+        },
+        "variant_picker": {
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          },
+          "type": "variant_picker"
+        },
+        "vendor": {
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          },
+          "type": "text"
+        }
+      },
+      "settings": {
+        "color_scheme": "",
+        "constrain_to_viewport": true,
+        "enable_sticky_info": true,
+        "enable_video_looping": false,
+        "gallery_layout": "stacked",
+        "hide_variants": true,
+        "image_zoom": "lightbox",
+        "media_fit": "cover",
+        "media_position": "left",
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "padding_bottom": 12,
+        "padding_top": 36
+      },
+      "type": "main-product"
+    },
+    "product_details_tabs_cPkNBp": {
+      "block_order": [
+        "tab_BCpzww",
+        "tab_diCYFD",
+        "tab_RLrUCx",
+        "tab_mwHbPt"
+      ],
+      "blocks": {
+        "tab_BCpzww": {
+          "name": "Specifications",
+          "settings": {
+            "description": "Detailed information and specifications",
+            "icon": "shopify://shop_images/Thunder.svg",
+            "label": "Specifications",
+            "metafield_key": "product_specification"
+          },
+          "type": "tab"
+        },
+        "tab_RLrUCx": {
+          "name": "Technology",
+          "settings": {
+            "description": "Detailed information and specifications",
+            "icon": "shopify://shop_images/vector_sheild.svg",
+            "label": "Technology",
+            "metafield_key": "product_technology"
+          },
+          "type": "tab"
+        },
+        "tab_diCYFD": {
+          "name": "What's Included",
+          "settings": {
+            "description": "Detailed information and specifications",
+            "icon": "shopify://shop_images/order_box.svg",
+            "label": "What's Included",
+            "metafield_key": "description"
+          },
+          "type": "tab"
+        },
+        "tab_mwHbPt": {
+          "name": "Care & Maintenance",
+          "settings": {
+            "description": "Detailed information and specifications",
+            "icon": "shopify://shop_images/Leaf.svg",
+            "label": "Care & Maintenance",
+            "metafield_key": "product_care_and_maintaince"
+          },
+          "type": "tab"
+        }
+      },
+      "name": "Product Details Tabs",
+      "settings": {
+        "heading": "Product Details",
+        "subheading": "Everything you need to know about the product"
+      },
+      "type": "product-details-tabs"
+    },
+    "product_faq_mE7BPV": {
+      "name": "Product FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about TheraFace Mask"
+      },
+      "type": "product-faq"
+    },
+    "product_highlights_zpBYAV": {
+      "name": "Product Highlights",
+      "settings": {
+        "heading": "Product Specifications"
+      },
+      "type": "product-highlights"
+    },
+    "product_key_benefits_7mEe4C": {
+      "name": "Product Key Benefits",
+      "settings": {
+        "heading": "Transform Your Skin with Professional LED Therapy",
+        "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
+      },
+      "type": "product-key-benefits"
+    },
+    "product_promo_banner_hfhMPj": {
+      "name": "Product Promo Banner",
+      "settings": {},
+      "type": "product-promo-banner"
+    },
+    "product_usp_bar_NWh8XU": {
+      "block_order": [
+        "usp_e3Erhm",
+        "usp_wjgEQE",
+        "usp_tPGtFe"
+      ],
+      "blocks": {
+        "usp_e3Erhm": {
+          "settings": {
+            "text": "Peace of mind with our 30-day satisfaction guarantee.",
+            "title": "30-Day Guarantee"
+          },
+          "type": "usp"
+        },
+        "usp_tPGtFe": {
+          "settings": {
+            "text": "Gentle, skin-friendly materials for safe at-home use.",
+            "title": "Skin-Safe Design"
+          },
+          "type": "usp"
+        },
+        "usp_wjgEQE": {
+          "settings": {
+            "text": "Easy returns and refunds if you’re not fully satisfied.",
+            "title": "Hassle-Free Refunds"
+          },
+          "type": "usp"
+        }
+      },
+      "name": "Product USP Bar",
+      "settings": {},
+      "type": "product-usp-bar"
+    },
+    "product_video_gallery_7gdXg8": {
+      "name": "Product Video Gallery",
+      "settings": {
+        "badge_text": "▶Real Results from Real People",
+        "cta_label": "Get Your TheraFace Mask Today",
+        "cta_link": "",
+        "cta_text": "Ready to see results like these?",
+        "heading": "See TheraFace in Action",
+        "subtitle": "Watch verified users and skincare experts share their transformation stories"
+      },
+      "type": "product-video-gallery"
+    },
+    "related-products": {
+      "settings": {
+        "color_scheme": "scheme-1",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "padding_bottom": 28,
+        "padding_top": 36,
+        "products_to_show": 4,
+        "show_rating": false,
+        "show_secondary_image": true,
+        "show_vendor": false
+      },
+      "type": "related-products"
+    },
+    "sticky_scroll_section_7YyDeH": {
+      "name": "Sticky Scroll Section",
+      "settings": {},
+      "type": "sticky-scroll-section"
+    }
+  }
 }
