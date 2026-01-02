@@ -73,12 +73,12 @@
         "text_9AAEPN"
       ],
       "custom_css": [
-        "@media screen and (max-width: 749px) {div#ImageWithText--template--25666423193895__image_with_text_pBPA96 {padding: 40px 20px 0px !important;}}"
+        "@media screen and (max-width: 749px) {div#ImageWithText--template--25666423193895__image_with_text_pBPA96 {padding: 40px 20px 0px !important; }}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.webp",
-        "height": "adapt",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
