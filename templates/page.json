@@ -72,6 +72,9 @@
         "heading_nGfVr7",
         "text_9AAEPN"
       ],
+      "custom_css": [
+        "div#ImageWithText--template--25666423193895__image_with_text_pBPA96 {padding: 40px 20px 0px !important;}"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.webp",
