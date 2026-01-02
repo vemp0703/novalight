@@ -110,6 +110,9 @@
         "heading_YwfGDg",
         "text_9b6VKJ"
       ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100% !important;}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
