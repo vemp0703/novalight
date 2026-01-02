@@ -1,0 +1,643 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "LED Skincare Devices for Glowing Skin at Home",
+            "heading_size": "h2"
+          }
+        },
+        "heading_V3DPt7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Glow That Speaks for Itself",
+            "heading_size": "hxl"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Novalight™ creates advanced LED skincare devices designed for safe, effective at-home light therapy. Refresh your skin, improve tone, and enjoy a simple daily routine trusted by thousands.Relax, enjoy, and let your skin do the talking.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Experience the Glow",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "heading_V3DPt7",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "section_width": "full",
+        "image": "shopify://shop_images/hero1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "infinity_slider_wPYRQH": {
+      "type": "infinity-slider",
+      "blocks": {
+        "slide_Yhtg8G": {
+          "type": "slide",
+          "settings": {
+            "text": "Radiant, healthy-looking skin",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        },
+        "slide_mWiVWA": {
+          "type": "slide",
+          "settings": {
+            "text": "More balanced tone and texture",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        },
+        "slide_cCm7q9": {
+          "type": "slide",
+          "settings": {
+            "text": "Calm, soothing light therapy",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        },
+        "slide_wjaaQw": {
+          "type": "slide",
+          "settings": {
+            "text": "Naturally luminous glow",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        },
+        "slide_tBR7rx": {
+          "type": "slide",
+          "settings": {
+            "text": "Improved skin vitality",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        },
+        "slide_FJaQWw": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "text": "Custom Modes",
+            "icon": "shopify://shop_images/Group.svg",
+            "icon_svg": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_Yhtg8G",
+        "slide_mWiVWA",
+        "slide_cCm7q9",
+        "slide_wjaaQw",
+        "slide_tBR7rx",
+        "slide_FJaQWw"
+      ],
+      "name": "Infinity Slider",
+      "settings": {
+        "heading": "Fresh Face, Fresh Start",
+        "heading_color": "#000000",
+        "heading_size": 32,
+        "slider_speed": 40,
+        "font_size": 18,
+        "text_color": "#303030",
+        "icon_size": 24,
+        "inverse_colors": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection__description.body.rte.scroll-trigger.animate--slide-in {text-align: center; padding: 0px 22%;}"
+      ],
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "Favorites Our Customers Return To",
+        "heading_size": "h1",
+        "description": "<p>Our top stars, adored for results you can see and feel. Loved by thousands, these favorites bring out your natural glow, boost confidence, and make your daily skincare ritual a treat. </p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "image_with_text_H8qj7k": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_k9tdGJ": {
+          "type": "caption",
+          "settings": {
+            "caption": "About Us",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_VrG6jn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Where Science Meets Radiance",
+            "heading_size": "h1"
+          }
+        },
+        "text_jeQkke": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ combines advanced LED technology with smart design to bring professional-level skincare into your home. Each device and bundle is thoughtfully crafted to rejuvenate, brighten, and refresh your skin, making your daily routine a simple yet effective self-care ritual.</p><p>Novalight™ devices are designed for safe at-home use, with a focus on comfort, quality, and everyday reliability. Across the globe, thousands of users rely on Novalight™ to care for their skin with confidence. From soothing irritation to revitalizing dullness, our solutions support healthier, radiant-looking skin every day, all while making your self-care experience effortless, safe, and enjoyable.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_HRkeEX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover Our Story",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_k9tdGJ",
+        "heading_VrG6jn",
+        "text_jeQkke",
+        "button_HRkeEX"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_5xj9865xj9865xj9.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_fCeN46": {
+      "type": "image-banner",
+      "blocks": {
+        "text_7JVebD": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "heading_6bC8HT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Skin, Your Confidence",
+            "heading_size": "h1"
+          }
+        },
+        "text_XqUM7w": {
+          "type": "text",
+          "settings": {
+            "text": "Every day is an opportunity to let your skin shine. Novalight™ LED devices are designed to make professional-level skincare effortless at home. Calm, rejuvenate, and energize your skin in just minutes, so you can feel confident in every moment. Embrace a routine that works for you and see your natural glow come to life.",
+            "text_style": "body"
+          }
+        },
+        "buttons_nkfEtQ": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Experience the Glow",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_7JVebD",
+        "heading_6bC8HT",
+        "text_XqUM7w",
+        "buttons_nkfEtQ"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "section_width": "boxed",
+        "image": "shopify://shop_images/bottom_cta.webp",
+        "image_overlay_opacity": 10,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-2",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "left",
+        "show_text_below": true
+      }
+    },
+    "image_with_text_iVWfpR": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_j6wezQ": {
+          "type": "caption",
+          "settings": {
+            "caption": "Wish Your Skin Could Feel Alive Again?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_8eaYBC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Skin Rescue Starts Here",
+            "heading_size": "h1"
+          }
+        },
+        "text_pWFWkP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From dullness to uneven tone and stress-related skin fatigue, Novalight™ delivers professional-quality at-home solutions. Experience glowing, healthy-looking skin with ease, every day.</p><p>✓ <strong>Dull, Lackluster Skin</strong> – Novalight™ devices and bundles revitalize your complexion, bringing out a natural, luminous glow in just minutes a day.</p><p>✓ <strong>Uneven Tone & Texture</strong> – Targeted light therapy helps improve the appearance of uneven tone, revealing a more even, radiant surface.</p><p>✓ <strong>Redness & Irritation</strong> – Gentle LED therapy soothes and calms sensitive areas, restoring comfort and a healthy, balanced appearance.</p><p>✓ <strong>Early Signs of Aging</strong> – Supports the skin’s natural collagen process and improves elasticity with Novalight™ products, giving skin a firmer, refreshed, and youthful look.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_j6wezQ",
+        "heading_8eaYBC",
+        "text_pWFWkP"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_tqyrcftqyrcftqyr.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_8NqKMk": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection__description.body.rte.scroll-trigger.animate--slide-in {text-align: center; padding: 0px 22%;}"
+      ],
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "<strong>The Full Spectrum of Glow</strong>",
+        "heading_size": "h1",
+        "description": "<p>Discover the Novalight™ collection, where every device and bundle revives, energizes, and illuminates your skin’s natural brilliance. Unlock radiant, vibrant results effortlessly, every day.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "testimonial_slider_JtM43D": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "testimonial_cbyFkN": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Using the Novalight™ LED face mask has become a relaxing part of my nightly routine. My skin feels genuinely refreshed, and I actually look forward to this quiet self-care moment.</p>",
+            "author_name": "Emma L.",
+            "author_position": "",
+            "rating": 1,
+            "date": ""
+          }
+        },
+        "testimonial_hJtXr3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>I’ve been using the Novalight™ LED skincare device for a few weeks, and it fits seamlessly into my schedule. It feels well-made and safe to use at home, which gives me confidence in every session.</p>",
+            "author_name": "Michael S.",
+            "author_position": "",
+            "rating": 5,
+            "date": ""
+          }
+        },
+        "testimonial_mWwa7p": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>The Novalight™ LED face mask is simple to use and comfortable to wear. I’ve noticed my skin looks brighter, and it’s motivating me to stay consistent with my routine.</p>",
+            "author_name": "Chloe R.",
+            "author_position": "",
+            "rating": 5,
+            "date": ""
+          }
+        },
+        "testimonial_gMtBch": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>I appreciate how the Novalight™ LED skincare device doesn’t overcomplicate things. It’s reliable, fits well, and turns my evening skincare into a deliberate, enjoyable ritual.</p>",
+            "author_name": "Ryan K.",
+            "author_position": "",
+            "rating": 5,
+            "date": ""
+          }
+        },
+        "testimonial_FVWgzr": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>I’ve tried other LED masks, but the Novalight™ LED face mask feels much more comfortable and thoughtfully designed. My skin feels smoother, and I look forward to using it every night.</p>",
+            "author_name": "Olivia M.",
+            "author_position": "",
+            "rating": 5,
+            "date": ""
+          }
+        },
+        "testimonial_fE7egg": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>The Novalight™ LED face mask has become part of my self-care routine. It’s calming, easy to use, and I’ve seen gradual, noticeable improvements without harsh treatments.</p>",
+            "author_name": "Sophia T.",
+            "author_position": "",
+            "rating": 5,
+            "date": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_cbyFkN",
+        "testimonial_hJtXr3",
+        "testimonial_mWwa7p",
+        "testimonial_gMtBch",
+        "testimonial_FVWgzr",
+        "testimonial_fE7egg"
+      ],
+      "name": "Testimonial Slider",
+      "settings": {
+        "section_title": "Testimonials",
+        "background_color": "#ffffff",
+        "autoplay": false,
+        "autoplay_speed": 5000,
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "featured_blog_fUtUEG": {
+      "type": "featured-blog",
+      "custom_css": [
+        ".title-wrapper-with-link {display: flex; justify-content: center;}"
+      ],
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Our Latest News Update",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_NGczcr": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_JMtMWK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is LED light therapy safe for home use?",
+            "icon": "none",
+            "row_content": "<p>Yes! Novalight™ LED devices are designed for safe at-home use with adjustable intensity levels, making them suitable even for sensitive skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pi4mkD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to see results with an LED face mask?",
+            "icon": "none",
+            "row_content": "<p>Most users notice visible improvements in skin tone, texture, and radiance within a few weeks of consistent use. Individual results may vary.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dWKM37": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can LED light therapy be used daily?",
+            "icon": "none",
+            "row_content": "<p>Yes. Daily or several-times-per-week use is safe. Many customers build a routine that fits their schedule for optimal benefits.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ei7xMg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Novalight™ suitable for all skin types?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! Novalight™ LED skincare devices are suitable for most skin types. Adjustable settings allow a gentle and comfortable experience for everyone.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bcyzkG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the best way to use my Novalight™ device?",
+            "icon": "none",
+            "row_content": "<p>Use your device on clean skin, following the recommended timing. Many users pair it with their regular skincare for enhanced results.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KH3Fam": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can LED light therapy help with acne-prone skin?",
+            "icon": "none",
+            "row_content": "<p>Yes! Novalight™ LED devices are designed to gently calm acne-prone areas. Regular use can help reduce redness and inflammation while supporting clearer, healthier-looking skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wjGKx7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use LED therapy with my existing skincare products?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! Novalight™ works perfectly alongside your daily cleansers and moisturizers. Pairing your device with your favorite products can enhance results without extra effort.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JDqwdh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long should each LED session last?",
+            "icon": "none",
+            "row_content": "<p>Most sessions take 10–20 minutes, depending on your routine and skin concerns. Following the recommended timing ensures safe, effective results every time.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ekmfpa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Novalight™ safe for sensitive skin types?",
+            "icon": "none",
+            "row_content": "<p>Yes. Devices have adjustable intensity levels to provide a gentle, soothing experience. Even sensitive skin can enjoy the benefits of light therapy without irritation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8iEcUU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I target specific areas with my LED device?",
+            "icon": "none",
+            "row_content": "<p>Definitely. Novalight™ allows focused care on areas like under the eyes or around the nose. Targeted sessions help improve tone, calm redness, and refresh your skin naturally.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_JMtMWK",
+        "collapsible_row_pi4mkD",
+        "collapsible_row_dWKM37",
+        "collapsible_row_Ei7xMg",
+        "collapsible_row_bcyzkG",
+        "collapsible_row_KH3Fam",
+        "collapsible_row_wjGKx7",
+        "collapsible_row_JDqwdh",
+        "collapsible_row_Ekmfpa",
+        "collapsible_row_8iEcUU"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "Got Questions?",
+        "heading": "<strong>Answers to What You’re Curious About</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Gemini_Generated_Image_v29ufqv29ufqv29u.webp",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_gWkyyG": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_MM78rt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay Connected to What Your Skin Loves",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_7trtDX": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Fresh updates, early access, and special offers sent right to your inbox.</p>"
+          }
+        },
+        "email_form_KHHXjj": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_MM78rt",
+        "paragraph_7trtDX",
+        "email_form_KHHXjj"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "infinity_slider_wPYRQH",
+    "featured_collection",
+    "image_with_text_H8qj7k",
+    "image_banner_fCeN46",
+    "image_with_text_iVWfpR",
+    "featured_collection_8NqKMk",
+    "testimonial_slider_JtM43D",
+    "featured_blog_fUtUEG",
+    "collapsible_content_NGczcr",
+    "newsletter_gWkyyG"
+  ]
+}
