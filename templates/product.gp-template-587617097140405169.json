@@ -1,0 +1,182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_587617097257845681": {
+      "type": "gp-section-587617097257845681",
+      "settings": {
+        "checksum": "2d8b0ab5af645128f98bc492a0aa82f19544def4ed7cc754863d57700cb97cab_1_1_1_0__1",
+        "gg4-SHnXxnw_text": "Triple-Action Formula for Radiant, Healthy Skin",
+        "ggq1IlgWd5y_text": "Delay Early Signs of Aging",
+        "ggdWnKwSwZ9_text": "Encourage natural collagen production to soften fine lines, smooth texture, and restore youthful elasticity.",
+        "ggSNtESugC3_text": "Repair &amp; Revitalize Skin",
+        "ggVjuQ87Tf7_text": "Powered by active renewal ingredients, the serum penetrates deeply to hydrate, heal, and support skin regeneration at the cellular level.",
+        "ggcP5obY3SH_text": "Maximize Skincare Effectiveness",
+        "gg6n8pfDEFz_text": "Enhance absorption and amplify the impact of your full skincare routine—helping other products work more efficiently for visibly faster results."
+      }
+    },
+    "gp_section_587617097257911217": {
+      "type": "gp-section-587617097257911217",
+      "settings": {
+        "checksum": "9a1f026fed48b34bc60b39895ef808b2d8fd0b8c392da6ccbbe802f0e1a53483_1_1_1_0__1",
+        "ggCYUxgEhyh_text": "<p>FEATURED IN</p>"
+      }
+    },
+    "gp_section_587617097257976753": {
+      "type": "gp-section-587617097257976753",
+      "blocks": {
+        "gp_app_qikify-upsell_gUXVT--6nZ": {
+          "type": "shopify://apps/qikify-bogo-freegift/blocks/bogo_offer/2e94b962-8172-4839-8ad9-7837eb8b017a",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        }
+      },
+      "block_order": [
+        "gp_app_qikify-upsell_gUXVT--6nZ"
+      ],
+      "settings": {
+        "checksum": "1e6557e1541a470783508784b96c7765baf8380ed9f4b0897b7df9173b4bc473_1_1_1_0__1",
+        "ggbUO5STk22_text": "<p>4.7/5 (Based on 629 reviews) | <span style=\"color:#B32308;\">7000+ Masks Already Sold</span></p>",
+        "ggrr0WnKtQL_template": "In Stock!",
+        "ggrr0WnKtQL_outOfStockMessage": "OUT OF STOCK",
+        "ggrr0WnKtQL_continueSelling": "Restock soon! PREORDER NOW",
+        "ggrr0WnKtQL_unlimitedQuantityMessage": "In Stock!",
+        "gg5Sj0txQqL_text": "<p>Discover the ultimate natural skin rejuvenation routine with NovaLight’s Automatic Rejuvenation Pack. This digital guide reveals proven techniques to reduce wrinkles, boost collagen, and restore youthful glow—without devices or chemicals.</p>",
+        "ggR5iV3K4tz_text": "Quantity",
+        "ggw_Sumtj8O_label": "Add to cart",
+        "ggw_Sumtj8O_outOfStockLabel": "Out of stock",
+        "ggw_Sumtj8O_unavailableLabel": "Unavailable",
+        "ggw_Sumtj8O_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "ggrea1VTNx1_label": "Buy Now",
+        "ggrea1VTNx1_outOfStockLabel": "Out of stock",
+        "ggrea1VTNx1_unavailableLabel": "Unavailable",
+        "ggrea1VTNx1_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "ggPYB-oHzpS_text": "<p>Free Global Shipping Above $50</p>",
+        "ggatvf3OoBt_text": "<p>1 Year Warranty</p>",
+        "gg9Y6HH0j02_text": "<p>Secure online payment</p>",
+        "ggExFQ0IQBu_text": "<p>30 Days Return</p>",
+        "ggkCsU8innO_text": "<p>Secure Checkout With:</p>",
+        "ggEks8-3r3j_childItem_0": "<p>Return and Refund Policy</p>",
+        "ggEb3w8J-nI_text": "<p>Please note the change in our refund policy regarding skin care products. For hygiene reasons, all products intended for skin care are neither refundable nor exchangeable, as specified in our general terms and conditions of sale.</p>"
+      }
+    },
+    "gp_section_587617097258042289": {
+      "type": "gp-section-587617097258042289",
+      "settings": {
+        "checksum": "7d3bf3f16f88283f77498717f7ccba0278f7cd050cdff4b60a1a9f1972db90ef_1_1_1_0__1",
+        "gggk88p1qOk_text": "Over a Decade of Expert Research",
+        "gggVPddRcVo_text": "Our Active Renewal Serum draws on the same rigor and innovation behind NASA-grade skincare approaches, offering a safe and effective path to refresh and rejuvenate your complexion.",
+        "ggxJuPEXEny_text": "We select only the most potent, clinically validated ingredients to ensure maximum impact.",
+        "ggPgi1ZFXKV_text": "Spend just 15 to 30 minutes daily, and begin to reveal a revitalized you.",
+        "ggkXhOA3e_l_text": "<p>of users observed smoother skin with fewer fine lines and wrinkles</p>",
+        "gg78puxOszH_text": "<p>reported enhanced skin tone and overall radiance</p>"
+      }
+    },
+    "gp_section_587617097258107825": {
+      "type": "gp-section-587617097258107825",
+      "settings": {
+        "checksum": "9e2c18b0cc45cef4c7081936b13ec405810be298cbb64c955a73f6f543fc6932_1_1_1_0__1",
+        "ggRJXZX9NZO_text": "Results you'll see with your own eyes",
+        "ggRbsffyxcO_text": "Clinically proven devices delivering real results, never just empty promises.",
+        "ggW-7nun3Qn_text": "IT REALLY WORKS!!",
+        "ggLM9rrzZfH_text": "Teresa S. | Verified Customer",
+        "ggFfjFqtqVf_text": "“I was very skeptical when my husband bought this mask for me. But after 6mo the results are amazing!! I’ve tried numerous serums for my sun spots but nothing worked until I used this mask. Definitely worth the money.”",
+        "gg-YUumrX_6_text": "Renewed Skin!",
+        "ggpJh-vTEzC_text": "Tiffany L. | Verified Customer",
+        "ggEFMOK9dJg_text": "“My Novalight mask has been amazing! As someone who struggles with acne and rosacea, your LED light therapy mask has improved my skin so much that I can now feel comfortable without any makeup. I’m very happy with this product!”",
+        "ggI3c5dzWA1_text": "IT REALLY WORKS!!",
+        "ggtDSNkkUCz_text": "Aimee. | Verified Customer",
+        "gg4_K8E6fbx_text": "“I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit.”",
+        "gG0d9FJWlHG_text": "IT REALLY WORKS!!",
+        "gxINq6w1lEP_text": "Terri P. | Verified Customer",
+        "gByNzh1QSXS_text": "After years of searching for an effective wrinkle treatment, I finally found a game-changer with this LED mask therapy. Six months in, the results are astonishing! I’ve used countless serums and devices with no success until now. This LED mask is definitely worth the investment.",
+        "gWm1JWIF5v0_text": "Renewed Skin!",
+        "gid-Ej0tMGt_text": "Tiffany L. | Verified Customer",
+        "gNtFEu9ipQ0_text": "“My Novalight mask has been amazing! As someone who struggles with acne and rosacea, your LED light therapy mask has improved my skin so much that I can now feel comfortable without any makeup. I’m very happy with this product!”",
+        "gveofcCzqYO_text": "IT REALLY WORKS!!",
+        "gcpvBiQd2u1_text": "Aimee. | Verified Customer",
+        "g6nPbfqnm9J_text": "“I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit.”"
+      }
+    },
+    "gp_section_587617097258173361": {
+      "type": "gp-section-587617097258173361",
+      "settings": {
+        "section_preload": "true",
+        "checksum": "7b2c1f6b441192b9059fbd48838b6c4fbba0aa8de05d0e0eba4b60d53d6cfca6_1_1_1_0__1"
+      }
+    },
+    "gp_section_587617097258304433": {
+      "type": "gp-section-587617097258304433",
+      "settings": {
+        "checksum": "24b407a0909719d1aca126b3f07ba4e53536e4d62b4f763175d05abcc1f31a5a_1_1_1_0__1",
+        "gg6lInRjUzU_text": "<p>| Based on 629 reviews</p>",
+        "ggRVijsNkRA_text": "Why Customers Love Novalight™ - ACTIVE RENEWAL SERUM",
+        "ggCa8xLwpcg_text": "<p>Highly recommend!</p>",
+        "ggao1xB6Ysb_text": "<p>I have only been using it for a month. Prior to using this my skin was flaky &amp; dry. My skin barrier has been severely damaged for the past 2 years where almost anything I use burns, but in 1 month this mask has lightened my hyperpigmentation considerably as well as helped to give a bit</p>",
+        "ggH9Kx3_hqa_text": "<p>—Aimee.</p>",
+        "ggytYBYrnCN_text": "<p>IT REALLY WORKS!!</p>",
+        "ggxEkl6glGT_text": "<p>After years of searching for an effective wrinkle treatment, I finally found a game-changer with this LED mask therapy. Six months in, the results are astonishing! I’ve used countless serums and devices with no success until now. This LED mask is definitely worth the investment.</p>",
+        "ggM19vTj5OP_text": "<p>—BJ Nardi.</p>",
+        "ggi6AXMoNKd_text": "<p>Completely CURED my acne</p>",
+        "ggHMolIHj_9_text": "<p>I have been battling dark spots for years, trying everything under the sun. When I came across this LED mask, I was hesitant but decided to give it a try. After 6 months of consistent use, the improvement is remarkable! My dark spots have significantly faded. This LED mask is truly worth every penny.</p>",
+        "ggECNERHHTz_text": "<p>—Terri P.</p>"
+      }
+    },
+    "gp_section_587617097258369969": {
+      "type": "gp-section-587617097258369969",
+      "settings": {
+        "checksum": "0fdce0158da8ba8232a7e4d6cd00b26fb88c561599da20f478591a366d132120_1_1_1_0__1",
+        "ggjeEPUzAHz_text": "Frequently Asked Questions",
+        "ggM_f2g-aQq_childItem_0": "<p>How often should I use the Hydra Boost Serum?</p>",
+        "ggM_f2g-aQq_childItem_1": "<p>Is this serum suitable for all skin types?</p>",
+        "ggM_f2g-aQq_childItem_2": "<p>When will I start seeing results?</p>",
+        "ggM_f2g-aQq_childItem_3": "<p>Can I use it with other skincare products?</p>",
+        "ggFag0SyHPv_text": "<p>For best results, apply the serum twice daily—morning and night—after cleansing and before moisturizing.</p>",
+        "gaRjC3FbZm9_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">Yes, the formula is dermatologically tested and safe for all skin types, including sensitive and acne-prone skin.</span></p>",
+        "gUNlCkSROcv_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">Many users notice improved hydration and glow within the first week, with visible firming and smoothing in 4–6 weeks.</span></p>",
+        "gP66e8Cuqr7_text": "<p><span style=\"background-color:rgb(247,253,250);color:rgb(26,26,26);font-size:16px;\">Absolutely. Hydra Boost Serum enhances absorption, making it the perfect partner for your moisturizer, sunscreen, and other treatments.</span></p>"
+      }
+    },
+    "gp_section_587617783764747098": {
+      "type": "gp-section-587617783764747098",
+      "settings": {
+        "checksum": "e8f24bfe24c9aab9ed1f28ea77699b74b59ed21e142290f3896d8961fa9c5ed9_1_1_1_0__1",
+        "ggRnLH1KW6M_text": "Your Complete Guide to Natural, At-Home Skin Rejuvenation",
+        "gghTxE1JEgq_text": "<p>NovaLight – The Automatic Rejuvenation Pack</p>",
+        "ggc3SIo-z5Q_text": "<p>Forget expensive treatments. With this powerful digital skin-rejuvenation program, you’ll discover how to restore youthful skin naturally, without machines, needles, or harsh chemicals.</p>",
+        "ggh08Unm7yY_text": "<p>What You'll Learn:</p>",
+        "ggEjCo_L53d_childItem_0": "<p>The to firm and smooth your skin</p>",
+        "ggEjCo_L53d_childItem_1": "<p>Stimulate collagen without devices</p>",
+        "ggEjCo_L53d_childItem_2": "<p>Face, neck, and under-eyes in minutes/day</p>",
+        "ggEjCo_L53d_childItem_3": "<p>Anti-aging lifestyle blueprint for long-term glow</p>",
+        "ggUTM8rLiKX_text": "Key Dermatological Ingredients",
+        "ggocCXAptnv_text": "<p>A powerful blend of science-backed ingredients designed to hydrate, repair, and rejuvenate your skin from within.</p>",
+        "ggOQ5suJub6_childItem_0": "<p>Vitamin C</p>",
+        "gg0NMpFlRA__text": "<p>Brightens and protects by boosting natural collagen production, reducing visible signs of aging, and minimizing pigmentation for a more even skin tone.</p>",
+        "ggdMTev-l2z_childItem_0": "<p>Hydrolyzed Collagen</p>",
+        "ggxaAhvmLGv_text": "<p>Supports skin elasticity and firmness by replenishing lost collagen, helping to smooth fine lines and delay premature aging.</p>",
+        "ggJajiyzGmI_childItem_0": "<p>Avocado Butter</p>",
+        "ggk-RKLQCSu_text": "<p>Deeply nourishes and hydrates with rich, natural moisture—leaving skin soft, supple, and replenished.</p>"
+      }
+    }
+  },
+  "order": [
+    "gp_section_587617097258173361",
+    "gp_section_587617097257976753",
+    "gp_section_587617097257911217",
+    "gp_section_587617097258042289",
+    "gp_section_587617097257845681",
+    "gp_section_587617783764747098",
+    "gp_section_587617097258304433",
+    "gp_section_587617097258107825",
+    "gp_section_587617097258369969"
+  ]
+}
