@@ -62,7 +62,7 @@
         "text_9AAEPN": {
           "type": "text",
           "settings": {
-            "text": "<p>At Novalight™, we bring professional LED light therapy to your home with devices designed for real results. Our approach is rooted in research-backed technology that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.<br/></p><h2>Why We Exist</h2><p><br/>Novalight™ started with a simple goal: to make advanced skincare accessible to everyone. Our founders, frustrated by expensive clinic visits and limited home options, created a line of LED devices that anyone can use safely and consistently. We believe taking care of your skin should feel approachable, effective, and rewarding.<br/></p>",
+            "text": "<p>At Novalight™, we bring professional LED light therapy into your home with devices designed for real, visible results. Our approach is rooted in research-backed technology and evolving innovation that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.</p><p>As we continue to grow, Novalight™ is expanding into premium LED skincare solutions, including FDA-cleared LED masks, developed to meet high standards of safety, performance, and effectiveness.</p>",
             "text_style": "body"
           }
         }
@@ -95,14 +95,14 @@
         "heading_YwfGDg": {
           "type": "heading",
           "settings": {
-            "heading": "What Makes Novalight™ Different",
+            "heading": "Why We Exist",
             "heading_size": "h1"
           }
         },
         "text_9b6VKJ": {
           "type": "text",
           "settings": {
-            "text": "<ul><li><strong>Evidence-Based LED Technology</strong> – Using wavelengths proven to support skin renewal and appearance.<br/></li><li><strong>Intuitive Daily Use</strong> – Designed to fit naturally into your routine.<br/></li><li><strong>Gentle and Safe</strong> – Suitable for all skin types, without irritation.</li><li><strong>Visible Impact</strong> – Noticeable improvements with consistent use.<br/><br/></li></ul>"
+            "text": "<p>Novalight™ started with a simple goal: to make advanced skincare accessible to everyone. Our founders, frustrated by expensive clinic visits and limited home options, created a line of LED devices that anyone can use safely and consistently. Today, this includes both everyday skincare tools and FDA-cleared LED masks designed for advanced at-home care. We believe taking care of your skin should feel approachable, effective, and rewarding.</p>"
           }
         }
       },
