@@ -170,7 +170,7 @@
       "type": "product-key-benefits",
       "name": "Product Key Benefits",
       "settings": {
-        "heading": "Transform Your Skin with Professional LED Therapy",
+        "heading": "{{ product.metafields.custom.product_benefits_tilte.value }}",
         "subheading": "Experience the power of clinically-proven red and infrared light therapy from the comfort of your home"
       }
     },
@@ -188,7 +188,7 @@
       "type": "sticky-scroll-section",
       "custom_css": [
         ".pin-icon {background: #527567;}",
-        "@media screen and (max-width: 749px) {.article-template__content.page-width.page-width--narrow.rte.scroll-trigger.animate--slide-in {margin: 0px 20px;}.pin-layout {padding: 50px 20px 0px; gap: 0px;}}"
+        "@media screen and (max-width: 749px) {.article-template__content.page-width.page-width--narrow.rte.scroll-trigger.animate--slide-in {margin: 0px 20px; } .pin-layout {padding: 50px 20px 0px; gap: 0px; }}"
       ],
       "name": "Sticky Scroll Section",
       "settings": {}
