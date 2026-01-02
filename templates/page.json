@@ -120,6 +120,40 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_PRAX9z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_k4zGcF": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Makes Novalight™ Different",
+            "heading_size": "h1"
+          }
+        },
+        "text_LApN7f": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Evidence-Based LED Technology:</strong> Using wavelengths proven to support skin renewal and appearance.</li><li><strong>Intuitive Daily Use:</strong> Designed to fit naturally into your routine.</li><li><strong>Gentle and Safe: </strong>Suitable for all skin types, without irritation.<br/></li><li><strong>Visible Impact: </strong>Noticeable improvements with consistent use.<br/><br/></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_k4zGcF",
+        "text_LApN7f"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100% !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -226,6 +260,7 @@
     "rich_text_4bYmQH",
     "image_with_text_pBPA96",
     "rich_text_pNqMJY",
+    "rich_text_PRAX9z",
     "multicolumn_R6FJxr",
     "rich_text_eQm3ic"
   ]
