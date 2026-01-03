@@ -210,6 +210,9 @@
         "text_jeQkke",
         "button_HRkeEX"
       ],
+      "custom_css": [
+        "div#ImageWithText--template--25666422800679__image_with_text_H8qj7k {padding: 20px 10px !important;}"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_5xj9865xj9865xj9.webp",
@@ -270,7 +273,7 @@
         "buttons_nkfEtQ"
       ],
       "custom_css": [
-        "@media screen and (max-width: 749px) {.banner__media.media.scroll-trigger.animate--fade-in {display: none !important;}}"
+        "@media screen and (max-width: 749px) {.banner__media.media.scroll-trigger.animate--fade-in {display: none !important; }}"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
