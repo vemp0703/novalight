@@ -269,6 +269,9 @@
         "text_XqUM7w",
         "buttons_nkfEtQ"
       ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.banner__media.media.scroll-trigger.animate--fade-in {display: none !important;}}"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "section_width": "boxed",
