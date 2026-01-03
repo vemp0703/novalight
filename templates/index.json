@@ -211,7 +211,7 @@
         "button_HRkeEX"
       ],
       "custom_css": [
-        "div#ImageWithText--template--25666422800679__image_with_text_H8qj7k {padding: 20px 10px !important;}"
+        "@media screen and (max-width: 749px) {div#ImageWithText--template--25666422800679__image_with_text_H8qj7k {padding: 20px 10px !important;}}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
