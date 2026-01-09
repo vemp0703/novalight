@@ -193,36 +193,6 @@
       "name": "Sticky Scroll Section",
       "settings": {}
     },
-    "product_video_gallery_7gdXg8": {
-      "type": "product-video-gallery",
-      "name": "Product Video Gallery",
-      "settings": {
-        "badge_text": "▶Real Results from Real People",
-        "heading": "See TheraFace in Action",
-        "subtitle": "Watch verified users and skincare experts share their transformation stories",
-        "cta_text": "Ready to see results like these?",
-        "cta_label": "Get Your TheraFace Mask Today",
-        "cta_link": ""
-      }
-    },
-    "17660988777f51a894": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_8zFrTE": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1480
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_8zFrTE"
-      ],
-      "name": "Product Review",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "product_faq_mE7BPV": {
       "type": "product-faq",
       "name": "Product FAQ",
@@ -259,8 +229,6 @@
     "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
     "sticky_scroll_section_7YyDeH",
-    "product_video_gallery_7gdXg8",
-    "17660988777f51a894",
     "product_faq_mE7BPV",
     "related-products"
   ]
