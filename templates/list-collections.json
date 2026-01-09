@@ -10,8 +10,12 @@
 {
   "sections": {
     "main": {
-      "type": "collection-wise-products",
-      "settings": {}
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square"
+      }
     }
   },
   "order": [
