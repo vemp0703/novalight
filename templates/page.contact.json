@@ -54,7 +54,7 @@
         "text_Y7RemR": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Address: </strong>1840 Grant Park Lane Los Altos CA 94024 United States <br/><strong>Phone: </strong><a href=\"tel:+12056914040\" target=\"_blank\">+1 205 691 4040</a><br/><strong>Email: </strong>info@novalight-shop.com<br/><strong>Office Hour: </strong>9 Am - 5 Pm (Monday to Friday)<br/><strong>Timezone: </strong>(GMT-07:00) Mountain Standard Time (Phoenix)</p>"
+            "text": "<p><strong>Address: </strong>1840 Grant Park Lane Los Altos CA 94024 United States <br/><strong>Phone: </strong><a href=\"tel:+12056914040\" target=\"_blank\">+1 205 691 4040</a><br/><strong>Email: </strong><a href=\"mailto:info@novalightmask.com\">info@novalightmask.com</a><br/><strong>Office Hour: </strong>9 Am - 5 Pm (Monday to Friday)<br/><strong>Timezone: </strong>(GMT-07:00) Mountain Standard Time (Phoenix)</p>"
           }
         }
       },
