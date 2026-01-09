@@ -47,3 +47,39 @@
   margin-bottom: 20px;
 }
 </style>
+
+
+{% schema %}
+{
+  "name": "Collection wise products",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Products per collection",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection wise product listing"
+    }
+  ]
+}
+{% endschema %}
