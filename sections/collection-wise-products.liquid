@@ -1,0 +1,49 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+
+  {% for block in section.blocks %}
+    {% assign collection = block.settings.collection %}
+
+    {% if collection != blank %}
+
+      <!-- COLLECTION TITLE -->
+      <div class="collection-group">
+        <h2 class="collection-group__title">
+          {{ collection.title }}
+        </h2>
+
+        <!-- PRODUCTS -->
+        <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down">
+          {% for product in collection.products limit: section.settings.products_limit %}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'adapt',
+                show_secondary_image: true,
+                show_vendor: false,
+                show_rating: false,
+                lazy_load: true
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+<style>
+.collection-group {
+  margin-bottom: 60px;
+}
+.collection-group__title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+</style>
