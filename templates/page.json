@@ -31,7 +31,6 @@
       "block_order": [
         "heading_BXTtNJ"
       ],
-      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -73,7 +72,6 @@
         "heading_nGfVr7",
         "text_9AAEPN"
       ],
-      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 749px) {div#ImageWithText--template--25666423193895__image_with_text_pBPA96 {padding: 40px 20px 0px !important; }}"
       ],
