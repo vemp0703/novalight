@@ -47,14 +47,14 @@
         "heading_7Nrk6K": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Novalight LLC</strong>",
+            "heading": "Novalight™ LLC",
             "heading_size": "h1"
           }
         },
         "text_Y7RemR": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Address: </strong>1840 Grant Park Lane Los Altos CA 94024 United States <br/><strong>Phone: </strong><a href=\"tel:+12056914040\" target=\"_blank\">+1 205 691 4040</a><br/><strong>Email: </strong><a href=\"mailto:info@novalightmask.com\">info@novalightmask.com</a><br/><strong>Office Hour: </strong>9 Am - 5 Pm (Monday to Friday)<br/><strong>Timezone: </strong>(GMT-07:00) Mountain Standard Time (Phoenix)</p>"
+            "text": "<ul><li><strong>Registered Business Address:</strong> 1840 Grant Park Lane, Los Altos, CA 94024, United States</li><li><strong>Customer Support Email:</strong> info@novalightmask.com</li><li><strong>Customer Support Phone:</strong> +1 205-691-4040</li><li><strong>Business Hours:</strong> Monday - Friday | 9:00 AM - 5:00 PM (PST - Pacific Standard Time)<br/><br/></li></ul>"
           }
         }
       },
