@@ -41,12 +41,15 @@
             "swatch_shape": "circle"
           }
         },
+        "text_aFVidE": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Disclaimer:</strong> For cosmetic use only. Not intended to diagnose, treat, cure, or prevent any medical condition. Individual results may vary.",
+            "text_style": "body"
+          }
+        },
         "quantity_buy_now_CwE3HX": {
           "type": "quantity_buy_now",
-          "settings": {}
-        },
-        "description_MJd4rg": {
-          "type": "description",
           "settings": {}
         }
       },
@@ -56,15 +59,15 @@
         "caption",
         "price",
         "variant_picker",
-        "quantity_buy_now_CwE3HX",
-        "description_MJd4rg"
+        "text_aFVidE",
+        "quantity_buy_now_CwE3HX"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
