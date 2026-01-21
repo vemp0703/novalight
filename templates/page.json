@@ -62,7 +62,7 @@
         "text_9AAEPN": {
           "type": "text",
           "settings": {
-            "text": "<p>At Novalight™, we bring professional LED light therapy into your home with devices designed for real, visible results. Our approach is rooted in research-backed technology and evolving innovation that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.</p><p>As we continue to grow, Novalight™ is expanding into premium LED skincare solutions, including FDA-cleared LED masks, developed to meet high standards of safety, performance, and effectiveness.</p>",
+            "text": "<p>Novalight™ is a premium skincare brand owned and operated by Novalight LLC.<strong> </strong>At Novalight™, we bring professional LED light therapy into your home with devices designed for real, visible results. Our approach is rooted in research-backed technology and evolving innovation that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.</p><p>As we continue to grow, Novalight™ is expanding into premium LED skincare solutions, including FDA-cleared LED masks, developed to meet high standards of safety, performance, and effectiveness.</p>",
             "text_style": "body"
           }
         }
@@ -249,8 +249,52 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_x6WRiE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NMm8pY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Corporate Transparency & Identity</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Qi8AUn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ is more than just a brand; it is a commitment to excellence in at-home skincare. The website (<a href=\"https://novalightmask.com\"><span style=\"text-decoration:underline\">https://novalightmask.com</span></a>) is owned and operated by Novalight LLC, a registered business entity in the United States. We operate with full transparency to ensure our customers receive professional-grade service and research-backed technology they can trust.</p><ul><li>Legal Business Name: Novalight LLC</li><li>Brand Name: Novalight™</li><li>Registered Business Address: 1840 Grant Park Lane, Los Altos, CA 94024, United States</li><li>Customer Support Email: info@novalightmask.com</li><li>Customer Support Phone: +1 205-691-4040</li></ul>"
+          }
+        },
+        "button_LrDGL9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore Our Devices",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NMm8pY",
+        "text_Qi8AUn",
+        "button_LrDGL9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -265,6 +309,7 @@
     "rich_text_pNqMJY",
     "rich_text_PRAX9z",
     "multicolumn_R6FJxr",
-    "rich_text_eQm3ic"
+    "rich_text_eQm3ic",
+    "rich_text_x6WRiE"
   ]
 }
