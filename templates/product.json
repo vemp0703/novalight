@@ -44,6 +44,10 @@
         "quantity_buy_now_CwE3HX": {
           "type": "quantity_buy_now",
           "settings": {}
+        },
+        "description_MJd4rg": {
+          "type": "description",
+          "settings": {}
         }
       },
       "block_order": [
@@ -52,7 +56,8 @@
         "caption",
         "price",
         "variant_picker",
-        "quantity_buy_now_CwE3HX"
+        "quantity_buy_now_CwE3HX",
+        "description_MJd4rg"
       ],
       "settings": {
         "enable_sticky_info": true,
