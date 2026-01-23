@@ -24,7 +24,7 @@
     endif
   -%}
   {%- paginate collections by paginate_by -%}
-    <ul
+    {% comment %} <ul
       class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
       role="list"
     >
@@ -43,7 +43,53 @@
           %}
         </li>
       {%- endfor -%}
-    </ul>
+    </ul> {% endcomment %}
+
+
+    <ul
+  class="collection-list grid grid--1-col"
+  role="list"
+>
+  {%- for collection in collections -%}
+    {%- if collection.products_count > 0 -%}
+      <li class="collection-list__item">
+
+        <!-- Collection Title -->
+        <h2 class="collection-title">
+          <a href="{{ collection.url }}">
+            {{ collection.title }}
+          </a>
+        </h2>
+
+        <!-- Products Grid -->
+        <ul class="product-grid grid grid--4-col-desktop grid--2-col-tablet-down">
+          {%- for product in collection.products limit: 4 -%}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                show_secondary_image: true,
+                show_vendor: false,
+                show_rating: false
+              %}
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <!-- View More Link -->
+        <div class="collection-more">
+          <a href="{{ collection.url }}" class="button button--secondary">
+            View More
+          </a>
+        </div>
+
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+
+
+
     {% render 'pagination', paginate: paginate %}
   {%- endpaginate -%}
 </div>
