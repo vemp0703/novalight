@@ -57,84 +57,46 @@ h2.collection-title a {
     </ul> {% endcomment %}
 
 
-  {% assign priority_collections = "Advanced|FDA Cleared|Bundles|Save|Accessories" | split: "|" %}
-
-<ul class="collection-list grid grid--1-col" role="list">
-
-  {%- comment -%} 
-  STEP 1: Show priority collections in fixed order 
-  {%- endcomment -%}
-  {%- for priority in priority_collections -%}
-    {%- for collection in collections -%}
-      {%- if collection.title == priority and collection.products_count > 0 -%}
-        <li class="collection-list__item">
-
-          <h2 class="collection-title">
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
-          </h2>
-
-          <ul class="product-grid grid grid--4-col-desktop grid--2-col-tablet-down">
-            {%- for product in collection.products limit: 4 -%}
-              <li class="grid__item">
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: 'square',
-                  show_secondary_image: true,
-                  show_vendor: false,
-                  show_rating: false
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-
-          <div class="collection-more">
-            <a href="{{ collection.url }}" class="button button--secondary">
-              View More
-            </a>
-          </div>
-
-        </li>
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endfor -%}
-
-  {%- comment -%} 
-  STEP 2: Show remaining collections (excluding priority ones)
-  {%- endcomment -%}
+    <ul
+  class="collection-list grid grid--1-col"
+  role="list"
+>
   {%- for collection in collections -%}
-    {%- unless priority_collections contains collection.title -%}
-      {%- if collection.products_count > 0 -%}
-        <li class="collection-list__item">
+    {%- if collection.products_count > 0 -%}
+      <li class="collection-list__item">
 
-          <h2 class="collection-title">
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
-          </h2>
+        <!-- Collection Title -->
+        <h2 class="collection-title">
+          <a href="{{ collection.url }}">
+            {{ collection.title }}
+          </a>
+        </h2>
 
-          <ul class="product-grid grid grid--4-col-desktop grid--2-col-tablet-down">
-            {%- for product in collection.products limit: 4 -%}
-              <li class="grid__item">
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: 'square',
-                  show_secondary_image: true,
-                  show_vendor: false,
-                  show_rating: false
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
+        <!-- Products Grid -->
+        <ul class="product-grid grid grid--4-col-desktop grid--2-col-tablet-down">
+          {%- for product in collection.products limit: 4 -%}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                show_secondary_image: true,
+                show_vendor: false,
+                show_rating: false
+              %}
+            </li>
+          {%- endfor -%}
+        </ul>
 
-          <div class="collection-more">
-            <a href="{{ collection.url }}" class="button button--secondary">
-              View More
-            </a>
-          </div>
+        <!-- View More Link -->
+        <div class="collection-more">
+          <a href="{{ collection.url }}" class="button button--secondary">
+            View More
+          </a>
+        </div>
 
-        </li>
-      {%- endif -%}
-    {%- endunless -%}
+      </li>
+    {%- endif -%}
   {%- endfor -%}
-
 </ul>
 
 
