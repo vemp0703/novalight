@@ -24,7 +24,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>Contact Us</strong>",
-            "heading_size": "h1"
+            "heading_size": "h0"
           }
         }
       },
