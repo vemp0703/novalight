@@ -153,6 +153,11 @@
         "type": "shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
         "disabled": false,
         "settings": {}
+      },
+      "3062113278708352188": {
+        "type": "shopify://apps/gp-json-ld-schema/blocks/gropulse-rich-snippets/067179e8-363f-48e1-8ee4-5891cda502fa",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
