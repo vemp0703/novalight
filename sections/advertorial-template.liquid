@@ -1,37 +1,27 @@
 <style>
-.advertorial-container {
-  max-width: 750px;
-  margin: auto;
+.advertorial-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
   padding: 40px 20px;
   font-family: Georgia, serif;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #222;
 }
 
-.advertorial-container h1 {
-  font-size: 32px;
+.advertorial-meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.advertorial-wrapper h1 {
+  font-size: 34px;
   margin-bottom: 10px;
 }
 
-.advertorial-container h2 {
-  margin-top: 40px;
+.advertorial-wrapper h2 {
   font-size: 24px;
-}
-
-.advertorial-container p {
-  margin-bottom: 18px;
-}
-
-.cta-button {
-  display: block;
-  text-align: center;
-  background: #000;
-  color: #fff;
-  padding: 15px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 30px 0;
-  border-radius: 6px;
+  margin-top: 40px;
 }
 
 .highlight-box {
@@ -41,39 +31,96 @@
   margin: 30px 0;
 }
 
+.cta-button {
+  display: block;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 30px 0;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
+}
+
 .testimonial {
   background: #fafafa;
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 20px;
   border-radius: 6px;
+  font-size: 15px;
+}
+
+.product-box {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.product-box img {
+  max-width: 100%;
+  margin-bottom: 15px;
 }
 </style>
 
-<div class="advertorial-container">
+<div class="advertorial-wrapper">
 
+  <!-- Meta -->
+  <div class="advertorial-meta">
+    Sponsored • {{ section.settings.author_name }} • {{ "now" | date: "%B %d, %Y" }}
+  </div>
+
+  <!-- Headline -->
   <h1>{{ section.settings.headline }}</h1>
   <p><strong>{{ section.settings.subheadline }}</strong></p>
 
-  <p>{{ section.settings.intro_text }}</p>
+  <!-- Intro -->
+  {{ section.settings.intro_text }}
 
+  <!-- PAGE DESCRIPTION (IMPORTANT) -->
+  <div class="page-description">
+    {{ page.content }}
+  </div>
+
+  <!-- Problem Section -->
   <h2>The Hidden Problem</h2>
   <p>{{ section.settings.problem_text }}</p>
 
+  <!-- Research Highlight -->
   <div class="highlight-box">
-    <strong>According to recent findings:</strong>
+    <strong>Research Insight:</strong>
     <p>{{ section.settings.research_text }}</p>
   </div>
 
+  <!-- Solution -->
   <h2>The Breakthrough Solution</h2>
   <p>{{ section.settings.solution_text }}</p>
 
-  <a href="{{ section.settings.product_link }}" class="cta-button">
-    👉 Try It Today
-  </a>
+  <!-- Auto Product Pull (Optional) -->
+  {% if section.settings.product != blank %}
+    {% assign product = all_products[section.settings.product] %}
+    <div class="product-box">
+      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.price | money }}</p>
+      <a href="{{ product.url }}" class="cta-button">
+        👉 Try It Today
+      </a>
+    </div>
+  {% endif %}
 
+  <!-- Benefits -->
   <h2>Why People Love It</h2>
   <p>{{ section.settings.benefits_text }}</p>
 
+  <!-- Testimonials -->
   <h2>Real Customer Results</h2>
 
   <div class="testimonial">
@@ -88,13 +135,10 @@
     – {{ section.settings.testimonial_name_2 }}
   </div>
 
-  <a href="{{ section.settings.product_link }}" class="cta-button">
-    🔥 Get Special Offer Now
+  <!-- Final CTA -->
+  <a href="{{ section.settings.final_cta_link }}" class="cta-button">
+    🔥 {{ section.settings.final_cta_text }}
   </a>
-
-  <h2>Frequently Asked Questions</h2>
-  <p><strong>Is it safe?</strong><br>{{ section.settings.faq_1 }}</p>
-  <p><strong>How long does it take?</strong><br>{{ section.settings.faq_2 }}</p>
 
 </div>
 
@@ -102,20 +146,21 @@
 {
   "name": "Advertorial Template",
   "settings": [
+    { "type": "text", "id": "author_name", "label": "Author Name", "default": "Health Editorial Team" },
     { "type": "text", "id": "headline", "label": "Headline" },
     { "type": "text", "id": "subheadline", "label": "Subheadline" },
-    { "type": "textarea", "id": "intro_text", "label": "Intro Text" },
-    { "type": "textarea", "id": "problem_text", "label": "Problem Text" },
-    { "type": "textarea", "id": "research_text", "label": "Research Text" },
-    { "type": "textarea", "id": "solution_text", "label": "Solution Text" },
-    { "type": "textarea", "id": "benefits_text", "label": "Benefits Text" },
-    { "type": "textarea", "id": "testimonial_1", "label": "Testimonial 1" },
+    { "type": "richtext", "id": "intro_text", "label": "Intro Text" },
+    { "type": "richtext", "id": "problem_text", "label": "Problem Text" },
+    { "type": "richtext", "id": "research_text", "label": "Research Text" },
+    { "type": "richtext", "id": "solution_text", "label": "Solution Text" },
+    { "type": "richtext", "id": "benefits_text", "label": "Benefits Text" },
+    { "type": "text", "id": "testimonial_1", "label": "Testimonial 1" },
     { "type": "text", "id": "testimonial_name_1", "label": "Testimonial 1 Name" },
-    { "type": "textarea", "id": "testimonial_2", "label": "Testimonial 2" },
+    { "type": "text", "id": "testimonial_2", "label": "Testimonial 2" },
     { "type": "text", "id": "testimonial_name_2", "label": "Testimonial 2 Name" },
-    { "type": "textarea", "id": "faq_1", "label": "FAQ 1 Answer" },
-    { "type": "textarea", "id": "faq_2", "label": "FAQ 2 Answer" },
-    { "type": "url", "id": "product_link", "label": "Product Link" }
+    { "type": "product", "id": "product", "label": "Select Product (Optional)" },
+    { "type": "text", "id": "final_cta_text", "label": "Final CTA Text", "default": "Get Special Offer Now" },
+    { "type": "url", "id": "final_cta_link", "label": "Final CTA Link" }
   ],
   "presets": [
     {
