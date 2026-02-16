@@ -1,0 +1,315 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_4bYmQH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BXTtNJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BXTtNJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_pBPA96": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_CbjU9Q": {
+          "type": "caption",
+          "settings": {
+            "caption": "About Novalight™",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_nGfVr7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Science You Can See, Care You Can Trust",
+            "heading_size": "h1"
+          }
+        },
+        "text_9AAEPN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ is a premium skincare brand owned and operated by Novalight LLC.<strong> </strong>At Novalight™, we bring professional LED light therapy into your home with devices designed for real, visible results. Our approach is rooted in research-backed technology and evolving innovation that supports skin clarity, tone, and overall vitality without harsh treatments or complicated routines.</p><p>As we continue to grow, Novalight™ is expanding into premium LED skincare solutions, including FDA-cleared LED masks, developed to meet high standards of safety, performance, and effectiveness.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_CbjU9Q",
+        "heading_nGfVr7",
+        "text_9AAEPN"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {div#ImageWithText--template--25666423193895__image_with_text_pBPA96 {padding: 40px 20px 0px !important; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_rq82rjrq82rjrq82.webp",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_pNqMJY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YwfGDg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why We Exist",
+            "heading_size": "h1"
+          }
+        },
+        "text_9b6VKJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ started with a simple goal: to make advanced skincare accessible to everyone. Our founders, frustrated by expensive clinic visits and limited home options, created a line of LED devices that anyone can use safely and consistently. Today, this includes both everyday skincare tools and FDA-cleared LED masks designed for advanced at-home care. We believe taking care of your skin should feel approachable, effective, and rewarding.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YwfGDg",
+        "text_9b6VKJ"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100% !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_PRAX9z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_k4zGcF": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Makes Novalight™ Different",
+            "heading_size": "h1"
+          }
+        },
+        "text_LApN7f": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Evidence-Based LED Technology:</strong> Using wavelengths proven to support skin renewal and appearance.</li><li><strong>Intuitive Daily Use:</strong> Designed to fit naturally into your routine.</li><li><strong>Gentle and Safe: </strong>Suitable for all skin types, without irritation.<br/></li><li><strong>Visible Impact: </strong>Noticeable improvements with consistent use.<br/><br/></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_k4zGcF",
+        "text_LApN7f"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100% !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "multicolumn_R6FJxr": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_RBrTpK": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Our Story</strong>",
+            "text": "<p>Novalight™ was founded to bring a thoughtful approach to skincare at home. Driven by a passion for innovation and results, our team sought to create LED light therapy devices that make caring for your skin effective. We focus on combining scientific understanding with practical design, allowing individuals to support their skin’s natural processes through premium, FDA-cleared LED technology without relying on complex methods.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PtH9r8": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Our Mission</strong>",
+            "text": "<p>Our mission is to provide safe, research-informed skincare solutions that are easy to use daily. We strive to deliver devices that promote skin health and wellness, including FDA-cleared premium LED masks, making advanced skincare practices approachable for everyone. Through consistent, mindful use, we aim to help individuals feel confident and supported in their self-care routines while achieving visible, healthy results.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HkRgE8": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Our Vision</strong>",
+            "text": "<p>We envision a future where professional-level skin treatments are accessible at home, giving people the ability to care for their skin on their own terms. By focusing on innovation, usability, and scientifically supported practices, including FDA-cleared advancements, Novalight™ aims to become a leading name in home skincare, inspiring trust and promoting well-being for all users.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_RBrTpK",
+        "column_PtH9r8",
+        "column_HkRgE8"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_eQm3ic": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QkgGfU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Give Your Skin the Care It Deserves",
+            "heading_size": "h1"
+          }
+        },
+        "text_8yP3zE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Take LED skincare into your own hands with Novalight™. Our devices use research-supported light therapy to help your skin look clearer, balanced, and healthier. Safe, simple, and designed for daily use, Novalight™ is trusted by users worldwide to deliver results you can see and feel.</p><p><strong>Don’t wait, bring Novalight™ into your daily routine and see your skin’s true potential come to life.</strong></p>"
+          }
+        },
+        "button_PzQ9Kb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Our Devices",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QkgGfU",
+        "text_8yP3zE",
+        "button_PzQ9Kb"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_x6WRiE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NMm8pY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Corporate Transparency & Identity</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Qi8AUn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novalight™ is more than just a brand; it is a commitment to excellence in at-home skincare. The website (<a href=\"https://novalightmask.com\"><span style=\"text-decoration:underline\">https://novalightmask.com</span></a>) is owned and operated by Novalight LLC, a registered business entity in the United States. We operate with full transparency to ensure our customers receive professional-grade service and research-backed technology they can trust.</p><ul><li>Legal Business Name: Novalight LLC</li><li>Brand Name: Novalight™</li><li>Registered Business Address: 1840 Grant Park Lane, Los Altos, CA 94024, United States</li><li>Customer Support Email: info@novalightmask.com</li><li>Customer Support Phone: +1 205-691-4040</li></ul><p>Our products are not intended to diagnose, treat, cure, or prevent any medical condition.</p>"
+          }
+        },
+        "button_LrDGL9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore Our Devices",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NMm8pY",
+        "text_Qi8AUn",
+        "button_LrDGL9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_4bYmQH",
+    "image_with_text_pBPA96",
+    "rich_text_pNqMJY",
+    "rich_text_PRAX9z",
+    "multicolumn_R6FJxr",
+    "rich_text_eQm3ic",
+    "rich_text_x6WRiE"
+  ]
+}
