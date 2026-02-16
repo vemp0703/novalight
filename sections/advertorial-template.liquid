@@ -844,58 +844,6 @@ button:focus {
   <div class="page-description">
     {{ page.content }}
   </div>
-
-  <!-- Problem Section -->
-  <h2>The Hidden Problem</h2>
-  <p>{{ section.settings.problem_text }}</p>
-
-  <!-- Research Highlight -->
-  <div class="highlight-box">
-    <strong>Research Insight:</strong>
-    <p>{{ section.settings.research_text }}</p>
-  </div>
-
-  <!-- Solution -->
-  <h2>The Breakthrough Solution</h2>
-  <p>{{ section.settings.solution_text }}</p>
-
-  <!-- Auto Product Pull (Optional) -->
-  {% if section.settings.product != blank %}
-    {% assign product = all_products[section.settings.product] %}
-    <div class="product-box">
-      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
-      <h3>{{ product.title }}</h3>
-      <p>{{ product.price | money }}</p>
-      <a href="{{ product.url }}" class="cta-button">
-        👉 Try It Today
-      </a>
-    </div>
-  {% endif %}
-
-  <!-- Benefits -->
-  <h2>Why People Love It</h2>
-  <p>{{ section.settings.benefits_text }}</p>
-
-  <!-- Testimonials -->
-  <h2>Real Customer Results</h2>
-
-  <div class="testimonial">
-    ⭐⭐⭐⭐⭐ <br>
-    "{{ section.settings.testimonial_1 }}" <br>
-    – {{ section.settings.testimonial_name_1 }}
-  </div>
-
-  <div class="testimonial">
-    ⭐⭐⭐⭐⭐ <br>
-    "{{ section.settings.testimonial_2 }}" <br>
-    – {{ section.settings.testimonial_name_2 }}
-  </div>
-
-  <!-- Final CTA -->
-  <a href="{{ section.settings.final_cta_link }}" class="cta-button">
-    🔥 {{ section.settings.final_cta_text }}
-  </a>
-
 </div>
 
 {% schema %}
