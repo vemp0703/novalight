@@ -1,4 +1,760 @@
 <style>
+
+/* ===================================
+   Typography
+   =================================== */
+h1, h2, h3 {
+    font-family: inherit;
+    line-height: 1.3;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+strong {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+em {
+    font-style: italic;
+}
+
+/* ===================================
+   Layout Components
+   =================================== */
+.container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 3rem 0;
+}
+
+.hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: #475569;
+    max-width: 48rem;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Main Content
+   =================================== */
+.main-content {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.content {
+    color: #475569;
+}
+
+.paragraph {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.paragraph.italic {
+    font-style: italic;
+}
+
+.paragraph.strong {
+    font-weight: 600;
+}
+
+.paragraph.large {
+    font-size: 1.125rem;
+}
+
+/* ===================================
+   Section Variants
+   =================================== */
+.section-alt {
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.section-highlight {
+    background: linear-gradient(to bottom right, #fef3c7, #fed7aa);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.section-purple {
+    background: linear-gradient(to bottom right, #faf5ff, #fce7f3);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.section-divider {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 3rem;
+}
+
+.section-final {
+    background: linear-gradient(to bottom right, #f8fafc, #dbeafe);
+    border: 2px solid #cbd5e1;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+/* ===================================
+   Lists
+   =================================== */
+.list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.list-item {
+    color: #475569;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.list-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #475569;
+}
+
+.list-numbered {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.list-numbered .list-item::before {
+    display: none;
+}
+
+.list-small {
+    padding-left: 1rem;
+}
+
+.list-checkmark .list-item::before {
+    content: "✓";
+    color: #16a34a;
+}
+
+/* ===================================
+   Timeline
+   =================================== */
+.timeline {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+/* ===================================
+   Callouts
+   =================================== */
+.callout {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.callout-blue {
+    background-color: #dbeafe;
+    border-left: 4px solid #3b82f6;
+}
+
+.callout-title {
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+/* ===================================
+   Options
+   =================================== */
+.options {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.option-item {
+    margin-bottom: 1.5rem;
+}
+
+.option-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.option-featured {
+    border: 2px solid #d97706;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+.option-title-featured {
+    color: #78350f;
+}
+
+/* ===================================
+   Mechanism Steps
+   =================================== */
+.mechanism {
+    margin-top: 1.5rem;
+}
+
+.mechanism-item {
+    border-left: 4px solid;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.mechanism-red {
+    border-color: #ef4444;
+}
+
+.mechanism-purple {
+    border-color: #a855f7;
+}
+
+.mechanism-green {
+    border-color: #22c55e;
+}
+
+.mechanism-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+/* ===================================
+   Testimonial
+   =================================== */
+.testimonial {
+    background: linear-gradient(to right, #dbeafe, #e0e7ff);
+    border: 1px solid #93c5fd;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+/* ===================================
+   Evidence
+   =================================== */
+.evidence {
+    margin-bottom: 1.5rem;
+}
+
+/* ===================================
+   Myth vs Fact
+   =================================== */
+.myth-fact-grid {
+    margin-top: 1.5rem;
+}
+
+.myth-fact-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.myth-fact-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.myth-fact-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.myth-label {
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.fact-label {
+    font-weight: 600;
+    color: #16a34a;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* ===================================
+   Tables
+   =================================== */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cbd5e1;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #cbd5e1;
+    padding: 1rem;
+    text-align: left;
+}
+
+.comparison-table thead {
+    background-color: #f1f5f9;
+}
+
+.comparison-table th {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.comparison-table td {
+    color: #475569;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.table-label {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* ===================================
+   Final Content
+   =================================== */
+.final-content {
+    margin-top: 2rem;
+}
+
+.final-item {
+    margin-bottom: 2rem;
+}
+
+.final-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+/* ===================================
+   CTA Section
+   =================================== */
+.cta {
+    background: linear-gradient(to right, #2563eb, #4f46e5);
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cta-title {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    color: #dbeafe;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    color: #2563eb;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #dbeafe;
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+.footer-disclaimer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
+    padding-top: 1.5rem;
+}
+
+.disclaimer-text {
+    margin-bottom: 0.5rem;
+}
+
+/* ===================================
+   Responsive Design - Tablet
+   =================================== */
+@media (min-width: 640px) {
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-alt,
+    .section-highlight,
+    .section-purple,
+    .section-final {
+        padding: 2.5rem;
+    }
+
+    .cta {
+        padding: 3rem;
+    }
+}
+
+/* ===================================
+   Responsive Design - Desktop
+   =================================== */
+@media (min-width: 768px) {
+    .hero {
+        padding: 5rem 0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .main-content {
+        padding: 4rem 0;
+    }
+
+    .section {
+        margin-bottom: 5rem;
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+    }
+
+    .myth-fact-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .final-content {
+        margin-top: 3rem;
+    }
+
+    .final-item {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .hero {
+        padding: 6rem 0;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+    .cta-button {
+        display: none;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+}
+
+/* ===================================
+   Cross-Browser Compatibility
+   =================================== */
+
+/* Firefox */
+@-moz-document url-prefix() {
+    body {
+        font-weight: normal;
+    }
+}
+
+/* Safari */
+@supports (-webkit-appearance: none) {
+    .cta-button {
+        -webkit-appearance: none;
+    }
+}
+
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .hero {
+        background: #f8fafc;
+    }
+    
+    .section-highlight {
+        background: #fef3c7;
+    }
+    
+    .section-purple {
+        background: #faf5ff;
+    }
+    
+    .section-final {
+        background: #f8fafc;
+    }
+    
+    .cta {
+        background: #2563eb;
+    }
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
+.cta-button:focus,
+button:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    background: #2563eb;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hero {
+        border-bottom: 2px solid #000;
+    }
+    
+    .callout-blue {
+        border-left-width: 6px;
+    }
+    
+    .mechanism-item {
+        border-left-width: 6px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* This is optional - can be enabled if dark mode is needed */
+    /*
+    body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+    }
+    
+    h1, h2, h3 {
+        color: #f1f5f9;
+    }
+    */
+}
+
+/* ===================================
+   Touch Device Optimizations
+   =================================== */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.25rem;
+    }
+    
+    /* Increase tap targets for mobile */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ===================================
+   Loading States
+   =================================== */
+.cta-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===================================
+   Small Mobile Adjustments
+   =================================== */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.875rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem;
+    }
+    
+    .section-alt,
+    .section-highlight,
+    .section-purple,
+    .section-final {
+        padding: 1.5rem;
+    }
+    
+    .cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+}
+
 .advertorial-wrapper {
   max-width: 760px;
   margin: 0 auto;
