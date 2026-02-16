@@ -1,0 +1,126 @@
+<style>
+.advertorial-container {
+  max-width: 750px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: Georgia, serif;
+  line-height: 1.7;
+  color: #222;
+}
+
+.advertorial-container h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.advertorial-container h2 {
+  margin-top: 40px;
+  font-size: 24px;
+}
+
+.advertorial-container p {
+  margin-bottom: 18px;
+}
+
+.cta-button {
+  display: block;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 30px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: #f8f8f8;
+  padding: 20px;
+  border-left: 4px solid #000;
+  margin: 30px 0;
+}
+
+.testimonial {
+  background: #fafafa;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+</style>
+
+<div class="advertorial-container">
+
+  <h1>{{ section.settings.headline }}</h1>
+  <p><strong>{{ section.settings.subheadline }}</strong></p>
+
+  <p>{{ section.settings.intro_text }}</p>
+
+  <h2>The Hidden Problem</h2>
+  <p>{{ section.settings.problem_text }}</p>
+
+  <div class="highlight-box">
+    <strong>According to recent findings:</strong>
+    <p>{{ section.settings.research_text }}</p>
+  </div>
+
+  <h2>The Breakthrough Solution</h2>
+  <p>{{ section.settings.solution_text }}</p>
+
+  <a href="{{ section.settings.product_link }}" class="cta-button">
+    👉 Try It Today
+  </a>
+
+  <h2>Why People Love It</h2>
+  <p>{{ section.settings.benefits_text }}</p>
+
+  <h2>Real Customer Results</h2>
+
+  <div class="testimonial">
+    ⭐⭐⭐⭐⭐ <br>
+    "{{ section.settings.testimonial_1 }}" <br>
+    – {{ section.settings.testimonial_name_1 }}
+  </div>
+
+  <div class="testimonial">
+    ⭐⭐⭐⭐⭐ <br>
+    "{{ section.settings.testimonial_2 }}" <br>
+    – {{ section.settings.testimonial_name_2 }}
+  </div>
+
+  <a href="{{ section.settings.product_link }}" class="cta-button">
+    🔥 Get Special Offer Now
+  </a>
+
+  <h2>Frequently Asked Questions</h2>
+  <p><strong>Is it safe?</strong><br>{{ section.settings.faq_1 }}</p>
+  <p><strong>How long does it take?</strong><br>{{ section.settings.faq_2 }}</p>
+
+</div>
+
+{% schema %}
+{
+  "name": "Advertorial Template",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline" },
+    { "type": "text", "id": "subheadline", "label": "Subheadline" },
+    { "type": "textarea", "id": "intro_text", "label": "Intro Text" },
+    { "type": "textarea", "id": "problem_text", "label": "Problem Text" },
+    { "type": "textarea", "id": "research_text", "label": "Research Text" },
+    { "type": "textarea", "id": "solution_text", "label": "Solution Text" },
+    { "type": "textarea", "id": "benefits_text", "label": "Benefits Text" },
+    { "type": "textarea", "id": "testimonial_1", "label": "Testimonial 1" },
+    { "type": "text", "id": "testimonial_name_1", "label": "Testimonial 1 Name" },
+    { "type": "textarea", "id": "testimonial_2", "label": "Testimonial 2" },
+    { "type": "text", "id": "testimonial_name_2", "label": "Testimonial 2 Name" },
+    { "type": "textarea", "id": "faq_1", "label": "FAQ 1 Answer" },
+    { "type": "textarea", "id": "faq_2", "label": "FAQ 2 Answer" },
+    { "type": "url", "id": "product_link", "label": "Product Link" }
+  ],
+  "presets": [
+    {
+      "name": "Advertorial Page"
+    }
+  ]
+}
+{% endschema %}
