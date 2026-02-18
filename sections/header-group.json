@@ -17,14 +17,14 @@
         "announcement_TEQeHY": {
           "type": "announcement",
           "settings": {
-            "text": "Valentine’s Day Special: 20% OFF Everything + Free Shipping | Use Code: LOVE20",
+            "text": "Spring into Savings! Grab 15% OFF with Code: SPRING27 –Limited Time!",
             "link": ""
           }
         },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Celebrate love with up to 20% off. Simply use code LOVE20",
+            "text": "Fresh Deals, Fresh Season! Use SPRING27 for 15% OFF Today!",
             "link": ""
           }
         }
@@ -33,7 +33,6 @@
         "announcement_TEQeHY",
         "announcement-bar-0"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 3,
