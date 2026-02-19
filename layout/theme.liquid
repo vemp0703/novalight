@@ -395,9 +395,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
 
-<script>
+    <script>
 function enhanceJudgeMeBadge() {
   document.querySelectorAll('.jdgm-prev-badge__text').forEach(el => {
     const num = el.textContent.match(/\d+/)?.[0];
@@ -409,4 +408,5 @@ document.addEventListener('jdgm:ready', enhanceJudgeMeBadge);
 document.addEventListener('DOMContentLoaded', enhanceJudgeMeBadge);
 </script>
 
+  </body>
 </html>
