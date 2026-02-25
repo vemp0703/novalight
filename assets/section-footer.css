@@ -16,7 +16,7 @@ footer *, footer .link {
   padding-bottom: 5rem;
   display: block;
 }
-
+a{ text-decoration:none;}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
