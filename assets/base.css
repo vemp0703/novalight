@@ -1,6 +1,6 @@
 :root {
     --font-heading: "Google Sans Flex", sans-serif;
-    --font-body: "Inter", sans-serif;
+    --font-body: "DM Sans", sans-serif;
     --alpha-button-background: 1;
     --alpha-button-border: 1;
     --alpha-link: 0.85;
@@ -2475,7 +2475,7 @@ input[type='checkbox'] {
 .header__heading-link .h2 {
     line-height: 1;
     color: rgba(var(--color-foreground), 0.75);
-    font-family: 'Jost', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
