@@ -9,7 +9,9 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify://shop_images/nova_daedc876-9ca5-4cde-babc-18a32231db9b.png",
+    "logo_width": 120,
+    "favicon": "shopify://shop_images/Favicon.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 110,
     "type_body_font": "lato_n4",
