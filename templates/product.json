@@ -64,14 +64,14 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
+        "media_fit": "cover",
+        "gallery_layout": "stacked",
         "mobile_thumbnails": "hide",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "hover",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
@@ -84,6 +84,7 @@
         "usp_e3Erhm": {
           "type": "usp",
           "settings": {
+            "icon": "shopify://shop_images/trust-badge-icon.png",
             "title": "30-Day Guarantee",
             "text": "Peace of mind with our 30-day satisfaction guarantee."
           }
