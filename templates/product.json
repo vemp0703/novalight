@@ -63,7 +63,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Care & Maintance",
-            "icon": "snowflake",
+            "icon": "leaf",
             "content": "{{ product.metafields.custom.product_care_and_maintaince | metafield_tag }}",
             "page": ""
           }
