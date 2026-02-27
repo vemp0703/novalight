@@ -164,11 +164,6 @@
         "padding_bottom": 36
       }
     },
-    "product_promo_banner_hfhMPj": {
-      "type": "product-promo-banner",
-      "name": "Product Promo Banner",
-      "settings": {}
-    },
     "clinical_results_metaobject_AJtiEM": {
       "type": "clinical-results-metaobject",
       "name": "Clinical Results (Metaobject)",
@@ -214,7 +209,6 @@
     "main",
     "product_key_benefits_7mEe4C",
     "image_with_text_FaXkaq",
-    "product_promo_banner_hfhMPj",
     "clinical_results_metaobject_AJtiEM",
     "sticky_scroll_section_7YyDeH",
     "product_faq_mE7BPV",
