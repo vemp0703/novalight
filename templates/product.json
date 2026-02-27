@@ -169,6 +169,22 @@
       "name": "Clinical Results (Metaobject)",
       "settings": {}
     },
+    "video_KwRjRr": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "{{ product.metafields.custom.badge_text.value }}",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/UGC1.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "sticky_scroll_section_7YyDeH": {
       "type": "sticky-scroll-section",
       "custom_css": [
@@ -205,21 +221,52 @@
         "padding_bottom": 28
       }
     },
-    "video_KwRjRr": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
-      "settings": {
-        "heading": "{{ product.metafields.custom.badge_text.value }}",
-        "heading_size": "h2",
-        "enable_video_looping": true,
-        "video": "shopify://files/videos/c33aeae089ee4ec1923fb2814fc6e379.HD-720p-3.0Mbps-47943454.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+    "1772221854787776ad": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ae23a95_cpgt9n": {
+          "type": "ai_gen_block_ae23a95",
+          "settings": {
+            "video": "shopify://files/videos/fe14dae2ce214f3e9d38bb2e1262d806.HD-1080p-3.3Mbps-29175629.mp4",
+            "video_url": "",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "media_radius": 10,
+            "heading": "Video with text",
+            "text": "<p>Pair video with text to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.</p>",
+            "button_label": "Learn more",
+            "button_link": "",
+            "layout": "video-first",
+            "container_width": 1400,
+            "spacing": 40,
+            "spacing_mobile": 24,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "content_padding": 20,
+            "heading_size": 36,
+            "heading_color": "#121212",
+            "heading_spacing": 16,
+            "text_size": 16,
+            "text_color": "#121212",
+            "text_spacing": 24,
+            "button_text_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_radius": 16,
+            "button_background": "#121212",
+            "button_background_hover": "#000000",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ae23a95_cpgt9n"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -230,6 +277,7 @@
     "video_KwRjRr",
     "sticky_scroll_section_7YyDeH",
     "product_faq_mE7BPV",
-    "related-products"
+    "related-products",
+    "1772221854787776ad"
   ]
 }
