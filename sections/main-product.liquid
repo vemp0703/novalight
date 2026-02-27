@@ -153,8 +153,8 @@
       {% if certification.logo != blank %}
         <div class="badge-item">
           <img 
-            src="{{ certification.logo | image_url: width: 180 }}" 
-            alt="{{ certification.title | escape }}"
+            src="{{ certification.certification_image | image_url: width: 180 }}" 
+            alt="{{ certification.certification_name | escape }}"
             loading="lazy"
           >
         </div>
