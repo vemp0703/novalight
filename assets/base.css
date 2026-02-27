@@ -3803,7 +3803,7 @@ span.metafield-rating::before {
 .product-badges-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 24px;
   margin-top: 20px;
