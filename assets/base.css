@@ -3800,3 +3800,15 @@ span.metafield-rating::before {
 .metafield-rich_text_field {
     font-size: 16px;
 }
+.product-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.badge-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
