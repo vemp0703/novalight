@@ -3801,3 +3801,6 @@ span.metafield-rating::before {
     font-size: 100%;
     font-variant: normal;
 }
+.metafield-rich_text_field {
+    font-size: 16px;
+}
