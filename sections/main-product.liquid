@@ -146,7 +146,23 @@
 
           {% comment %} Product Badges {% endcomment %}
 
-
+{% if product.metafields.custom.product_badges.value != blank %}
+  <div class="product-badges-grid">
+    {% for certification in product.metafields.custom.product_badges.value %}
+      
+      {% if certification.logo != blank %}
+        <div class="badge-item">
+          <img 
+            src="{{ certification.logo | image_url: width: 180 }}" 
+            alt="{{ certification.title | escape }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+      
+    {% endfor %}
+  </div>
+{% endif %}
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
