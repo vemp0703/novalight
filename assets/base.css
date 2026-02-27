@@ -3825,3 +3825,6 @@ span.metafield-rating::before {
 product-info#MainProduct-template--25666423554343__main {
     background: #e2eded;
 }
+.product-form__buttons div {
+    display: none;
+}
