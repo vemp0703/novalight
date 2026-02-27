@@ -145,14 +145,10 @@
           {% endif %}
 
           {% comment %} Product Badges {% endcomment %}
-
-{% if product.metafields.custom.product_badges != blank %}
-
-  product has data
+{% if product.metafields.custom.product_badges.value != blank %}
   <div class="product-badges-grid">
+    
     {% for certification in product.metafields.custom.product_badges.value %}
-
-      {{certification }}
       
       {% if certification.certification_image != blank %}
         <div class="badge-item">
@@ -165,6 +161,7 @@
       {% endif %}
       
     {% endfor %}
+    
   </div>
 {% endif %}
 
