@@ -3687,16 +3687,14 @@ span.badge.price__badge-sale.color-scheme-5 {
 
 /* Blue check icon */
 .feature-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #331;
-  color: #fff;
-  font-size: 13px;
-  font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 /* Text */
