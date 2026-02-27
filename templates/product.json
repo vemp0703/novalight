@@ -108,96 +108,6 @@
         "padding_bottom": 12
       }
     },
-    "product_usp_bar_NWh8XU": {
-      "type": "product-usp-bar",
-      "blocks": {
-        "usp_e3Erhm": {
-          "type": "usp",
-          "settings": {
-            "icon": "shopify://shop_images/trust-badge-icon.png",
-            "title": "30-Day Guarantee",
-            "text": "Peace of mind with our 30-day satisfaction guarantee."
-          }
-        },
-        "usp_wjgEQE": {
-          "type": "usp",
-          "settings": {
-            "title": "Hassle-Free Refunds",
-            "text": "Easy returns and refunds if you’re not fully satisfied."
-          }
-        },
-        "usp_tPGtFe": {
-          "type": "usp",
-          "settings": {
-            "title": "Skin-Safe Design",
-            "text": "Gentle, skin-friendly materials for safe at-home use."
-          }
-        }
-      },
-      "block_order": [
-        "usp_e3Erhm",
-        "usp_wjgEQE",
-        "usp_tPGtFe"
-      ],
-      "name": "Product USP Bar",
-      "settings": {}
-    },
-    "product_details_tabs_cPkNBp": {
-      "type": "product-details-tabs",
-      "blocks": {
-        "tab_BCpzww": {
-          "type": "tab",
-          "name": "Specifications",
-          "settings": {
-            "icon": "shopify://shop_images/Thunder.svg",
-            "label": "Specifications",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_specification"
-          }
-        },
-        "tab_diCYFD": {
-          "type": "tab",
-          "name": "What's Included",
-          "settings": {
-            "icon": "shopify://shop_images/order_box.svg",
-            "label": "What's Included",
-            "description": "Detailed information and specifications",
-            "metafield_key": "description"
-          }
-        },
-        "tab_RLrUCx": {
-          "type": "tab",
-          "name": "Technology",
-          "settings": {
-            "icon": "shopify://shop_images/vector_sheild.svg",
-            "label": "Technology",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_technology"
-          }
-        },
-        "tab_mwHbPt": {
-          "type": "tab",
-          "name": "Care & Maintenance",
-          "settings": {
-            "icon": "shopify://shop_images/Leaf.svg",
-            "label": "Care & Maintenance",
-            "description": "Detailed information and specifications",
-            "metafield_key": "product_care_and_maintaince"
-          }
-        }
-      },
-      "block_order": [
-        "tab_BCpzww",
-        "tab_diCYFD",
-        "tab_RLrUCx",
-        "tab_mwHbPt"
-      ],
-      "name": "Product Details Tabs",
-      "settings": {
-        "heading": "Product Details",
-        "subheading": "Everything you need to know about the product"
-      }
-    },
     "product_highlights_zpBYAV": {
       "type": "product-highlights",
       "name": "Product Highlights",
@@ -257,12 +167,67 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "multirow_m7q9N4": {
+      "type": "multirow",
+      "blocks": {
+        "row_CHtBLG": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_NXdz4P": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_btWTaP": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_CHtBLG",
+        "row_NXdz4P",
+        "row_btWTaP"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "product_usp_bar_NWh8XU",
-    "product_details_tabs_cPkNBp",
+    "multirow_m7q9N4",
     "product_highlights_zpBYAV",
     "product_key_benefits_7mEe4C",
     "product_promo_banner_hfhMPj",
