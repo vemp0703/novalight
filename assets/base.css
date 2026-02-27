@@ -3800,15 +3800,25 @@ span.metafield-rating::before {
 .metafield-rich_text_field {
     font-size: 16px;
 }
-.product-badges-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 15px;
+.product-badges-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
   margin-top: 20px;
 }
 
-.badge-item img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.badge-item {
+  width: 120px;              /* controls overall size */
+  height: 120px;             /* forces equal box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;       /* keeps aspect ratio clean */
 }
