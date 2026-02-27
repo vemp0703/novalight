@@ -41,6 +41,33 @@
             "swatch_shape": "circle"
           }
         },
+        "collapsible_tab_BXtydQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Specification",
+            "icon": "clipboard",
+            "content": "{{ product.metafields.custom.product_specification | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_FLTwg4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Technology",
+            "icon": "snowflake",
+            "content": "{{ product.metafields.custom.product_specification | metafield_tag }}{{ product.metafields.custom.product_technology | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_kga8aq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care & Maintance",
+            "icon": "snowflake",
+            "content": "{{ product.metafields.custom.product_care_and_maintaince | metafield_tag }}",
+            "page": ""
+          }
+        },
         "text_aFVidE": {
           "type": "text",
           "settings": {
@@ -59,6 +86,9 @@
         "caption",
         "price",
         "variant_picker",
+        "collapsible_tab_BXtydQ",
+        "collapsible_tab_FLTwg4",
+        "collapsible_tab_kga8aq",
         "text_aFVidE",
         "quantity_buy_now_CwE3HX"
       ],
