@@ -3805,7 +3805,7 @@ span.metafield-rating::before {
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
 }
 
