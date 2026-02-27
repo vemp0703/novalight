@@ -150,13 +150,16 @@
     
     {% for certification in product.metafields.custom.product_badges.value %}
       
-      {% if certification.certification_image != blank %}
+      {% assign badge = certification %}
+      
+      {% if badge.certification_image %}
         <div class="badge-item">
-          <img 
-            src="{{ certification.certification_image | image_url: width: 180 }}" 
-            alt="{{ certification.certification_name | escape }}"
-            loading="lazy"
-          >
+          {{ badge.certification_image 
+            | image_url: width: 200 
+            | image_tag: 
+              alt: badge.certification_name,
+              loading: 'lazy' 
+          }}
         </div>
       {% endif %}
       
