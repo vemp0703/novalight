@@ -72,7 +72,7 @@
           "type": "text",
           "settings": {
             "text": "<strong>Disclaimer:</strong> For cosmetic use only. Not intended to diagnose, treat, cure, or prevent any medical condition. Individual results may vary.",
-            "text_style": "body"
+            "text_style": "uppercase"
           }
         },
         "quantity_buy_now_CwE3HX": {
