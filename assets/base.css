@@ -3805,13 +3805,13 @@ span.metafield-rating::before {
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
-  gap: 0px;
+  gap: 24px;
   margin-top: 20px;
 }
 
 .badge-item {
-  width: 250px;              /* controls overall size */
-  height: 250px;             /* forces equal box */
+  width: 180px;              /* controls overall size */
+  height: 180px;             /* forces equal box */
   display: flex;
   align-items: center;
   justify-content: center;
