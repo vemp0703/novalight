@@ -3792,3 +3792,12 @@ a.link.product__view-details.animate-arrow {
 .customized-card-product .card__content h3 a {
     font-size: 18px !important;
 }
+span.metafield-rating::before {
+    content: "\F586";
+    font-family: bootstrap-icons !important;
+    vertical-align: text-top;
+    margin-right: 0.45rem;
+    color: gold;
+    font-size: 100%;
+    font-variant: normal;
+}
