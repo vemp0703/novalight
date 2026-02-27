@@ -114,9 +114,9 @@
                 <!-- Judge.me Star Rating -->
               
                 {% comment %} <div class="jdgm-widget jdgm-preview-badge"
-                    data-id="{{ product.id }}"
-                    data-template="badge"> {{ product.metafields.judgeme.badge }}
-                </div> {% endcomment %}
+                                     data-id="{{ product.id }}"
+                                                         data-template="badge"> {{ product.metafields.judgeme.badge }}
+                                                                         </div> %} {% endcomment %}
 
 
               {%- when 'price' -%}
@@ -136,7 +136,7 @@
               {% for feature in features %}
                 {% if feature != blank %}
                   <li class="product-feature-item">
-                    <span class="feature-icon">✓</span>
+                    <span class="feature-icon"><i class="bi bi-water"></i></span>
                     <span class="feature-text">{{ feature | strip }}</span>
                   </li>
                 {% endif %}
