@@ -68,7 +68,13 @@
           class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
         >
-          {{ article.content }}
+          {% comment %} {{ article.content }} {% endcomment %}
+           {{ article.content
+ | replace: '<a href="http://novalight-shop.com', '<span data-link-removed="true"'
+ | replace: '<a href="https://novalight-shop.com', '<span data-link-removed="true"'
+ | replace: '<a href="https://www.novalight-shop.com', '<span data-link-removed="true"'
+ | replace: '</a>', '</span>'
+}}
         </div>
 
       {%- when 'share' -%}
