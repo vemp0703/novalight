@@ -150,7 +150,7 @@
   <div class="product-badges-grid">
     {% for certification in product.metafields.custom.product_badges.value %}
       
-      {% if certification.logo != blank %}
+      {% if certification.certification_image != blank %}
         <div class="badge-item">
           <img 
             src="{{ certification.certification_image | image_url: width: 180 }}" 
