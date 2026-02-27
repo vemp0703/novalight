@@ -15,7 +15,7 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "<strong>{{ product.metafields.reviews.rating | metafield_tag }}</strong><strong> </strong> Top-rated Product | Loved by +40000 Customers",
+            "text": "<strong>{{ product.metafields.reviews.rating | metafield_tag }}</strong><strong>  Top-rated Product | Loved by +40000 Customers</strong>",
             "text_style": "uppercase"
           }
         },
