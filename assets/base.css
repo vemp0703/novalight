@@ -3810,8 +3810,8 @@ span.metafield-rating::before {
 }
 
 .badge-item {
-  width: 250px;              /* controls overall size */
-  height: 250px;             /* forces equal box */
+  width: 200px;              /* controls overall size */
+  height: 200px;             /* forces equal box */
   display: flex;
   align-items: center;
   justify-content: center;
