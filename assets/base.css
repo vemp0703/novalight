@@ -3722,7 +3722,7 @@ span.price-item.price-item--regular {
     gap: 1.5rem;
     width: 100%;
     align-items: center;
-    font-family: 'Marcellus';
+    font-family: var(--font-heading);
     font-size: 30px;
     flex-wrap: wrap;
 }
