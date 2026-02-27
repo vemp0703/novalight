@@ -3659,7 +3659,7 @@ s.price-item.price-item--regular {
 }
 span.badge.price__badge-sale.color-scheme-5 {
     background: linear-gradient(90deg, #fb2c36, #ff6900);
-    font-family: 'Marcellus';
+    font-family: var(--font-heading);
     letter-spacing: normal;
     font-size: 1.5rem;
 }
