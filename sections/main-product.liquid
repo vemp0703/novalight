@@ -145,30 +145,29 @@
           {% endif %}
 
           {% comment %} Product Badges {% endcomment %}
-{% if product.metafields.custom.product_badges.value != blank %}
+            {% if product.metafields.custom.product_badges.value != blank %}
 
-  data available
-  <div class="product-badges-grid">
-    
-    {% for certification in product.metafields.custom.product_badges.value %}
-      
-      {% assign badge = certification %}
-      
-      {% if badge.certification_image %}
-        <div class="badge-item">
-          {{ badge.certification_image 
-            | image_url: width: 200 
-            | image_tag: 
-              alt: badge.certification_name,
-              loading: 'lazy' 
-          }}
-        </div>
-      {% endif %}
-      
-    {% endfor %}
-    
-  </div>
-{% endif %}
+              <div class="product-badges-grid">
+                
+                {% for certification in product.metafields.custom.product_badges.value %}
+                  
+                  {% assign badge = certification %}
+                  
+                  {% if badge.certification_image %}
+                    <div class="badge-item">
+                      {{ badge.certification_image 
+                        | image_url: width: 200 
+                        | image_tag: 
+                          alt: badge.certification_name,
+                          loading: 'lazy' 
+                      }}
+                    </div>
+                  {% endif %}
+                  
+                {% endfor %}
+                
+              </div>
+            {% endif %}
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
