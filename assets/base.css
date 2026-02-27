@@ -3822,3 +3822,6 @@ span.metafield-rating::before {
   max-height: 100%;
   object-fit: contain;       /* keeps aspect ratio clean */
 }
+product-info#MainProduct-template--25666423554343__main {
+    background: #e2eded;
+}
