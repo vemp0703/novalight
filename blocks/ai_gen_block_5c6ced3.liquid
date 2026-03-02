@@ -173,12 +173,6 @@
       </h2>
     {% endif %}
 
-    {% if block.settings.description != blank %}
-      <h2 class="ai-video-gallery__description-{{ ai_gen_id }}">
-        {{ block.settings.description }}
-      </h2>
-    {% endif %}
-
     {% assign gallery = product.metafields.custom.product_video_gallery.value %}
 
     {% if gallery != blank and gallery.children != blank %}
@@ -463,7 +457,7 @@
       "type": "text",
       "id": "Description",
       "label": "Description",
-      "default": "Our customers’ feedback reflects our commitment to excellence, transparency, and outstanding service."
+      "default": "Product videos"
     },
     {
       "type": "range",
