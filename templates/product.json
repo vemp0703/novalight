@@ -247,6 +247,16 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_liquid_xMTHH9": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% unless product.tags contains 'no-discount' %}\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Womens Day Sidebar</title>\n\n<style>\n  .christmas-sidebar {\n    position: fixed;\n    top: 55%;\n    right: 0;\n    transform: translateY(-50%);\n    width: 220px;\n    padding: 10px;\n    background: #E17585;\n    color: #fff;\n    border-radius: 10px 0 0 10px;\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\n    text-align: center;\n    z-index: 1000;\n    overflow: hidden;\n  }\n\n  .christmas-sidebar .close-btn {\n    position: absolute;\n    top: 6px;\n    right: 6px;\n    width: 28px;\n    height: 28px;\n    border: 0;\n    border-radius: 999px;\n    background: rgba(255, 255, 255, 0.18);\n    color: #fff;\n    font-size: 18px;\n    line-height: 28px;\n    cursor: pointer;\n    display: grid;\n    place-items: center;\n  }\n  .christmas-sidebar .close-btn:hover {\n    background: rgba(255, 255, 255, 0.28);\n  }\n  .christmas-sidebar .close-btn:focus {\n    outline: 2px solid rgba(255, 255, 255, 0.75);\n    outline-offset: 2px;\n  }\n\n  .christmas-sidebar img {\n    max-width: 100%;\n    border-radius: 8px;\n    margin-top: 18px;\n  }\n\n.christmas-sidebar p {\n    margin: 8px 0 0;\n    font-size: 12px;\n    line-height: 1.3;\n    margin-top: 5px !important;\n}\n\n .christmas-sidebar h4 {\n    color: #fff !important;\n    margin-top: 10px;\n    margin-bottom: 0px !important;\n    font-size: 16px !important;\n    font-weight: bold !important;\n}\n\n  .christmas-sidebar.is-hidden {\n    display: none;\n  }\n</style>\n\n<div class=\"christmas-sidebar\" id=\"christmasSidebar\">\n  <button class=\"close-btn\" type=\"button\" aria-label=\"Close sidebar\" id=\"closeSidebarBtn\">\n    ×\n  </button>\n\n  <img src=\"https://cdn.shopify.com/s/files/1/0587/7409/3860/files/Women_s_Day_sale.png?v=1771959353\" alt=\"Womens Day Special\">\n  <h4>Women’s Day Special</h4>\n<p>Celebrate the power of women with <strong>20% off</strong>. Simply use code <strong>WOMEN20</strong>.</p>\n</div>\n\n<script>\n  (function () {\n    const sidebar = document.getElementById(\"christmasSidebar\");\n    const btn = document.getElementById(\"closeSidebarBtn\");\n\n    // No localStorage = it will show again after reload\n    btn.addEventListener(\"click\", function () {\n      sidebar.classList.add(\"is-hidden\");\n    });\n  })();\n</script>\n{% endunless %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -257,6 +267,7 @@
     "clinical_results_metaobject_AJtiEM",
     "sticky_scroll_section_7YyDeH",
     "product_faq_mE7BPV",
-    "related-products"
+    "related-products",
+    "custom_liquid_xMTHH9"
   ]
 }

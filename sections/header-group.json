@@ -17,29 +17,21 @@
         "announcement_TEQeHY": {
           "type": "announcement",
           "settings": {
-            "text": "Buy 1 Get 1 FREE on Selected Masks Only — Limited Time Offer!",
+            "text": "Women’s Day Special 🌷 Flat 20% OFF – Use Code: WOMEN20",
             "link": ""
           }
         },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Hurry! Same Mask FREE on Every Purchase",
-            "link": ""
-          }
-        },
-        "announcement_kbyAED": {
-          "type": "announcement",
-          "settings": {
-            "text": "No Discount Codes Applicable",
+            "text": "Celebrate Her Power – Save 20% Today!",
             "link": ""
           }
         }
       },
       "block_order": [
         "announcement_TEQeHY",
-        "announcement-bar-0",
-        "announcement_kbyAED"
+        "announcement-bar-0"
       ],
       "settings": {
         "auto_rotate": true,
