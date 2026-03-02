@@ -236,7 +236,7 @@
             "button_color": "#ffffff",
             "dot_color": "#121212",
             "dot_active_color": "#121212",
-            "enable_autoplay": true,
+            "enable_autoplay": false,
             "autoplay_interval": 5
           },
           "blocks": {}
