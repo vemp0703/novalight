@@ -173,6 +173,12 @@
       </h2>
     {% endif %}
 
+    {% if block.settings.description != blank %}
+      <h2 class="ai-video-gallery__description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </h2>
+    {% endif %}
+
     {% assign gallery = product.metafields.custom.product_video_gallery.value %}
 
     {% if gallery != blank and gallery.children != blank %}
