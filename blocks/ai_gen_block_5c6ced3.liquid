@@ -173,6 +173,8 @@
       <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
         <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
           {% for video in product.metafields.custom.product_video_gallery.value %}
+
+          {{ video }}
             <div class="ai-video-gallery__slide-{{ ai_gen_id }}">
               <div class="ai-video-gallery__video-wrapper-{{ ai_gen_id }}">
                 {{ video | video_tag: 
