@@ -128,7 +128,7 @@
             "autoplay": false,
             "loop": true,
             "muted": true,
-            "show_controls": true,
+            "show_controls": false,
             "video_background": "#000000",
             "video_border_radius": 10,
             "show_navigation": true,
