@@ -222,7 +222,7 @@
             "videos_per_row_tablet": "2",
             "videos_per_row_mobile": "1",
             "video_gap": 16,
-            "autoplay": true,
+            "autoplay": false,
             "loop": true,
             "muted": true,
             "show_controls": true,
