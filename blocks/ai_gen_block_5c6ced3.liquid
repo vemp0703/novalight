@@ -165,69 +165,97 @@
 
 <product-video-gallery-{{ ai_gen_id }} class="ai-video-gallery-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <div class="ai-video-gallery__container-{{ ai_gen_id }}">
+
     {% if block.settings.heading != blank %}
-      <h2 class="ai-video-gallery__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      <h2 class="ai-video-gallery__heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
     {% endif %}
 
-    {% if product.metafields.custom.product_video_gallery.value != blank %}
-      <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
-        <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
-          {% for video in product.metafields.custom.product_video_gallery.value.children[0].children[0].value %}
-            <div class="ai-video-gallery__slide-{{ ai_gen_id }}">
-              <div class="ai-video-gallery__video-wrapper-{{ ai_gen_id }}">
-                {{ video | video_tag: 
-                  class: 'ai-video-gallery__video-' | append: ai_gen_id,
-                  autoplay: block.settings.autoplay,
-                  loop: block.settings.loop,
-                  muted: block.settings.muted,
-                  controls: block.settings.show_controls
-                }}
-              </div>
-            </div>
-          {% endfor %}
+    {% assign gallery = product.metafields.custom.product_video_gallery.value %}
+
+    {% if gallery != blank and gallery.children != blank %}
+
+      {% assign raw_videos = gallery.children[0].children[0].value %}
+      {% assign video_list = raw_videos | split: ';' %}
+
+      {% assign valid_video_count = 0 %}
+      {% for video in video_list %}
+        {% assign video_url = video | strip %}
+        {% if video_url != blank %}
+          {% assign valid_video_count = valid_video_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if valid_video_count > 0 %}
+
+        <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
+          <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
+
+            {% for video in video_list %}
+              {% assign video_url = video | strip %}
+
+              {% if video_url != blank %}
+                <div class="ai-video-gallery__slide-{{ ai_gen_id }}">
+                  <div class="ai-video-gallery__video-wrapper-{{ ai_gen_id }}">
+                    <video
+                      class="ai-video-gallery__video-{{ ai_gen_id }}"
+                      {% if block.settings.autoplay %} autoplay {% endif %}
+                      {% if block.settings.loop %} loop {% endif %}
+                      {% if block.settings.muted %} muted {% endif %}
+                      {% if block.settings.show_controls %} controls {% endif %}
+                      playsinline
+                      preload="metadata"
+                    >
+                      <source src="{{ video_url }}" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              {% endif %}
+
+            {% endfor %}
+
+          </div>
         </div>
-      </div>
 
-      {% if block.settings.show_navigation %}
-        <div class="ai-video-gallery__controls-{{ ai_gen_id }}">
-          <button 
-            class="ai-video-gallery__button-{{ ai_gen_id }}" 
-            data-prev
-            aria-label="Previous videos"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
+        {% if block.settings.show_navigation %}
+          <div class="ai-video-gallery__controls-{{ ai_gen_id }}">
+            
+            <button class="ai-video-gallery__button-{{ ai_gen_id }}" data-prev aria-label="Previous videos">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
 
-          {% if block.settings.show_dots %}
-            <div class="ai-video-gallery__dots-{{ ai_gen_id }}" data-dots></div>
-          {% endif %}
+            {% if block.settings.show_dots %}
+              <div class="ai-video-gallery__dots-{{ ai_gen_id }}" data-dots></div>
+            {% endif %}
 
-          <button 
-            class="ai-video-gallery__button-{{ ai_gen_id }}" 
-            data-next
-            aria-label="Next videos"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
+            <button class="ai-video-gallery__button-{{ ai_gen_id }}" data-next aria-label="Next videos">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+          </div>
+        {% endif %}
+
+      {% else %}
+        <div class="ai-video-gallery__empty-state-{{ ai_gen_id }}">
+          <p class="ai-video-gallery__empty-text-{{ ai_gen_id }}">
+            No valid videos found in metafield.
+          </p>
         </div>
       {% endif %}
+
     {% else %}
       <div class="ai-video-gallery__empty-state-{{ ai_gen_id }}">
-        <div class="ai-video-gallery__empty-icon-{{ ai_gen_id }}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-          </svg>
-        </div>
         <p class="ai-video-gallery__empty-text-{{ ai_gen_id }}">
-          Add videos to the product metafield: custom.product_video_gallery
+          Add videos to metafield: custom.product_video_gallery
         </p>
       </div>
     {% endif %}
+
   </div>
 </product-video-gallery-{{ ai_gen_id }}>
 
