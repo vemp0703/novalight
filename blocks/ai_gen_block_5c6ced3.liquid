@@ -169,7 +169,9 @@
       <h2 class="ai-video-gallery__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
     {% endif %}
 
-    {% if product.metafields.custom.product_video_gallery.value.children[0].children[0].value != blank %}
+    {% if product.metafields.custom.product_video_gallery.value != blank %}
+
+    {{  product.metafields.custom.product_video_gallery.value }}
       <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
         <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
           {% for video in product.metafields.custom.product_video_gallery.value.children[0].children[0].value %}
