@@ -171,7 +171,7 @@
 
     {% if product.metafields.custom.product_video_gallery.value != blank %}
 
-    {{  product.metafields.custom.product_video_gallery.value }}
+    {{  product.metafields.custom.product_video_gallery.value.children[0].children[0].value }}
       <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
         <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
           {% for video in product.metafields.custom.product_video_gallery.value.children[0].children[0].value %}
