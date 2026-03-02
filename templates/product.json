@@ -204,6 +204,48 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "17724717934e6d8854": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5c6ced3_4Tag3H": {
+          "type": "ai_gen_block_5c6ced3",
+          "settings": {
+            "heading": "Product videos",
+            "heading_size": 28,
+            "heading_color": "#121212",
+            "heading_alignment": "center",
+            "heading_spacing": 24,
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "videos_per_row_desktop": "3",
+            "videos_per_row_tablet": "2",
+            "videos_per_row_mobile": "1",
+            "video_gap": 16,
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "show_controls": true,
+            "video_background": "#000000",
+            "video_border_radius": 10,
+            "show_navigation": true,
+            "show_dots": true,
+            "controls_spacing": 24,
+            "button_background": "#121212",
+            "button_hover_background": "#000000",
+            "button_color": "#ffffff",
+            "dot_color": "#121212",
+            "dot_active_color": "#121212",
+            "enable_autoplay": true,
+            "autoplay_interval": 5
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5c6ced3_4Tag3H"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -213,6 +255,7 @@
     "clinical_results_metaobject_AJtiEM",
     "sticky_scroll_section_7YyDeH",
     "product_faq_mE7BPV",
-    "related-products"
+    "related-products",
+    "17724717934e6d8854"
   ]
 }
