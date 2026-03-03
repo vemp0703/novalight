@@ -207,190 +207,51 @@
 
 <script>
   (function() {
-    class ProductVideoGallery{{ video_gen_id }} extends HTMLElement {
-      constructor() {
-        super();
-        this.currentIndex = 0;
-        this.videosPerView = {{ section.settings.videos_per_row_desktop }};
-        this.autoplayEnabled = {{ section.settings.enable_autoplay | json }};
-        this.autoplayInterval = {{ section.settings.autoplay_interval | times: 1000 }};
-        this.autoplayTimer = null;
-      }
+    const gallery = document.querySelector('[data-gallery]');
+    if (!gallery) return;
 
-      connectedCallback() {
-        this.track = this.querySelector('[data-track]');
-        this.prevButton = this.querySelector('[data-prev]');
-        this.nextButton = this.querySelector('[data-next]');
-        this.dotsContainer = this.querySelector('[data-dots]');
-        
-        if (!this.track) return;
+    const track = gallery.querySelector('[data-track]');
+    const slides = Array.from(track.children);
+    const prevButton = gallery.querySelector('[data-prev]');
+    const nextButton = gallery.querySelector('[data-next]');
+    const dotsContainer = gallery.querySelector('[data-dots]');
 
-        this.slides = Array.from(this.track.children);
-        this.totalSlides = this.slides.length;
+    let currentIndex = 0;
+    let videosPerView = {{ section.settings.videos_per_row_desktop }};
+    const gap = parseInt(getComputedStyle(track).gap) || {{ section.settings.video_gap }};
 
-        this.updateVideosPerView();
-        this.setupEventListeners();
-        this.createDots();
-        this.updateCarousel();
-        this.toggleNavButtons();
+    function updateVideosPerView() {
+      const width = window.innerWidth;
+      if (width <= 749) videosPerView = {{ section.settings.videos_per_row_mobile }};
+      else if (width <= 989) videosPerView = {{ section.settings.videos_per_row_tablet }};
+      else videosPerView = {{ section.settings.videos_per_row_desktop }};
+    }
 
-        if (this.autoplayEnabled && this.totalSlides > this.videosPerView) {
-          this.startAutoplay();
-        }
-      }
+    function updateCarousel() {
+      const slideWidth = slides[0].offsetWidth;
+      const offset = -(currentIndex * (slideWidth + gap));
+      track.style.transform = `translateX(${offset}px)`;
 
-      disconnectedCallback() {
-        this.stopAutoplay();
-        window.removeEventListener('resize', this.handleResize);
-      }
+      if (prevButton) prevButton.disabled = currentIndex === 0;
+      if (nextButton) nextButton.disabled = currentIndex >= slides.length - videosPerView;
 
-      updateVideosPerView() {
-        const width = window.innerWidth;
-        if (width <= 749) {
-          this.videosPerView = {{ section.settings.videos_per_row_mobile }};
-        } else if (width <= 989) {
-          this.videosPerView = {{ section.settings.videos_per_row_tablet }};
-        } else {
-          this.videosPerView = {{ section.settings.videos_per_row_desktop }};
-        }
-      }
-
-      setupEventListeners() {
-        if (this.prevButton) {
-          this.prevButton.addEventListener('click', () => {
-            this.stopAutoplay();
-            this.goToPrevious();
-            if (this.autoplayEnabled) this.startAutoplay();
-          });
-        }
-
-        if (this.nextButton) {
-          this.nextButton.addEventListener('click', () => {
-            this.stopAutoplay();
-            this.goToNext();
-            if (this.autoplayEnabled) this.startAutoplay();
-          });
-        }
-
-        this.handleResize = () => {
-          const oldVideosPerView = this.videosPerView;
-          this.updateVideosPerView();
-          if (oldVideosPerView !== this.videosPerView) {
-            this.currentIndex = 0;
-            this.createDots();
-            this.updateCarousel();
-            this.toggleNavButtons();
-          }
-        };
-
-        window.addEventListener('resize', this.handleResize);
-
-        this.addEventListener('mouseenter', () => this.stopAutoplay());
-        this.addEventListener('mouseleave', () => {
-          if (this.autoplayEnabled && this.totalSlides > this.videosPerView) {
-            this.startAutoplay();
-          }
-        });
-      }
-
-      toggleNavButtons() {
-        if (this.totalSlides <= this.videosPerView) {
-          if (this.prevButton) this.prevButton.style.display = 'none';
-          if (this.nextButton) this.nextButton.style.display = 'none';
-        } else {
-          if (this.prevButton) this.prevButton.style.display = 'flex';
-          if (this.nextButton) this.nextButton.style.display = 'flex';
-        }
-      }
-
-      createDots() {
-        if (!this.dotsContainer) return;
-
-        this.dotsContainer.innerHTML = '';
-        const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-        const totalDots = maxIndex + 1;
-
-        for (let i = 0; i < totalDots; i++) {
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i <= slides.length - videosPerView; i++) {
           const dot = document.createElement('button');
-          dot.className = 'video-video-gallery__dot-{{ video_gen_id }}';
-          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-          dot.addEventListener('click', () => {
-            this.stopAutoplay();
-            this.goToSlide(i);
-            if (this.autoplayEnabled) this.startAutoplay();
-          });
-          this.dotsContainer.appendChild(dot);
-        }
-
-        this.dots = Array.from(this.dotsContainer.children);
-      }
-
-      updateCarousel() {
-        const slideWidth = this.slides[0].offsetWidth;
-        const gap = parseInt(getComputedStyle(this.track).gap) || {{ section.settings.video_gap }};
-        const offset = -(this.currentIndex * (slideWidth + gap));
-        this.track.style.transform = `translateX(${offset}px)`;
-
-        if (this.prevButton) {
-          this.prevButton.disabled = this.currentIndex === 0;
-        }
-
-        if (this.nextButton) {
-          const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-          this.nextButton.disabled = this.currentIndex >= maxIndex;
-        }
-
-        if (this.dots) {
-          this.dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentIndex);
-          });
-        }
-
-        this.toggleNavButtons();
-      }
-
-      goToPrevious() {
-        if (this.currentIndex > 0) {
-          this.currentIndex--;
-          this.updateCarousel();
-        }
-      }
-
-      goToNext() {
-        const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-        if (this.currentIndex < maxIndex) {
-          this.currentIndex++;
-          this.updateCarousel();
-        }
-      }
-
-      goToSlide(index) {
-        this.currentIndex = index;
-        this.updateCarousel();
-      }
-
-      startAutoplay() {
-        this.stopAutoplay();
-        this.autoplayTimer = setInterval(() => {
-          const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-          if (this.currentIndex >= maxIndex) {
-            this.currentIndex = 0;
-          } else {
-            this.currentIndex++;
-          }
-          this.updateCarousel();
-        }, this.autoplayInterval);
-      }
-
-      stopAutoplay() {
-        if (this.autoplayTimer) {
-          clearInterval(this.autoplayTimer);
-          this.autoplayTimer = null;
+          dot.className = i === currentIndex ? 'active' : '';
+          dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); });
+          dotsContainer.appendChild(dot);
         }
       }
     }
 
-    customElements.define('product-video-gallery-{{ video_gen_id }}', ProductVideoGallery{{ video_gen_id }});
+    if (prevButton) prevButton.addEventListener('click', () => { currentIndex--; updateCarousel(); });
+    if (nextButton) nextButton.addEventListener('click', () => { currentIndex++; updateCarousel(); });
+    window.addEventListener('resize', () => { updateVideosPerView(); updateCarousel(); });
+
+    updateVideosPerView();
+    updateCarousel();
   })();
 </script>
 
