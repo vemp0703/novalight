@@ -281,11 +281,11 @@
 
       connectedCallback() {
         this.track = this.querySelector('[data-track]');
+        //if (!this.track) return; // Exit if no videos
+
         this.prevButton = this.querySelector('[data-prev]');
         this.nextButton = this.querySelector('[data-next]');
         this.dotsContainer = this.querySelector('[data-dots]');
-
-        if (!this.track) return;
 
         this.slides = Array.from(this.track.children);
         this.totalSlides = this.slides.length;
@@ -322,6 +322,8 @@
       }
 
       setupEventListeners() {
+        if (!this.track) return;
+
         if (this.prevButton) {
           this.prevButton.addEventListener('click', () => {
             this.stopAutoplay();
@@ -367,7 +369,7 @@
       }
 
       createDots() {
-        if (!this.dotsContainer) return;
+        if (!this.dotsContainer || !this.track) return;
 
         this.dotsContainer.innerHTML = '';
         const totalDots = Math.max(1, this.totalSlides - this.videosPerView + 1);
@@ -388,6 +390,8 @@
       }
 
       updateCarousel() {
+        if (!this.track || !this.slides.length) return;
+
         const slideWidth = this.slides[0].offsetWidth;
         const gap = parseFloat(getComputedStyle(this.track).gap) || {{ section.settings.video_gap }};
         const offset = -(this.currentIndex * (slideWidth + gap));
@@ -424,6 +428,8 @@
       }
 
       startAutoplay() {
+        if (!this.track) return;
+
         this.stopAutoplay();
         this.autoplayTimer = setInterval(() => {
           const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
