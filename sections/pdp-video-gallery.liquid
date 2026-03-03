@@ -281,7 +281,9 @@
 
       connectedCallback() {
         this.track = this.querySelector('[data-track]');
-        //if (!this.track) return; // Exit if no videos
+
+        console.log(this.track);
+        if (!this.track) return; // Exit if no videos
 
         this.prevButton = this.querySelector('[data-prev]');
         this.nextButton = this.querySelector('[data-next]');
