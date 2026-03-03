@@ -152,6 +152,40 @@
       "name": "Product Video Gallery",
       "settings": {}
     },
+    "pdp_video_gallery_9cLXfD": {
+      "type": "pdp-video-gallery",
+      "name": "PDP Product video gallery",
+      "settings": {
+        "heading": "Product videos",
+        "description": "Our customers’ feedback reflects our commitment to excellence, transparency, and outstanding service.",
+        "heading_size": 28,
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_spacing": 24,
+        "desktop_width_percent": 100,
+        "section_padding": 40,
+        "videos_per_row_desktop": "3",
+        "videos_per_row_tablet": "2",
+        "videos_per_row_mobile": "1",
+        "video_gap": 16,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "show_controls": true,
+        "video_background": "#000000",
+        "video_border_radius": 10,
+        "show_navigation": true,
+        "show_dots": true,
+        "controls_spacing": 24,
+        "button_background": "#121212",
+        "button_hover_background": "#000000",
+        "button_color": "#ffffff",
+        "dot_color": "#121212",
+        "dot_active_color": "#121212",
+        "enable_autoplay": false,
+        "autoplay_interval": 5
+      }
+    },
     "product_key_benefits_7mEe4C": {
       "type": "product-key-benefits",
       "name": "Product Key Benefits",
@@ -263,6 +297,7 @@
   "order": [
     "main",
     "17724717934e6d8854",
+    "pdp_video_gallery_9cLXfD",
     "product_key_benefits_7mEe4C",
     "image_with_text_FaXkaq",
     "clinical_results_metaobject_AJtiEM",
