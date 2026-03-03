@@ -166,107 +166,44 @@
   }
 {% endstyle %}
 
-<product-video-gallery-{{ video_gen_id }} class="video-video-gallery-{{ video_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="video-video-gallery__contvideoner-{{ video_gen_id }}">
+<div class="video-gallery-{{ video_gen_id }}" data-gallery>
+  {% assign gallery = product.metafields.custom.product_video_gallery.value %}
+  {% assign video_list = '' | split: ',' %}
 
-    {% if section.settings.heading != blank %}
-      <h2 class="video-video-gallery__heading-{{ video_gen_id }}">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
+  {% if gallery != blank and gallery.children != blank %}
+    {% for child in gallery.children %}
+      {% assign video_list = video_list | concat: child.value | split: ';' %}
+    {% endfor %}
+  {% endif %}
 
-    {% if section.settings.description != blank %}
-      <h2 class="video-video-gallery__description-{{ video_gen_id }}">
-        {{ section.settings.description }}
-      </h2>
-    {% endif %}
-
-    {% assign gallery = product.metafields.custom.product_video_gallery.value %}
-
-    {% if gallery != blank and gallery.children != blank %}
-
-      {% assign raw_videos = gallery.children[0].children[0].value %}
-      {% assign video_list = raw_videos | split: ';' %}
-
-      {% assign valid_video_count = 0 %}
-      {% for video in video_list %}
-        {% assign video_url = video | strip %}
-        {% if video_url != blank %}
-          {% assign valid_video_count = valid_video_count | plus: 1 %}
-        {% endif %}
-      {% endfor %}
-
-      {% if valid_video_count > 0 %}
-
-        <div class="video-video-gallery__carousel-{{ video_gen_id }}">
-          <div class="video-video-gallery__track-{{ video_gen_id }}" data-track>
-
-            {% for video in video_list %}
-              {% assign video_url = video | strip %}
-
-              {% if video_url != blank %}
-                <div class="video-video-gallery__slide-{{ video_gen_id }}">
-                  <div class="video-video-gallery__video-wrapper-{{ video_gen_id }}">
-                    <video
-                      class="video-video-gallery__video-{{ video_gen_id }}"
-                      {% if section.settings.autoplay %} autoplay {% endif %}
-                      {% if section.settings.loop %} loop {% endif %}
-                      {% if section.settings.muted %} muted {% endif %}
-                      {% if section.settings.show_controls %} controls {% endif %}
-                      playsinline
-                      preload="metadata"
-                    >
-                      <source src="{{ video_url }}" type="video/mp4">
-                    </video>
-                  </div>
-                </div>
-              {% endif %}
-
-            {% endfor %}
-
-          </div>
-        </div>
-
-        {% if section.settings.show_navigation %}
-          <div class="video-video-gallery__controls-{{ video_gen_id }}">
-            
-            <button class="video-video-gallery__button-{{ video_gen_id }}" data-prev aria-label="Previous videos">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-
-            {% if section.settings.show_dots %}
-              <div class="video-video-gallery__dots-{{ video_gen_id }}" data-dots></div>
-            {% endif %}
-
-            <button class="video-video-gallery__button-{{ video_gen_id }}" data-next aria-label="Next videos">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-          </div>
-        {% endif %}
-
-      {% else %}
-        <div class="video-video-gallery__empty-state-{{ video_gen_id }}">
-          <p class="video-video-gallery__empty-text-{{ video_gen_id }}">
-            No valid videos found in metafield.
-          </p>
+  <div class="video-gallery__track-{{ video_gen_id }}" data-track>
+    {% for video in video_list %}
+      {% assign video_url = video | strip %}
+      {% if video_url != blank %}
+        <div class="video-gallery__slide-{{ video_gen_id }}">
+          <video
+            class="video-gallery__video-{{ video_gen_id }}"
+            {% if section.settings.autoplay %} autoplay {% endif %}
+            {% if section.settings.loop %} loop {% endif %}
+            {% if section.settings.muted %} muted {% endif %}
+            {% if section.settings.show_controls %} controls {% endif %}
+            playsinline
+            preload="metadata"
+          >
+            <source src="{{ video_url }}" type="video/mp4">
+          </video>
         </div>
       {% endif %}
-
-    {% else %}
-      <div class="video-video-gallery__empty-state-{{ video_gen_id }}">
-        <p class="video-video-gallery__empty-text-{{ video_gen_id }}">
-          Add videos to metafield: custom.product_video_gallery
-        </p>
-      </div>
-    {% endif %}
-
+    {% endfor %}
   </div>
-</product-video-gallery-{{ video_gen_id }}>
+
+  {% if section.settings.show_navigation %}
+    <button data-prev class="video-gallery__button-{{ video_gen_id }}">Prev</button>
+    <button data-next class="video-gallery__button-{{ video_gen_id }}">Next</button>
+  {% endif %}
+
+  <div data-dots class="video-gallery__dots-{{ video_gen_id }}"></div>
+</div>
 
 <script>
   (function() {
