@@ -1,11 +1,7 @@
-{% doc %}
-  @prompt
-    Generate Product video gallery which needs to be responsive. In every product I have a metafeild custom.product_video_gallery and I want the section take it as dynamic source for video carousel make sure it responsive it is very important
-{% enddoc %}
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% assign video_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-video-gallery-{{ ai_gen_id }} {
+  .video-video-gallery-{{ video_gen_id }} {
     display: block;
     width: {{ block.settings.desktop_width_percent }}%;
     max-width: 100%;
@@ -13,37 +9,37 @@
     padding: {{ block.settings.section_padding }}px 0;
   }
 
-  .ai-video-gallery__container-{{ ai_gen_id }} {
+  .video-video-gallery__contvideoner-{{ video_gen_id }} {
     position: relative;
     width: 100%;
   }
 
-  .ai-video-gallery__heading-{{ ai_gen_id }} {
+  .video-video-gallery__heading-{{ video_gen_id }} {
     text-align: {{ block.settings.heading_alignment }};
     margin-bottom: {{ block.settings.heading_spacing }}px;
     font-size: {{ block.settings.heading_size }}px;
     color: {{ block.settings.heading_color }};
   }
-  .ai-video-gallery__description-{{ ai_gen_id }} {
+  .video-video-gallery__description-{{ video_gen_id }} {
     text-align: {{ block.settings.heading_alignment }};
     margin-bottom: {{ block.settings.heading_spacing }}px;
     font-size: 18px;
     color: {{ block.settings.heading_color }};
   }
 
-  .ai-video-gallery__carousel-{{ ai_gen_id }} {
+  .video-video-gallery__carousel-{{ video_gen_id }} {
     position: relative;
     overflow: hidden;
     border-radius: {{ block.settings.video_border_radius }}px;
   }
 
-  .ai-video-gallery__track-{{ ai_gen_id }} {
+  .video-video-gallery__track-{{ video_gen_id }} {
     display: flex;
     gap: {{ block.settings.video_gap }}px;
     transition: transform 0.4s ease;
   }
 
-  .ai-video-gallery__slide-{{ ai_gen_id }} {
+  .video-video-gallery__slide-{{ video_gen_id }} {
     flex: 0 0 calc((100% - ({{ block.settings.videos_per_row_desktop | minus: 1 }} * {{ block.settings.video_gap }}px)) / {{ block.settings.videos_per_row_desktop }});
     position: relative;
     background-color: {{ block.settings.video_background }};
@@ -51,7 +47,7 @@
     overflow: hidden;
   }
 
-  .ai-video-gallery__video-wrapper-{{ ai_gen_id }} {
+  .video-video-gallery__video-wrapper-{{ video_gen_id }} {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
@@ -61,7 +57,7 @@
     min-height:450px;
   }
 
-  .ai-video-gallery__video-{{ ai_gen_id }} {
+  .video-video-gallery__video-{{ video_gen_id }} {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,7 +66,7 @@
     object-fit: cover;
   }
 
-  .ai-video-gallery__controls-{{ ai_gen_id }} {
+  .video-video-gallery__controls-{{ video_gen_id }} {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +74,7 @@
     margin-top: {{ block.settings.controls_spacing }}px;
   }
 
-  .ai-video-gallery__button-{{ ai_gen_id }} {
+  .video-video-gallery__button-{{ video_gen_id }} {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -92,27 +88,27 @@
     transition: all 0.3s ease;
   }
 
-  .ai-video-gallery__button-{{ ai_gen_id }}:hover:not(:disabled) {
+  .video-video-gallery__button-{{ video_gen_id }}:hover:not(:disabled) {
     background-color: {{ block.settings.button_hover_background }};
     transform: scale(1.1);
   }
 
-  .ai-video-gallery__button-{{ ai_gen_id }}:disabled {
+  .video-video-gallery__button-{{ video_gen_id }}:disabled {
     opacity: 0.3;
     cursor: not-allowed;
   }
 
-  .ai-video-gallery__button-{{ ai_gen_id }} svg {
+  .video-video-gallery__button-{{ video_gen_id }} svg {
     width: 20px;
     height: 20px;
   }
 
-  .ai-video-gallery__dots-{{ ai_gen_id }} {
+  .video-video-gallery__dots-{{ video_gen_id }} {
     display: flex;
     gap: 8px;
   }
 
-  .ai-video-gallery__dot-{{ ai_gen_id }} {
+  .video-video-gallery__dot-{{ video_gen_id }} {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -124,63 +120,63 @@
     transition: all 0.3s ease;
   }
 
-  .ai-video-gallery__dot-{{ ai_gen_id }}.active {
+  .video-video-gallery__dot-{{ video_gen_id }}.active {
     opacity: 1;
     background-color: {{ block.settings.dot_active_color }};
   }
 
-  .ai-video-gallery__empty-state-{{ ai_gen_id }} {
+  .video-video-gallery__empty-state-{{ video_gen_id }} {
     text-align: center;
     padding: 60px 20px;
     background-color: #f4f4f4;
     border-radius: {{ block.settings.video_border_radius }}px;
   }
 
-  .ai-video-gallery__empty-icon-{{ ai_gen_id }} {
+  .video-video-gallery__empty-icon-{{ video_gen_id }} {
     width: 80px;
     height: 80px;
     margin: 0 auto 20px;
     opacity: 0.3;
   }
 
-  .ai-video-gallery__empty-text-{{ ai_gen_id }} {
+  .video-video-gallery__empty-text-{{ video_gen_id }} {
     font-size: 16px;
     color: #666;
     margin: 0;
   }
 
   @media screen and (max-width: 989px) {
-    .ai-video-gallery__slide-{{ ai_gen_id }} {
+    .video-video-gallery__slide-{{ video_gen_id }} {
       flex: 0 0 calc((100% - ({{ block.settings.videos_per_row_tablet | minus: 1 }} * {{ block.settings.video_gap }}px)) / {{ block.settings.videos_per_row_tablet }});
     }
   }
 
   @media screen and (max-width: 749px) {
-    .ai-video-gallery-{{ ai_gen_id }} {
+    .video-video-gallery-{{ video_gen_id }} {
       width: 100%;
     }
 
-    .ai-video-gallery__slide-{{ ai_gen_id }} {
+    .video-video-gallery__slide-{{ video_gen_id }} {
       flex: 0 0 calc((100% - ({{ block.settings.videos_per_row_mobile | minus: 1 }} * {{ block.settings.video_gap }}px)) / {{ block.settings.videos_per_row_mobile }});
     }
 
-    .ai-video-gallery__heading-{{ ai_gen_id }} {
+    .video-video-gallery__heading-{{ video_gen_id }} {
       font-size: calc({{ block.settings.heading_size }}px * 0.8);
     }
   }
 {% endstyle %}
 
-<product-video-gallery-{{ ai_gen_id }} class="ai-video-gallery-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-video-gallery__container-{{ ai_gen_id }}">
+<product-video-gallery-{{ video_gen_id }} class="video-video-gallery-{{ video_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="video-video-gallery__contvideoner-{{ video_gen_id }}">
 
     {% if block.settings.heading != blank %}
-      <h2 class="ai-video-gallery__heading-{{ ai_gen_id }}">
+      <h2 class="video-video-gallery__heading-{{ video_gen_id }}">
         {{ block.settings.heading }}
       </h2>
     {% endif %}
 
     {% if block.settings.description != blank %}
-      <h2 class="ai-video-gallery__description-{{ ai_gen_id }}">
+      <h2 class="video-video-gallery__description-{{ video_gen_id }}">
         {{ block.settings.description }}
       </h2>
     {% endif %}
@@ -202,17 +198,17 @@
 
       {% if valid_video_count > 0 %}
 
-        <div class="ai-video-gallery__carousel-{{ ai_gen_id }}">
-          <div class="ai-video-gallery__track-{{ ai_gen_id }}" data-track>
+        <div class="video-video-gallery__carousel-{{ video_gen_id }}">
+          <div class="video-video-gallery__track-{{ video_gen_id }}" data-track>
 
             {% for video in video_list %}
               {% assign video_url = video | strip %}
 
               {% if video_url != blank %}
-                <div class="ai-video-gallery__slide-{{ ai_gen_id }}">
-                  <div class="ai-video-gallery__video-wrapper-{{ ai_gen_id }}">
+                <div class="video-video-gallery__slide-{{ video_gen_id }}">
+                  <div class="video-video-gallery__video-wrapper-{{ video_gen_id }}">
                     <video
-                      class="ai-video-gallery__video-{{ ai_gen_id }}"
+                      class="video-video-gallery__video-{{ video_gen_id }}"
                       {% if block.settings.autoplay %} autoplay {% endif %}
                       {% if block.settings.loop %} loop {% endif %}
                       {% if block.settings.muted %} muted {% endif %}
@@ -232,19 +228,19 @@
         </div>
 
         {% if block.settings.show_navigation %}
-          <div class="ai-video-gallery__controls-{{ ai_gen_id }}">
+          <div class="video-video-gallery__controls-{{ video_gen_id }}">
             
-            <button class="ai-video-gallery__button-{{ ai_gen_id }}" data-prev aria-label="Previous videos">
+            <button class="video-video-gallery__button-{{ video_gen_id }}" data-prev aria-label="Previous videos">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
 
             {% if block.settings.show_dots %}
-              <div class="ai-video-gallery__dots-{{ ai_gen_id }}" data-dots></div>
+              <div class="video-video-gallery__dots-{{ video_gen_id }}" data-dots></div>
             {% endif %}
 
-            <button class="ai-video-gallery__button-{{ ai_gen_id }}" data-next aria-label="Next videos">
+            <button class="video-video-gallery__button-{{ video_gen_id }}" data-next aria-label="Next videos">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
@@ -254,27 +250,27 @@
         {% endif %}
 
       {% else %}
-        <div class="ai-video-gallery__empty-state-{{ ai_gen_id }}">
-          <p class="ai-video-gallery__empty-text-{{ ai_gen_id }}">
+        <div class="video-video-gallery__empty-state-{{ video_gen_id }}">
+          <p class="video-video-gallery__empty-text-{{ video_gen_id }}">
             No valid videos found in metafield.
           </p>
         </div>
       {% endif %}
 
     {% else %}
-      <div class="ai-video-gallery__empty-state-{{ ai_gen_id }}">
-        <p class="ai-video-gallery__empty-text-{{ ai_gen_id }}">
+      <div class="video-video-gallery__empty-state-{{ video_gen_id }}">
+        <p class="video-video-gallery__empty-text-{{ video_gen_id }}">
           Add videos to metafield: custom.product_video_gallery
         </p>
       </div>
     {% endif %}
 
   </div>
-</product-video-gallery-{{ ai_gen_id }}>
+</product-video-gallery-{{ video_gen_id }}>
 
 <script>
   (function() {
-    class ProductVideoGallery{{ ai_gen_id }} extends HTMLElement {
+    class ProductVideoGallery{{ video_gen_id }} extends HTMLElement {
       constructor() {
         super();
         this.currentIndex = 0;
@@ -288,7 +284,7 @@
         this.track = this.querySelector('[data-track]');
         this.prevButton = this.querySelector('[data-prev]');
         this.nextButton = this.querySelector('[data-next]');
-        this.dotsContainer = this.querySelector('[data-dots]');
+        this.dotsContvideoner = this.querySelector('[data-dots]');
         
         if (!this.track) return;
 
@@ -359,25 +355,25 @@
       }
 
       createDots() {
-        if (!this.dotsContainer) return;
+        if (!this.dotsContvideoner) return;
 
-        this.dotsContainer.innerHTML = '';
+        this.dotsContvideoner.innerHTML = '';
         const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
         const totalDots = maxIndex + 1;
 
         for (let i = 0; i < totalDots; i++) {
           const dot = document.createElement('button');
-          dot.className = 'ai-video-gallery__dot-{{ ai_gen_id }}';
+          dot.className = 'video-video-gallery__dot-{{ video_gen_id }}';
           dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
           dot.addEventListener('click', () => {
             this.stopAutoplay();
             this.goToSlide(i);
             if (this.autoplayEnabled) this.startAutoplay();
           });
-          this.dotsContainer.appendChild(dot);
+          this.dotsContvideoner.appendChild(dot);
         }
 
-        this.dots = Array.from(this.dotsContainer.children);
+        this.dots = Array.from(this.dotsContvideoner.children);
       }
 
       updateCarousel() {
@@ -446,7 +442,7 @@
       }
     }
 
-    customElements.define('product-video-gallery-{{ ai_gen_id }}', ProductVideoGallery{{ ai_gen_id }});
+    customElements.define('product-video-gallery-{{ video_gen_id }}', ProductVideoGallery{{ video_gen_id }});
   })();
 </script>
 
