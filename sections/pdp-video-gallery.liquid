@@ -266,8 +266,6 @@
     {% endif %}
 
   </div>
-
-  {{ section.settings.videos_per_row_desktop }}
 </product-video-gallery-{{ video_gen_id }}>
 
 <script>
@@ -276,7 +274,6 @@
       constructor() {
         super();
         this.currentIndex = 0;
-        this.videosPerView = {{ section.settings.videos_per_row_desktop }};
         this.autoplayEnabled = {{ section.settings.enable_autoplay | json }};
         this.autoplayInterval = {{ section.settings.autoplay_interval | times: 1000 }};
         this.autoplayTimer = null;
@@ -287,7 +284,7 @@
         this.prevButton = this.querySelector('[data-prev]');
         this.nextButton = this.querySelector('[data-next]');
         this.dotsContainer = this.querySelector('[data-dots]');
-        
+
         if (!this.track) return;
 
         this.slides = Array.from(this.track.children);
@@ -318,6 +315,10 @@
         } else {
           this.videosPerView = {{ section.settings.videos_per_row_desktop }};
         }
+        // Ensure currentIndex is not out of bounds
+        if (this.currentIndex > this.totalSlides - this.videosPerView) {
+          this.currentIndex = Math.max(0, this.totalSlides - this.videosPerView);
+        }
       }
 
       setupEventListeners() {
@@ -341,7 +342,6 @@
           const oldVideosPerView = this.videosPerView;
           this.updateVideosPerView();
           if (oldVideosPerView !== this.videosPerView) {
-            this.currentIndex = 0;
             this.createDots();
             this.updateCarousel();
             this.toggleNavButtons();
@@ -359,21 +359,18 @@
       }
 
       toggleNavButtons() {
-        if (this.totalSlides <= this.videosPerView) {
-          if (this.prevButton) this.prevButton.style.display = 'none';
-          if (this.nextButton) this.nextButton.style.display = 'none';
-        } else {
-          if (this.prevButton) this.prevButton.style.display = 'flex';
-          if (this.nextButton) this.nextButton.style.display = 'flex';
-        }
+        if (!this.prevButton || !this.nextButton) return;
+
+        const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
+        this.prevButton.disabled = this.currentIndex === 0;
+        this.nextButton.disabled = this.currentIndex >= maxIndex;
       }
 
       createDots() {
         if (!this.dotsContainer) return;
 
         this.dotsContainer.innerHTML = '';
-        const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-        const totalDots = maxIndex + 1;
+        const totalDots = Math.max(1, this.totalSlides - this.videosPerView + 1);
 
         for (let i = 0; i < totalDots; i++) {
           const dot = document.createElement('button');
@@ -392,18 +389,9 @@
 
       updateCarousel() {
         const slideWidth = this.slides[0].offsetWidth;
-        const gap = parseInt(getComputedStyle(this.track).gap) || {{ section.settings.video_gap }};
+        const gap = parseFloat(getComputedStyle(this.track).gap) || {{ section.settings.video_gap }};
         const offset = -(this.currentIndex * (slideWidth + gap));
         this.track.style.transform = `translateX(${offset}px)`;
-
-        if (this.prevButton) {
-          this.prevButton.disabled = this.currentIndex === 0;
-        }
-
-        if (this.nextButton) {
-          const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-          this.nextButton.disabled = this.currentIndex >= maxIndex;
-        }
 
         if (this.dots) {
           this.dots.forEach((dot, index) => {
@@ -430,7 +418,8 @@
       }
 
       goToSlide(index) {
-        this.currentIndex = index;
+        const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
+        this.currentIndex = Math.min(Math.max(0, index), maxIndex);
         this.updateCarousel();
       }
 
