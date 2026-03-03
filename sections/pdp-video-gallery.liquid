@@ -270,7 +270,7 @@
 
 <script>
 (function() {
-  class ProductVideoGallery{{ video_gen_id }} extends HTMLElement {
+  class ProductVideoGallery extends HTMLElement {  // <- Removed {{ video_gen_id }} from class name
     constructor() {
       super();
       this.currentIndex = 0;
@@ -345,7 +345,7 @@
       const totalDots = maxIndex + 1;
       for (let i = 0; i < totalDots; i++) {
         const dot = document.createElement('button');
-        dot.className = 'video-video-gallery__dot-{{ video_gen_id }}';
+        dot.className = 'video-video-gallery__dot';
         dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
         dot.addEventListener('click', () => this.goToSlide(i));
         this.dotsContainer.appendChild(dot);
@@ -371,21 +371,9 @@
       if (this.dots) this.dots.forEach((dot, i) => dot.classList.toggle('active', i === this.currentIndex));
     }
 
-    goToPrevious() {
-      if (this.currentIndex > 0) this.currentIndex--;
-      this.updateCarousel();
-    }
-
-    goToNext() {
-      const maxIndex = Math.max(0, this.totalSlides - this.videosPerView);
-      if (this.currentIndex < maxIndex) this.currentIndex++;
-      this.updateCarousel();
-    }
-
-    goToSlide(index) {
-      this.currentIndex = index;
-      this.updateCarousel();
-    }
+    goToPrevious() { if (this.currentIndex > 0) this.currentIndex--; this.updateCarousel(); }
+    goToNext() { const maxIndex = Math.max(0, this.totalSlides - this.videosPerView); if (this.currentIndex < maxIndex) this.currentIndex++; this.updateCarousel(); }
+    goToSlide(index) { this.currentIndex = index; this.updateCarousel(); }
 
     startAutoplay() {
       this.stopAutoplay();
@@ -397,14 +385,12 @@
     }
 
     stopAutoplay() {
-      if (this.autoplayTimer) {
-        clearInterval(this.autoplayTimer);
-        this.autoplayTimer = null;
-      }
+      if (this.autoplayTimer) { clearInterval(this.autoplayTimer); this.autoplayTimer = null; }
     }
   }
 
-  customElements.define('product-video-gallery-{{ video_gen_id }}', ProductVideoGallery{{ video_gen_id }});
+  // Register custom element with unique name
+  customElements.define('product-video-gallery-{{ video_gen_id }}', ProductVideoGallery);
 })();
 </script>
 
