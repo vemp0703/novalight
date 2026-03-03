@@ -1,8 +1,3 @@
-{% doc %}
- @prompt
- dfasjdf;asjf;ajdf
-{% enddoc %}
-
 {% assign video_gen_id = section.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -286,9 +281,7 @@
 
       connectedCallback() {
         this.track = this.querySelector('[data-track]');
-
-        console.log(this.track);
-        if (!this.track) return; // Exit if no videos
+        //if (!this.track) return; // Exit if no videos
 
         this.prevButton = this.querySelector('[data-prev]');
         this.nextButton = this.querySelector('[data-next]');
